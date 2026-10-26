@@ -57,6 +57,11 @@ nav:
   - Anmeldung & Oberfläche: 01-anmeldung.md
   - Mitglieder & Zählpunkte: 02-mitglieder-zaehlpunkte.md
   - E-Mail-Texte: 03-email-texte.md
+  - Tarife: 04-tarife.md
+  - Abrechnung: 05-abrechnung.md
+  - Energiedaten: 06-energiedaten.md
+  - Nachrichten: 07-nachrichten.md
+  - Prozesse: 08-prozesse.md
 
 markdown_extensions:
   - admonition

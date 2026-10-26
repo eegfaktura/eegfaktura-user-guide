@@ -155,20 +155,17 @@ Einen ungültigen Zählpunkt, der nie angemeldet wurde, kannst du hier mit **Lö
 Klicke in der Mitgliederliste beim Mitglied auf **+**. Das Formular ist dasselbe wie oben; gespeichert wird mit
 **Registrieren**. Ist das Mitglied schon zugelassen, meldet eegFaktura den neuen Zählpunkt bei Gemeinschaften mit
 Online-Anbindung gleich beim Netzbetreiber an.
+## Dokumente eines Mitglieds
+
+Unter **Dokumente** legst du Unterlagen zum Mitglied ab, z. B. den unterschriebenen Beitritt. **Hochladen** (bzw.
+**Hinzufügen**) öffnet das Fenster zum Hochladen; erlaubt sind PDF, PNG und JPEG:
+
+![Dokumente hochladen](images/dokumente-hochladen.png)
+
+Ein Klick auf ein Dokument öffnet es, das Papierkorb-Symbol löscht es endgültig. Dieselben Anmeldedokumente kannst
+du auch beim [Zulassen](#neues-mitglied-zulassen) hochladen.
+
 ## Prozesse beim Netzbetreiber
 
-Für Gemeinschaften mit Online-Anbindung findest du unter **Prozesse** die Vorgänge, die du beim Netzbetreiber
-auslösen kannst:
-
-![Prozesse](images/prozesse.png)
-
-| Prozess | Wofür |
-|---------|-------|
-| **Zählpunktdaten nachfordern** | Energiedaten für einen Zeitraum erneut anfordern, für einzelne Zählpunkte oder die ganze Gemeinschaft; mit „Smart“ nur fehlende Daten |
-| **Zählpunkt aktivieren** | einen noch nicht aktiven Zählpunkt (erneut) beim Netzbetreiber anmelden, z. B. nach einer Abweisung oder mit dem Aktivierungs-Code einer Offline-Registrierung |
-| **Zählpunkt abmelden** | die Datenfreigabe eines Zählpunkts beim Netzbetreiber aufheben |
-| **Teilnahmefaktor ändern** | den Teilnahmefaktor aktiver Zählpunkte ändern (eine Änderung pro Tag und Zählpunkt, 09:00–17:00 Uhr, gilt ab dem nächsten Tag) |
-| **Teilnehmerliste anfordern** | die Liste der Zählpunkte der Gemeinschaft beim Netzbetreiber anfordern |
-| **Prozess History** | alle bisherigen Prozesse und Rückmeldungen nachlesen |
-
-Die Antworten des Netzbetreibers kommen unter **Nachrichten** an.
+Vorgänge wie Daten nachfordern, einen Zählpunkt abmelden oder den Teilnahmefaktor ändern findest du unter
+**Prozesse**; sie sind im Kapitel [Prozesse beim Netzbetreiber](08-prozesse.md) beschrieben.

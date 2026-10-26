@@ -11,7 +11,8 @@ Usage:
 Env (optional): BASE_URL (default http://localhost:8090), SCREENSHOT_USER (default rc100100-admin, an EEG_ADMIN of
 one community), SCREENSHOT_MULTI_USER (default multi-admin, an EEG_ADMIN of two communities, for the switcher).
 
-Nothing is saved in the app: the script only opens pages, dialogs and the preview; edits made for a dialog are
+Nothing is saved in the app — except by the billing chapter (screens_more.py), which creates a billing preview and,
+once, a final billing run in the local stack; run scripts/prepare-local-stack.sql before. Edits made for a dialog are
 discarded. A screenshot that fails is reported and the script exits with 1 (the others are still taken).
 """
 import os
@@ -20,28 +21,56 @@ from pathlib import Path
 
 from playwright.sync_api import Page, sync_playwright
 
+import screens_more
+
 BASE_URL = os.environ.get("BASE_URL", "http://localhost:8090").rstrip("/")
 USER = os.environ.get("SCREENSHOT_USER", "rc100100-admin")
 MULTI_USER = os.environ.get("SCREENSHOT_MULTI_USER", "multi-admin")
 PASSWORD = os.environ.get("SCREENSHOT_PASSWORD")
 OUT = Path(__file__).resolve().parent.parent / "docs" / "images"
-VIEWPORT = {"width": 1280, "height": 800}
+VIEWPORT = {"width": 1440, "height": 900}
+MAX_HEIGHT = 2400  # a page taller than its content area is shot in full, up to this height
+DEBUG_DIR = Path(__file__).resolve().parent.parent / ".cache"  # failed steps leave an image here (gitignored)
+
+# height of the visible page content: Ionic scrolls inside ion-content, so a plain full-page shot would cut it off
+CONTENT_HEIGHT_JS = """async () => {
+  let bottom = 0
+  for (const c of document.querySelectorAll('ion-content')) {
+    const r = c.getBoundingClientRect()
+    if (r.width === 0 || r.height === 0) continue
+    const el = await c.getScrollElement()
+    bottom = Math.max(bottom, r.top + el.scrollHeight)
+  }
+  return Math.ceil(bottom)
+}"""
+OVERLAYS = "ion-alert, ion-modal, ion-popover, ion-picker"
 ONLY = sys.argv[1] if len(sys.argv) > 1 else ""
 # the community with online connection of SCREENSHOT_MULTI_USER (only there the menu has "Prozesse")
 ONLINE_COMMUNITY = os.environ.get("SCREENSHOT_ONLINE_COMMUNITY", "GC106668")
 
 failed: list[str] = []
 written: list[str] = []
+CURRENT_PAGE: list[Page] = []  # the page of the running user, for the debug image of a failed step
 
 
-def shot(name: str, page: Page, locator=None) -> None:
-    """Saves docs/images/<name>.png: the whole viewport, or only the given element."""
+def shot(name: str, page: Page, locator=None, fit: bool = True) -> None:
+    """Saves docs/images/<name>.png: the whole page (fit: window grown to the content), or only the given element."""
     if ONLY and ONLY not in name:
         return
     path = OUT / f"{name}.png"
     page.wait_for_timeout(400)  # Ionic transitions
     wait_toasts_gone(page)
-    (locator or page).screenshot(path=str(path))
+    overlay = any(o.is_visible() for o in page.locator(OVERLAYS).all())
+    if locator or overlay or not fit:  # an element, a dialog, or a long list in the normal window
+        (locator or page).screenshot(path=str(path))
+    else:  # the whole page: let the window grow to the content, then back
+        height = min(max(page.evaluate(CONTENT_HEIGHT_JS), VIEWPORT["height"]), MAX_HEIGHT)
+        page.set_viewport_size({"width": VIEWPORT["width"], "height": height})
+        try:
+            page.wait_for_timeout(600)
+            page.screenshot(path=str(path))
+        finally:
+            page.set_viewport_size(VIEWPORT)
     written.append(name)
     print(f"ok    {name}")
 
@@ -66,7 +95,14 @@ def step(name: str, fn) -> None:
         fn()
     except Exception as e:  # noqa: BLE001 — report every failing step, then exit 1
         failed.append(name)
-        print(f"FAIL  {name}: {str(e).splitlines()[0]}")
+        lines = str(e).splitlines() or [type(e).__name__]
+        print(f"FAIL  {name}: {lines[0]}" + (f"  | {lines[2].strip()}" if len(lines) > 2 else ""))
+        if CURRENT_PAGE:
+            try:
+                DEBUG_DIR.mkdir(exist_ok=True)
+                CURRENT_PAGE[0].screenshot(path=str(DEBUG_DIR / f"failed-{name}.png"))
+            except Exception:  # noqa: BLE001 — the debug image is optional, the run goes on
+                pass
 
 
 def login(page: Page, user: str, capture: bool = False) -> None:
@@ -233,10 +269,15 @@ def main() -> int:
             old.unlink()
     with sync_playwright() as p:
         browser = p.chromium.launch()
-        for user, chapters, capture in ((USER, (chapter_overview, chapter_members, chapter_mail_texts), True),
-                                        (MULTI_USER, (chapter_switch_community,), False)):
+        more = [lambda pg, f=f: f(pg, shot, step, goto) for f in (
+            screens_more.chapter_tariffs, screens_more.chapter_billing, screens_more.chapter_energy,
+            screens_more.chapter_messages_documents)]
+        processes = lambda pg: screens_more.chapter_processes(pg, shot, step, goto)  # noqa: E731
+        for user, chapters, capture in ((USER, (chapter_overview, chapter_members, chapter_mail_texts, *more), True),
+                                        (MULTI_USER, (chapter_switch_community, processes), False)):
             ctx = browser.new_context(viewport=VIEWPORT, locale="de-AT", timezone_id="Europe/Vienna")
             page = ctx.new_page()
+            CURRENT_PAGE[:] = [page]
             try:
                 login(page, user, capture)
             except Exception as e:  # noqa: BLE001
