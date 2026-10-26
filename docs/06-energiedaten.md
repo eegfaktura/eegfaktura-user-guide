@@ -38,7 +38,7 @@ Der Knopf mit dem Pfeil nach unten oben in der Mitgliederliste öffnet **Downloa
 ![Export](images/energiedaten-export.png)
 
 1. Wähle **Energiedaten** (oder **Stammdaten** für die Mitglieder- und Zählpunktdaten).
-2. Wähle unter **Zeitspanne auswählen** den **Zeitraum**.
+2. Bei Energiedaten: Wähle unter **Zeitspanne auswählen** den **Zeitraum**.
 3. Klicke auf **Export**. Du bekommst eine Excel-Datei.
 
 Die Excel-Datei hat zwei Blätter:
@@ -62,6 +62,6 @@ nur die fehlenden.
 
 ## Energiedaten importieren
 
-Nur bei Gemeinschaften **ohne Online-Anbindung**: Der Knopf mit der Wolke öffnet **Upload Daten für …**. Wähle
-**Energiedaten**, die Excel-Datei mit dem Blatt „Energiedaten“ und klicke auf **Import**. Mit **Stammdaten** liest du
-auf demselben Weg Mitglieder und Zählpunkte aus einer Excel-Datei ein (Blatt „EEG Stammdaten“).
+Der Knopf mit der Wolke öffnet **Upload Daten für …**. Mit **Stammdaten** liest du Mitglieder und Zählpunkte aus einer
+Excel-Datei ein (Blatt „EEG Stammdaten“). Nur bei Gemeinschaften **ohne Online-Anbindung** gibt es zusätzlich
+**Energiedaten** (Blatt „Energiedaten“). Wähle die Datei und klicke auf **Import**.

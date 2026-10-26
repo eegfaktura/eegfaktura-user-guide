@@ -20,8 +20,8 @@ Fordert Energiedaten für einen Zeitraum erneut an, z. B. wenn Daten fehlen oder
    fehlt, und schlägt vor, nur diese Zählpunkte anzufordern.
 4. Klicke auf **Anfordern**.
 
-Für heute und spätere Tage gibt es noch keine Daten; dieselben Zählpunkte innerhalb einer Stunde erneut anzufordern
-ist nicht nötig. Das Ergebnis kommt als **Zusammenfassung Energiedaten-Anforderung** unter Nachrichten.
+Für heute und spätere Tage gibt es noch keine Daten. Zählpunkte, die in der letzten Stunde schon angefordert wurden,
+überspringt eegFaktura und sagt das. Das Ergebnis kommt als **Zusammenfassung Energiedaten-Anforderung** unter Nachrichten.
 
 ## Zählpunkt aktivieren
 
@@ -32,12 +32,14 @@ bestätigen; es bekommt dazu die Mail „Freigabe-Aufforderung“.
 
 ## Zählpunkt abmelden
 
-Hebt die Datenfreigabe eines Zählpunkts beim Netzbetreiber auf — der Zählpunkt verlässt die Gemeinschaft.
+Hebt die Datenfreigabe eines Zählpunkts beim Netzbetreiber auf — der Zählpunkt verlässt die Gemeinschaft. Soll er
+später wieder teilnehmen, ist eine neue Anmeldung nötig.
 
 ![Zählpunkt abmelden](images/prozesse-abmelden.png)
 
 1. Wähle **Mitglied** und **Zählpunkt** (mehrere möglich).
-2. Wähle unter **Zeitraum** das Ende der Teilnahme (frühestens morgen).
+2. Wähle unter **Zeitraum** das Ende der Teilnahme (frühestens morgen). Das Feld **Begründung (optional)** wird
+   derzeit nicht an den Netzbetreiber übermittelt.
 3. Klicke auf **Anfordern** und bestätige „Datenfreigabe aufheben“ mit **Aufheben**.
 
 Fehlt eegFaktura die Kennung der Datenfreigabe, fordere zuerst die **Teilnehmerliste** an (siehe unten).

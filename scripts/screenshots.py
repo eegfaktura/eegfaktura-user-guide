@@ -66,9 +66,11 @@ def shot(name: str, page: Page, locator=None, fit: bool = True) -> None:
     else:  # the whole page: let the window grow to the content, then back
         height = min(max(page.evaluate(CONTENT_HEIGHT_JS), VIEWPORT["height"]), MAX_HEIGHT)
         page.set_viewport_size({"width": VIEWPORT["width"], "height": height})
-        page.wait_for_timeout(600)
-        page.screenshot(path=str(path))
-        page.set_viewport_size(VIEWPORT)
+        try:
+            page.wait_for_timeout(600)
+            page.screenshot(path=str(path))
+        finally:
+            page.set_viewport_size(VIEWPORT)
     written.append(name)
     print(f"ok    {name}")
 
@@ -95,8 +97,11 @@ def step(name: str, fn) -> None:
         failed.append(name)
         print(f"FAIL  {name}: {str(e).splitlines()[0]}" + ("  | " + str(e).splitlines()[2].strip() if len(str(e).splitlines()) > 2 else ""))
         if CURRENT_PAGE:
-            DEBUG_DIR.mkdir(exist_ok=True)
-            CURRENT_PAGE[0].screenshot(path=str(DEBUG_DIR / f"failed-{name}.png"))
+            try:
+                DEBUG_DIR.mkdir(exist_ok=True)
+                CURRENT_PAGE[0].screenshot(path=str(DEBUG_DIR / f"failed-{name}.png"))
+            except Exception:  # noqa: BLE001 — the debug image is optional, the run goes on
+                pass
 
 
 def login(page: Page, user: str, capture: bool = False) -> None:

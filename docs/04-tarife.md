@@ -40,7 +40,7 @@ mit deiner Steuerberatung.
 |-----|--------|
 | **Mitglied** | **Mitgliedsbeitrag in €** (je Abrechnungsintervall, netto), **Rabatt in %** (ganze Zahl) |
 | **Erzeuger** | **Arbeitspreis in ct/kWh** (netto); optional **Zählpunktgebühr einheben?** mit Gebühr in € und eigener USt. |
-| **Verbraucher** | **Arbeitspreis in ct/kWh** (netto), **Kostenlose Energie in kWh** (Freikontingent je Abrechnungsintervall), **Rabatt in %**; optional **Zählpunktgebühr einheben?** |
+| **Verbraucher** | **Arbeitspreis in ct/kWh** (netto), **Kostenlose Energie in kWh** (Freikontingent je Abrechnungsintervall und **je Zählpunkt**), **Rabatt in %**; optional **Zählpunktgebühr einheben?** |
 
 ### Zeitbasierte Tarife
 
@@ -75,8 +75,8 @@ weist darauf hin.
 
 ## Einen Tarif löschen
 
-Wähle den Tarif und klicke oben rechts auf **Tarif löschen**. Wird er noch verwendet, zeigt eegFaktura, welche
-Mitglieder und Zählpunkte ihn haben — weise ihnen zuerst einen anderen Tarif zu:
+Wähle den Tarif und klicke oben rechts auf **Tarif löschen**. Wird er noch verwendet — auch von inaktiven Mitgliedern —,
+zeigt eegFaktura, welche Mitglieder und Zählpunkte ihn haben; weise ihnen zuerst einen anderen Tarif zu:
 
 ![Tarif löschen nicht möglich](images/tarife-loeschen-gesperrt.png)
 

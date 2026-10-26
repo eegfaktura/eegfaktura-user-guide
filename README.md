@@ -34,7 +34,7 @@ to run it:
 
 ```bash
 # once per local stack: demo data the tariff and billing chapters need (local stack only!)
-docker exec -i eegfaktura-legacy-dev-eegfaktura-postgresql-1 psql -U postgres -d eegfaktura < scripts/prepare-local-stack.sql
+docker exec -i eegfaktura-legacy-dev-eegfaktura-postgresql-1 psql -v ON_ERROR_STOP=1 -U postgres -d eegfaktura < scripts/prepare-local-stack.sql
 pip install --no-deps -r requirements-screenshots.txt
 playwright install chromium
 SCREENSHOT_PASSWORD=<fixture password> python scripts/screenshots.py          # all images
@@ -42,7 +42,8 @@ SCREENSHOT_PASSWORD=<fixture password> python scripts/screenshots.py abrechnung 
 ```
 
 The billing steps write to the local stack: a preview for the current period and, once, a final billing run for
-Jul-Sep 2026. Everything else only reads. A failed step leaves a debug image in `.cache/`.
+Jul-Sep 2026 (confirmed only when the check dialog shows that period). They run in every run, also with a name filter
+(the filter only selects which images are saved). Everything else only reads. A failed step leaves a debug image in `.cache/`.
 
 ## Publishing
 

@@ -1,11 +1,19 @@
 -- Demo data for the user-guide screenshots, ONLY for the local eegfaktura-dev stack (fixture world, RC100100).
 -- Idempotent. Run once after seeding, e.g.:
---   docker exec -i eegfaktura-legacy-dev-eegfaktura-postgresql-1 psql -U postgres -d eegfaktura < scripts/prepare-local-stack.sql
+--   docker exec -i eegfaktura-legacy-dev-eegfaktura-postgresql-1 psql -v ON_ERROR_STOP=1 -U postgres -d eegfaktura < scripts/prepare-local-stack.sql
 -- Never run it against production or pilot.
 
 BEGIN;
 
--- the fixture's "Tarif A" has baseFee 2.25, which the backend cannot read (tracking backend 261026-mm1)
+-- guard: only the fixture world (RC100100 "Fixture Sonnenhang"); anything else stops before a change
+DO $$ BEGIN
+  IF NOT EXISTS (SELECT 1 FROM base.eeg WHERE tenant = 'RC100100' AND name = 'Fixture Sonnenhang') THEN
+    RAISE EXCEPTION 'not the local fixture stack (RC100100 "Fixture Sonnenhang" missing) — nothing changed';
+  END IF;
+END $$;
+
+-- the fixture's tariffs have baseFee 2.25, which the backend cannot read (tracking backend 261026-mm1): round all
+-- fractional values of RC100100 down
 UPDATE base.tariff SET "baseFee" = 2 WHERE tenant = 'RC100100' AND "baseFee" <> trunc("baseFee");
 
 -- a consumer tariff (the fixture has only an archived one)
@@ -16,7 +24,8 @@ SELECT '00000000-0000-4000-a100-00000000000d', 'RC100100', 'VZP', 'Bezug Standar
        0, 0, 0, '2026-01-01', '2026-01-01', 1, 12.5, 0, 'ACTIVE', NULL, false
 WHERE NOT EXISTS (SELECT 1 FROM base.tariff WHERE id = '00000000-0000-4000-a100-00000000000d');
 
--- every active metering point gets a tariff of its direction, every active member the member fee
+-- every active metering point gets a tariff of its direction (overwrites the fixture's assignments on purpose:
+-- one consumer had the member tariff), every active member without one the member fee
 UPDATE base.meteringpoint SET tariff_id = '00000000-0000-4000-a100-00000000000d'
  WHERE tenant = 'RC100100' AND direction = 'CONSUMPTION' AND status = 'ACTIVE';
 UPDATE base.meteringpoint SET tariff_id = '00000000-0000-4000-a100-00000000000b'
