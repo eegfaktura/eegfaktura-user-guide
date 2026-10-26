@@ -1,0 +1,90 @@
+# MkDocs config for the eegFaktura end-user guide (Benutzerhandbuch).
+#
+# Build:    mkdocs build --strict  → site/ (gitignored)
+# Preview:  mkdocs serve           → http://localhost:8000
+#
+# Style is identical to the eegFaktura member-onboarding user guide: same theme
+# features, palette (docs/stylesheets/vfeeg.css) and markdown extensions.
+
+site_name: eegFaktura — Benutzerhandbuch
+site_description: Bedienungsanleitung für EEG-Admins
+site_author: vfeeg
+docs_dir: docs
+site_url: https://eegfaktura.github.io/eegfaktura-user-guide/
+
+theme:
+  name: material
+  language: de
+  features:
+    # Classic Sphinx/ReadTheDocs-style layout: one combined left sidebar
+    # (page nav + section nav + page-level TOC), full-width content on
+    # the right. No top tabs, no separate right-hand TOC column.
+    - navigation.sections       # group children under section headers
+    - navigation.expand         # auto-expand the full tree
+    - navigation.indexes        # let sections have their own index page
+    - navigation.top            # back-to-top button
+    - navigation.footer         # prev/next at page bottom
+    - toc.integrate             # merge page TOC into the left sidebar
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+  palette:
+    # Light / dark toggle. Material auto-respects prefers-color-scheme.
+    # primary/accent: custom → see docs/stylesheets/vfeeg.css for the actual
+    # color overrides (same palette as the member-onboarding user guide).
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Dunkles Theme
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Helles Theme
+  # Self-hosted Roboto (docs/assets/fonts) instead of Google Fonts: no request to Google at build or read
+  # time, fixed font files. No repo_url either: the theme would call api.github.com from the reader's browser.
+  font: false
+
+nav:
+  - Überblick: index.md
+  - Was ist neu?: changelog.md
+  - Anmeldung & Oberfläche: 01-anmeldung.md
+  - Mitglieder & Zählpunkte: 02-mitglieder-zaehlpunkte.md
+  - E-Mail-Texte: 03-email-texte.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      permalink_title: Link zu diesem Abschnitt
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  # No mermaid fence: mkdocs-material would load mermaid@11 unpinned from unpkg at runtime
+  # (supply-chain rule: fixed versions only). Diagrams go in as images or tables.
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - search:
+      lang:
+        - de
+        - en
+
+extra_css:
+  - assets/fonts/fonts.css
+  - stylesheets/vfeeg.css
+
+extra:
+  generator: false       # no "Made with Material for MkDocs" footer
