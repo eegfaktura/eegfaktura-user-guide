@@ -55,7 +55,18 @@ jobs:
           echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
 
       - name: Trivy (requirements, HIGH and CRITICAL fail)
-        run: trivy fs --scanners vuln --severity HIGH,CRITICAL --exit-code 1 --ignorefile "" --no-progress .
+        # Trivy only recognises a file named requirements.txt, so each file is scanned from its own folder;
+        # a scan that found no packages fails instead of passing silently.
+        run: |
+          set -e
+          for f in requirements-docs.txt requirements-screenshots.txt; do
+            d="$RUNNER_TEMP/trivy-${f%.txt}"; mkdir -p "$d"; cp "$f" "$d/requirements.txt"
+            trivy fs --scanners vuln --severity HIGH,CRITICAL --exit-code 1 --ignorefile "" --no-progress               --format json --output "$d.json" "$d"
+            trivy convert --format table "$d.json"
+            n=$(jq '[.Results[]? | .Packages[]?] | length' "$d.json")
+            if [ "$n" -eq 0 ]; then n=$(jq '[.Results[]?] | length' "$d.json"); fi
+            [ "$n" -gt 0 ] || { echo "::error::Trivy found no packages in $f"; exit 1; }
+          done
 
       - name: OSV-Scanner (requirements, any known vulnerability fails)
         # --no-resolve: the files are fully pinned; without it OSV-Scanner resolves the declared dependencies
