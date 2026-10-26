@@ -292,6 +292,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../einrichtung-hilfe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Einrichtung & Hilfe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../01-anmeldung/" class="md-nav__link">
         
   
@@ -604,6 +631,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Prozess History">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nachrichtenarten-in-der-spalte-protokoll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nachrichtenarten in der Spalte Protokoll
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#haufige-ablehnungsgrunde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Häufige Ablehnungsgründe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wie-lange-dauert-es" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wie lange dauert es?
+      
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -719,6 +785,112 @@ verantwortliche Person der EEG bekommt eine E-Mail. Bei Bürgerenergiegemeinscha
 die Schritte mit Datum, <strong>Protokoll</strong> und <strong>Status</strong> bzw. <strong>Info</strong>.</p>
 <p><strong>Eine Ablehnung lesen:</strong> In der Spalte Protokoll steht dann ABLEHNUNG, in Status oder Info der Grund, z. B.
 „Zählpunkt nicht gefunden“, „Kunde hat Datenfreigabe abgelehnt“ oder „Prozessdatum falsch“.</p>
+<h3 id="nachrichtenarten-in-der-spalte-protokoll">Nachrichtenarten in der Spalte Protokoll<a class="headerlink" href="#nachrichtenarten-in-der-spalte-protokoll" title="Link zu diesem Abschnitt">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Bereich</th>
+<th>Ablauf</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anmeldung Teilnahme Online</td>
+<td>ANFORDERUNG_ECON (eegFaktura meldet an) → ANTWORT_ECON (Netzbetreiber bestätigt den Eingang) → ZUSTIMMUNG_ECON (Mitglied hat zugestimmt) → ABSCHLUSS_ECON (Zählpunkt aufgenommen); oder ABLEHNUNG_ECON</td>
+</tr>
+<tr>
+<td>Datenfreigabe-Aufhebung</td>
+<td>AUFHEBUNG_CCMS (eegFaktura hebt auf), ANTWORT_CCMS / ABLEHNUNG_CCMS; AUFHEBUNG_CCMC, wenn das Mitglied aufhebt; AUFHEBUNG_CCMI, wenn der Netzbetreiber aufhebt</td>
+</tr>
+<tr>
+<td>Anfordern von Energiedaten</td>
+<td>ANFORDERUNG_PT → ANTWORT_PT oder ABLEHNUNG_PT</td>
+</tr>
+<tr>
+<td>Änderung des Teilnahmefaktors</td>
+<td>ANFORDERUNG_CPF (mit neuem Faktor) → ANTWORT_CPF oder ABLEHNUNG_CPF</td>
+</tr>
+<tr>
+<td>Versenden der Energiedaten</td>
+<td>DATEN_CRMSG: Energiedaten sind eingetroffen (von – bis)</td>
+</tr>
+</tbody>
+</table>
+<p>Eine angenommene Anforderung (ANTWORT_PT) heißt noch nicht, dass die Daten da sind — das zeigt erst DATEN_CRMSG.</p>
+<h2 id="haufige-ablehnungsgrunde">Häufige Ablehnungsgründe<a class="headerlink" href="#haufige-ablehnungsgrunde" title="Link zu diesem Abschnitt">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Grund</th>
+<th>Was meist dahintersteckt — und was du tun kannst</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zählpunkt nicht gefunden</td>
+<td>Tippfehler in der Zählpunktnummer: mit der Stromrechnung vergleichen, korrigieren, neu anmelden</td>
+</tr>
+<tr>
+<td>Zählpunkt befindet sich nicht im Bereich der Energiegemeinschaft</td>
+<td>der Zählpunkt liegt außerhalb des Gebiets der Gemeinschaft; häufig ist auch ein Einspeisezählpunkt beim Netzbetreiber noch nicht fertig eingerichtet</td>
+</tr>
+<tr>
+<td>Kunde hat Datenfreigabe abgelehnt</td>
+<td>das Mitglied hat im Portal abgelehnt (oft versehentlich): mit dem Mitglied klären, dann unter <strong>Zählpunkt aktivieren</strong> neu anmelden</td>
+</tr>
+<tr>
+<td>Kunde hat auf Datenfreigabe nicht reagiert (Timeout)</td>
+<td>das Mitglied hat nicht rechtzeitig zugestimmt: erinnern und neu anmelden</td>
+</tr>
+<tr>
+<td>Kein Smart Meter / Noch kein fernauslesbarer Zähler eingebaut</td>
+<td>ohne Smart Meter (bzw. ohne Fernauslesung) geht die Teilnahme noch nicht: Netzbetreiber fragen, wann getauscht wird</td>
+</tr>
+<tr>
+<td>Kunde hat optiert</td>
+<td>das Mitglied hat Viertelstundenwerte im Smart Meter abgelehnt (Opt-out): das Mitglied muss beim Netzbetreiber wieder einwilligen</td>
+</tr>
+<tr>
+<td>Zählpunkt nicht versorgt</td>
+<td>für den Zählpunkt gibt es keinen Liefervertrag mit einem Energieversorger</td>
+</tr>
+<tr>
+<td>Zählpunkt nicht dem Lieferanten zugeordnet</td>
+<td>oft liegt der angefragte Zeitraum vor dem Aktivierungsdatum: Zeitraum ab „Aktiv seit“ wählen</td>
+</tr>
+<tr>
+<td>konkurrierende Prozesse</td>
+<td>ein früherer Vorgang zum selben Zählpunkt läuft noch: abwarten und später erneut senden</td>
+</tr>
+<tr>
+<td>Prozessdatum falsch</td>
+<td>beim Teilnahmefaktor meist: außerhalb 9–17 Uhr gesendet</td>
+</tr>
+<tr>
+<td>Teilnahmefaktor von 100 % würde überschritten werden / Summe … übersteigt 100%</td>
+<td>der Zählpunkt nimmt schon an einer anderen Gemeinschaft teil: dort zuerst den Faktor senken</td>
+</tr>
+<tr>
+<td>Teilnahme-Limit wird überschritten</td>
+<td>der Zählpunkt nimmt schon an der höchstzulässigen Zahl von Gemeinschaften teil</td>
+</tr>
+<tr>
+<td>Keine Daten im angeforderten Zeitraum vorhanden</td>
+<td>der Netzbetreiber hat für den Zeitraum (noch) keine Werte: später erneut anfordern</td>
+</tr>
+</tbody>
+</table>
+<p>Unbekannte Gründe zeigt eegFaktura als Nummer. Kommt dieselbe Ablehnung immer wieder, prüfe Zählpunktnummer und
+Netzbetreiber-ID auf Tippfehler oder Leerzeichen.</p>
+<h2 id="wie-lange-dauert-es">Wie lange dauert es?<a class="headerlink" href="#wie-lange-dauert-es" title="Link zu diesem Abschnitt">&para;</a></h2>
+<p>Erfahrungswerte aus der Praxis, je nach Netzbetreiber verschieden:</p>
+<ul>
+<li><strong>Anmeldung</strong> eines Zählpunkts mit Smart Meter: einige Tage, sofern das Mitglied rasch zustimmt.</li>
+<li><strong>Energiedaten:</strong> die ersten Werte kommen meist nach 1–3 Tagen; vorläufige Werte (L3) korrigiert der Netzbetreiber
+  später noch. Rechne daher nicht unmittelbar nach dem Ende eines Zeitraums ab, sondern prüfe vorher die
+  <a href="../05-abrechnung/#vorschau-erstellen">Vollständigkeit</a>.</li>
+<li>Fehlen Daten ein, zwei Tage nach einer Störung noch immer, fordere sie nach; erst danach lohnt ein Ticket.</li>
+</ul>
 
 
 

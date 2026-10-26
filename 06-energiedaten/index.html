@@ -294,6 +294,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../einrichtung-hilfe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Einrichtung & Hilfe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../01-anmeldung/" class="md-nav__link">
         
   
@@ -522,6 +549,34 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#woraus-die-werte-entstehen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Woraus die Werte entstehen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Woraus die Werte entstehen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typische-effekte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typische Effekte
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#energiedaten-importieren" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -706,6 +761,50 @@ Tagesansicht blätterst du mit den Pfeilen; sie beginnt beim letzten Tag mit Dat
 <p>Werte mit L0 oder L3 machen einen Zählpunkt „nicht vollständig“. Für sie kannst du die Daten unter
 <a href="../08-prozesse/#zahlpunktdaten-nachfordern">Prozesse → Zählpunktdaten nachfordern</a> erneut anfordern — mit „Smart“
 nur die fehlenden.</p>
+<h2 id="woraus-die-werte-entstehen">Woraus die Werte entstehen<a class="headerlink" href="#woraus-die-werte-entstehen" title="Link zu diesem Abschnitt">&para;</a></h2>
+<p>Der Netzbetreiber schickt je Zählpunkt mehrere Messreihen. eegFaktura verwendet:</p>
+<table>
+<thead>
+<tr>
+<th>Zählpunkt</th>
+<th>Messreihe</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Verbraucher</td>
+<td>Gesamtverbrauch</td>
+<td>was der Zählpunkt insgesamt bezogen hat</td>
+</tr>
+<tr>
+<td>Verbraucher</td>
+<td>Eigendeckung (G.03)</td>
+<td>der Anteil aus der Gemeinschaft — <strong>Grundlage der Rechnung</strong></td>
+</tr>
+<tr>
+<td>Erzeuger</td>
+<td>Erzeugung</td>
+<td>was die Anlage insgesamt eingespeist hat</td>
+</tr>
+<tr>
+<td>Erzeuger</td>
+<td>Überschuss</td>
+<td>was davon nicht in der Gemeinschaft verbraucht wurde</td>
+</tr>
+</tbody>
+</table>
+<p>Abgerechnet wird beim Erzeuger <strong>Erzeugung minus Überschuss</strong>, also der in der Gemeinschaft verteilte Teil. Das zeigen
+auch die Karten in der Mitgliederliste.</p>
+<h3 id="typische-effekte">Typische Effekte<a class="headerlink" href="#typische-effekte" title="Link zu diesem Abschnitt">&para;</a></h3>
+<ul>
+<li><strong>Zeitumstellung:</strong> Ein Tag der Umstellung hat 92 bzw. 100 Viertelstunden statt 96 — beim Nachrechnen von Hand
+  daran denken.</li>
+<li><strong>Korrekturen:</strong> Vorläufige Werte (L3) ersetzt der Netzbetreiber später durch gemessene oder Ersatzwerte (L2).
+  Kleine Differenzen von Bruchteilen eines Prozents zwischen zwei Abfragen sind dadurch normal.</li>
+<li><strong>Mengenbilanz</strong> im Export und <strong>Bilanzdifferenz</strong> im Dashboard sollten nahe 0 sein. Größere Abweichungen deuten auf
+  fehlende Daten hin — siehe <a href="../01-anmeldung/#dashboard">Bilanzdifferenz</a>.</li>
+</ul>
 <h2 id="energiedaten-importieren">Energiedaten importieren<a class="headerlink" href="#energiedaten-importieren" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p>Der Knopf mit der Wolke öffnet <strong>Upload Daten für …</strong>. Mit <strong>Stammdaten</strong> liest du Mitglieder und Zählpunkte aus einer
 Excel-Datei ein (Blatt „EEG Stammdaten“). Nur bei Gemeinschaften <strong>ohne Online-Anbindung</strong> gibt es zusätzlich

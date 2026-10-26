@@ -294,6 +294,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../einrichtung-hilfe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Einrichtung & Hilfe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../01-anmeldung/" class="md-nav__link">
         
   
@@ -470,6 +497,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Abrechnungseinstellungen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#was-auf-einem-beleg-steht" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Was auf einem Beleg steht
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -522,6 +566,17 @@
     <span class="md-ellipsis">
       
         SEPA-Dateien
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sepa-begriffe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SEPA — Begriffe
       
     </span>
   </a>
@@ -708,6 +763,17 @@ hinzufügen</strong>):</p>
 </tbody>
 </table>
 <p>Änderungen werden gespeichert, sobald du ein Feld verlässt.</p>
+<p>In allen Texten der Abrechnungseinstellungen (und in den Tariftexten) erzeugt <code>##</code> einen Zeilenumbruch.</p>
+<h3 id="was-auf-einem-beleg-steht">Was auf einem Beleg steht<a class="headerlink" href="#was-auf-einem-beleg-steht" title="Link zu diesem Abschnitt">&para;</a></h3>
+<p>Die Positionen sind je Zählpunkt gruppiert („Zählpunkt AT… – Anlagenname“, ggf. mit Rabatt):</p>
+<ul>
+<li>die <strong>Energiemenge</strong> mit Arbeitspreis (bei zeitbasierten Tarifen je Zeitraum),</li>
+<li>bei Verbrauchern mit Freikontingent eine Zeile „Menge (…) = Verbrauch (…) abzgl. freie kWh (…)“,</li>
+<li>die <strong>Zählpunktgebühr</strong>, wenn der Tarif eine hat,</li>
+<li>auf Rechnungen der <strong>Mitgliedsbeitrag</strong> des Mitglieds-Tarifs,</li>
+<li>Umsatzsteuer und Summen, darunter die Texte aus den Abrechnungseinstellungen und die Fußzeile.</li>
+</ul>
+<p>Der Anlagenname des Zählpunkts erscheint auf dem Beleg — praktisch, wenn ein Mitglied mehrere Anlagen hat.</p>
 <h2 id="abrechnungsmodus">Abrechnungsmodus<a class="headerlink" href="#abrechnungsmodus" title="Link zu diesem Abschnitt">&para;</a></h2>
 <ol>
 <li>Öffne <strong>Mitglieder</strong> und wähle oben den <strong>Zeitraum</strong> (z. B. „Jul-Sep 2026“). Jeder Zeitraum hat seinen eigenen
@@ -780,10 +846,8 @@ warnt ausdrücklich:</p>
 <p><strong>Die Abrechnung ist endgültig.</strong> Die Belege bekommen fortlaufende Nummern und lassen sich danach nicht mehr ändern
 oder löschen. Ein Belegdatum in der Zukunft ist nicht erlaubt.</p>
 </blockquote>
-<p>Belege mit dem Betrag 0 werden nicht erstellt. Erzeuger ohne UID bekommen eine <strong>Gutschrift</strong>. Erzeuger mit UID
-bekommen — je nach Einstellung der Gemeinschaft — eine <strong>Gutschrift im Reverse-Charge-Verfahren</strong> oder eine
-<strong>Information</strong> (ohne Nummer, mit den Texten „Gutschriften für Mitgliedstyp Firma“); dann stellt der Erzeuger der
-Gemeinschaft selbst eine Rechnung. Welche Variante deine Gemeinschaft hat, siehst du an den Belegen der Vorschau.</p>
+<p>Belege mit dem Betrag 0 werden nicht erstellt. Erzeuger ohne UID bekommen eine <strong>Gutschrift</strong>, Erzeuger mit UID eine
+<strong>Gutschrift im Reverse-Charge-Verfahren</strong> (mit den Texten „Gutschriften für Mitgliedstyp Firma“).</p>
 <h2 id="nach-der-abrechnung">Nach der Abrechnung<a class="headerlink" href="#nach-der-abrechnung" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p><img alt="Abgerechneter Zeitraum" src="../images/abrechnung-abgerechnet.png" /></p>
 <table>
@@ -838,16 +902,22 @@ E-Mail-Adressen deshalb vorher und gib Mitgliedern ohne Mail ihren Beleg aus dem
 <li>Mitglieder mit Einzugsart „Kein SEPA“ oder ohne Einzugsart,</li>
 <li>Mitglieder ohne IBAN — diese bitte händisch abwickeln.</li>
 </ul>
-<blockquote>
-<p>Prüfe die Überweisungsdatei vor dem Hochladen zur Bank gegen die Gutschriften. Belege der Art <strong>Information</strong>
-werden derzeit ebenfalls als Überweisung aufgenommen, obwohl dort der Erzeuger der Gemeinschaft eine Rechnung stellt.</p>
-</blockquote>
+<h3 id="sepa-begriffe">SEPA — Begriffe<a class="headerlink" href="#sepa-begriffe" title="Link zu diesem Abschnitt">&para;</a></h3>
+<ul>
+<li><strong>Einzugsart CORE</strong> (Basislastschrift): für alle Mitglieder; das Mitglied kann eine Lastschrift innerhalb von acht
+  Wochen zurückbuchen lassen.</li>
+<li><strong>Einzugsart B2B</strong> (Firmenlastschrift): nur für Firmen; das Mandat muss der Bank des Mitglieds vorliegen, eine
+  Rückbuchung ist nur sehr kurz möglich.</li>
+<li><strong>Kein SEPA:</strong> das Mitglied zahlt selbst (z. B. per Überweisung); es kommt nicht in die Lastschrift-Datei.</li>
+<li><strong>Mandatsreferenz</strong> und <strong>Mandatsdatum</strong> (Datum der Unterschrift) stehen beim Mitglied unter Bankdaten; als
+  Mandatsreferenz wird oft die Mitgliedsnummer verwendet.</li>
+</ul>
+<p>Details zu Lastschriften klärt eure Bank.</p>
 <h2 id="belege-eines-mitglieds">Belege eines Mitglieds<a class="headerlink" href="#belege-eines-mitglieds" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p>Beim Mitglied unter <strong>Meine Rechnungen</strong> stehen seine Belege, mit den Reitern Alle, Rechnungen, Gutschriften und
 Information. Ein Klick öffnet das PDF:</p>
 <p><img alt="Belege eines Mitglieds" src="../images/abrechnung-meine-rechnungen.png" /></p>
-<p>Belege mit „Vorschau“ im Namen stammen aus einer Vorschau und sind nicht gültig. Der Reiter <strong>Information</strong> zeigt
-Info-Belege für Erzeuger mit UID (siehe oben).</p>
+<p>Belege mit „Vorschau“ im Namen stammen aus einer Vorschau und sind nicht gültig.</p>
 
 
 

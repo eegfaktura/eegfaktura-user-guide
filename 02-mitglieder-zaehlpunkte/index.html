@@ -294,6 +294,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../einrichtung-hilfe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Einrichtung & Hilfe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../01-anmeldung/" class="md-nav__link">
         
   
@@ -522,6 +549,28 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stammdaten-aus-excel-importieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stammdaten aus Excel importieren
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gut-zu-wissen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gut zu wissen
+      
+    </span>
+  </a>
   
 </li>
       
@@ -962,6 +1011,95 @@ richtest du dich: Ist der Fehler behoben (z. B. Nummer korrigiert), meldest du d
 <p>Klicke in der Mitgliederliste beim Mitglied auf <strong>+</strong>. Das Formular ist dasselbe wie oben; gespeichert wird mit
 <strong>Registrieren</strong>. Ist das Mitglied schon zugelassen, meldet eegFaktura den neuen Zählpunkt bei Gemeinschaften mit
 Online-Anbindung gleich beim Netzbetreiber an.</p>
+<h2 id="stammdaten-aus-excel-importieren">Stammdaten aus Excel importieren<a class="headerlink" href="#stammdaten-aus-excel-importieren" title="Link zu diesem Abschnitt">&para;</a></h2>
+<p>Viele Mitglieder auf einmal — z. B. beim Umstieg auf eegFaktura — liest du aus einer Excel-Datei ein: oben in der
+Mitgliederliste der Knopf mit der Wolke, <strong>Stammdaten</strong>, Blatt „EEG Stammdaten“, <strong>Import</strong>. Eine Vorlage gibt es
+hier (die Spalte <strong>Einzugsart</strong> fügst du bei Bedarf selbst hinzu):
+<a href="https://github.com/eegfaktura/eegfaktura-backend/raw/master/tests/260716-vorlage-import-stammdaten.xlsx">Vorlage Stammdatenimport (Excel)</a>.</p>
+<p>Wichtige Spalten:</p>
+<table>
+<thead>
+<tr>
+<th>Spalte</th>
+<th>Hinweis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gemeinschafts-ID</td>
+<td>Pflicht, muss zur Gemeinschaft passen</td>
+</tr>
+<tr>
+<td>Name 1 / Name 2</td>
+<td>Vorname / Nachname (bei Firmen: Firmenname / Nachname der Kontaktperson). Groß-/Kleinschreibung zählt beim Wiedererkennen</td>
+</tr>
+<tr>
+<td>Zählpunkt</td>
+<td>genau 33 Zeichen</td>
+</tr>
+<tr>
+<td>Energierichtung</td>
+<td><code>CONSUMPTION</code> (Verbraucher, auch leer) oder <code>GENERATION</code> (Erzeuger)</td>
+</tr>
+<tr>
+<td>Zählpunktstatus</td>
+<td>Pflicht. <code>ACTIVE</code>, <code>ACTIVATED</code> oder <code>REGISTERED</code> → wird als <strong>aktiv</strong> übernommen; <code>NEW</code> → wird neu angemeldet; andere Werte → Zeile wird nicht importiert</td>
+</tr>
+<tr>
+<td>registriert seit</td>
+<td>ab wann der Zählpunkt aktiv ist; <strong>leer = 1. Jänner des laufenden Jahres</strong>. Ältere Energiedaten werden davor weder angefordert noch abgerechnet — beim Umstieg das tatsächliche Datum eintragen</td>
+</tr>
+<tr>
+<td>Zugeteilte Menge in Prozent</td>
+<td>Teilnahmefaktor (1–100); leer oder 0 wird 100 %</td>
+</tr>
+<tr>
+<td>email</td>
+<td>mehrere Adressen mit <code>;</code> trennen; ist eine Adresse ungültig, wird das Mitglied ohne E-Mail angelegt (mit Hinweis)</td>
+</tr>
+<tr>
+<td>Einzugsart</td>
+<td><code>CORE</code>, <code>B2B</code> oder <code>Kein SEPA</code></td>
+</tr>
+<tr>
+<td>ObjektName</td>
+<td>wird als Anlagenname übernommen</td>
+</tr>
+</tbody>
+</table>
+<p>So verhält sich der Import:</p>
+<ul>
+<li>Zählpunkte, die beim Netzbetreiber <strong>schon aktiv</strong> sind, importierst du mit Status aktiv — mit <code>NEW</code> würden sie
+  erneut angemeldet.</li>
+<li>Ein Mitglied mit gleichem Vor- und Nachnamen wie ein vorhandenes gilt als <strong>dasselbe</strong>: Es bekommt nur die neuen
+  Zählpunkte, seine übrigen Daten werden <strong>nicht</strong> geändert.</li>
+<li>Ein Fehler betrifft nur das jeweilige Mitglied; die übrigen Zeilen werden trotzdem importiert. Datumsfelder dürfen
+  Excel-Datum oder Text (<code>TT.MM.JJJJ</code>) sein.</li>
+<li>Hinweise und Fehler (z. B. doppelte Mitgliedsnummer, Zählpunkt mit falscher Länge) kommen als Nachricht
+  <strong>„Excel Stammdaten importiert — Hinweise: …“</strong> unter <a href="../07-nachrichten/">Nachrichten</a>.</li>
+<li>Die Einzugsart gilt nur für Mitglieder, die der Import neu anlegt.</li>
+</ul>
+<h2 id="gut-zu-wissen">Gut zu wissen<a class="headerlink" href="#gut-zu-wissen" title="Link zu diesem Abschnitt">&para;</a></h2>
+<ul>
+<li><strong>Mehrere E-Mail-Adressen</strong> eines Mitglieds trennst du mit <code>;</code> (ohne Leerzeichen); Mails gehen an alle gültigen
+  Adressen.</li>
+<li><strong>Mitglied ohne E-Mail:</strong> Lass das Feld leer — eegFaktura schickt diesem Mitglied dann keine Mails. Trage keine
+  Platzhalter-Adresse ein, sonst wird an sie geschickt.</li>
+<li><strong>Mitglied ohne Konto:</strong> Wähle die Einzugsart <strong>Kein SEPA</strong>; die IBAN darf dann leer bleiben.</li>
+<li><strong>Anlagenname:</strong> Hat ein Zählpunkt einen Anlagennamen, steht in der Liste dieser Name statt der Nummer, in den
+  Prozessen „Name – Nummer“ — praktisch bei mehreren Anlagen eines Mitglieds.</li>
+<li><strong>Aktiv seit:</strong> Bei Online-Anmeldungen setzt eegFaktura das Datum aus der Meldung des Netzbetreibers, beim Import
+  aus der Spalte „registriert seit“. Es begrenzt, ab wann Energiedaten angefordert und abgerechnet werden; ändere es nur, wenn es nicht
+  zum Netzbetreiber passt.</li>
+<li><strong>Ein Mitglied verlässt die Gemeinschaft:</strong> Melde seine Zählpunkte ab
+  (<a href="../08-prozesse/#zahlpunkt-abmelden">Zählpunkt abmelden</a>) statt das Mitglied zu löschen — so bleiben seine Daten und
+  Belege erhalten. Bei importierten Zählpunkten fehlt eegFaktura manchmal die Kennung der Datenfreigabe; dann zuerst
+  die Teilnehmerliste anfordern.</li>
+<li><strong>Ein Zählpunkt wechselt den Besitzer</strong> (z. B. Mieterwechsel): Verschiebe ihn mit dem Pfeilkreuz zum neuen Mitglied
+  oder melde ihn beim alten ab und beim neuen an; bisherige Rechnungen bleiben beim alten Mitglied.</li>
+<li><strong>Teilnahmefaktor:</strong> 1 bis 100 %. Nimmt ein Zählpunkt an mehreren Gemeinschaften teil, darf die Summe 100 % nicht
+  übersteigen — senke den Faktor zuerst in der einen Gemeinschaft, bevor du ihn in der anderen erhöhst.</li>
+</ul>
 <h2 id="dokumente-eines-mitglieds">Dokumente eines Mitglieds<a class="headerlink" href="#dokumente-eines-mitglieds" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p>Unter <strong>Dokumente</strong> legst du Unterlagen zum Mitglied ab, z. B. den unterschriebenen Beitritt. <strong>Hochladen</strong> (bzw.
 <strong>Hinzufügen</strong>) öffnet das Fenster zum Hochladen; erlaubt sind PDF, PNG und JPEG:</p>
