@@ -1,0 +1,243 @@
+"""Screenshot generator for the user guide.
+
+Takes the screenshots in docs/images/ from a LOCAL eegFaktura stack with fixture data (never production or pilot:
+the guide is public, so no real names, addresses or IBANs). The local stack is the eegfaktura-dev workspace
+(web on http://localhost:8090, Keycloak on http://localhost:8180, fixture users from its realm supplement).
+
+Usage:
+    SCREENSHOT_PASSWORD=<fixture password> python scripts/screenshots.py            # all screenshots
+    SCREENSHOT_PASSWORD=<fixture password> python scripts/screenshots.py email-texte  # only names containing this
+
+Env (optional): BASE_URL (default http://localhost:8090), SCREENSHOT_USER (default rc100100-admin, an EEG_ADMIN of
+one community), SCREENSHOT_MULTI_USER (default multi-admin, an EEG_ADMIN of two communities, for the switcher).
+
+Nothing is saved in the app: the script only opens pages, dialogs and the preview; edits made for a dialog are
+discarded. A screenshot that fails is reported and the script exits with 1 (the others are still taken).
+"""
+import os
+import sys
+from pathlib import Path
+
+from playwright.sync_api import Page, sync_playwright
+
+BASE_URL = os.environ.get("BASE_URL", "http://localhost:8090").rstrip("/")
+USER = os.environ.get("SCREENSHOT_USER", "rc100100-admin")
+MULTI_USER = os.environ.get("SCREENSHOT_MULTI_USER", "multi-admin")
+PASSWORD = os.environ.get("SCREENSHOT_PASSWORD")
+OUT = Path(__file__).resolve().parent.parent / "docs" / "images"
+VIEWPORT = {"width": 1280, "height": 800}
+ONLY = sys.argv[1] if len(sys.argv) > 1 else ""
+
+failed: list[str] = []
+
+
+def shot(name: str, page: Page, locator=None) -> None:
+    """Saves docs/images/<name>.png: the whole viewport, or only the given element."""
+    if ONLY and ONLY not in name:
+        return
+    path = OUT / f"{name}.png"
+    page.wait_for_timeout(400)  # Ionic transitions
+    wait_toasts_gone(page)
+    (locator or page).screenshot(path=str(path))
+    print(f"ok    {name}")
+
+
+def wait_toasts_gone(page: Page) -> None:
+    """Notices disappear on their own; one that stays (an error with a button) fails the screenshot."""
+    for _ in range(40):
+        if not any(t.is_visible() for t in page.locator("ion-toast").all()):
+            return
+        page.wait_for_timeout(250)
+    raise RuntimeError("a notice (ion-toast) is still shown: " + page.locator("ion-toast").first.inner_text()[:120])
+
+
+def scroll_to(locator) -> None:
+    locator.evaluate("e => e.scrollIntoView({block: 'start'})")
+
+
+def step(name: str, fn) -> None:
+    """Runs one screenshot step; a failure is recorded, the run goes on."""
+    if ONLY and ONLY not in name:
+        return
+    try:
+        fn()
+    except Exception as e:  # noqa: BLE001 — report every failing step, then exit 1
+        failed.append(name)
+        print(f"FAIL  {name}: {str(e).splitlines()[0]}")
+
+
+def login(page: Page, user: str, capture: bool = False) -> None:
+    page.goto(BASE_URL + "/")
+    page.locator("#username, input[name=username]").first.wait_for(timeout=30000)
+    if capture:
+        shot("anmeldung-keycloak", page)
+    page.locator("#username, input[name=username]").first.fill(user)
+    page.locator("#password, input[name=password]").first.fill(PASSWORD)
+    page.locator("#kc-login, [type=submit]").first.click()
+    page.wait_for_url("**/page/participants", timeout=30000)
+    page.locator("ion-menu ion-header ion-chip").wait_for(timeout=30000)
+    page.wait_for_load_state("networkidle")
+
+
+def goto(page: Page, route: str, ready_text: str) -> None:
+    page.goto(BASE_URL + route)
+    page.get_by_text(ready_text, exact=True).first.wait_for(timeout=30000)
+    page.wait_for_load_state("networkidle")
+
+
+def close_overlays(page: Page) -> None:
+    page.keyboard.press("Escape")
+    page.wait_for_timeout(300)
+
+
+def chapter_overview(page: Page) -> None:
+    def shell():
+        shot("oberflaeche-start", page)
+
+    def user_menu():
+        page.locator("ion-menu ion-header ion-chip").click()
+        page.locator("ion-popover ion-item", has_text="Abmelden").wait_for()
+        shot("oberflaeche-benutzermenue", page)
+        close_overlays(page)
+
+    step("oberflaeche-start", shell)
+    step("oberflaeche-benutzermenue", user_menu)
+    step("dashboard", lambda: (goto(page, "/page/dashboard", "Übersicht EEG"), page.wait_for_timeout(1500),
+                               shot("dashboard", page)))
+    step("eeg-seite", lambda: (goto(page, "/page/eeg", "Allgemeines"), shot("eeg-seite", page)))
+
+
+def chapter_switch_community(page: Page) -> None:
+    def switcher():
+        page.locator("ion-menu ion-header ion-chip").click()
+        page.locator('ion-popover ion-select[label="Auswahl Gemeinschaft"]').click()
+        page.locator("ion-alert").wait_for()
+        shot("oberflaeche-gemeinschaft-wechseln", page)
+        close_overlays(page)
+        close_overlays(page)
+
+    step("oberflaeche-gemeinschaft-wechseln", switcher)
+    # "Prozesse" is only in the menu of an online community (GC106668 of the second user)
+    step("prozesse", lambda: (goto(page, "/page/processes", "Zählpunktdaten nachfordern"), shot("prozesse", page)))
+
+
+def chapter_members(page: Page) -> None:
+    def member_meter():
+        goto(page, "/page/participants", "Periode")
+        page.locator("div.participant").first.click()  # opens the member with its first metering point
+        page.locator("ion-item.eeg-item-box", has_text="Details und Adresse").wait_for()
+        shot("mitglied-zaehlpunkt", page)
+
+    def member_details():
+        page.locator("ion-item.eeg-item-box", has_text="Details").first.click()
+        page.wait_for_load_state("networkidle")
+        shot("mitglied-details", page)
+
+    def sort_dialog():
+        page.locator(".period-filter-menu .sort").first.click()
+        page.locator("ion-alert").wait_for()
+        shot("mitglieder-sortierung", page)
+        close_overlays(page)
+
+    def filter_dialog():
+        tab = page.locator(".period-filter-menu > div.item").nth(1)
+        tab.locator("ion-icon").first.click()
+        page.locator("ion-alert", has_text="Filteroptionen").wait_for()
+        shot("mitglieder-filter", page)
+        close_overlays(page)
+
+    def add_member():
+        goto(page, "/page/addParticipant", "Allgemeines")
+        shot("mitglied-anlegen", page)
+        page.get_by_text("Zählpunkt hinzufügen", exact=True).first.click()
+        page.get_by_text("Teilnahmefaktor in %").first.wait_for()
+        shot("mitglied-anlegen-zaehlpunkt", page)
+
+    for name, fn in (("mitglied-zaehlpunkt", member_meter), ("mitglied-details", member_details),
+                     ("mitglieder-sortierung", sort_dialog), ("mitglieder-filter", filter_dialog),
+                     ("mitglied-anlegen", add_member)):
+        step(name, fn)
+
+
+def chapter_mail_texts(page: Page) -> None:
+    card = page.locator(".eeg-property-card", has=page.locator(".header", has_text="E-Mail-Texte"))
+    toggle = page.locator("ion-toggle", has_text="Eigenen Text verwenden")
+
+    def card_shot():
+        goto(page, "/page/eeg", "Allgemeines")
+        card.scroll_into_view_if_needed()
+        shot("email-texte-karte", page, card)
+
+    def mail_list():
+        goto(page, "/page/mailtemplates", "Zählpunkt aktiv")
+        page.locator("ion-badge").first.wait_for()
+        shot("email-texte-liste", page)
+
+    def editor_standard():
+        page.locator("ion-item", has=page.locator("h2", has_text="Zählpunkt aktiv")).click()
+        toggle.wait_for()
+        page.wait_for_load_state("networkidle")
+        shot("email-texte-standard", page)
+
+    def preview():
+        page.locator(".mail-template-actions ion-button", has_text="Vorschau").click()
+        preview_card = page.locator("ion-card", has_text="Vorschau mit Beispieldaten").last
+        preview_card.wait_for()
+        page.wait_for_timeout(1000)
+        scroll_to(preview_card)
+        shot("email-texte-vorschau", page, preview_card)
+        page.get_by_text("Vorschau schließen").click()
+
+    def own_text():
+        toggle.click()
+        page.get_by_text("Noch nicht gespeichert", exact=False).first.wait_for()
+        scroll_to(page.locator(".mail-template-editor"))
+        shot("email-texte-eigener-text", page)
+
+    def switch_off():
+        # an unsaved edit makes switching off ask first; the edit is discarded with "Ja" (nothing is saved)
+        page.locator(".mail-editor .ProseMirror").click()
+        page.keyboard.press("End")
+        page.keyboard.type(" Beispiel")
+        toggle.click()
+        page.locator("ion-alert").wait_for()
+        scroll_to(page.locator(".mail-template-editor"))
+        shot("email-texte-ausschalten", page)
+        page.locator("ion-alert button", has_text="Ja").click()
+
+    for name, fn in (("email-texte-karte", card_shot), ("email-texte-liste", mail_list),
+                     ("email-texte-standard", editor_standard), ("email-texte-vorschau", preview),
+                     ("email-texte-eigener-text", own_text), ("email-texte-ausschalten", switch_off)):
+        step(name, fn)
+
+
+def main() -> int:
+    if not PASSWORD:
+        print("SCREENSHOT_PASSWORD is not set (fixture password of the local stack)")
+        return 2
+    OUT.mkdir(parents=True, exist_ok=True)
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        for user, chapters, capture in ((USER, (chapter_overview, chapter_members, chapter_mail_texts), True),
+                                        (MULTI_USER, (chapter_switch_community,), False)):
+            ctx = browser.new_context(viewport=VIEWPORT, locale="de-AT", timezone_id="Europe/Vienna")
+            page = ctx.new_page()
+            try:
+                login(page, user, capture)
+            except Exception as e:  # noqa: BLE001
+                failed.append(f"login {user}")
+                print(f"FAIL  login {user}: {str(e).splitlines()[0]}")
+                ctx.close()
+                continue
+            for chapter in chapters:
+                chapter(page)
+            ctx.close()
+        browser.close()
+    if failed:
+        print(f"{len(failed)} screenshot(s) failed: {', '.join(failed)}")
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

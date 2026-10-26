@@ -1,0 +1,98 @@
+# MkDocs config for the eegFaktura end-user guide (Benutzerhandbuch).
+#
+# Build:    mkdocs build --strict  → site/ (gitignored)
+# Preview:  mkdocs serve           → http://localhost:8000
+#
+# Style is identical to the eegFaktura member-onboarding user guide: same theme
+# features, palette (docs/stylesheets/vfeeg.css) and markdown extensions.
+
+site_name: eegFaktura — Benutzerhandbuch
+site_description: Bedienungsanleitung für EEG-Admins
+site_author: vfeeg
+docs_dir: docs
+site_url: https://eegfaktura.github.io/eegfaktura-user-guide/
+
+theme:
+  name: material
+  language: de
+  features:
+    # Classic Sphinx/ReadTheDocs-style layout: one combined left sidebar
+    # (page nav + section nav + page-level TOC), full-width content on
+    # the right. No top tabs, no separate right-hand TOC column.
+    - navigation.sections       # group children under section headers
+    - navigation.expand         # auto-expand the full tree
+    - navigation.indexes        # let sections have their own index page
+    - navigation.top            # back-to-top button
+    - navigation.footer         # prev/next at page bottom
+    - toc.integrate             # merge page TOC into the left sidebar
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+  palette:
+    # Light / dark toggle. Material auto-respects prefers-color-scheme.
+    # primary/accent: custom → see docs/user-guide/stylesheets/vfeeg.css
+    # for the actual color overrides (mirrors the member-onboarding app
+    # palette defined in src/app/globals.css).
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Dunkles Theme
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Helles Theme
+  icon:
+    repo: fontawesome/brands/github
+
+repo_url: https://github.com/eegfaktura/eegfaktura-user-guide
+repo_name: eegfaktura-user-guide
+edit_uri: edit/main/docs/
+
+nav:
+  - Überblick: index.md
+  - Was ist neu?: changelog.md
+  - Anmeldung & Oberfläche: 01-anmeldung.md
+  - Mitglieder & Zählpunkte: 02-mitglieder-zaehlpunkte.md
+  - E-Mail-Texte: 03-email-texte.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  # No mermaid fence: mkdocs-material would load mermaid@11 unpinned from unpkg at runtime
+  # (supply-chain rule: fixed versions only). Diagrams go in as images or tables.
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.snippets
+
+plugins:
+  # privacy: downloads the theme font (Roboto from Google Fonts) at build time and serves it from the
+  # site itself, so readers' browsers never contact Google (GDPR). Only difference to the onboarding guide.
+  - privacy:
+      assets_exclude:
+        - unpkg.com/mermaid@11/*   # not used, unpinned (see markdown_extensions)
+  - search:
+      lang:
+        - de
+        - en
+
+extra_css:
+  - stylesheets/vfeeg.css
+
+extra:
+  generator: false       # no "Made with Material for MkDocs" footer
