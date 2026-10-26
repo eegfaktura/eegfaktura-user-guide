@@ -158,8 +158,8 @@ Online-Anbindung gleich beim Netzbetreiber an.
 ## Stammdaten aus Excel importieren
 
 Viele Mitglieder auf einmal — z. B. beim Umstieg auf eegFaktura — liest du aus einer Excel-Datei ein: oben in der
-Mitgliederliste der Knopf mit der Wolke, **Stammdaten**, Blatt „EEG Stammdaten“, **Import**. Eine Vorlage mit allen
-Spalten gibt es hier:
+Mitgliederliste der Knopf mit der Wolke, **Stammdaten**, Blatt „EEG Stammdaten“, **Import**. Eine Vorlage gibt es
+hier (die Spalte **Einzugsart** fügst du bei Bedarf selbst hinzu):
 [Vorlage Stammdatenimport (Excel)](https://github.com/eegfaktura/eegfaktura-backend/raw/master/tests/260716-vorlage-import-stammdaten.xlsx).
 
 Wichtige Spalten:
@@ -167,12 +167,13 @@ Wichtige Spalten:
 | Spalte | Hinweis |
 |--------|---------|
 | Gemeinschafts-ID | Pflicht, muss zur Gemeinschaft passen |
-| Name 1 / Name 2 | Vorname / Nachname |
+| Name 1 / Name 2 | Vorname / Nachname (bei Firmen: Firmenname / Nachname der Kontaktperson). Groß-/Kleinschreibung zählt beim Wiedererkennen |
 | Zählpunkt | genau 33 Zeichen |
 | Energierichtung | `CONSUMPTION` (Verbraucher, auch leer) oder `GENERATION` (Erzeuger) |
-| Zählpunktstatus | `ACTIVE`, `ACTIVATED` oder `REGISTERED` → wird als **aktiv** übernommen; `NEW` → wird neu angemeldet |
-| Zugeteilte Menge in Prozent | Teilnahmefaktor; leer oder 0 wird 100 % |
-| email | mehrere Adressen mit `;` trennen |
+| Zählpunktstatus | Pflicht. `ACTIVE`, `ACTIVATED` oder `REGISTERED` → wird als **aktiv** übernommen; `NEW` → wird neu angemeldet; andere Werte → Zeile wird nicht importiert |
+| registriert seit | ab wann der Zählpunkt aktiv ist; **leer = 1. Jänner des laufenden Jahres**. Ältere Energiedaten werden davor weder angefordert noch abgerechnet — beim Umstieg das tatsächliche Datum eintragen |
+| Zugeteilte Menge in Prozent | Teilnahmefaktor (1–100); leer oder 0 wird 100 % |
+| email | mehrere Adressen mit `;` trennen; ist eine Adresse ungültig, wird das Mitglied ohne E-Mail angelegt (mit Hinweis) |
 | Einzugsart | `CORE`, `B2B` oder `Kein SEPA` |
 | ObjektName | wird als Anlagenname übernommen |
 
@@ -195,14 +196,15 @@ So verhält sich der Import:
 - **Mitglied ohne E-Mail:** Lass das Feld leer — eegFaktura schickt diesem Mitglied dann keine Mails. Trage keine
   Platzhalter-Adresse ein, sonst wird an sie geschickt.
 - **Mitglied ohne Konto:** Wähle die Einzugsart **Kein SEPA**; die IBAN darf dann leer bleiben.
-- **Anlagenname:** Hat ein Zählpunkt einen Anlagennamen, steht in der Liste und in den Prozessen dieser Name statt der
-  Nummer — praktisch bei mehreren Anlagen eines Mitglieds.
-- **Aktiv seit:** Bei Gemeinschaften mit Online-Anbindung setzt eegFaktura das Datum aus der Meldung des
-  Netzbetreibers. Es begrenzt, ab wann Energiedaten angefordert und abgerechnet werden; ändere es nur, wenn es nicht
+- **Anlagenname:** Hat ein Zählpunkt einen Anlagennamen, steht in der Liste dieser Name statt der Nummer, in den
+  Prozessen „Name – Nummer“ — praktisch bei mehreren Anlagen eines Mitglieds.
+- **Aktiv seit:** Bei Online-Anmeldungen setzt eegFaktura das Datum aus der Meldung des Netzbetreibers, beim Import
+  aus der Spalte „registriert seit“. Es begrenzt, ab wann Energiedaten angefordert und abgerechnet werden; ändere es nur, wenn es nicht
   zum Netzbetreiber passt.
 - **Ein Mitglied verlässt die Gemeinschaft:** Melde seine Zählpunkte ab
   ([Zählpunkt abmelden](08-prozesse.md#zahlpunkt-abmelden)) statt das Mitglied zu löschen — so bleiben seine Daten und
-  Belege erhalten.
+  Belege erhalten. Bei importierten Zählpunkten fehlt eegFaktura manchmal die Kennung der Datenfreigabe; dann zuerst
+  die Teilnehmerliste anfordern.
 - **Ein Zählpunkt wechselt den Besitzer** (z. B. Mieterwechsel): Verschiebe ihn mit dem Pfeilkreuz zum neuen Mitglied
   oder melde ihn beim alten ab und beim neuen an; bisherige Rechnungen bleiben beim alten Mitglied.
 - **Teilnahmefaktor:** 1 bis 100 %. Nimmt ein Zählpunkt an mehreren Gemeinschaften teil, darf die Summe 100 % nicht

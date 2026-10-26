@@ -40,11 +40,10 @@ Die Positionen sind je Zählpunkt gruppiert („Zählpunkt AT… – Anlagenname
 - die **Energiemenge** mit Arbeitspreis (bei zeitbasierten Tarifen je Zeitraum),
 - bei Verbrauchern mit Freikontingent eine Zeile „Menge (…) = Verbrauch (…) abzgl. freie kWh (…)“,
 - die **Zählpunktgebühr**, wenn der Tarif eine hat,
-- der **Mitgliedsbeitrag** des Mitglieds-Tarifs,
+- auf Rechnungen der **Mitgliedsbeitrag** des Mitglieds-Tarifs,
 - Umsatzsteuer und Summen, darunter die Texte aus den Abrechnungseinstellungen und die Fußzeile.
 
-Anlagenname und Anlagen-Nr. des Zählpunkts erscheinen auf dem Beleg — praktisch, wenn ein Mitglied mehrere Anlagen
-hat.
+Der Anlagenname des Zählpunkts erscheint auf dem Beleg — praktisch, wenn ein Mitglied mehrere Anlagen hat.
 
 ## Abrechnungsmodus
 

@@ -7,20 +7,21 @@ gibt es zwei Wege:
 
 | Weg | Was er bedeutet |
 |-----|-----------------|
-| **Online-Anbindung** über den Kommunikationsdienstleister (KEP) des VFEEG | eegFaktura meldet Zählpunkte selbst an und ab, fordert Daten nach und bekommt die Energiedaten automatisch. **Empfohlen.** |
+| **Online-Anbindung** über den Kommunikationsendpunkt (KEP) des VFEEG | eegFaktura meldet Zählpunkte selbst an und ab, fordert Daten nach und bekommt die Energiedaten automatisch. **Empfohlen.** |
 | **EDA-Anwenderportal** (ohne Online-Anbindung) | Anmeldungen und Datenfreigaben laufen im Portal; Energiedaten importierst du in eegFaktura selbst (siehe [Energiedaten importieren](06-energiedaten.md#energiedaten-importieren)) |
 
 ### Online-Anbindung einrichten
 
 1. Melde die Gemeinschaft bei der EDA für die Anbindung über einen KEP an (Anleitung der EDA:
-   <https://www.eda.at/e-mail-anbindung>). Als KEP gibst du den **VFEEG** an, als Backend-System **EEG Faktura**.
+   <https://www.eda.at/e-mail-anbindung>). Als KEP-Betreiber gibst du den **VFEEG** an, als Backend-System
+   **EEG Faktura**.
 2. Die Zugangsdaten, die du von der EDA bekommst, schickst du als Ticket an den Support (siehe unten).
 3. Sobald die Anbindung aktiv ist, erscheint in eegFaktura der Menüpunkt **Prozesse**.
 
 **Wechsel vom EDA-Anwenderportal:** Ein Abmelden im Portal vorab ist nicht nötig. Lege die Mitglieder in eegFaktura an
 oder importiere sie (siehe [Stammdaten importieren](02-mitglieder-zaehlpunkte.md#stammdaten-aus-excel-importieren)).
-Zählpunkte, die beim Netzbetreiber schon aktiv sind, importierst du als **aktiv** — sonst würden sie neu angemeldet.
-Danach forderst du die Energiedaten rückwirkend an
+Zählpunkte, die beim Netzbetreiber schon aktiv sind, importierst du als **aktiv** — sonst würden sie neu angemeldet —
+und mit dem tatsächlichen Datum in „registriert seit“. Danach forderst du die Energiedaten rückwirkend an
 ([Zählpunktdaten nachfordern](08-prozesse.md#zahlpunktdaten-nachfordern)).
 
 ## Datenfreigabe der Mitglieder
@@ -35,10 +36,9 @@ Datenfreigabe, Viertelstundenwerte einschalten), steht in den Anleitungen der bi
 
 ## Datenschutz
 
-Bevor du ein Mitglied aufnimmst, sollte eine unterschriebene **Beitrittserklärung mit Vereinbarung zur
-Auftragsverarbeitung** vorliegen. Halte im Bezugs- bzw. Einspeisevertrag fest, dass die Daten auf den Servern des
-VFEEG (eegFaktura) gespeichert und für die Verrechnung verarbeitet werden. Für die rechtliche Gestaltung wende dich an
-eure Rechtsberatung.
+eegFaktura speichert die Daten der Mitglieder auf den Servern des VFEEG und verarbeitet sie für die Verrechnung.
+Darauf sollten eure Beitrittserklärung bzw. eure Verträge mit den Mitgliedern hinweisen. Wie ihr Beitrittserklärung und
+Datenverarbeitung rechtlich gestaltet, klärt bitte mit eurer Rechtsberatung oder dem VFEEG.
 
 ## Hilfe und Support
 

@@ -76,10 +76,10 @@ auch die Karten in der Mitgliederliste.
 
 ### Typische Effekte
 
-- **Zeitumstellung:** Am Tag der Umstellung fehlt eine Stunde oder es gibt sie doppelt; die Vollständigkeit kann dort
-  „nicht vollständig“ zeigen, obwohl alles in Ordnung ist.
-- **Ersatzwerte (L2):** Der Netzbetreiber kann gemessene Werte später durch Ersatzwerte ersetzen. Kleine Differenzen
-  von Bruchteilen eines Prozents zwischen zwei Abfragen sind dadurch normal.
+- **Zeitumstellung:** Ein Tag der Umstellung hat 92 bzw. 100 Viertelstunden statt 96 — beim Nachrechnen von Hand
+  daran denken.
+- **Korrekturen:** Vorläufige Werte (L3) ersetzt der Netzbetreiber später durch gemessene oder Ersatzwerte (L2).
+  Kleine Differenzen von Bruchteilen eines Prozents zwischen zwei Abfragen sind dadurch normal.
 - **Mengenbilanz** im Export und **Bilanzdifferenz** im Dashboard sollten nahe 0 sein. Größere Abweichungen deuten auf
   fehlende Daten hin — siehe [Bilanzdifferenz](01-anmeldung.md#dashboard).
 
