@@ -9,7 +9,8 @@ import re
 from playwright.sync_api import Page
 
 FINAL_PERIOD = "Jul-Sep 2026"  # the period that gets a final billing run in the local stack
-FINAL_RANGE = "01.07.2026 – 30.09.2026"  # as the check dialog shows it: the final run is confirmed only for this
+FINAL_RANGE = "01.07.2026 – 30.09.2026"
+FINAL_PERIOD_ID = "/YQ/Abr_YQ-2026-3"  # how the billing API names that period (end of the billing-run URL)  # as the check dialog shows it: the final run is confirmed only for this
 CHECK_TITLE = "Prüfung vor der Abrechnung"
 METER_WITH_DATA = "0000143001"  # shown shortened in the list ("AT008000...0000143001")
 
@@ -43,17 +44,24 @@ def chapter_tariffs(page: Page, shot, step, goto) -> None:
         step(name, fn)
 
 
-def _billing_mode(page: Page, goto, period: str | None = None) -> None:
+def _billing_mode(page: Page, goto) -> None:
     goto(page, "/page/participants", "Periode")
-    if period:
-        select = page.locator("ion-select.select-box").first
-        select.click()
-        page.locator("ion-popover ion-item, ion-popover button", has_text=period).first.click()
-        page.wait_for_function("([el, p]) => el.textContent.includes(p) || (el.value || '').includes(p)",
-                               arg=[select.element_handle(), period], timeout=10000)
-        page.wait_for_timeout(1500)  # the billing run of the new period is loaded after the selection
     page.locator("ion-checkbox").first.click()  # all members
     page.locator("label.eeg-sliding-box").first.click()
+
+
+def _select_period(page: Page, period: str, period_id: str) -> bool:
+    """Selects the period in billing mode and returns whether the server says it is billed already (status DONE).
+    Decided on the server's answer for that period, not on the footer, which can still show the previous period."""
+    page.locator("ion-select.select-box").first.click()
+    # GET /api/billingRuns/{tenant}{period_id}: the run of exactly this period (a late answer for the previous
+    # period must not count)
+    with page.expect_response(lambda r: r.url.endswith(period_id) and r.request.method == "GET",
+                              timeout=30000) as answer:
+        page.locator("ion-popover ion-item, ion-popover button", has_text=period).first.click()
+    response = answer.value
+    page.wait_for_timeout(1500)  # the footer renders the new state
+    return response.ok and "DONE" in response.text()
 
 
 def chapter_billing(page: Page, shot, step, goto) -> None:
@@ -82,16 +90,17 @@ def chapter_billing(page: Page, shot, step, goto) -> None:
 
     def final_run():
         # once per local stack: a final run for FINAL_PERIOD (skipped when it exists already)
-        _billing_mode(page, goto, FINAL_PERIOD)
+        _billing_mode(page, goto)
         page.wait_for_timeout(800)
         ok = page.locator("ion-alert button", has_text="OK")  # the hint comes only once per session
         if ok.count() and ok.first.is_visible():
             ok.first.click()
+        billed = _select_period(page, FINAL_PERIOD, FINAL_PERIOD_ID)
         sepa_button = page.get_by_role("button", name="SEPA")
         new_preview = page.get_by_role("button", name="VORSCHAU ERSTELLEN")
         run_button = page.get_by_role("button", name="ABRECHNUNG DURCHFÜHREN", exact=False)
         sepa_button.or_(new_preview).or_(run_button).first.wait_for(timeout=60000)  # footer loaded
-        if not sepa_button.is_visible():
+        if not billed:
             if new_preview.is_visible():
                 new_preview.click()
                 page.get_by_text("Prüfung läuft", exact=False).first.wait_for(state="hidden", timeout=60000)
@@ -142,6 +151,7 @@ def chapter_energy(page: Page, shot, step, goto) -> None:
         page.locator("div.participant ion-card", has_text=METER_WITH_DATA).first.click()
         page.get_by_text("Energiedaten", exact=True).first.wait_for()
         page.get_by_text("YM", exact=True).first.click()
+        page.wait_for_timeout(1500)  # the month data is loaded after the click
         page.locator(".recharts-bar-rectangle").first.wait_for()  # bars of the month view drawn
         shot("energiedaten-diagramm", page)
 
@@ -149,6 +159,7 @@ def chapter_energy(page: Page, shot, step, goto) -> None:
         page.get_by_text("D", exact=True).first.click()
         page.get_by_label("Vorheriger Tag").first.wait_for()  # the day view is active (fails if "D" hit something else)
         page.locator(".recharts-line").first.wait_for()
+        page.wait_for_timeout(1600)  # recharts draws the line with a 1.5 s animation
         shot("energiedaten-tag", page)
 
     def export_popover():

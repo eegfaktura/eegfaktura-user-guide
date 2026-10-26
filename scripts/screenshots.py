@@ -95,7 +95,8 @@ def step(name: str, fn) -> None:
         fn()
     except Exception as e:  # noqa: BLE001 — report every failing step, then exit 1
         failed.append(name)
-        print(f"FAIL  {name}: {str(e).splitlines()[0]}" + ("  | " + str(e).splitlines()[2].strip() if len(str(e).splitlines()) > 2 else ""))
+        lines = str(e).splitlines() or [type(e).__name__]
+        print(f"FAIL  {name}: {lines[0]}" + (f"  | {lines[2].strip()}" if len(lines) > 2 else ""))
         if CURRENT_PAGE:
             try:
                 DEBUG_DIR.mkdir(exist_ok=True)

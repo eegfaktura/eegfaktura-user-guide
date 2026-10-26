@@ -10,6 +10,10 @@ DO $$ BEGIN
   IF NOT EXISTS (SELECT 1 FROM base.eeg WHERE tenant = 'RC100100' AND name = 'Fixture Sonnenhang') THEN
     RAISE EXCEPTION 'not the local fixture stack (RC100100 "Fixture Sonnenhang" missing) — nothing changed';
   END IF;
+  IF (SELECT count(DISTINCT id) FROM base.tariff WHERE id IN ('00000000-0000-4000-a100-00000000000a',
+      '00000000-0000-4000-a100-00000000000b') AND tenant = 'RC100100') <> 2 THEN
+    RAISE EXCEPTION 'fixture tariffs "Tarif A"/"Tarif B" of RC100100 missing — nothing changed';
+  END IF;
 END $$;
 
 -- the fixture's tariffs have baseFee 2.25, which the backend cannot read (tracking backend 261026-mm1): round all
