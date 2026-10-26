@@ -55,18 +55,23 @@ jobs:
           echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
 
       - name: Trivy (requirements, HIGH and CRITICAL fail)
-        # Trivy only recognises a file named requirements.txt, so each file is scanned from its own folder;
-        # a scan that found no packages fails instead of passing silently.
+        # Trivy only recognises a file named requirements.txt, so each file is scanned from its own folder.
+        # The table goes to the log; the gate reads the JSON: no recognised file or any finding fails.
         run: |
           set -e
+          fail=0
           for f in requirements-docs.txt requirements-screenshots.txt; do
             d="$RUNNER_TEMP/trivy-${f%.txt}"; mkdir -p "$d"; cp "$f" "$d/requirements.txt"
-            trivy fs --scanners vuln --severity HIGH,CRITICAL --exit-code 1 --ignorefile "" --no-progress               --format json --output "$d.json" "$d"
-            trivy convert --format table "$d.json"
-            n=$(jq '[.Results[]? | .Packages[]?] | length' "$d.json")
-            if [ "$n" -eq 0 ]; then n=$(jq '[.Results[]?] | length' "$d.json"); fi
-            [ "$n" -gt 0 ] || { echo "::error::Trivy found no packages in $f"; exit 1; }
+            opts=(--scanners vuln --severity HIGH,CRITICAL --exit-code 0 --ignorefile "" --no-progress)
+            trivy fs "${opts[@]}" --format table "$d"
+            trivy fs "${opts[@]}" --format json --output "$d.json" "$d"
+            targets=$(jq '[.Results[]?] | length' "$d.json")
+            vulns=$(jq '[.Results[]?.Vulnerabilities[]?] | length' "$d.json")
+            echo "$f: $targets recognised file(s), $vulns HIGH/CRITICAL finding(s)"
+            [ "$targets" -gt 0 ] || { echo "::error::Trivy recognised no file in $f"; fail=1; }
+            [ "$vulns" -eq 0 ] || fail=1
           done
+          exit $fail
 
       - name: OSV-Scanner (requirements, any known vulnerability fails)
         # --no-resolve: the files are fully pinned; without it OSV-Scanner resolves the declared dependencies
@@ -131,7 +136,10 @@ jobs:
           mkdir gh-pages && cd gh-pages
           git init -q -b gh-pages
           git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          if git fetch --depth=1 origin gh-pages 2>/dev/null; then git reset -q --hard FETCH_HEAD; fi
+          # first deploy: no gh-pages yet; any other fetch error stops the job
+          if git ls-remote --exit-code --heads origin gh-pages >/dev/null; then
+            git fetch -q --depth=1 origin gh-pages && git reset -q --hard FETCH_HEAD
+          fi
           find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name 'CNAME' -exec rm -rf {} +
           cp -r ../site/. .
           touch .nojekyll

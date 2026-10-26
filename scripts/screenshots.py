@@ -168,6 +168,8 @@ def chapter_members(page: Page) -> None:
 def chapter_mail_texts(page: Page) -> None:
     card = page.locator(".eeg-property-card", has=page.locator(".header", has_text="E-Mail-Texte"))
     toggle = page.locator("ion-toggle", has_text="Eigenen Text verwenden")
+    # the mail must be on the standard text: with a saved own text, switching off would offer to delete it
+    standard_box = page.locator(".mail-template-status-box.standard")
 
     def card_shot():
         goto(page, "/page/eeg", "Allgemeines")
@@ -183,6 +185,8 @@ def chapter_mail_texts(page: Page) -> None:
         page.locator("ion-item", has=page.locator("h2", has_text="Zählpunkt aktiv")).click()
         toggle.wait_for()
         page.wait_for_load_state("networkidle")
+        if not standard_box.is_visible():
+            raise RuntimeError("'Zählpunkt aktiv' has a saved own text in this stack — reset it first")
         shot("email-texte-standard", page)
 
     def preview():
@@ -195,6 +199,8 @@ def chapter_mail_texts(page: Page) -> None:
         page.get_by_text("Vorschau schließen").click()
 
     def own_text():
+        if not standard_box.is_visible():
+            raise RuntimeError("not on the standard text")
         toggle.click()
         page.get_by_text("Noch nicht gespeichert", exact=False).first.wait_for()
         scroll_to(page.locator(".mail-template-editor"))
