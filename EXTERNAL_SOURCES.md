@@ -8,17 +8,17 @@ Decided 2026-10-26: same tools as the member-onboarding user guide.
 
 Pinned in `requirements-docs.txt` (site build) and `requirements-screenshots.txt` (screenshot generator),
 direct and transitive. Install with `pip install --no-deps -r …` so nothing unpinned is pulled in.
+`requests` (and with it certifi, charset-normalizer, idna, urllib3) is left out on purpose: mkdocs-material declares
+it, but uses it only in its info, privacy and social plugins, which this site does not enable (`pip check` reports
+it as missing — expected). Fewer packages, and certifi < 2026.10.19 has a critical advisory (PYSEC-2026-4320).
 
 | Package | Version | Published | Licence | Used for |
 |---|---|---|---|---|
 | babel | 2.18.0 | 2026-02-01 | BSD-3-Clause | Site build |
 | backrefs | 8.1 | 2026-10-10 | MIT | Site build |
-| certifi | 2026.10.18 | 2026-10-18 | MPL-2.0 | Site build |
-| charset-normalizer | 3.5.2 | 2026-09-30 | MIT | Site build |
 | click | 8.5.0 | 2026-08-26 | BSD-3-Clause | Site build |
 | colorama | 0.4.6 | 2022-10-25 | BSD-3-Clause | Site build |
 | ghp-import | 2.1.0 | 2022-05-02 | Apache-2.0 | Site build |
-| idna | 3.20 | 2026-09-17 | BSD-3-Clause | Site build |
 | Jinja2 | 3.1.6 | 2025-03-05 | BSD-3-Clause | Site build |
 | Markdown | 3.11.1 | 2026-10-13 | BSD-3-Clause | Site build |
 | MarkupSafe | 3.0.4 | 2026-10-02 | BSD-3-Clause | Site build |
@@ -32,14 +32,12 @@ direct and transitive. Install with `pip install --no-deps -r …` so nothing un
 | pathspec | 1.1.1 | 2026-04-27 | MPL-2.0 | Site build |
 | platformdirs | 4.13.4 | 2026-10-17 | MIT | Site build |
 | Pygments | 2.21.0 | 2026-08-17 | BSD-2-Clause | Site build |
-| pymdown-extensions | 10.21.3 | 2026-05-13 | MIT | Site build |
+| pymdown-extensions | 11.0.1 | 2026-07-02 | MIT | Site build |
 | python-dateutil | 2.9.0.post0 | 2024-03-01 | Apache-2.0 OR BSD-3-Clause | Site build |
 | PyYAML | 6.0.3 | 2025-09-25 | MIT | Site build |
 | pyyaml_env_tag | 1.1 | 2025-05-13 | MIT | Site build |
-| requests | 2.34.2 | 2026-05-14 | Apache-2.0 | Site build |
 | six | 1.17.0 | 2024-12-04 | MIT | Site build |
 | tzdata | 2026.5 | 2026-10-03 | Apache-2.0 | Site build |
-| urllib3 | 2.8.0 | 2026-09-15 | MIT | Site build |
 | watchdog | 6.0.0 | 2024-11-01 | Apache-2.0 | Site build |
 | greenlet | 3.5.6 | 2026-09-14 | MIT AND PSF-2.0 | Screenshots |
 | playwright | 1.64.0 | 2026-10-13 | Apache-2.0 | Screenshots |
