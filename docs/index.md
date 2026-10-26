@@ -23,7 +23,7 @@ vorbehalten.
 | Rolle | Was sie in eegFaktura kann |
 |-------|----------------------------|
 | **EEG-Admin** | alles in diesem Handbuch: Mitglieder und Zählpunkte anlegen und ändern, Prozesse beim Netzbetreiber auslösen, Nachrichten lesen, E-Mail-Texte gestalten, abrechnen |
-| **Mitglied mit Zugang** | sieht die Daten der Gemeinschaft. Nachrichten, Prozesse, E-Mail-Texte und das Ändern der EEG-Seite sind EEG-Admins vorbehalten |
+| **Mitglied mit Zugang** | kann sich anmelden und sieht seine eigenen Daten. Ändern kann es nichts — alle Änderungen, Abrechnungen und Prozesse sind EEG-Admins vorbehalten |
 
 Den Zugang (Benutzername, Rolle, Gemeinschaften) richtet der Betreiber deiner eegFaktura-Installation ein.
 
