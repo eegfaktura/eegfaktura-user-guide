@@ -58,7 +58,9 @@ jobs:
         run: trivy fs --scanners vuln --severity HIGH,CRITICAL --exit-code 1 --ignorefile "" --no-progress .
 
       - name: OSV-Scanner (requirements, any known vulnerability fails)
-        run: osv-scanner scan source --lockfile requirements-docs.txt --lockfile requirements-screenshots.txt
+        # --no-resolve: the files are fully pinned; without it OSV-Scanner resolves the declared dependencies
+        # itself and scans packages that are deliberately not installed (requests, see EXTERNAL_SOURCES.md).
+        run: osv-scanner scan source --no-resolve --lockfile requirements-docs.txt --lockfile requirements-screenshots.txt
 
   build:
     name: Build MkDocs (strict)
