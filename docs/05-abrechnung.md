@@ -104,10 +104,8 @@ warnt ausdrücklich:
 > **Die Abrechnung ist endgültig.** Die Belege bekommen fortlaufende Nummern und lassen sich danach nicht mehr ändern
 > oder löschen. Ein Belegdatum in der Zukunft ist nicht erlaubt.
 
-Belege mit dem Betrag 0 werden nicht erstellt. Erzeuger ohne UID bekommen eine **Gutschrift**. Erzeuger mit UID
-bekommen — je nach Einstellung der Gemeinschaft — eine **Gutschrift im Reverse-Charge-Verfahren** oder eine
-**Information** (ohne Nummer, mit den Texten „Gutschriften für Mitgliedstyp Firma“); dann stellt der Erzeuger der
-Gemeinschaft selbst eine Rechnung. Welche Variante deine Gemeinschaft hat, siehst du an den Belegen der Vorschau.
+Belege mit dem Betrag 0 werden nicht erstellt. Erzeuger ohne UID bekommen eine **Gutschrift**, Erzeuger mit UID eine
+**Gutschrift im Reverse-Charge-Verfahren** (mit den Texten „Gutschriften für Mitgliedstyp Firma“).
 
 ## Nach der Abrechnung
 
@@ -147,9 +145,6 @@ Die Hinweise darunter nennen, was nicht in den Dateien ist, z. B.:
 - Mitglieder mit Einzugsart „Kein SEPA“ oder ohne Einzugsart,
 - Mitglieder ohne IBAN — diese bitte händisch abwickeln.
 
-> Prüfe die Überweisungsdatei vor dem Hochladen zur Bank gegen die Gutschriften. Belege der Art **Information**
-> werden derzeit ebenfalls als Überweisung aufgenommen, obwohl dort der Erzeuger der Gemeinschaft eine Rechnung stellt.
-
 ### SEPA — Begriffe
 
 - **Einzugsart CORE** (Basislastschrift): für alle Mitglieder; das Mitglied kann eine Lastschrift innerhalb von acht
@@ -169,5 +164,4 @@ Information. Ein Klick öffnet das PDF:
 
 ![Belege eines Mitglieds](images/abrechnung-meine-rechnungen.png)
 
-Belege mit „Vorschau“ im Namen stammen aus einer Vorschau und sind nicht gültig. Der Reiter **Information** zeigt
-Info-Belege für Erzeuger mit UID (siehe oben).
+Belege mit „Vorschau“ im Namen stammen aus einer Vorschau und sind nicht gültig.
