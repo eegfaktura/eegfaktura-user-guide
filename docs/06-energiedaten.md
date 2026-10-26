@@ -60,6 +60,29 @@ Werte mit L0 oder L3 machen einen Zählpunkt „nicht vollständig“. Für sie 
 [Prozesse → Zählpunktdaten nachfordern](08-prozesse.md#zahlpunktdaten-nachfordern) erneut anfordern — mit „Smart“
 nur die fehlenden.
 
+## Woraus die Werte entstehen
+
+Der Netzbetreiber schickt je Zählpunkt mehrere Messreihen. eegFaktura verwendet:
+
+| Zählpunkt | Messreihe | Bedeutung |
+|-----------|-----------|-----------|
+| Verbraucher | Gesamtverbrauch | was der Zählpunkt insgesamt bezogen hat |
+| Verbraucher | Eigendeckung (G.03) | der Anteil aus der Gemeinschaft — **Grundlage der Rechnung** |
+| Erzeuger | Erzeugung | was die Anlage insgesamt eingespeist hat |
+| Erzeuger | Überschuss | was davon nicht in der Gemeinschaft verbraucht wurde |
+
+Abgerechnet wird beim Erzeuger **Erzeugung minus Überschuss**, also der in der Gemeinschaft verteilte Teil. Das zeigen
+auch die Karten in der Mitgliederliste.
+
+### Typische Effekte
+
+- **Zeitumstellung:** Am Tag der Umstellung fehlt eine Stunde oder es gibt sie doppelt; die Vollständigkeit kann dort
+  „nicht vollständig“ zeigen, obwohl alles in Ordnung ist.
+- **Ersatzwerte (L2):** Der Netzbetreiber kann gemessene Werte später durch Ersatzwerte ersetzen. Kleine Differenzen
+  von Bruchteilen eines Prozents zwischen zwei Abfragen sind dadurch normal.
+- **Mengenbilanz** im Export und **Bilanzdifferenz** im Dashboard sollten nahe 0 sein. Größere Abweichungen deuten auf
+  fehlende Daten hin — siehe [Bilanzdifferenz](01-anmeldung.md#dashboard).
+
 ## Energiedaten importieren
 
 Der Knopf mit der Wolke öffnet **Upload Daten für …**. Mit **Stammdaten** liest du Mitglieder und Zählpunkte aus einer

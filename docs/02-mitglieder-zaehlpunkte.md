@@ -155,6 +155,59 @@ Einen ungültigen Zählpunkt, der nie angemeldet wurde, kannst du hier mit **Lö
 Klicke in der Mitgliederliste beim Mitglied auf **+**. Das Formular ist dasselbe wie oben; gespeichert wird mit
 **Registrieren**. Ist das Mitglied schon zugelassen, meldet eegFaktura den neuen Zählpunkt bei Gemeinschaften mit
 Online-Anbindung gleich beim Netzbetreiber an.
+## Stammdaten aus Excel importieren
+
+Viele Mitglieder auf einmal — z. B. beim Umstieg auf eegFaktura — liest du aus einer Excel-Datei ein: oben in der
+Mitgliederliste der Knopf mit der Wolke, **Stammdaten**, Blatt „EEG Stammdaten“, **Import**. Eine Vorlage mit allen
+Spalten gibt es hier:
+[Vorlage Stammdatenimport (Excel)](https://github.com/eegfaktura/eegfaktura-backend/raw/master/tests/260716-vorlage-import-stammdaten.xlsx).
+
+Wichtige Spalten:
+
+| Spalte | Hinweis |
+|--------|---------|
+| Gemeinschafts-ID | Pflicht, muss zur Gemeinschaft passen |
+| Name 1 / Name 2 | Vorname / Nachname |
+| Zählpunkt | genau 33 Zeichen |
+| Energierichtung | `CONSUMPTION` (Verbraucher, auch leer) oder `GENERATION` (Erzeuger) |
+| Zählpunktstatus | `ACTIVE`, `ACTIVATED` oder `REGISTERED` → wird als **aktiv** übernommen; `NEW` → wird neu angemeldet |
+| Zugeteilte Menge in Prozent | Teilnahmefaktor; leer oder 0 wird 100 % |
+| email | mehrere Adressen mit `;` trennen |
+| Einzugsart | `CORE`, `B2B` oder `Kein SEPA` |
+| ObjektName | wird als Anlagenname übernommen |
+
+So verhält sich der Import:
+
+- Zählpunkte, die beim Netzbetreiber **schon aktiv** sind, importierst du mit Status aktiv — mit `NEW` würden sie
+  erneut angemeldet.
+- Ein Mitglied mit gleichem Vor- und Nachnamen wie ein vorhandenes gilt als **dasselbe**: Es bekommt nur die neuen
+  Zählpunkte, seine übrigen Daten werden **nicht** geändert.
+- Ein Fehler betrifft nur das jeweilige Mitglied; die übrigen Zeilen werden trotzdem importiert. Datumsfelder dürfen
+  Excel-Datum oder Text (`TT.MM.JJJJ`) sein.
+- Hinweise und Fehler (z. B. doppelte Mitgliedsnummer, Zählpunkt mit falscher Länge) kommen als Nachricht
+  **„Excel Stammdaten importiert — Hinweise: …“** unter [Nachrichten](07-nachrichten.md).
+- Die Einzugsart gilt nur für Mitglieder, die der Import neu anlegt.
+
+## Gut zu wissen
+
+- **Mehrere E-Mail-Adressen** eines Mitglieds trennst du mit `;` (ohne Leerzeichen); Mails gehen an alle gültigen
+  Adressen.
+- **Mitglied ohne E-Mail:** Lass das Feld leer — eegFaktura schickt diesem Mitglied dann keine Mails. Trage keine
+  Platzhalter-Adresse ein, sonst wird an sie geschickt.
+- **Mitglied ohne Konto:** Wähle die Einzugsart **Kein SEPA**; die IBAN darf dann leer bleiben.
+- **Anlagenname:** Hat ein Zählpunkt einen Anlagennamen, steht in der Liste und in den Prozessen dieser Name statt der
+  Nummer — praktisch bei mehreren Anlagen eines Mitglieds.
+- **Aktiv seit:** Bei Gemeinschaften mit Online-Anbindung setzt eegFaktura das Datum aus der Meldung des
+  Netzbetreibers. Es begrenzt, ab wann Energiedaten angefordert und abgerechnet werden; ändere es nur, wenn es nicht
+  zum Netzbetreiber passt.
+- **Ein Mitglied verlässt die Gemeinschaft:** Melde seine Zählpunkte ab
+  ([Zählpunkt abmelden](08-prozesse.md#zahlpunkt-abmelden)) statt das Mitglied zu löschen — so bleiben seine Daten und
+  Belege erhalten.
+- **Ein Zählpunkt wechselt den Besitzer** (z. B. Mieterwechsel): Verschiebe ihn mit dem Pfeilkreuz zum neuen Mitglied
+  oder melde ihn beim alten ab und beim neuen an; bisherige Rechnungen bleiben beim alten Mitglied.
+- **Teilnahmefaktor:** 1 bis 100 %. Nimmt ein Zählpunkt an mehreren Gemeinschaften teil, darf die Summe 100 % nicht
+  übersteigen — senke den Faktor zuerst in der einen Gemeinschaft, bevor du ihn in der anderen erhöhst.
+
 ## Dokumente eines Mitglieds
 
 Unter **Dokumente** legst du Unterlagen zum Mitglied ab, z. B. den unterschriebenen Beitritt. **Hochladen** (bzw.

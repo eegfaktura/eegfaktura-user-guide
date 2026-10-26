@@ -82,3 +82,47 @@ die Schritte mit Datum, **Protokoll** und **Status** bzw. **Info**.
 
 **Eine Ablehnung lesen:** In der Spalte Protokoll steht dann ABLEHNUNG, in Status oder Info der Grund, z. B.
 „Zählpunkt nicht gefunden“, „Kunde hat Datenfreigabe abgelehnt“ oder „Prozessdatum falsch“.
+
+### Nachrichtenarten in der Spalte Protokoll
+
+| Bereich | Ablauf |
+|---------|--------|
+| Anmeldung Teilnahme Online | ANFORDERUNG_ECON (eegFaktura meldet an) → ANTWORT_ECON (Netzbetreiber bestätigt den Eingang) → ZUSTIMMUNG_ECON (Mitglied hat zugestimmt) → ABSCHLUSS_ECON (Zählpunkt aufgenommen); oder ABLEHNUNG_ECON |
+| Datenfreigabe-Aufhebung | AUFHEBUNG_CCMS (eegFaktura hebt auf), ANTWORT_CCMS / ABLEHNUNG_CCMS; AUFHEBUNG_CCMI, wenn Mitglied oder Netzbetreiber aufheben |
+| Anfordern von Energiedaten | ANFORDERUNG_PT → ANTWORT_PT oder ABLEHNUNG_PT |
+| Änderung des Teilnahmefaktors | ANFORDERUNG_CPF (mit neuem Faktor) → ANTWORT_CPF oder ABLEHNUNG_CPF |
+| Versenden der Energiedaten | DATEN_CRMSG: Energiedaten sind eingetroffen (von – bis) |
+
+Eine angenommene Anforderung (ANTWORT_PT) heißt noch nicht, dass die Daten da sind — das zeigt erst DATEN_CRMSG.
+
+## Häufige Ablehnungsgründe
+
+| Grund | Was meist dahintersteckt — und was du tun kannst |
+|-------|---------------------------------------------------|
+| Zählpunkt nicht gefunden | Tippfehler in der Zählpunktnummer: mit der Stromrechnung vergleichen, korrigieren, neu anmelden |
+| Zählpunkt befindet sich nicht im Bereich der Energiegemeinschaft | der Zählpunkt liegt außerhalb des Gebiets der Gemeinschaft, oder ein Einspeisezählpunkt ist beim Netzbetreiber noch nicht fertig eingerichtet |
+| Kunde hat Datenfreigabe abgelehnt | das Mitglied hat im Portal abgelehnt (oft versehentlich): mit dem Mitglied klären, dann unter **Zählpunkt aktivieren** neu anmelden |
+| Kunde hat auf Datenfreigabe nicht reagiert (Timeout) | das Mitglied hat nicht rechtzeitig zugestimmt: erinnern und neu anmelden |
+| Kein Smart Meter / Noch kein fernauslesbarer Zähler eingebaut | ohne Smart Meter (bzw. ohne Fernauslesung) geht die Teilnahme noch nicht: Netzbetreiber fragen, wann getauscht wird |
+| Kunde hat optiert | das Mitglied hat Viertelstundenwerte im Smart Meter abgelehnt (Opt-out): das Mitglied muss beim Netzbetreiber wieder einwilligen |
+| Zählpunkt nicht versorgt | für den Zählpunkt gibt es keinen Liefervertrag mit einem Energieversorger |
+| Zählpunkt nicht dem Lieferanten zugeordnet | oft liegt der angefragte Zeitraum vor dem Aktivierungsdatum: Zeitraum ab „Aktiv seit“ wählen |
+| konkurrierende Prozesse | ein früherer Vorgang zum selben Zählpunkt läuft noch: abwarten und später erneut senden |
+| Prozessdatum falsch | beim Teilnahmefaktor: außerhalb 9–17 Uhr gesendet oder schon eine Änderung am selben Tag |
+| Teilnahmefaktor von 100 % würde überschritten werden / Summe … übersteigt 100% | der Zählpunkt nimmt schon an einer anderen Gemeinschaft teil: dort zuerst den Faktor senken |
+| Teilnahme-Limit wird überschritten | der Zählpunkt nimmt schon an der höchstzulässigen Zahl von Gemeinschaften teil |
+| Keine Daten im angeforderten Zeitraum vorhanden | der Netzbetreiber hat für den Zeitraum (noch) keine Werte: später erneut anfordern |
+
+Unbekannte Gründe zeigt eegFaktura als Nummer. Kommt dieselbe Ablehnung immer wieder, prüfe Zählpunktnummer und
+Netzbetreiber-ID auf Tippfehler oder Leerzeichen.
+
+## Wie lange dauert es?
+
+Erfahrungswerte aus der Praxis, je nach Netzbetreiber verschieden:
+
+- **Anmeldung** eines Zählpunkts mit Smart Meter: einige Tage, sofern das Mitglied rasch zustimmt.
+- **Energiedaten:** vorläufige Werte kommen meist nach 1–3 Tagen; der Netzbetreiber kann sie noch korrigieren
+  (Ersatzwerte L2). Rechne daher nicht unmittelbar nach dem Ende eines Zeitraums ab, sondern prüfe vorher die
+  [Vollständigkeit](05-abrechnung.md#vorschau-erstellen).
+- Fehlen Daten ein, zwei Tage nach einer Störung noch immer, fordere sie nach; erst danach lohnt ein Ticket.
+

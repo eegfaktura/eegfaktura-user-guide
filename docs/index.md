@@ -31,6 +31,7 @@ Den Zugang (Benutzername, Rolle, Gemeinschaften) richtet der Betreiber deiner ee
 
 | Kapitel | Inhalt |
 |---------|--------|
+| [Einrichtung & Hilfe](einrichtung-hilfe.md) | Anbindung an die Netzbetreiber, Datenfreigabe der Mitglieder, Datenschutz, Support |
 | [Anmeldung & Oberfläche](01-anmeldung.md) | Anmelden, Menü, Gemeinschaft wechseln, Dashboard, EEG-Seite |
 | [Mitglieder & Zählpunkte](02-mitglieder-zaehlpunkte.md) | Mitgliederliste, Mitglied anlegen, Zählpunkte, Status, Prozesse beim Netzbetreiber |
 | [E-Mail-Texte](03-email-texte.md) | die automatischen Mails an Mitglieder selbst gestalten |
