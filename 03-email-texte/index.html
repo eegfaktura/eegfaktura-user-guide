@@ -1,0 +1,764 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Bedienungsanleitung für EEG-Admins">
+      
+      
+        <meta name="author" content="vfeeg">
+      
+      
+        <link rel="canonical" href="https://eegfaktura.github.io/eegfaktura-user-guide/03-email-texte/">
+      
+      
+        <link rel="prev" href="../02-mitglieder-zaehlpunkte/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>E-Mail-Texte - eegFaktura — Benutzerhandbuch</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../assets/fonts/fonts.css">
+    
+      <link rel="stylesheet" href="../stylesheets/vfeeg.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#e-mail-texte" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href=".." title="eegFaktura — Benutzerhandbuch" class="md-header__button md-logo" aria-label="eegFaktura — Benutzerhandbuch" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            eegFaktura — Benutzerhandbuch
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              E-Mail-Texte
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Dunkles Theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dunkles Theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Helles Theme"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Helles Theme" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="eegFaktura — Benutzerhandbuch" class="md-nav__button md-logo" aria-label="eegFaktura — Benutzerhandbuch" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    eegFaktura — Benutzerhandbuch
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Überblick
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Was ist neu?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-anmeldung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anmeldung & Oberfläche
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-mitglieder-zaehlpunkte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mitglieder & Zählpunkte
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-Mail-Texte
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-Mail-Texte
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wo-finde-ich-die-e-mail-texte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wo finde ich die E-Mail-Texte?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#der-standardtext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Der Standardtext
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eigenen-text-verwenden" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eigenen Text verwenden
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Eigenen Text verwenden">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bilder-und-pdf-anhang" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bilder und PDF-Anhang
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vorschau-und-testmail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vorschau und Testmail
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zuruck-zum-standardtext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zurück zum Standardtext
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gut-zu-wissen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gut zu wissen
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="e-mail-texte">E-Mail-Texte<a class="headerlink" href="#e-mail-texte" title="Link zu diesem Abschnitt">&para;</a></h1>
+<p>eegFaktura schickt deinen Mitgliedern automatisch E-Mails, zum Beispiel wenn ein Zählpunkt aktiv wird oder eine
+Rechnung fertig ist. Für jede dieser Mails gibt es einen <strong>Standardtext von eegFaktura</strong>. Du kannst ihn
+übernehmen, wie er ist, oder einen <strong>eigenen Text</strong> mit Bildern und einem PDF-Anhang gestalten.</p>
+<p>Die E-Mail-Texte können nur <strong>EEG-Admins</strong> bearbeiten.</p>
+<h2 id="wo-finde-ich-die-e-mail-texte">Wo finde ich die E-Mail-Texte?<a class="headerlink" href="#wo-finde-ich-die-e-mail-texte" title="Link zu diesem Abschnitt">&para;</a></h2>
+<p>Auf der <strong>EEG-Seite</strong> (Menüpunkt mit dem Namen deiner Gemeinschaft) in der Karte <strong>E-Mail-Texte</strong>:</p>
+<p><img alt="Karte E-Mail-Texte" src="../images/email-texte-karte.png" /></p>
+<p>Klicke auf <strong>E-Mail-Texte bearbeiten</strong>. Es öffnet sich die Liste der Mails:</p>
+<p><img alt="Liste der E-Mail-Texte" src="../images/email-texte-liste.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Mail</th>
+<th>Wann sie verschickt wird</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Freigabe-Aufforderung</strong></td>
+<td>wenn der Netzbetreiber den Eingang der Anmeldung eines Zählpunkts bestätigt; das Mitglied wird gebeten, die Datenfreigabe zu bestätigen</td>
+</tr>
+<tr>
+<td><strong>Zählpunkt aktiv</strong></td>
+<td>wenn die Anmeldung eines Zählpunkts abgeschlossen und der Zählpunkt aktiv ist</td>
+</tr>
+<tr>
+<td><strong>Zählpunkt inaktiv</strong></td>
+<td>wenn ein Zählpunkt nicht mehr Teil der Gemeinschaft ist (Datenfreigabe beendet oder Zählpunkt abgemeldet)</td>
+</tr>
+<tr>
+<td><strong>Rechnung / Gutschrift</strong></td>
+<td>beim Versand eines Abrechnungslaufs an jedes Mitglied mit E-Mail-Adresse; der Beleg (PDF) ist immer angehängt</td>
+</tr>
+</tbody>
+</table>
+<p>Bei jeder Mail siehst du, was gerade verschickt wird:</p>
+<ul>
+<li><strong>Standard</strong>: der Standardtext von eegFaktura,</li>
+<li><strong>Eigener Text</strong>: eure gespeicherte Fassung, mit dem Hinweis „Angepasst (am … von …)“.</li>
+</ul>
+<h2 id="der-standardtext">Der Standardtext<a class="headerlink" href="#der-standardtext" title="Link zu diesem Abschnitt">&para;</a></h2>
+<p>Ein Klick auf eine Mail öffnet sie. Solange der Schalter <strong>Eigenen Text verwenden</strong> aus ist, verschickt eegFaktura
+den Standardtext. Der Kasten darunter sagt das ausdrücklich, Betreff und Text sind zum Lesen da und gesperrt:</p>
+<p><img alt="Standardtext" src="../images/email-texte-standard.png" /></p>
+<p>Die grün hinterlegten Felder sind <strong>Platzhalter</strong>. Sie werden beim Versand für jedes Mitglied ersetzt, z. B.
+„Vorname“ durch den Vornamen des Mitglieds oder „Zählpunkt“ durch die Zählpunktnummer. Der <strong>Kontaktblock der
+EEG</strong> ist ein <strong>Baustein</strong>: Er wird durch EEG Bezeichnung, Kontaktperson, Adresse, Telefon, E-Mail und Webseite der
+Gemeinschaft ersetzt (leere Angaben fallen weg). Die Rechnungs-Mail hat stattdessen den Baustein <strong>Kontaktdaten der
+EEG</strong>; er kommt aus den Angaben des Belegs, und dort gibt es zusätzlich den Platzhalter <strong>Empfängername</strong>.</p>
+<p><strong>Vorschau</strong> und <strong>Testmail</strong> funktionieren auch mit dem Standardtext.</p>
+<h2 id="eigenen-text-verwenden">Eigenen Text verwenden<a class="headerlink" href="#eigenen-text-verwenden" title="Link zu diesem Abschnitt">&para;</a></h2>
+<ol>
+<li>
+<p>Schalte <strong>Eigenen Text verwenden</strong> ein. Der Editor startet mit einer Kopie des Standardtexts.</p>
+<p><img alt="Eigener Text, noch nicht gespeichert" src="../images/email-texte-eigener-text.png" /></p>
+<p>Solange du nicht gespeichert hast, steht im Kasten „Noch nicht gespeichert – verschickt wird weiterhin der
+Standardtext.“</p>
+</li>
+<li>
+<p>Ändere <strong>Betreff</strong> und Text:</p>
+<ul>
+<li>Die Knöpfe über dem Text formatieren ihn: <strong>Fett</strong>, <strong>Kursiv</strong>, <strong>Unterstrichen</strong>, <strong>Überschrift 1–3</strong>,
+  <strong>Aufzählung</strong>, <strong>Nummerierte Liste</strong>, <strong>Link</strong>, <strong>Linksbündig</strong>, <strong>Zentriert</strong>, <strong>Rechtsbündig</strong> und
+  <strong>Bild einfügen</strong>.</li>
+<li><strong>Platzhalter einfügen</strong> setzt einen Platzhalter an die Stelle des Cursors; Einträge mit „(Baustein)“ fügen
+  einen ganzen Absatz ein. <strong>Platzhalter in den Betreff</strong> macht dasselbe für den Betreff.</li>
+<li>Links müssen mit <code>https://</code> oder <code>mailto:</code> beginnen.</li>
+</ul>
+</li>
+<li>Klicke auf <strong>Speichern</strong>. Ab jetzt verschickt eegFaktura eure Fassung; der Kasten wird grün:
+   „Verschickt wird eure eigene Fassung (gespeichert am … von …).“</li>
+</ol>
+<h3 id="bilder-und-pdf-anhang">Bilder und PDF-Anhang<a class="headerlink" href="#bilder-und-pdf-anhang" title="Link zu diesem Abschnitt">&para;</a></h3>
+<p>Mit eingeschaltetem eigenem Text kannst du Bilder (PNG oder JPEG) in den Text einfügen und bei den Mitglieder-Mails
+ein PDF anhängen (z. B. eine Anleitung). Breitere Bilder werden auf 1200 px verkleinert. Unter dem Text stehen die
+Grenzen der jeweiligen Mail:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Freigabe-Aufforderung, Zählpunkt aktiv, Zählpunkt inaktiv</th>
+<th>Rechnung / Gutschrift</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bilder</td>
+<td>höchstens 10, je höchstens 1 MB</td>
+<td>höchstens 3</td>
+</tr>
+<tr>
+<td>PDF-Anhang (<strong>PDF anhängen</strong>)</td>
+<td>höchstens 1, höchstens 3 MB</td>
+<td>keiner — der Beleg ist immer angehängt</td>
+</tr>
+<tr>
+<td>alle Dateien zusammen</td>
+<td>höchstens 6 MB</td>
+<td>höchstens 500 KB</td>
+</tr>
+</tbody>
+</table>
+<p>Neu hochgeladene Dateien sind <strong>Entwürfe</strong>: Sie werden erst mit dem Speichern verwendet.</p>
+<h2 id="vorschau-und-testmail">Vorschau und Testmail<a class="headerlink" href="#vorschau-und-testmail" title="Link zu diesem Abschnitt">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Vorschau</strong> zeigt die Mail mit Beispieldaten, so wie ein Mitglied sie bekommt:</p>
+<p><img alt="Vorschau mit Beispieldaten" src="../images/email-texte-vorschau.png" /></p>
+</li>
+<li>
+<p><strong>Testmail an mich</strong> schickt die Mail mit Beispieldaten an deine eigene E-Mail-Adresse.</p>
+</li>
+<li><strong>Testmail an die Gemeinschaft</strong> schickt sie an die E-Mail-Adresse der Gemeinschaft (EEG-Seite → Kontakt).
+  Ist dort keine Adresse hinterlegt, ist der Knopf gesperrt.</li>
+</ul>
+<p>Testmails tragen „[Test]“ vor dem Betreff. Sie verwenden den Text, der gerade im Editor steht, auch wenn er noch
+nicht gespeichert ist. So kannst du Änderungen prüfen, bevor du sie speicherst.</p>
+<h2 id="zuruck-zum-standardtext">Zurück zum Standardtext<a class="headerlink" href="#zuruck-zum-standardtext" title="Link zu diesem Abschnitt">&para;</a></h2>
+<p>Schalte <strong>Eigenen Text verwenden</strong> wieder aus. eegFaktura fragt nach:</p>
+<p><img alt="Rückfrage beim Ausschalten" src="../images/email-texte-ausschalten.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Rückfrage</th>
+<th>Mit <strong>Ja</strong> …</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eine gespeicherte eigene Fassung</td>
+<td>„Eigene Fassung löschen und wieder den Standardtext verschicken? Bilder und PDF-Anhang werden mit gelöscht.“</td>
+<td>wird eure Fassung gelöscht, ab sofort geht der Standardtext hinaus</td>
+</tr>
+<tr>
+<td>nur ungespeicherte Änderungen</td>
+<td>„Änderungen verwerfen und beim Standardtext bleiben?“</td>
+<td>werden die Änderungen verworfen</td>
+</tr>
+<tr>
+<td>keine Änderungen</td>
+<td>keine Rückfrage</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>Mit <strong>Abbrechen</strong> bleibt alles, wie es war.</p>
+<h2 id="gut-zu-wissen">Gut zu wissen<a class="headerlink" href="#gut-zu-wissen" title="Link zu diesem Abschnitt">&para;</a></h2>
+<ul>
+<li><strong>Kopie an die Gemeinschaft:</strong> Die Mails „Freigabe-Aufforderung“, „Zählpunkt aktiv“ und „Zählpunkt inaktiv“ gehen
+  mit der E-Mail-Adresse der Gemeinschaft (EEG-Seite → Kontakt) in Kopie hinaus.</li>
+<li><strong>Wenn eure Fassung nicht verwendet werden kann:</strong> Lässt sich ein gespeicherter eigener Text beim Versand nicht
+  verwenden, verschickt eegFaktura den Standardtext — die Mail kommt also trotzdem an. Bei den Mitglieder-Mails
+  meldet eegFaktura das unter <strong>Nachrichten</strong>, bei der Rechnungs-Mail mit einem Hinweis im Versandprotokoll des
+  Abrechnungslaufs. Prüfe dann deinen Text in der Vorschau.</li>
+<li><strong>Der Standardtext wurde überarbeitet:</strong> Ändert eegFaktura einen Standardtext, während ihr einen eigenen Text
+  verwendet, siehst du „Der Standardtext wurde inzwischen überarbeitet.“ Mit <strong>Neuen Standard ansehen</strong> vergleichst
+  du, mit <strong>Neuen Standard übernehmen</strong> startest du von der neuen Fassung. Eure Fassung bleibt bis dahin gültig.</li>
+<li><strong>Zwei Personen gleichzeitig:</strong> Hat jemand anderer die Mail inzwischen gespeichert, meldet eegFaktura „Diese Mail
+  wurde inzwischen geändert …“. Mit <strong>Neu laden</strong> holst du den aktuellen Stand.</li>
+<li><strong>Ungespeichert zurück:</strong> <strong>Zurück zur Liste</strong> fragt nach, wenn noch Änderungen offen sind.</li>
+<li><strong>Kontaktdaten aktuell halten:</strong> Der Kontaktblock der Mitglieder-Mails kommt aus den Stammdaten der EEG-Seite.
+  Ändern sich Adresse oder Telefonnummer, passt du sie dort an, nicht im Text.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Fußzeile" >
+        
+          
+          <a href="../02-mitglieder-zaehlpunkte/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Mitglieder &amp; Zählpunkte">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Zurück
+              </span>
+              <div class="md-ellipsis">
+                Mitglieder & Zählpunkte
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
