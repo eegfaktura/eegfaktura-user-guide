@@ -37,8 +37,9 @@ den Standardtext. Der Kasten darunter sagt das ausdrücklich, Betreff und Text s
 
 Die grün hinterlegten Felder sind **Platzhalter**. Sie werden beim Versand für jedes Mitglied ersetzt, z. B.
 „Vorname“ durch den Vornamen des Mitglieds oder „Zählpunkt“ durch die Zählpunktnummer. Der **Kontaktblock der
-EEG** ist ein **Baustein**: Er wird durch Name, Adresse, Kontaktperson, Telefon, E-Mail und Webseite der
-Gemeinschaft ersetzt.
+EEG** ist ein **Baustein**: Er wird durch EEG Bezeichnung, Kontaktperson, Adresse, Telefon, E-Mail und Webseite der
+Gemeinschaft ersetzt (leere Angaben fallen weg). Die Rechnungs-Mail hat stattdessen den Baustein **Kontaktdaten der
+EEG**; er kommt aus den Angaben des Belegs, und dort gibt es zusätzlich den Platzhalter **Empfängername**.
 
 **Vorschau** und **Testmail** funktionieren auch mit dem Standardtext.
 
@@ -63,14 +64,15 @@ Gemeinschaft ersetzt.
 
 ### Bilder und PDF-Anhang
 
-Mit eingeschaltetem eigenem Text kannst du Bilder in den Text einfügen und bei den Mitglieder-Mails ein PDF
-anhängen (z. B. eine Anleitung). Unter dem Text stehen die Grenzen:
+Mit eingeschaltetem eigenem Text kannst du Bilder (PNG oder JPEG) in den Text einfügen und bei den Mitglieder-Mails
+ein PDF anhängen (z. B. eine Anleitung). Breitere Bilder werden auf 1200 px verkleinert. Unter dem Text stehen die
+Grenzen der jeweiligen Mail:
 
-| Was | Grenze |
-|-----|--------|
-| Bilder | PNG oder JPEG, höchstens 10 Stück, je höchstens 1 MB; breitere Bilder werden auf 1200 px verkleinert |
-| PDF-Anhang | höchstens 1, höchstens 3 MB (**PDF anhängen**); nicht bei „Rechnung / Gutschrift“, dort ist der Beleg angehängt |
-| alle Dateien zusammen | höchstens 6 MB |
+| | Freigabe-Aufforderung, Zählpunkt aktiv, Zählpunkt inaktiv | Rechnung / Gutschrift |
+|---|---|---|
+| Bilder | höchstens 10, je höchstens 1 MB | höchstens 3 |
+| PDF-Anhang (**PDF anhängen**) | höchstens 1, höchstens 3 MB | keiner — der Beleg ist immer angehängt |
+| alle Dateien zusammen | höchstens 6 MB | höchstens 500 KB |
 
 Neu hochgeladene Dateien sind **Entwürfe**: Sie werden erst mit dem Speichern verwendet.
 
@@ -103,11 +105,17 @@ Mit **Abbrechen** bleibt alles, wie es war.
 
 ## Gut zu wissen
 
+- **Kopie an die Gemeinschaft:** Die Mails „Freigabe-Aufforderung“, „Zählpunkt aktiv“ und „Zählpunkt inaktiv“ gehen
+  mit der E-Mail-Adresse der Gemeinschaft (EEG-Seite → Kontakt) in Kopie hinaus.
+- **Wenn eure Fassung nicht verwendet werden kann:** Lässt sich ein gespeicherter eigener Text beim Versand nicht
+  verwenden, verschickt eegFaktura den Standardtext — die Mail kommt also trotzdem an. Bei den Mitglieder-Mails
+  meldet eegFaktura das unter **Nachrichten**, bei der Rechnungs-Mail mit einem Hinweis im Versandprotokoll des
+  Abrechnungslaufs. Prüfe dann deinen Text in der Vorschau.
 - **Der Standardtext wurde überarbeitet:** Ändert eegFaktura einen Standardtext, während ihr einen eigenen Text
   verwendet, siehst du „Der Standardtext wurde inzwischen überarbeitet.“ Mit **Neuen Standard ansehen** vergleichst
   du, mit **Neuen Standard übernehmen** startest du von der neuen Fassung. Eure Fassung bleibt bis dahin gültig.
 - **Zwei Personen gleichzeitig:** Hat jemand anderer die Mail inzwischen gespeichert, meldet eegFaktura „Diese Mail
   wurde inzwischen geändert …“. Mit **Neu laden** holst du den aktuellen Stand.
 - **Ungespeichert zurück:** **Zurück zur Liste** fragt nach, wenn noch Änderungen offen sind.
-- **Kontaktdaten aktuell halten:** Der Kontaktblock kommt aus den Stammdaten der EEG-Seite. Ändern sich Adresse
-  oder Telefonnummer, passt du sie dort an, nicht im Text.
+- **Kontaktdaten aktuell halten:** Der Kontaktblock der Mitglieder-Mails kommt aus den Stammdaten der EEG-Seite.
+  Ändern sich Adresse oder Telefonnummer, passt du sie dort an, nicht im Text.

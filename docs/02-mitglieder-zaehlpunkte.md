@@ -67,7 +67,8 @@ Ein Klick auf ein Mitglied öffnet rechts seine Daten, zunächst mit dem ersten 
 
 ![Details eines Mitglieds](images/mitglied-details.png)
 
-- Oben wählst du **Privat** oder **Firma**.
+- Oben steht, ob das Mitglied **Privat** oder **Firma** ist. Ändern kannst du das als EEG-Admin über das
+  Pfeil-Symbol daneben; eegFaktura warnt vorher (bei Privat → Firma wird der Vorname zum Firmennamen).
 - **Kontakt**: Mitglieds-Nr, Titel, Vorname und Nachname (bei Firmen der Firmenname), **Mitglieds-Tarif**,
   Adresse, Telefon, E-Mail, UID.
 - **Bankdaten**: IBAN, Kontoinhaber, **Einzugsart** (Kein SEPA, B2B oder CORE); bei Lastschrift zusätzlich
@@ -78,11 +79,16 @@ Ein Klick auf ein Mitglied öffnet rechts seine Daten, zunächst mit dem ersten 
 
 ### Neues Mitglied zulassen
 
-Wartet ein neues Mitglied auf deine Zulassung (orange mit „!“ in der Liste), fragt eegFaktura:
-„Möchtest du *Name* in deine EEG aufnehmen?“
+Ein neues Mitglied — von dir angelegt oder über eine Registrierung hereingekommen — steht zuerst orange mit „!“ in
+der Liste und wartet auf die Zulassung. Rechts fragt eegFaktura: „Möchtest du *Nachname* in deine EEG aufnehmen?“
 
-- **Ja, Zulassen** öffnet einen Dialog mit den Zählpunkten des Mitglieds; mit **Zulassen** wird es aufgenommen.
+- **Ja, Zulassen** öffnet den Dialog „*Name* zulassen“. Dort kannst du **Anmeldedokumente** hochladen (z. B. den
+  unterschriebenen Beitritt) und je Zählpunkt angeben, ob er per **Offline-Registrierung** mit einem
+  **Aktivierungs-Code** angemeldet wird. Mit **Zulassen** wird das Mitglied aufgenommen.
 - **Nein, Löschen** löscht das Mitglied mit allen Zählpunkten. Das lässt sich nicht rückgängig machen.
+
+Erst mit dem Zulassen meldet eegFaktura die Zählpunkte bei Gemeinschaften mit Online-Anbindung beim Netzbetreiber
+an. Bei Gemeinschaften ohne Online-Anbindung werden sie damit aktiv.
 
 ## Zählpunkte
 
@@ -94,6 +100,9 @@ daneben **verschiebt** den Zählpunkt zu einem anderen Mitglied (bisherige Rechn
 - **Zählpunkt aktiv**: zeigt, ob der Zählpunkt aktiv ist (nur Anzeige).
 - **Energiedaten**: ein Diagramm der Energiedaten des Zählpunkts (nur bei aktiven Zählpunkten).
 
+Die **Richtung** (Verbraucher/Erzeuger) eines angemeldeten Zählpunkts ist gesperrt. Ein EEG-Admin kann sie über das
+Pfeil-Symbol ändern; eegFaktura warnt vorher, denn die Änderung wird **nicht** an den Netzbetreiber gemeldet.
+
 ### Status eines Zählpunkts
 
 Ist ein Zählpunkt nicht aktiv, steht über den Details ein Hinweis zum Stand:
@@ -101,11 +110,18 @@ Ist ein Zählpunkt nicht aktiv, steht über den Details ein Hinweis zum Stand:
 | Hinweis | Bedeutung |
 |---------|-----------|
 | Antwort des Netzbetreibers noch ausstehend. | Die Anmeldung ist beim Netzbetreiber, er hat noch nicht geantwortet. |
-| Zustimmung des Mitglieds noch ausstehend. | Das Mitglied muss die Datenfreigabe noch bestätigen (es bekommt dazu die Mail „Freigabe-Aufforderung“). |
+| Zustimmung des Mitglieds noch ausstehend. | Das Mitglied muss die Datenfreigabe noch bestätigen; bei der Online-Anmeldung bekommt es dazu die Mail „Freigabe-Aufforderung“. |
 | Abschlussmeldung vom Netzbetreiber noch ausstehend. | Das Mitglied hat zugestimmt, die Abschlussmeldung des Netzbetreibers fehlt noch. |
 | Zählpunkt wurde vom Netzbetreiber abgewiesen. | Der Netzbetreiber hat die Anmeldung abgelehnt. |
-| Zählpunkt inaktiv seit … | Der Zählpunkt gehört nicht mehr zur Gemeinschaft. |
+| Zählpunkt wurde vom Netzbetreiber nicht angenommen. | Die Anmeldung war ungültig, z. B. weil die Zählpunktnummer nicht gefunden wurde. |
+| Zählpunkt wurde vom Netzbetreiber aufgehoben. | Der Netzbetreiber hat die Teilnahme beendet. |
+| Zählpunkt inaktiv seit … / inaktiv am … | Der Zählpunkt gehört nicht mehr zur Gemeinschaft („am“: das Ende liegt noch in der Zukunft). |
+| Zählpunkt wurde archiviert. | Der Zählpunkt ist abgeschlossen und nur noch zur Ansicht da. |
 | Zählpunkt hat eine Warnung, bitte die Prozess History prüfen. | Beim Netzbetreiber gab es eine Unstimmigkeit, siehe **Prozesse → Prozess History**. |
+
+Bei Abweisung oder Nichtannahme steht der **Grund** fett darunter, z. B. „Kunde hat Datenfreigabe abgelehnt“. Danach
+richtest du dich: Ist der Fehler behoben (z. B. Nummer korrigiert), meldest du den Zählpunkt unter
+**Prozesse → Zählpunkt aktivieren** erneut an.
 
 Einen ungültigen Zählpunkt, der nie angemeldet wurde, kannst du hier mit **Löschen** entfernen.
 
@@ -125,16 +141,20 @@ Einen ungültigen Zählpunkt, der nie angemeldet wurde, kannst du hier mit **Lö
 4. Wähle **Verbraucher** oder **Erzeuger**, den **Tarif**, gib die **Zählpunktnummer** (33 Zeichen, beginnt mit
    `AT`) und den **Teilnahmefaktor in %** ein. Mit **Adresse vom Besitzer übernehmen** wird die Adresse des
    Mitglieds eingetragen.
-5. Klicke auf **Registrieren**.
-
-Bei Gemeinschaften mit Online-Anbindung meldet eegFaktura den Zählpunkt danach automatisch beim Netzbetreiber an;
-den Fortschritt siehst du am Status des Zählpunkts. Verlässt du die Seite vor dem Speichern, fragt eegFaktura nach.
+    - Hast du vom Netzbetreiber einen **Aktivierungs-Code** (Offline-Registrierung), hakst du
+      **Offline-Registrierung** an und trägst den Code ein.
+    - Bei Gemeinschaften ohne Online-Anbindung wählst du zusätzlich den **Status** („Noch nicht registriert“ oder
+      „Bereits registriert“) und das Datum **Aktiv seit …**.
+5. Klicke auf **Registrieren**. Verlässt du die Seite vor dem Speichern, fragt eegFaktura nach.
+6. Das Mitglied steht jetzt als **ausstehend** in der Liste. **Lasse es zu** (siehe
+   [Neues Mitglied zulassen](#neues-mitglied-zulassen)) — erst dann werden die Zählpunkte beim Netzbetreiber
+   angemeldet bzw. aktiv. Den Fortschritt siehst du am Status des Zählpunkts.
 
 ### Zählpunkt zu einem bestehenden Mitglied hinzufügen
 
 Klicke in der Mitgliederliste beim Mitglied auf **+**. Das Formular ist dasselbe wie oben; gespeichert wird mit
-**Registrieren**.
-
+**Registrieren**. Ist das Mitglied schon zugelassen, meldet eegFaktura den neuen Zählpunkt bei Gemeinschaften mit
+Online-Anbindung gleich beim Netzbetreiber an.
 ## Prozesse beim Netzbetreiber
 
 Für Gemeinschaften mit Online-Anbindung findest du unter **Prozesse** die Vorgänge, die du beim Netzbetreiber
@@ -145,7 +165,7 @@ auslösen kannst:
 | Prozess | Wofür |
 |---------|-------|
 | **Zählpunktdaten nachfordern** | Energiedaten für einen Zeitraum erneut anfordern, für einzelne Zählpunkte oder die ganze Gemeinschaft; mit „Smart“ nur fehlende Daten |
-| **Zählpunkt aktivieren** | einen Zählpunkt aktivieren, z. B. mit dem Aktivierungs-Code einer Offline-Registrierung |
+| **Zählpunkt aktivieren** | einen noch nicht aktiven Zählpunkt (erneut) beim Netzbetreiber anmelden, z. B. nach einer Abweisung oder mit dem Aktivierungs-Code einer Offline-Registrierung |
 | **Zählpunkt abmelden** | die Datenfreigabe eines Zählpunkts beim Netzbetreiber aufheben |
 | **Teilnahmefaktor ändern** | den Teilnahmefaktor aktiver Zählpunkte ändern (eine Änderung pro Tag und Zählpunkt, 09:00–17:00 Uhr, gilt ab dem nächsten Tag) |
 | **Teilnehmerliste anfordern** | die Liste der Zählpunkte der Gemeinschaft beim Netzbetreiber anfordern |

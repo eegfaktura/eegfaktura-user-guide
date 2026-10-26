@@ -53,18 +53,25 @@ die nächste Anmeldung im selben Browser.
 
 ## Dashboard
 
-Das **Dashboard** zeigt die wichtigsten Zahlen der Gemeinschaft für den gewählten **Zeitraum**:
+Das **Dashboard** zeigt die wichtigsten Zahlen der Gemeinschaft, meist für den gewählten **Zeitraum**:
 
 ![Dashboard](images/dashboard.png)
 
 | Bereich | Inhalt |
 |---------|--------|
-| **Übersicht EEG** | Mitglieder (aktive, inaktive, in Anmeldung), Zählpunkte (Abnehmer und Einspeiser), Tarife mit der Anzahl ihrer Zählpunkte |
+| **Übersicht EEG** | Mitglieder „Stand heute“ (aktive, inaktive, in Anmeldung), aktive Zählpunkte (Abnehmer und Einspeiser), Tarife mit der Anzahl ihrer Zählpunkte |
 | **Übersicht Stromproduktion und Verteilung** | **Produziert**, **Verteilt** und **EVU** (Bezug vom Energieversorger), jeweils mit der vorherigen Periode zum Vergleich; darunter die **Energiemengen** „Eingekauft“ und „Verkauft“ |
-| **Lastverlauf** | Balken für EEG, EVU und Erzeugung über den Zeitraum. Eine **Bilanzdifferenz** steht rot darüber, auffällige Balken tragen ein „!“ |
+| **Lastverlauf** | Balken für EEG, EVU und Erzeugung über den Zeitraum, darüber die **Bilanz** (siehe unten); auffällige Balken tragen ein „!“ |
 | **Tagesverlauf** | Verlauf über den Tag (EEG, EVU, Erzeugt) |
 
-Die Fragezeichen-Symbole neben den Werten erklären, wie eine Zahl entsteht. „Eingekauft“ und „Verkauft“ zählen
+Die Fragezeichen-Symbole neben den Werten erklären, wie eine Zahl entsteht.
+
+**Bilanzdifferenz:** Produktion minus Eigendeckung minus Überschuss. Sind alle Energiedaten da, ist sie 0, und
+eegFaktura zeigt „Bilanz ausgeglichen“ (sehr kleine Werte sind Rundung). Eine Differenz steht rot da: **negativ**
+heißt, vermutlich fehlen Daten von Einspeisern, **positiv**, vermutlich fehlen Daten von Beziehern. Für die
+jüngsten Tage ist eine Differenz normal, solange noch nicht alle Daten eingetroffen sind. Fehlen ältere Daten,
+kannst du sie unter **Prozesse → Zählpunktdaten nachfordern** anfordern.
+ „Eingekauft“ und „Verkauft“ zählen
 nur Zählpunkte mit einem gültigen Tarif der Gemeinschaft; ein Hinweis darunter nennt die Zählpunkte, die deshalb
 fehlen.
 
@@ -85,8 +92,9 @@ Der Menüpunkt mit dem **Namen deiner Gemeinschaft** öffnet die EEG-Seite mit i
 | **Optional** | Webseite |
 | **Abrechnungseinstellungen** | Einstellungen für Rechnungen und Gutschriften, z. B. das Logo |
 
-Als EEG-Admin kannst du die Felder direkt ändern. Eine Änderung wird gespeichert, sobald du das Feld verlässt;
-einen eigenen Speichern-Knopf gibt es nicht. EC-Nummer, Gemeinschafts-ID und Verteilung lassen sich nicht ändern.
+Ändern können die Felder nur EEG-Admins. Eine Änderung wird gespeichert, sobald du das Feld verlässt; einen
+eigenen Speichern-Knopf gibt es nicht. EC-Nummer, Gemeinschafts-ID und Verteilung lassen sich nicht ändern.
 
-> **Tipp:** Adresse, Kontaktperson, Telefon und E-Mail-Adresse der Gemeinschaft stehen im Kontaktblock der Mails an
-> deine Mitglieder (siehe [E-Mail-Texte](03-email-texte.md)). Halte sie aktuell.
+> **Tipp:** EEG Bezeichnung, Kontaktperson, Adresse, Telefon, E-Mail und Webseite der Gemeinschaft stehen im
+> Kontaktblock der Mails an deine Mitglieder (siehe [E-Mail-Texte](03-email-texte.md)), und die E-Mail-Adresse
+> bekommt diese Mails in Kopie. Halte die Angaben aktuell.

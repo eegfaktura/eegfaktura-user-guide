@@ -31,9 +31,8 @@ theme:
     - content.tabs.link
   palette:
     # Light / dark toggle. Material auto-respects prefers-color-scheme.
-    # primary/accent: custom → see docs/user-guide/stylesheets/vfeeg.css
-    # for the actual color overrides (mirrors the member-onboarding app
-    # palette defined in src/app/globals.css).
+    # primary/accent: custom → see docs/stylesheets/vfeeg.css for the actual
+    # color overrides (same palette as the member-onboarding user guide).
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: custom
@@ -48,12 +47,9 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Helles Theme
-  icon:
-    repo: fontawesome/brands/github
-
-repo_url: https://github.com/eegfaktura/eegfaktura-user-guide
-repo_name: eegfaktura-user-guide
-edit_uri: edit/main/docs/
+  # Self-hosted Roboto (docs/assets/fonts) instead of Google Fonts: no request to Google at build or read
+  # time, fixed font files. No repo_url either: the theme would call api.github.com from the reader's browser.
+  font: false
 
 nav:
   - Überblick: index.md
@@ -79,20 +75,15 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
-  - pymdownx.snippets
 
 plugins:
-  # privacy: downloads the theme font (Roboto from Google Fonts) at build time and serves it from the
-  # site itself, so readers' browsers never contact Google (GDPR). Only difference to the onboarding guide.
-  - privacy:
-      assets_exclude:
-        - unpkg.com/mermaid@11/*   # not used, unpinned (see markdown_extensions)
   - search:
       lang:
         - de
         - en
 
 extra_css:
+  - assets/fonts/fonts.css
   - stylesheets/vfeeg.css
 
 extra:

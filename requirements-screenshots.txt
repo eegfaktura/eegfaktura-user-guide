@@ -1,6 +1,6 @@
 # Fully pinned (direct and transitive), every version at least 7 days old when pinned (eegfaktura supply-chain rule).
 # Licences and publish dates: EXTERNAL_SOURCES.md.
-# Screenshots: pip install -r requirements-screenshots.txt && playwright install chromium
+# Screenshots: pip install --no-deps -r requirements-screenshots.txt && playwright install chromium
 greenlet==3.5.6
 playwright==1.64.0
 pyee==14.0.0

@@ -14,8 +14,8 @@ Siehe [E-Mail-Texte](03-email-texte.md).
 
 ### Dashboard: Bilanzdifferenz und Energiemengen
 
-Der **Lastverlauf** zeigt eine Bilanzdifferenz und markiert auffällige Zeiträume. Unter **Energiemengen** nennt ein
+Der **Lastverlauf** zeigt die Bilanzdifferenz (Hinweis auf fehlende Energiedaten) und markiert auffällige Zeiträume. Unter **Energiemengen** nennt ein
 Hinweis die Zählpunkte ohne gültigen Tarif, die in „Eingekauft“ und „Verkauft“ nicht enthalten sind.
 Siehe [Dashboard](01-anmeldung.md#dashboard).
 
-Beides ist zunächst im Pilotbetrieb verfügbar und kommt danach in den Regelbetrieb.
+Beides gibt es zunächst nur im Pilotbetrieb; wann es in den Regelbetrieb kommt, steht noch nicht fest.

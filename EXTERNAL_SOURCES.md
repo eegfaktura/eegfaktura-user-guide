@@ -54,8 +54,11 @@ direct and transitive. Install with `pip install --no-deps -r …` so nothing un
 | GitHub Action `actions/checkout` | v7.0.1 (`3d3c42e5aac5ba805825da76410c181273ba90b1`) | 2026-07-20 | MIT | CI |
 | GitHub Action `actions/setup-python` | v7.0.0 (`5fda3b95a4ea91299a34e894583c3862153e4b97`) | 2026-07-20 | MIT | CI |
 | GitHub Pages (`gh-pages` branch) | — | — | — | Hosting |
-| GitHub API (`api.github.com`, called by the theme's repository link in the reader's browser for stars/forks) | — | — | — | Repository widget in the header |
-| Google Fonts: Roboto, Roboto Mono (fetched at build time by the mkdocs-material `privacy` plugin, then self-hosted) | current on build | — | OFL-1.1 / Apache-2.0 | Theme font |
+| Trivy (release binary, SHA256 checked) | 0.75.0 | — | Apache-2.0 | CI scan (same version as eegfaktura-web) |
+| OSV-Scanner (release binary, SHA256 checked) | 2.6.0 | — | Apache-2.0 | CI scan (same version as eegfaktura-web) |
+| Fonts Roboto (v51) and Roboto Mono (v31), latin + latin-ext, downloaded once from Google Fonts on 2026-10-26 and committed in `docs/assets/fonts/` | v51 / v31 | — | OFL-1.1 (texts in `docs/assets/fonts/`) | Theme font |
 
-Not used on purpose: Mermaid. mkdocs-material would load `mermaid@11` unpinned from unpkg.com in the reader's
-browser, so `mkdocs.yml` has no mermaid fence.
+Not used on purpose: Mermaid (mkdocs-material would load `mermaid@11` unpinned from unpkg.com, so `mkdocs.yml` has
+no mermaid fence), Google Fonts at build or read time (`theme.font: false`, fonts committed) and the theme's
+repository link (`repo_url` would make the reader's browser call api.github.com). The published site makes no
+external request.

@@ -27,8 +27,11 @@ PASSWORD = os.environ.get("SCREENSHOT_PASSWORD")
 OUT = Path(__file__).resolve().parent.parent / "docs" / "images"
 VIEWPORT = {"width": 1280, "height": 800}
 ONLY = sys.argv[1] if len(sys.argv) > 1 else ""
+# the community with online connection of SCREENSHOT_MULTI_USER (only there the menu has "Prozesse")
+ONLINE_COMMUNITY = os.environ.get("SCREENSHOT_ONLINE_COMMUNITY", "GC106668")
 
 failed: list[str] = []
+written: list[str] = []
 
 
 def shot(name: str, page: Page, locator=None) -> None:
@@ -39,6 +42,7 @@ def shot(name: str, page: Page, locator=None) -> None:
     page.wait_for_timeout(400)  # Ionic transitions
     wait_toasts_gone(page)
     (locator or page).screenshot(path=str(path))
+    written.append(name)
     print(f"ok    {name}")
 
 
@@ -56,9 +60,8 @@ def scroll_to(locator) -> None:
 
 
 def step(name: str, fn) -> None:
-    """Runs one screenshot step; a failure is recorded, the run goes on."""
-    if ONLY and ONLY not in name:
-        return
+    """Runs one screenshot step; a failure is recorded, the run goes on. Every step runs, also with a name filter,
+    because later steps build on the page state of earlier ones; the filter only decides which images are saved."""
     try:
         fn()
     except Exception as e:  # noqa: BLE001 — report every failing step, then exit 1
@@ -113,7 +116,10 @@ def chapter_switch_community(page: Page) -> None:
         page.locator('ion-popover ion-select[label="Auswahl Gemeinschaft"]').click()
         page.locator("ion-alert").wait_for()
         shot("oberflaeche-gemeinschaft-wechseln", page)
-        close_overlays(page)
+        # switch to the online community explicitly: the "Prozesse" screenshot needs its menu entry
+        page.locator("ion-alert button[role=radio]", has_text=ONLINE_COMMUNITY).click()
+        page.locator("ion-alert button", has_text="OK").click()
+        page.locator("ion-menu ion-item", has_text="Prozesse").wait_for()
         close_overlays(page)
 
     step("oberflaeche-gemeinschaft-wechseln", switcher)
@@ -216,6 +222,9 @@ def main() -> int:
         print("SCREENSHOT_PASSWORD is not set (fixture password of the local stack)")
         return 2
     OUT.mkdir(parents=True, exist_ok=True)
+    if not ONLY:  # a full run starts empty, so an image of a failed step cannot survive from an older run
+        for old in OUT.glob("*.png"):
+            old.unlink()
     with sync_playwright() as p:
         browser = p.chromium.launch()
         for user, chapters, capture in ((USER, (chapter_overview, chapter_members, chapter_mail_texts), True),
@@ -233,6 +242,8 @@ def main() -> int:
                 chapter(page)
             ctx.close()
         browser.close()
+    if ONLY and not written:
+        failed.append(f"no screenshot name contains {ONLY!r}")
     if failed:
         print(f"{len(failed)} screenshot(s) failed: {', '.join(failed)}")
         return 1

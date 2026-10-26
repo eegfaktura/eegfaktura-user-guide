@@ -1,6 +1,6 @@
 # Fully pinned (direct and transitive), every version at least 7 days old when pinned (eegfaktura supply-chain rule).
 # Licences and publish dates: EXTERNAL_SOURCES.md.
-# Build the site: pip install -r requirements-docs.txt && mkdocs build --strict
+# Build the site: pip install --no-deps -r requirements-docs.txt && mkdocs build --strict
 babel==2.18.0
 backrefs==8.1
 certifi==2026.10.18

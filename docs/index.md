@@ -11,8 +11,9 @@ eegFaktura ist die Verwaltungs- und Abrechnungssoftware für **Erneuerbare-Energ
 - die **Tarife** und die **Abrechnung** (Rechnungen und Gutschriften),
 - die **E-Mails**, die eegFaktura automatisch an deine Mitglieder schickt.
 
-Die Kommunikation mit dem Netzbetreiber (Anmeldung, Datenfreigabe, Energiedaten) läuft automatisch über die
-österreichische Marktkommunikation (EDA). Du musst dafür nichts selbst verschicken.
+Die Kommunikation mit dem Netzbetreiber (Anmeldung, Datenfreigabe, Energiedaten) läuft über die österreichische
+Marktkommunikation (EDA). Du löst die Vorgänge in eegFaktura aus, z. B. mit dem Zulassen eines Mitglieds oder unter
+**Prozesse**; die Nachrichten an den Netzbetreiber verschickt eegFaktura selbst.
 
 ## Für wen ist dieses Handbuch?
 
@@ -22,7 +23,7 @@ vorbehalten.
 | Rolle | Was sie in eegFaktura kann |
 |-------|----------------------------|
 | **EEG-Admin** | alles in diesem Handbuch: Mitglieder und Zählpunkte anlegen und ändern, Prozesse beim Netzbetreiber auslösen, Nachrichten lesen, E-Mail-Texte gestalten, abrechnen |
-| **Mitglied mit Zugang** | sieht die Daten der Gemeinschaft, kann sie aber nicht ändern. Menüpunkte wie „Nachrichten“ und „Prozesse“ fehlen |
+| **Mitglied mit Zugang** | sieht die Daten der Gemeinschaft. Nachrichten, Prozesse, E-Mail-Texte und das Ändern der EEG-Seite sind EEG-Admins vorbehalten |
 
 Den Zugang (Benutzername, Rolle, Gemeinschaften) richtet der Betreiber deiner eegFaktura-Installation ein.
 
