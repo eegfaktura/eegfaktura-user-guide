@@ -14,6 +14,8 @@ eegFaktura member-onboarding user guide. Developer and architecture docs live in
 | `docs/stylesheets/vfeeg.css` | palette (identical to the onboarding guide) |
 | `docs/assets/fonts/` | Roboto / Roboto Mono, committed (no Google Fonts request), with licences |
 | `scripts/screenshots.py` | Playwright script that logs in to a local eegFaktura stack and takes the screenshots |
+| `scripts/screens_more.py` | the screenshot steps of the chapters Tarife to Prozesse |
+| `scripts/prepare-local-stack.sql` | demo data for those chapters in the local stack |
 
 ## Preview and build
 
@@ -31,10 +33,16 @@ names, addresses or IBANs end up in the public guide. See `scripts/screenshots.p
 to run it:
 
 ```bash
+# once per local stack: demo data the tariff and billing chapters need (local stack only!)
+docker exec -i eegfaktura-legacy-dev-eegfaktura-postgresql-1 psql -U postgres -d eegfaktura < scripts/prepare-local-stack.sql
 pip install --no-deps -r requirements-screenshots.txt
 playwright install chromium
-python scripts/screenshots.py
+SCREENSHOT_PASSWORD=<fixture password> python scripts/screenshots.py          # all images
+SCREENSHOT_PASSWORD=<fixture password> python scripts/screenshots.py abrechnung  # only names containing this
 ```
+
+The billing steps write to the local stack: a preview for the current period and, once, a final billing run for
+Jul-Sep 2026. Everything else only reads. A failed step leaves a debug image in `.cache/`.
 
 ## Publishing
 

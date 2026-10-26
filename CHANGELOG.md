@@ -5,6 +5,16 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 ## [Unreleased]
 
 ### Added
+- Chapters Tarife, Abrechnung, Energiedaten, Nachrichten and Prozesse beim Netzbetreiber; section Dokumente in
+  Mitglieder & Zählpunkte. `scripts/prepare-local-stack.sql` adds the demo data they need to the local stack (a consumer
+  tariff, tariffs on all metering points, billing settings); the billing screenshots create a preview and, once, a final
+  billing run there.
+
+### Changed
+- Screenshots: window 1440 px wide; a page is shot in full height (the window grows to the content, up to 2400 px)
+  instead of being cut off at 800 px. A failed step leaves a debug image in `.cache/`.
+
+### Added
 - First version (decided 2026-10-26): MkDocs Material in the style of the member-onboarding user guide, deploy to
   GitHub Pages, Playwright screenshot script against a local stack with fixture data. Chapters: Überblick,
   Anmeldung & Oberfläche, Mitglieder & Zählpunkte, E-Mail-Texte.
