@@ -31,6 +31,20 @@ hinzufügen**):
 
 Änderungen werden gespeichert, sobald du ein Feld verlässt.
 
+In allen Texten der Abrechnungseinstellungen (und in den Tariftexten) erzeugt `##` einen Zeilenumbruch.
+
+### Was auf einem Beleg steht
+
+Die Positionen sind je Zählpunkt gruppiert („Zählpunkt AT… – Anlagenname“, ggf. mit Rabatt):
+
+- die **Energiemenge** mit Arbeitspreis (bei zeitbasierten Tarifen je Zeitraum),
+- bei Verbrauchern mit Freikontingent eine Zeile „Menge (…) = Verbrauch (…) abzgl. freie kWh (…)“,
+- die **Zählpunktgebühr**, wenn der Tarif eine hat,
+- auf Rechnungen der **Mitgliedsbeitrag** des Mitglieds-Tarifs,
+- Umsatzsteuer und Summen, darunter die Texte aus den Abrechnungseinstellungen und die Fußzeile.
+
+Der Anlagenname des Zählpunkts erscheint auf dem Beleg — praktisch, wenn ein Mitglied mehrere Anlagen hat.
+
 ## Abrechnungsmodus
 
 1. Öffne **Mitglieder** und wähle oben den **Zeitraum** (z. B. „Jul-Sep 2026“). Jeder Zeitraum hat seinen eigenen
@@ -90,10 +104,8 @@ warnt ausdrücklich:
 > **Die Abrechnung ist endgültig.** Die Belege bekommen fortlaufende Nummern und lassen sich danach nicht mehr ändern
 > oder löschen. Ein Belegdatum in der Zukunft ist nicht erlaubt.
 
-Belege mit dem Betrag 0 werden nicht erstellt. Erzeuger ohne UID bekommen eine **Gutschrift**. Erzeuger mit UID
-bekommen — je nach Einstellung der Gemeinschaft — eine **Gutschrift im Reverse-Charge-Verfahren** oder eine
-**Information** (ohne Nummer, mit den Texten „Gutschriften für Mitgliedstyp Firma“); dann stellt der Erzeuger der
-Gemeinschaft selbst eine Rechnung. Welche Variante deine Gemeinschaft hat, siehst du an den Belegen der Vorschau.
+Belege mit dem Betrag 0 werden nicht erstellt. Erzeuger ohne UID bekommen eine **Gutschrift**, Erzeuger mit UID eine
+**Gutschrift im Reverse-Charge-Verfahren** (mit den Texten „Gutschriften für Mitgliedstyp Firma“).
 
 ## Nach der Abrechnung
 
@@ -133,8 +145,17 @@ Die Hinweise darunter nennen, was nicht in den Dateien ist, z. B.:
 - Mitglieder mit Einzugsart „Kein SEPA“ oder ohne Einzugsart,
 - Mitglieder ohne IBAN — diese bitte händisch abwickeln.
 
-> Prüfe die Überweisungsdatei vor dem Hochladen zur Bank gegen die Gutschriften. Belege der Art **Information**
-> werden derzeit ebenfalls als Überweisung aufgenommen, obwohl dort der Erzeuger der Gemeinschaft eine Rechnung stellt.
+### SEPA — Begriffe
+
+- **Einzugsart CORE** (Basislastschrift): für alle Mitglieder; das Mitglied kann eine Lastschrift innerhalb von acht
+  Wochen zurückbuchen lassen.
+- **Einzugsart B2B** (Firmenlastschrift): nur für Firmen; das Mandat muss der Bank des Mitglieds vorliegen, eine
+  Rückbuchung ist nur sehr kurz möglich.
+- **Kein SEPA:** das Mitglied zahlt selbst (z. B. per Überweisung); es kommt nicht in die Lastschrift-Datei.
+- **Mandatsreferenz** und **Mandatsdatum** (Datum der Unterschrift) stehen beim Mitglied unter Bankdaten; als
+  Mandatsreferenz wird oft die Mitgliedsnummer verwendet.
+
+Details zu Lastschriften klärt eure Bank.
 
 ## Belege eines Mitglieds
 
@@ -143,5 +164,4 @@ Information. Ein Klick öffnet das PDF:
 
 ![Belege eines Mitglieds](images/abrechnung-meine-rechnungen.png)
 
-Belege mit „Vorschau“ im Namen stammen aus einer Vorschau und sind nicht gültig. Der Reiter **Information** zeigt
-Info-Belege für Erzeuger mit UID (siehe oben).
+Belege mit „Vorschau“ im Namen stammen aus einer Vorschau und sind nicht gültig.

@@ -5,6 +5,12 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 ## [Unreleased]
 
 ### Added
+- Aspects of the previous guide (docs.eegfaktura.at), each checked against the code: new page Einrichtung & Hilfe
+  (connection via the VFEEG KEP, members' data release with links to the grid-operator guides, data protection,
+  support channels); Excel master-data import and practical cases in chapter 2; protocol codes, rejection reasons
+  with what to do and typical lead times in chapter 8; measurement series and typical data effects in chapter 6;
+  document contents, `##` line breaks and SEPA terms in chapter 5. Not taken over: statements the code contradicts
+  (e.g. a placeholder e-mail for members without e-mail, cells as text in the import, a QoV sheet, 16:00 limit).
 - Chapters Tarife, Abrechnung, Energiedaten, Nachrichten and Prozesse beim Netzbetreiber; section Dokumente in
   Mitglieder & Zählpunkte. `scripts/prepare-local-stack.sql` adds the demo data they need to the local stack (a consumer
   tariff, tariffs on all metering points, billing settings); the billing screenshots create a preview and, once, a final
