@@ -2,7 +2,10 @@
 
 eegFaktura schickt deinen Mitgliedern automatisch E-Mails, zum Beispiel wenn ein Zählpunkt aktiv wird oder eine
 Rechnung fertig ist. Für jede dieser Mails gibt es einen **Standardtext von eegFaktura**. Du kannst ihn
-übernehmen, wie er ist, oder einen **eigenen Text** mit Bildern und einem PDF-Anhang gestalten.
+übernehmen, wie er ist, oder einen **eigenen Text** mit Bildern gestalten.
+
+Unter jeder Mail steht eine feste Zeile, die du nicht ändern kannst: „versandt durch EEG Faktura, ein Service des
+VFEEG - https://vfeeg.org/“. Im Editor siehst du sie grau unter dem Text („Wird immer angehängt: …“).
 
 Die E-Mail-Texte können nur **EEG-Admins** bearbeiten.
 
@@ -56,25 +59,48 @@ EEG**; er kommt aus den Angaben des Belegs, und dort gibt es zusätzlich den Pla
     - Die Knöpfe über dem Text formatieren ihn: **Fett**, **Kursiv**, **Unterstrichen**, **Überschrift 1–3**,
       **Aufzählung**, **Nummerierte Liste**, **Link**, **Linksbündig**, **Zentriert**, **Rechtsbündig** und
       **Bild einfügen**.
+    - **Schriftgröße** setzt den Absatz, die Überschrift oder den Listenpunkt am Cursor auf **Klein**, **Normal**
+      oder **Groß**.
     - **Platzhalter einfügen** setzt einen Platzhalter an die Stelle des Cursors; Einträge mit „(Baustein)“ fügen
       einen ganzen Absatz ein. **Platzhalter in den Betreff** macht dasselbe für den Betreff.
-    - Links müssen mit `https://` oder `mailto:` beginnen.
+    - Für Links gelten Regeln gegen Spam, siehe [Links](#links).
 3. Klicke auf **Speichern**. Ab jetzt verschickt eegFaktura eure Fassung; der Kasten wird grün:
    „Verschickt wird eure eigene Fassung (gespeichert am … von …).“
 
-### Bilder und PDF-Anhang
+### Bilder
 
-Mit eingeschaltetem eigenem Text kannst du Bilder (PNG oder JPEG) in den Text einfügen und bei den Mitglieder-Mails
-ein PDF anhängen (z. B. eine Anleitung). Breitere Bilder werden auf 1200 px verkleinert. Unter dem Text stehen die
-Grenzen der jeweiligen Mail:
+Mit eingeschaltetem eigenem Text kannst du Bilder (PNG oder JPEG) in den Text einfügen: mit **Bild einfügen**, durch
+Einfügen aus der Zwischenablage oder indem du die Bilddatei in den Text ziehst. Breitere Bilder werden auf 1200 px
+verkleinert. Fotos (JPEG) verlieren vor dem Hochladen ihre versteckten Angaben, z. B. den Aufnahmeort.
+Klickst du ein Bild an, stellst du unter **Bildgröße** **Klein**, **Mittel** oder **Groß** ein.
+
+Unter dem Text stehen die Grenzen der jeweiligen Mail:
 
 | | Freigabe-Aufforderung, Zählpunkt aktiv, Zählpunkt inaktiv | Rechnung / Gutschrift |
 |---|---|---|
-| Bilder | höchstens 10, je höchstens 1 MB | höchstens 3 |
-| PDF-Anhang (**PDF anhängen**) | höchstens 1, höchstens 3 MB | keiner — der Beleg ist immer angehängt |
-| alle Dateien zusammen | höchstens 6 MB | höchstens 500 KB |
+| Bilder | höchstens 3, je höchstens 1 MB | höchstens 3 |
+| alle Bilder zusammen | — (3 × 1 MB) | höchstens 500 KB |
+| PDF-Anhang | keiner | keiner — der Beleg ist immer angehängt |
 
-Neu hochgeladene Dateien sind **Entwürfe**: Sie werden erst mit dem Speichern verwendet.
+Neu hochgeladene Bilder sind **Entwürfe**: Sie werden erst mit dem Speichern verwendet.
+
+### Links
+
+Damit eure Mails nicht im Spam landen, prüft eegFaktura die Links beim Speichern, bei der Vorschau und bei der
+Testmail:
+
+- höchstens **3 Links** je Mail, E-Mail-Links (`mailto:`) mitgezählt,
+- höchstens **2 Domains** (`portal.netz.at` und `www.netz.at` zählen als eine); E-Mail-Links zählen hier nicht,
+- die feste Zeile unten zählt bei beidem nicht mit,
+- Links beginnen mit `https://` oder `mailto:`,
+- keine Kurz-Links (z. B. bit.ly) und keine IP-Adressen,
+- steht im Linktext eine Adresse, muss es dieselbe sein wie das Ziel des Links,
+- kein Platzhalter in einem Link,
+- Domains mit Umlauten schreibst du in der Form mit `xn--` (z. B. `xn--mnchen-3ya.at` statt `münchen.at`).
+
+Verstößt ein Text gegen eine Regel, speichert eegFaktura ihn nicht und nennt den Grund. Ausnahme: Fügst du Text mit
+einem `http://`-Link ein, bleibt nur der Text stehen, der Link fällt ohne Meldung weg. Prüfe eingefügte Links
+deshalb in der Vorschau.
 
 ## Vorschau und Testmail
 
