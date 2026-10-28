@@ -4,6 +4,9 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 
 ## [Unreleased]
 
+### Removed
+- Überblick: the role "Mitglied mit Zugang" — eegFaktura has no member login today; the guide names EEG-Admins only.
+
 ### Added
 - Aspects of the previous guide (docs.eegfaktura.at), each checked against the code: new page Einrichtung & Hilfe
   (connection via the VFEEG KEP, members' data release with links to the grid-operator guides, data protection,

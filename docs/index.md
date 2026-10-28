@@ -17,15 +17,11 @@ Marktkommunikation (EDA). Du löst die Vorgänge in eegFaktura aus, z. B. mit de
 
 ## Für wen ist dieses Handbuch?
 
-Für alle, die eine Energiegemeinschaft in eegFaktura betreuen. Die meisten Funktionen sind **EEG-Admins**
-vorbehalten.
+Für alle, die eine Energiegemeinschaft in eegFaktura betreuen: die **EEG-Admins**. Als EEG-Admin kannst du alles,
+was in diesem Handbuch steht — Mitglieder und Zählpunkte anlegen und ändern, Prozesse beim Netzbetreiber auslösen,
+Nachrichten lesen, E-Mail-Texte gestalten, abrechnen.
 
-| Rolle | Was sie in eegFaktura kann |
-|-------|----------------------------|
-| **EEG-Admin** | alles in diesem Handbuch: Mitglieder und Zählpunkte anlegen und ändern, Prozesse beim Netzbetreiber auslösen, Nachrichten lesen, E-Mail-Texte gestalten, abrechnen |
-| **Mitglied mit Zugang** | kann sich anmelden und sieht seine eigenen Daten. Ändern kann es nichts — alle Änderungen, Abrechnungen und Prozesse sind EEG-Admins vorbehalten |
-
-Den Zugang (Benutzername, Rolle, Gemeinschaften) richtet der Betreiber deiner eegFaktura-Installation ein.
+Den Zugang (Benutzername, Gemeinschaften) richtet der Betreiber deiner eegFaktura-Installation ein.
 
 ## Kapitel
 
