@@ -72,8 +72,12 @@ heißt, vermutlich fehlen Daten von Einspeisern, **positiv**, vermutlich fehlen 
 jüngsten Tage ist eine Differenz normal, solange noch nicht alle Daten eingetroffen sind. Fehlen ältere Daten,
 kannst du sie unter **Prozesse → Zählpunktdaten nachfordern** anfordern.
 
-**Energiemengen:** „Eingekauft“ und „Verkauft“ zählen nur Zählpunkte mit einem gültigen Tarif der Gemeinschaft; ein Hinweis darunter nennt die Zählpunkte, die deshalb
-fehlen.
+**Energiemengen:** „Eingekauft“ und „Verkauft“ zählen nur Zählpunkte mit einem gültigen Tarif der Gemeinschaft;
+ein Hinweis darunter nennt die Zählpunkte, die deshalb fehlen.
+
+**Einzelner Tag:** Über das Zahnrad von Lastverlauf oder Tagesverlauf wählst du in der Zeile **Tag** ein Datum; mit
+den Pfeilen blätterst du tageweise. Nur diese Kachel wechselt in die Tagesansicht; möglich sind Tage mit
+Energiedaten bis gestern. Eine andere Zeile im Zahnrad-Menü führt zurück zum Zeitraum.
 
 ## EEG-Seite
 

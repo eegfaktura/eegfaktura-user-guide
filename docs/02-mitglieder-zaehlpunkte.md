@@ -29,7 +29,8 @@ Der Balken unter dem Wert zeigt den Anteil des Zählpunkts.
     - **Inaktive**: alle anderen Zählpunkte, z. B. Anmeldung läuft, abgewiesen, aufgehoben oder ausgetreten. Dazu
       aktive Zählpunkte, bei denen eine Aktion nötig ist (etwa eine laufende Aufhebung), und Mitglieder, die noch
       zugelassen werden müssen. Hier findest du also alles, was einen Blick braucht.
-    - **Alle**: jedes Mitglied mit allen Zählpunkten.
+    - **Alle**: jedes Mitglied mit allen Zählpunkten. Ein Mitglied ganz ohne Zählpunkt steht nur dann in der Liste,
+      wenn es noch zugelassen werden muss.
 
   ![Filteroptionen](images/mitglieder-filter.png)
 

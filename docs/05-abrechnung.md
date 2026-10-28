@@ -89,7 +89,8 @@ Die Vorschau erstellt Belege mit dem Zusatz „Vorschau“ und ohne Nummern:
   steuerliche Beratung.
 - Den **Mitgliedsbeitrag** bekommt ein Mitglied nur, wenn es im Zeitraum mindestens einen Zählpunkt mit Energiedaten
   hat.
-- **ZIP** lädt alle Vorschau-Belege als PDF herunter, **EXCEL** eine Aufstellung aller Positionen.
+- **ZIP** lädt alle Vorschau-Belege als PDF herunter (Dateinamen mit der Mitgliedsnummer am Ende, z. B.
+  `Abr_YM-2026-9_Rechnung_Vorschau_042.pdf`), **EXCEL** eine Aufstellung aller Positionen.
 - **Vorschau Akt.** rechnet die Vorschau neu, z. B. nachdem du einen Tarif geändert oder Daten nachgefordert hast.
 
 ## Abrechnung durchführen
@@ -123,8 +124,7 @@ Belege mit dem Betrag 0 werden nicht erstellt. Erzeuger ohne UID bekommen eine *
 > E-Mail-Adressen deshalb vorher und gib Mitgliedern ohne Mail ihren Beleg aus dem **DOWNLOAD** (ZIP).
 
 **Dateinamen im ZIP:** Rechnungen und Gutschriften heißen wie der Beleg, mit der Belegnummer, z. B.
-`Abr_YM-2026-9_Rechnung_RG202600123.pdf`. Vorschau-Belege tragen die Mitgliedsnummer am Ende, z. B.
-`Abr_YM-2026-9_Rechnung_Vorschau_042.pdf`. Kommt ein Name trotzdem zweimal vor, bekommt der zweite „ (2)“.
+`Abr_YM-2026-9_Rechnung_RG202600123.pdf`. Kommt ein Name zweimal vor, bekommt der zweite „ (2)“.
 
 ### SEPA-Dateien
 

@@ -71,7 +71,7 @@ EEG**; er kommt aus den Angaben des Belegs, und dort gibt es zusätzlich den Pla
 
 Mit eingeschaltetem eigenem Text kannst du Bilder (PNG oder JPEG) in den Text einfügen: mit **Bild einfügen**, durch
 Einfügen aus der Zwischenablage oder indem du die Bilddatei in den Text ziehst. Breitere Bilder werden auf 1200 px
-verkleinert. Fotos verlieren dabei ihre versteckten Angaben (z. B. den Aufnahmeort), bevor sie hochgeladen werden.
+verkleinert. Fotos (JPEG) verlieren vor dem Hochladen ihre versteckten Angaben, z. B. den Aufnahmeort.
 Klickst du ein Bild an, stellst du unter **Bildgröße** **Klein**, **Mittel** oder **Groß** ein.
 
 Unter dem Text stehen die Grenzen der jeweiligen Mail:
@@ -79,7 +79,7 @@ Unter dem Text stehen die Grenzen der jeweiligen Mail:
 | | Freigabe-Aufforderung, Zählpunkt aktiv, Zählpunkt inaktiv | Rechnung / Gutschrift |
 |---|---|---|
 | Bilder | höchstens 3, je höchstens 1 MB | höchstens 3 |
-| alle Bilder zusammen | höchstens 6 MB | höchstens 500 KB |
+| alle Bilder zusammen | — (3 × 1 MB) | höchstens 500 KB |
 | PDF-Anhang | keiner | keiner — der Beleg ist immer angehängt |
 
 Neu hochgeladene Bilder sind **Entwürfe**: Sie werden erst mit dem Speichern verwendet.
@@ -89,15 +89,18 @@ Neu hochgeladene Bilder sind **Entwürfe**: Sie werden erst mit dem Speichern ve
 Damit eure Mails nicht im Spam landen, prüft eegFaktura die Links beim Speichern, bei der Vorschau und bei der
 Testmail:
 
-- höchstens **3 Links** je Mail, zu höchstens **2 Domains** (`portal.netz.at` und `www.netz.at` zählen als eine);
-  E-Mail-Links (`mailto:`) und die feste Zeile unten zählen nicht mit,
+- höchstens **3 Links** je Mail, E-Mail-Links (`mailto:`) mitgezählt,
+- höchstens **2 Domains** (`portal.netz.at` und `www.netz.at` zählen als eine); E-Mail-Links zählen hier nicht,
+- die feste Zeile unten zählt bei beidem nicht mit,
 - Links beginnen mit `https://` oder `mailto:`,
 - keine Kurz-Links (z. B. bit.ly) und keine IP-Adressen,
 - steht im Linktext eine Adresse, muss es dieselbe sein wie das Ziel des Links,
 - kein Platzhalter in einem Link,
 - Domains mit Umlauten schreibst du in der Form mit `xn--` (z. B. `xn--mnchen-3ya.at` statt `münchen.at`).
 
-Verstößt ein Text gegen eine Regel, speichert eegFaktura ihn nicht und nennt den Grund.
+Verstößt ein Text gegen eine Regel, speichert eegFaktura ihn nicht und nennt den Grund. Ausnahme: Fügst du Text mit
+einem `http://`-Link ein, bleibt nur der Text stehen, der Link fällt ohne Meldung weg. Prüfe eingefügte Links
+deshalb in der Vorschau.
 
 ## Vorschau und Testmail
 

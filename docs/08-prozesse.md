@@ -5,7 +5,8 @@ Gemeinschaften mit **Online-Anbindung**. eegFaktura verschickt die Anfrage über
 Antwort kommt später unter [Nachrichten](07-nachrichten.md).
 
 Jedes Formular zeigt oben die **Gemeinschafts-ID**. In der Zählpunkt-Auswahl steht jeder Zählpunkt mit
-**Verbraucher** oder **Erzeuger**, dem Anlagennamen (falls vergeben) und der Nummer. Nach **Anfordern** meldet
+**Verbraucher** oder **Erzeuger**, dem Anlagennamen (falls vergeben) und der Nummer; je nach Formular folgt noch der
+Status oder der Teilnahmefaktor. Nach **Anfordern** meldet
 eegFaktura „Die Anforderung wurde an den Netzbetreiber gesendet.“ oder den Grund, warum es nicht geklappt hat.
 
 ![Prozesse](images/prozesse.png)
