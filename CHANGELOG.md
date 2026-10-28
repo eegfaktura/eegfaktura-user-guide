@@ -26,5 +26,12 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
   `requests` with certifi (PYSEC-2026-4320) dropped, it is only used by plugins this site does not enable.
 
 ### Changed
+- Brought in line with the production release of 28.10.2026 (web 1.14.0, backend 1.10.0, billing 1.5.0), each
+  point checked against the code: member list filters Alle/Aktive/Inaktive and the new sort options (chapter 2);
+  mail texts: font size, image size, pasting/dropping images, fixed footer, link rules, 3 images and no PDF for
+  member mails (chapter 3); dashboard membership fees (chapter 1); 0 % VAT for tariffs without „Umsatzsteuer
+  anführen“ (chapter 4); ZIP file names (chapter 5); direction and equipment name in the process selections, date
+  and time in the process history (chapter 8); „Was ist neu?“ now describes the production state instead of
+  „pilot only“. Screenshots retaken on the local stack at the release state.
 - Screenshots: window 1440 px wide; a page is shot in full height (the window grows to the content, up to 2400 px)
   instead of being cut off at 800 px. A failed step leaves a debug image in `.cache/`.

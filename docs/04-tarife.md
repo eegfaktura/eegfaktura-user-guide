@@ -26,13 +26,17 @@ Umsatzsteuer.
 2. Wähle die Art: **Mitglied**, **Erzeuger** oder **Verbraucher**. Die Art lässt sich später nicht mehr ändern.
 3. Gib die **Tarifbezeichnung** ein. Erlaubt sind Buchstaben ohne Umlaute, Ziffern, Leerzeichen, `-` und `_`; jeder
    Name darf nur einmal vorkommen.
-4. Fülle die Bestandteile aus (siehe unten) und klicke auf **Änderungen speichern**.
+4. Fülle die Bestandteile aus (siehe unten) und klicke auf **Änderungen speichern**. Ein Zahlenfeld, das du leerst,
+   zählt als 0.
 
 ### Umsatzsteuer
 
 Hake **Umsatzsteuer anführen** an, wenn auf dem Beleg Umsatzsteuer ausgewiesen werden soll. Dann trägst du
 **Umsatzsteuer in %** und optional einen **Zusatztext für Umsatzsteuer** ein. Welche Steuer gilt, klärst du bitte
 mit deiner Steuerberatung.
+
+Ohne den Haken stehen die Positionen dieses Tarifs auf dem Beleg mit **0 %** in der USt-Spalte, und für sie gibt es
+keine eigene USt-Summenzeile.
 
 ### Bestandteile je Art
 
