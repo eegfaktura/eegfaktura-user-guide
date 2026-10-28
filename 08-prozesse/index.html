@@ -701,8 +701,10 @@
 <p>Unter <strong>Prozesse</strong> löst du Vorgänge beim Netzbetreiber aus. Den Menüpunkt gibt es nur für EEG-Admins von
 Gemeinschaften mit <strong>Online-Anbindung</strong>. eegFaktura verschickt die Anfrage über die Marktkommunikation (EDA); die
 Antwort kommt später unter <a href="../07-nachrichten/">Nachrichten</a>.</p>
-<p>Jedes Formular zeigt oben die <strong>Gemeinschafts-ID</strong>. Nach <strong>Anfordern</strong> meldet eegFaktura „Die Anforderung wurde an
-den Netzbetreiber gesendet.“ oder den Grund, warum es nicht geklappt hat.</p>
+<p>Jedes Formular zeigt oben die <strong>Gemeinschafts-ID</strong>. In der Zählpunkt-Auswahl steht jeder Zählpunkt mit
+<strong>Verbraucher</strong> oder <strong>Erzeuger</strong>, dem Anlagennamen (falls vergeben) und der Nummer; je nach Formular folgt noch der
+Status oder der Teilnahmefaktor. Nach <strong>Anfordern</strong> meldet
+eegFaktura „Die Anforderung wurde an den Netzbetreiber gesendet.“ oder den Grund, warum es nicht geklappt hat.</p>
 <p><img alt="Prozesse" src="../images/prozesse.png" /></p>
 <h2 id="zahlpunktdaten-nachfordern">Zählpunktdaten nachfordern<a class="headerlink" href="#zahlpunktdaten-nachfordern" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p>Fordert Energiedaten für einen Zeitraum erneut an, z. B. wenn Daten fehlen oder nur vorläufig (L3) sind.</p>
@@ -736,7 +738,7 @@ später wieder teilnehmen, ist eine neue Anmeldung nötig.</p>
 <p>Ändert, welchen Anteil ein Zählpunkt an der Gemeinschaft hat.</p>
 <p><img alt="Teilnahmefaktor ändern" src="../images/prozesse-teilnahmefaktor.png" /></p>
 <ol>
-<li>Wähle <strong>Mitglied</strong> und <strong>Zählpunkt</strong> (die Auswahl zeigt den aktuellen Faktor).</li>
+<li>Wähle <strong>Mitglied</strong> und <strong>Zählpunkt</strong> (die Auswahl zeigt am Ende den aktuellen Faktor).</li>
 <li>Gib den neuen <strong>Teilnahmefaktor in %</strong> ein (1–100) und klicke auf <strong>Anfordern</strong>.</li>
 </ol>
 <blockquote>
@@ -782,7 +784,7 @@ verantwortliche Person der EEG bekommt eine E-Mail. Bei Bürgerenergiegemeinscha
 </tbody>
 </table>
 <p>Jeder Bereich lässt sich nach Zählpunkt, Name, Mitgliedsnummer oder Conversation-ID durchsuchen. Je Zählpunkt stehen
-die Schritte mit Datum, <strong>Protokoll</strong> und <strong>Status</strong> bzw. <strong>Info</strong>.</p>
+die Schritte mit Datum (TT.MM.JJJJ) und Uhrzeit, <strong>Protokoll</strong> und <strong>Status</strong> bzw. <strong>Info</strong>.</p>
 <p><strong>Eine Ablehnung lesen:</strong> In der Spalte Protokoll steht dann ABLEHNUNG, in Status oder Info der Grund, z. B.
 „Zählpunkt nicht gefunden“, „Kunde hat Datenfreigabe abgelehnt“ oder „Prozessdatum falsch“.</p>
 <h3 id="nachrichtenarten-in-der-spalte-protokoll">Nachrichtenarten in der Spalte Protokoll<a class="headerlink" href="#nachrichtenarten-in-der-spalte-protokoll" title="Link zu diesem Abschnitt">&para;</a></h3>

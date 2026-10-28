@@ -469,10 +469,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#bilder-und-pdf-anhang" class="md-nav__link">
+  <a href="#bilder" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bilder und PDF-Anhang
+        Bilder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links
       
     </span>
   </a>
@@ -680,7 +691,9 @@
 <h1 id="e-mail-texte">E-Mail-Texte<a class="headerlink" href="#e-mail-texte" title="Link zu diesem Abschnitt">&para;</a></h1>
 <p>eegFaktura schickt deinen Mitgliedern automatisch E-Mails, zum Beispiel wenn ein Zählpunkt aktiv wird oder eine
 Rechnung fertig ist. Für jede dieser Mails gibt es einen <strong>Standardtext von eegFaktura</strong>. Du kannst ihn
-übernehmen, wie er ist, oder einen <strong>eigenen Text</strong> mit Bildern und einem PDF-Anhang gestalten.</p>
+übernehmen, wie er ist, oder einen <strong>eigenen Text</strong> mit Bildern gestalten.</p>
+<p>Unter jeder Mail steht eine feste Zeile, die du nicht ändern kannst: „versandt durch EEG Faktura, ein Service des
+VFEEG - https://vfeeg.org/“. Im Editor siehst du sie grau unter dem Text („Wird immer angehängt: …“).</p>
 <p>Die E-Mail-Texte können nur <strong>EEG-Admins</strong> bearbeiten.</p>
 <h2 id="wo-finde-ich-die-e-mail-texte">Wo finde ich die E-Mail-Texte?<a class="headerlink" href="#wo-finde-ich-die-e-mail-texte" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p>Auf der <strong>EEG-Seite</strong> (Menüpunkt mit dem Namen deiner Gemeinschaft) in der Karte <strong>E-Mail-Texte</strong>:</p>
@@ -742,18 +755,22 @@ Standardtext.“</p>
 <li>Die Knöpfe über dem Text formatieren ihn: <strong>Fett</strong>, <strong>Kursiv</strong>, <strong>Unterstrichen</strong>, <strong>Überschrift 1–3</strong>,
   <strong>Aufzählung</strong>, <strong>Nummerierte Liste</strong>, <strong>Link</strong>, <strong>Linksbündig</strong>, <strong>Zentriert</strong>, <strong>Rechtsbündig</strong> und
   <strong>Bild einfügen</strong>.</li>
+<li><strong>Schriftgröße</strong> setzt den Absatz, die Überschrift oder den Listenpunkt am Cursor auf <strong>Klein</strong>, <strong>Normal</strong>
+  oder <strong>Groß</strong>.</li>
 <li><strong>Platzhalter einfügen</strong> setzt einen Platzhalter an die Stelle des Cursors; Einträge mit „(Baustein)“ fügen
   einen ganzen Absatz ein. <strong>Platzhalter in den Betreff</strong> macht dasselbe für den Betreff.</li>
-<li>Links müssen mit <code>https://</code> oder <code>mailto:</code> beginnen.</li>
+<li>Für Links gelten Regeln gegen Spam, siehe <a href="#links">Links</a>.</li>
 </ul>
 </li>
 <li>Klicke auf <strong>Speichern</strong>. Ab jetzt verschickt eegFaktura eure Fassung; der Kasten wird grün:
    „Verschickt wird eure eigene Fassung (gespeichert am … von …).“</li>
 </ol>
-<h3 id="bilder-und-pdf-anhang">Bilder und PDF-Anhang<a class="headerlink" href="#bilder-und-pdf-anhang" title="Link zu diesem Abschnitt">&para;</a></h3>
-<p>Mit eingeschaltetem eigenem Text kannst du Bilder (PNG oder JPEG) in den Text einfügen und bei den Mitglieder-Mails
-ein PDF anhängen (z. B. eine Anleitung). Breitere Bilder werden auf 1200 px verkleinert. Unter dem Text stehen die
-Grenzen der jeweiligen Mail:</p>
+<h3 id="bilder">Bilder<a class="headerlink" href="#bilder" title="Link zu diesem Abschnitt">&para;</a></h3>
+<p>Mit eingeschaltetem eigenem Text kannst du Bilder (PNG oder JPEG) in den Text einfügen: mit <strong>Bild einfügen</strong>, durch
+Einfügen aus der Zwischenablage oder indem du die Bilddatei in den Text ziehst. Breitere Bilder werden auf 1200 px
+verkleinert. Fotos (JPEG) verlieren vor dem Hochladen ihre versteckten Angaben, z. B. den Aufnahmeort.
+Klickst du ein Bild an, stellst du unter <strong>Bildgröße</strong> <strong>Klein</strong>, <strong>Mittel</strong> oder <strong>Groß</strong> ein.</p>
+<p>Unter dem Text stehen die Grenzen der jeweiligen Mail:</p>
 <table>
 <thead>
 <tr>
@@ -765,22 +782,38 @@ Grenzen der jeweiligen Mail:</p>
 <tbody>
 <tr>
 <td>Bilder</td>
-<td>höchstens 10, je höchstens 1 MB</td>
+<td>höchstens 3, je höchstens 1 MB</td>
 <td>höchstens 3</td>
 </tr>
 <tr>
-<td>PDF-Anhang (<strong>PDF anhängen</strong>)</td>
-<td>höchstens 1, höchstens 3 MB</td>
-<td>keiner — der Beleg ist immer angehängt</td>
+<td>alle Bilder zusammen</td>
+<td>— (3 × 1 MB)</td>
+<td>höchstens 500 KB</td>
 </tr>
 <tr>
-<td>alle Dateien zusammen</td>
-<td>höchstens 6 MB</td>
-<td>höchstens 500 KB</td>
+<td>PDF-Anhang</td>
+<td>keiner</td>
+<td>keiner — der Beleg ist immer angehängt</td>
 </tr>
 </tbody>
 </table>
-<p>Neu hochgeladene Dateien sind <strong>Entwürfe</strong>: Sie werden erst mit dem Speichern verwendet.</p>
+<p>Neu hochgeladene Bilder sind <strong>Entwürfe</strong>: Sie werden erst mit dem Speichern verwendet.</p>
+<h3 id="links">Links<a class="headerlink" href="#links" title="Link zu diesem Abschnitt">&para;</a></h3>
+<p>Damit eure Mails nicht im Spam landen, prüft eegFaktura die Links beim Speichern, bei der Vorschau und bei der
+Testmail:</p>
+<ul>
+<li>höchstens <strong>3 Links</strong> je Mail, E-Mail-Links (<code>mailto:</code>) mitgezählt,</li>
+<li>höchstens <strong>2 Domains</strong> (<code>portal.netz.at</code> und <code>www.netz.at</code> zählen als eine); E-Mail-Links zählen hier nicht,</li>
+<li>die feste Zeile unten zählt bei beidem nicht mit,</li>
+<li>Links beginnen mit <code>https://</code> oder <code>mailto:</code>,</li>
+<li>keine Kurz-Links (z. B. bit.ly) und keine IP-Adressen,</li>
+<li>steht im Linktext eine Adresse, muss es dieselbe sein wie das Ziel des Links,</li>
+<li>kein Platzhalter in einem Link,</li>
+<li>Domains mit Umlauten schreibst du in der Form mit <code>xn--</code> (z. B. <code>xn--mnchen-3ya.at</code> statt <code>münchen.at</code>).</li>
+</ul>
+<p>Verstößt ein Text gegen eine Regel, speichert eegFaktura ihn nicht und nennt den Grund. Ausnahme: Fügst du Text mit
+einem <code>http://</code>-Link ein, bleibt nur der Text stehen, der Link fällt ohne Meldung weg. Prüfe eingefügte Links
+deshalb in der Vorschau.</p>
 <h2 id="vorschau-und-testmail">Vorschau und Testmail<a class="headerlink" href="#vorschau-und-testmail" title="Link zu diesem Abschnitt">&para;</a></h2>
 <ul>
 <li>

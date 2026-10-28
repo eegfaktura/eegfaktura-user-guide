@@ -327,15 +327,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#herbst-2026" class="md-nav__link">
+  <a href="#herbst-2026-seit-28102026" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Herbst 2026
+        Herbst 2026 (seit 28.10.2026)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Herbst 2026">
+    <nav class="md-nav" aria-label="Herbst 2026 (seit 28.10.2026)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -350,10 +350,54 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dashboard-bilanzdifferenz-und-energiemengen" class="md-nav__link">
+  <a href="#energiedaten-smart-nachfordern" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dashboard: Bilanzdifferenz und Energiemengen
+        Energiedaten smart nachfordern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mitgliederliste" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mitgliederliste
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prozesse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prozesse
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abrechnung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abrechnung
       
     </span>
   </a>
@@ -636,17 +680,42 @@
 <h1 id="was-ist-neu">Was ist neu?<a class="headerlink" href="#was-ist-neu" title="Link zu diesem Abschnitt">&para;</a></h1>
 <p>Neue Funktionen von eegFaktura, die du als EEG-Admin bemerkst. Die Kapitel beschreiben jeweils den aktuellen
 Stand.</p>
-<h2 id="herbst-2026">Herbst 2026<a class="headerlink" href="#herbst-2026" title="Link zu diesem Abschnitt">&para;</a></h2>
+<h2 id="herbst-2026-seit-28102026">Herbst 2026 (seit 28.10.2026)<a class="headerlink" href="#herbst-2026-seit-28102026" title="Link zu diesem Abschnitt">&para;</a></h2>
 <h3 id="e-mail-texte-selbst-gestalten">E-Mail-Texte selbst gestalten<a class="headerlink" href="#e-mail-texte-selbst-gestalten" title="Link zu diesem Abschnitt">&para;</a></h3>
 <p>Die automatischen Mails an Mitglieder (Freigabe-Aufforderung, Zählpunkt aktiv, Zählpunkt inaktiv,
-Rechnung / Gutschrift) lassen sich anpassen: eigener Betreff und Text, Bilder, PDF-Anhang, Vorschau und Testmail.
-Ob der Standardtext oder ein eigener Text verschickt wird, wählst du mit dem Schalter <strong>Eigenen Text verwenden</strong>.
+Rechnung / Gutschrift) lassen sich anpassen: eigener Betreff und Text, Schriftgröße, Bilder (auch per Einfügen oder
+Ziehen), Vorschau und Testmail. Ob der Standardtext oder ein eigener Text verschickt wird, wählst du mit dem
+Schalter <strong>Eigenen Text verwenden</strong>. Unter jeder Mail steht fest „versandt durch EEG Faktura, ein Service des
+VFEEG“. Gegen Spam gelten Regeln für Links (höchstens 3, keine Kurz-Links).
 Siehe <a href="../03-email-texte/">E-Mail-Texte</a>.</p>
-<h3 id="dashboard-bilanzdifferenz-und-energiemengen">Dashboard: Bilanzdifferenz und Energiemengen<a class="headerlink" href="#dashboard-bilanzdifferenz-und-energiemengen" title="Link zu diesem Abschnitt">&para;</a></h3>
-<p>Der <strong>Lastverlauf</strong> zeigt die Bilanzdifferenz (Hinweis auf fehlende Energiedaten) und markiert auffällige Zeiträume. Unter <strong>Energiemengen</strong> nennt ein
-Hinweis die Zählpunkte ohne gültigen Tarif, die in „Eingekauft“ und „Verkauft“ nicht enthalten sind.
-Siehe <a href="../01-anmeldung/#dashboard">Dashboard</a>.</p>
-<p>Beides gibt es zunächst nur im Pilotbetrieb; wann es in den Regelbetrieb kommt, steht noch nicht fest.</p>
+<h3 id="energiedaten-smart-nachfordern">Energiedaten smart nachfordern<a class="headerlink" href="#energiedaten-smart-nachfordern" title="Link zu diesem Abschnitt">&para;</a></h3>
+<p>Beim Nachfordern prüft eegFaktura zuerst, wo Daten fehlen oder nur L3-Werte da sind, und fordert nur diese
+Zählpunkte an. Den Fortschritt siehst du unter <strong>Nachrichten</strong>.
+Siehe <a href="../08-prozesse/#zahlpunktdaten-nachfordern">Prozesse</a>.</p>
+<h3 id="dashboard">Dashboard<a class="headerlink" href="#dashboard" title="Link zu diesem Abschnitt">&para;</a></h3>
+<ul>
+<li>Tagesansicht für die ganze Gemeinschaft, Zeitraum in den oberen Kacheln.</li>
+<li>Der <strong>Lastverlauf</strong> zeigt die Bilanzdifferenz (Hinweis auf fehlende Energiedaten) und markiert auffällige
+  Zeiträume.</li>
+<li>Unter <strong>Energiemengen</strong> nennt ein Hinweis die Zählpunkte ohne gültigen Tarif, die in „Eingekauft“ und „Verkauft“
+  nicht enthalten sind.</li>
+<li><strong>Tarife</strong> zeigt auch die Mitgliedsbeiträge und wie viele aktive Mitglieder keinen haben.</li>
+</ul>
+<p>Siehe <a href="../01-anmeldung/#dashboard">Dashboard</a>.</p>
+<h3 id="mitgliederliste">Mitgliederliste<a class="headerlink" href="#mitgliederliste" title="Link zu diesem Abschnitt">&para;</a></h3>
+<p>Filter <strong>Alle / Aktive / Inaktive</strong> und eine wählbare Sortierung, z. B. nach Ort oder Einzugsart; „Mitglieder mit
+nötiger Aktion oben“ lässt sich abschalten.
+Siehe <a href="../02-mitglieder-zaehlpunkte/#zeitraum-filter-und-sortierung">Mitglieder &amp; Zählpunkte</a>.</p>
+<h3 id="prozesse">Prozesse<a class="headerlink" href="#prozesse" title="Link zu diesem Abschnitt">&para;</a></h3>
+<p>Die Zählpunkt-Auswahl zeigt Verbraucher oder Erzeuger und den Anlagennamen; die Prozess History zeigt Datum als
+TT.MM.JJJJ und die Uhrzeit. Siehe <a href="../08-prozesse/">Prozesse</a>.</p>
+<h3 id="abrechnung">Abrechnung<a class="headerlink" href="#abrechnung" title="Link zu diesem Abschnitt">&para;</a></h3>
+<ul>
+<li>Positionen eines Tarifs ohne „Umsatzsteuer anführen“ stehen auf dem Beleg mit 0 %, ohne eigene USt-Summenzeile.
+  Die Beträge bleiben gleich. Siehe <a href="../04-tarife/#umsatzsteuer">Tarife</a>.</li>
+<li>Die Dateien im ZIP-Download heißen wie die Belege, ohne Zahl davor.
+  Siehe <a href="../05-abrechnung/#nach-der-abrechnung">Abrechnung</a>.</li>
+</ul>
 
 
 
