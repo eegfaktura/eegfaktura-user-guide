@@ -22,15 +22,25 @@ Der Balken unter dem Wert zeigt den Anteil des Zählpunkts.
 ### Zeitraum, Filter und Sortierung
 
 - **Periode** zeigt alle Mitglieder. Den Zeitraum (z. B. „Okt-Dez 2026“) wählst du darunter.
-- Der zweite Reiter filtert die Liste. Über das Filter-Symbol wählst du **Aktive**, **Ausstehende**, **Inaktive**
-  oder **Abgewiesene**.
+- Der zweite Reiter filtert die Liste. Über das Filter-Symbol wählst du **Alle**, **Aktive** oder **Inaktive**;
+  voreingestellt ist **Inaktive**. Der Filter zeigt die Mitglieder der Gemeinschaft unabhängig vom Zeitraum, jedes
+  mit genau den Zählpunkten, die passen:
+    - **Aktive**: Zählpunkte mit dem Status aktiv.
+    - **Inaktive**: alle anderen Zählpunkte, z. B. Anmeldung läuft, abgewiesen, aufgehoben oder ausgetreten. Dazu
+      aktive Zählpunkte, bei denen eine Aktion nötig ist (etwa eine laufende Aufhebung), und Mitglieder, die noch
+      zugelassen werden müssen. Hier findest du also alles, was einen Blick braucht.
+    - **Alle**: jedes Mitglied mit allen Zählpunkten.
 
   ![Filteroptionen](images/mitglieder-filter.png)
 
-- Das Pfeil-Symbol ganz rechts öffnet die **Sortierung**: Standard, Nachname, Vorname, Mitgliedsnummer oder
-  Mitglied seit (neueste bzw. älteste zuerst). Mitglieder, bei denen eine Aktion nötig ist, bleiben immer oben.
+- Das Pfeil-Symbol ganz rechts öffnet die **Sortierung**: Mitgliedsnummer (voreingestellt), Nachname, Vorname,
+  Mitglied seit (neueste bzw. älteste zuerst), Aktiviert seit (neueste zuerst), Einzugsart oder Ort. Mit dem Haken
+  **Mitglieder mit nötiger Aktion oben** bleiben Mitglieder, bei denen etwas zu tun ist, vor den anderen; ohne Haken
+  gilt die Sortierung für alle gleich. Die Wahl gilt nach **Übernehmen** und bleibt in deinem Browser gespeichert.
 
   ![Sortierung](images/mitglieder-sortierung.png)
+
+- Bei jedem Mitglied stehen die Verbraucher vor den Erzeugern.
 
 ### Farben
 

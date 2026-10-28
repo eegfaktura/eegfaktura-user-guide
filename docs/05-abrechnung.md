@@ -114,13 +114,17 @@ Belege mit dem Betrag 0 werden nicht erstellt. Erzeuger ohne UID bekommen eine *
 | Knopf | Was er tut |
 |-------|------------|
 | **SENDEN** | schickt jedem Mitglied mit E-Mail-Adresse seinen Beleg als PDF, mit der Gemeinschaft in Kopie. Text und Betreff kommen aus den [E-Mail-Texten](03-email-texte.md) („Rechnung / Gutschrift“) |
-| **DOWNLOAD** | alle Belege als ZIP |
+| **DOWNLOAD** | alle Belege als ZIP (Dateinamen siehe unten) |
 | **EXCEL** | Aufstellung aller Belege und Positionen, z. B. für die Buchhaltung |
 | **SEPA** | Dateien für die Bank (siehe unten) |
 
 > **Vor dem Senden:** **SENDEN** geht pro Lauf nur **einmal**. Einzelne Mails, die nicht zugestellt werden können
 > (fehlende oder ungültige Adresse), zeigt eegFaktura nicht an, und der Versand lässt sich nicht wiederholen. Prüfe die
 > E-Mail-Adressen deshalb vorher und gib Mitgliedern ohne Mail ihren Beleg aus dem **DOWNLOAD** (ZIP).
+
+**Dateinamen im ZIP:** Rechnungen und Gutschriften heißen wie der Beleg, mit der Belegnummer, z. B.
+`Abr_YM-2026-9_Rechnung_RG202600123.pdf`. Vorschau-Belege tragen die Mitgliedsnummer am Ende, z. B.
+`Abr_YM-2026-9_Rechnung_Vorschau_042.pdf`. Kommt ein Name trotzdem zweimal vor, bekommt der zweite „ (2)“.
 
 ### SEPA-Dateien
 

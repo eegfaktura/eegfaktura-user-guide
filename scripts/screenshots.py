@@ -177,7 +177,7 @@ def chapter_members(page: Page) -> None:
 
     def sort_dialog():
         page.locator(".period-filter-menu .sort").first.click()
-        page.locator("ion-alert").wait_for()
+        page.locator("ion-popover .member-sort-popover").wait_for()
         shot("mitglieder-sortierung", page)
         close_overlays(page)
 

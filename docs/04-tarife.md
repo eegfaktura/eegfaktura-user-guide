@@ -34,6 +34,9 @@ Hake **Umsatzsteuer anführen** an, wenn auf dem Beleg Umsatzsteuer ausgewiesen 
 **Umsatzsteuer in %** und optional einen **Zusatztext für Umsatzsteuer** ein. Welche Steuer gilt, klärst du bitte
 mit deiner Steuerberatung.
 
+Ohne den Haken stehen die Positionen dieses Tarifs auf dem Beleg mit **0 %** in der USt-Spalte, und für sie gibt es
+keine eigene USt-Summenzeile. Ein Feld, das du leerst, zählt als 0.
+
 ### Bestandteile je Art
 
 | Art | Felder |

@@ -4,8 +4,9 @@ Unter **Prozesse** löst du Vorgänge beim Netzbetreiber aus. Den Menüpunkt gib
 Gemeinschaften mit **Online-Anbindung**. eegFaktura verschickt die Anfrage über die Marktkommunikation (EDA); die
 Antwort kommt später unter [Nachrichten](07-nachrichten.md).
 
-Jedes Formular zeigt oben die **Gemeinschafts-ID**. Nach **Anfordern** meldet eegFaktura „Die Anforderung wurde an
-den Netzbetreiber gesendet.“ oder den Grund, warum es nicht geklappt hat.
+Jedes Formular zeigt oben die **Gemeinschafts-ID**. In der Zählpunkt-Auswahl steht jeder Zählpunkt mit
+**Verbraucher** oder **Erzeuger**, dem Anlagennamen (falls vergeben) und der Nummer. Nach **Anfordern** meldet
+eegFaktura „Die Anforderung wurde an den Netzbetreiber gesendet.“ oder den Grund, warum es nicht geklappt hat.
 
 ![Prozesse](images/prozesse.png)
 
@@ -50,7 +51,7 @@ Fehlt eegFaktura die Kennung der Datenfreigabe, fordere zuerst die **Teilnehmerl
 
 ![Teilnahmefaktor ändern](images/prozesse-teilnahmefaktor.png)
 
-1. Wähle **Mitglied** und **Zählpunkt** (die Auswahl zeigt den aktuellen Faktor).
+1. Wähle **Mitglied** und **Zählpunkt** (die Auswahl zeigt am Ende den aktuellen Faktor).
 2. Gib den neuen **Teilnahmefaktor in %** ein (1–100) und klicke auf **Anfordern**.
 
 > Der Netzbetreiber nimmt Änderungen **nur zwischen 9 und 17 Uhr** an, **eine pro Tag** je Zählpunkt; die Änderung
@@ -78,7 +79,7 @@ Zeigt die Kommunikation mit dem Netzbetreiber, standardmäßig der letzten 14 Ta
 | **Versenden der Energiedaten** | Energiedaten, die der Netzbetreiber geschickt hat (von – bis) |
 
 Jeder Bereich lässt sich nach Zählpunkt, Name, Mitgliedsnummer oder Conversation-ID durchsuchen. Je Zählpunkt stehen
-die Schritte mit Datum, **Protokoll** und **Status** bzw. **Info**.
+die Schritte mit Datum (TT.MM.JJJJ) und Uhrzeit, **Protokoll** und **Status** bzw. **Info**.
 
 **Eine Ablehnung lesen:** In der Spalte Protokoll steht dann ABLEHNUNG, in Status oder Info der Grund, z. B.
 „Zählpunkt nicht gefunden“, „Kunde hat Datenfreigabe abgelehnt“ oder „Prozessdatum falsch“.

@@ -59,7 +59,7 @@ Das **Dashboard** zeigt die wichtigsten Zahlen der Gemeinschaft, meist für den 
 
 | Bereich | Inhalt |
 |---------|--------|
-| **Übersicht EEG** | Mitglieder „Stand heute“ (aktive, inaktive, in Anmeldung), aktive Zählpunkte (Abnehmer und Einspeiser), Tarife mit der Anzahl ihrer Zählpunkte |
+| **Übersicht EEG** | Mitglieder „Stand heute“ (aktive, inaktive, in Anmeldung), aktive Zählpunkte (Abnehmer und Einspeiser), Tarife mit der Anzahl ihrer Zählpunkte; in derselben Liste darunter die Mitgliedsbeitrags-Tarife mit der Anzahl aktiver Mitglieder und, wenn aktive Mitglieder keinen haben, die Zeile „ohne Mitgliedsbeitrag“ |
 | **Übersicht Stromproduktion und Verteilung** | **Produziert**, **Verteilt** und **EVU** (Bezug vom Energieversorger), jeweils mit der vorherigen Periode zum Vergleich; darunter die **Energiemengen** „Eingekauft“ und „Verkauft“ |
 | **Lastverlauf** | Balken für EEG, EVU und Erzeugung über den Zeitraum, darüber die **Bilanz** (siehe unten); auffällige Balken tragen ein „!“ |
 | **Tagesverlauf** | Verlauf über den Tag (EEG, EVU, Erzeugt) |
@@ -71,8 +71,8 @@ eegFaktura zeigt „Bilanz ausgeglichen“ (sehr kleine Werte sind Rundung). Ein
 heißt, vermutlich fehlen Daten von Einspeisern, **positiv**, vermutlich fehlen Daten von Beziehern. Für die
 jüngsten Tage ist eine Differenz normal, solange noch nicht alle Daten eingetroffen sind. Fehlen ältere Daten,
 kannst du sie unter **Prozesse → Zählpunktdaten nachfordern** anfordern.
- „Eingekauft“ und „Verkauft“ zählen
-nur Zählpunkte mit einem gültigen Tarif der Gemeinschaft; ein Hinweis darunter nennt die Zählpunkte, die deshalb
+
+**Energiemengen:** „Eingekauft“ und „Verkauft“ zählen nur Zählpunkte mit einem gültigen Tarif der Gemeinschaft; ein Hinweis darunter nennt die Zählpunkte, die deshalb
 fehlen.
 
 ## EEG-Seite
