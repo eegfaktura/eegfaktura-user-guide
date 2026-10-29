@@ -3,12 +3,13 @@
 Neue Funktionen von eegFaktura, die du als EEG-Admin bemerkst. Die Kapitel beschreiben jeweils den aktuellen
 Stand.
 
-## Seit 29.10.2026
+## Herbst 2026 (seit 29.10.2026)
 
 ### Einmalige Beitrittsgebühr
 
 Ein Mitgliedstarif kann eine einmalige **Beitrittsgebühr** haben, mit eigener Umsatzsteuer-Einstellung. eegFaktura
-verrechnet sie jedem Mitglied einmal, auf seiner ersten Rechnung mit Energie. Beim Mitglied unter **Details** siehst du
+verrechnet sie einmal je Mitglied im ersten endgültigen Lauf mit Energie, auf einer Rechnung. Mitglieder, die schon
+abgerechnet waren, bekommen sie nicht automatisch. Beim Mitglied unter **Details** siehst du
 den Stand („Beitrittsgebühr: …“) und kannst die Gebühr **nachverrechnen** (für schon abgerechnete Mitglieder) oder
 **außerhalb bezahlt** erfassen. Der Stammdaten-Export hat zwei neue Spalten dazu.
 Siehe [Tarife](04-tarife.md#beitrittsgebuhr) und

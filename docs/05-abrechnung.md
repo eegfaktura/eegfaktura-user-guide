@@ -41,7 +41,8 @@ Die Positionen sind je Zählpunkt gruppiert („Zählpunkt AT… – Anlagenname
 - bei Verbrauchern mit Freikontingent eine Zeile „Menge (…) = Verbrauch (…) abzgl. freie kWh (…)“,
 - die **Zählpunktgebühr**, wenn der Tarif eine hat,
 - auf Rechnungen der **Mitgliedsbeitrag** des Mitglieds-Tarifs,
-- auf der ersten Rechnung mit Energie (oder nach **Beitrittsgebühr nachverrechnen**) einmal die **Beitrittsgebühr**,
+- im ersten endgültigen Lauf mit Energie (oder nach **Beitrittsgebühr nachverrechnen**) einmal die **Beitrittsgebühr**,
+  immer auf einer Rechnung (ein reiner Erzeuger bekommt dafür eine eigene Rechnung neben der Gutschrift),
   siehe [Tarife](04-tarife.md#beitrittsgebuhr),
 - Umsatzsteuer und Summen, darunter die Texte aus den Abrechnungseinstellungen und die Fußzeile.
 

@@ -42,8 +42,9 @@ Der Knopf mit dem Pfeil nach unten oben in der Mitgliederliste öffnet **Downloa
 3. Klicke auf **Export**. Du bekommst eine Excel-Datei.
 
 Im **Stammdaten**-Export stehen im Blatt „Mitglieder“ nach „Mitgliedstarif“ die Spalten „Beitrittsgebühr (€)“ und
-„Beitrittsgebühr Status“, mit denselben Texten wie beim
-[Mitglied](02-mitglieder-zaehlpunkte.md#beitrittsgebuhr-eines-mitglieds). Ist die Abrechnung gerade nicht
+„Beitrittsgebühr Status“, mit den Status-Texten wie beim
+[Mitglied](02-mitglieder-zaehlpunkte.md#beitrittsgebuhr-eines-mitglieds); hat der Tarif eines Mitglieds keine Gebühr,
+bleiben beide Zellen leer. Ist die Abrechnung gerade nicht
 erreichbar, sagt eegFaktura das; der Export enthält dann alle Mitglieder, nur die Status-Spalte bleibt leer.
 
 Die Excel-Datei mit den Energiedaten hat zwei Blätter:

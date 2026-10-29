@@ -11,7 +11,7 @@ Unter **Tarife** stehen links alle aktiven Tarife als Karten, rechts die Daten d
 
 Die Karten sind nach Art gruppiert: **Mitgliedstarife**, **Erzeugertarife** und **Verbrauchertarife**, jeweils nach
 Namen sortiert (Zahlen in natürlicher Reihenfolge, „Beitritt 2 ZP“ vor „Beitritt 10 ZP“). Die Zahl hinter der
-Überschrift nennt die Tarife der Gruppe; ein Klick auf die Überschrift klappt die Gruppe zu oder auf. Beim Öffnen der
+Überschrift nennt die Tarife der Gruppe (bei einer Suche die Treffer); ein Klick auf die Überschrift klappt die Gruppe zu oder auf. Beim Öffnen der
 Seite sind alle Gruppen offen. Der gewählte Tarif bleibt immer sichtbar.
 
 Die **Lupe** neben dem **+** blendet ein Suchfeld ein („Tarif suchen“): Es sucht im Tarifnamen, ohne auf Groß- und
