@@ -517,6 +517,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#beitrittsgebuhr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beitrittsgebühr
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -694,6 +705,13 @@ Vergütung für eingespeisten Strom. Tarife anlegen und ändern können nur EEG-
 <h2 id="die-tarifliste">Die Tarifliste<a class="headerlink" href="#die-tarifliste" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p>Unter <strong>Tarife</strong> stehen links alle aktiven Tarife als Karten, rechts die Daten des gewählten Tarifs:</p>
 <p><img alt="Tarifliste" src="../images/tarife-liste.png" /></p>
+<p>Die Karten sind nach Art gruppiert: <strong>Mitgliedstarife</strong>, <strong>Erzeugertarife</strong> und <strong>Verbrauchertarife</strong>, jeweils nach
+Namen sortiert (Zahlen in natürlicher Reihenfolge, „Beitritt 2 ZP“ vor „Beitritt 10 ZP“). Die Zahl hinter der
+Überschrift nennt die Tarife der Gruppe (bei einer Suche die Treffer); ein Klick auf die Überschrift klappt die Gruppe zu oder auf. Beim Öffnen der
+Seite sind alle Gruppen offen. Der gewählte Tarif bleibt immer sichtbar.</p>
+<p>Die <strong>Lupe</strong> neben dem <strong>+</strong> blendet ein Suchfeld ein („Tarif suchen“): Es sucht im Tarifnamen, ohne auf Groß- und
+Kleinschreibung oder Akzente zu achten, und öffnet die Gruppen mit Treffern. Ein zweiter Klick auf die Lupe schließt
+die Suche.</p>
 <p>Das Symbol zeigt die Art:</p>
 <table>
 <thead>
@@ -721,8 +739,8 @@ Vergütung für eingespeisten Strom. Tarife anlegen und ändern können nur EEG-
 </tr>
 </tbody>
 </table>
-<p>Auf der Karte stehen die wichtigsten Werte, z. B. Mitgliedsbeitrag, Cent pro kWh, Inklusive kWh, Zählpunktgebühr und
-Umsatzsteuer.</p>
+<p>Auf der Karte stehen die wichtigsten Werte, z. B. Mitgliedsbeitrag, Beitrittsgebühr, Cent pro kWh, Inklusive kWh,
+Zählpunktgebühr und Umsatzsteuer.</p>
 <h2 id="einen-tarif-anlegen">Einen Tarif anlegen<a class="headerlink" href="#einen-tarif-anlegen" title="Link zu diesem Abschnitt">&para;</a></h2>
 <ol>
 <li>Klicke oben in der Tarifliste auf <strong>+</strong>.</li>
@@ -749,7 +767,7 @@ keine eigene USt-Summenzeile.</p>
 <tbody>
 <tr>
 <td><strong>Mitglied</strong></td>
-<td><strong>Mitgliedsbeitrag in €</strong> (je Abrechnungsintervall, netto), <strong>Rabatt in %</strong> (ganze Zahl)</td>
+<td><strong>Mitgliedsbeitrag in €</strong> (je Abrechnungsintervall, netto), <strong>Rabatt in %</strong> (ganze Zahl); optional die <a href="#beitrittsgebuhr">Beitrittsgebühr</a></td>
 </tr>
 <tr>
 <td><strong>Erzeuger</strong></td>
@@ -772,6 +790,41 @@ keine eigene USt-Summenzeile.</p>
   über Mitternacht gehen (z. B. 22:00 bis 06:00).</li>
 <li>Das Freikontingent gibt es nur bei <strong>Einfach</strong>.</li>
 </ul>
+<h3 id="beitrittsgebuhr">Beitrittsgebühr<a class="headerlink" href="#beitrittsgebuhr" title="Link zu diesem Abschnitt">&para;</a></h3>
+<p>Ein Tarif der Art <strong>Mitglied</strong> kann zusätzlich zum laufenden Mitgliedsbeitrag eine <strong>einmalige Beitrittsgebühr</strong>
+haben (Abschnitt <strong>Einmalige Beitrittsgebühr</strong>):</p>
+<ul>
+<li><strong>Beitrittsgebühr in € (einmalig, netto)</strong>, auch mit Cent (z. B. 49,90). Leer oder 0 heißt: keine Beitrittsgebühr.</li>
+<li><strong>Umsatzsteuer für die Beitrittsgebühr anführen</strong> und <strong>Umsatzsteuer der Beitrittsgebühr in %</strong> (ganze Zahl über
+  0) — eine eigene Einstellung, unabhängig vom Mitgliedsbeitrag. Welche Steuer gilt, klärst du bitte mit deiner
+  Steuerberatung.</li>
+</ul>
+<p>Soll nur die Beitrittsgebühr verrechnet werden, setzt du den Mitgliedsbeitrag auf 0.</p>
+<p><img alt="Mitgliedstarif mit Beitrittsgebühr" src="../images/tarife-beitrittsgebuehr.png" /></p>
+<p>So verrechnet eegFaktura die Gebühr:</p>
+<ul>
+<li><strong>Einmal je Mitglied</strong>, im ersten endgültigen Abrechnungslauf, in dem das Mitglied <strong>Energie</strong> abgerechnet bekommt —
+  egal ob Bezug oder Einspeisung. Ein Lauf nur mit Mitgliedsbeitrag oder Zählpunktgebühr (z. B. weil der Zählpunkt
+  noch nicht aktiv ist) löst sie nicht aus.</li>
+<li>Sie steht als eigene Position „Beitrittsgebühr“ immer auf einer <strong>Rechnung</strong>, nie auf einer Gutschrift. Ein reiner
+  Erzeuger bekommt dafür eine eigene Rechnung.</li>
+<li>Es gilt der Tarifstand <strong>beim Abrechnen</strong>. Nach einem Tarifwechsel wird keine zweite Gebühr fällig.</li>
+<li>Mitglieder, die in eegFaktura <strong>schon mit Energie abgerechnet</strong> wurden, bekommen die Gebühr nicht automatisch. Willst
+  du sie trotzdem verrechnen, nutzt du beim Mitglied <strong>Beitrittsgebühr nachverrechnen</strong>; hat ein Mitglied außerhalb
+  von eegFaktura bezahlt, erfasst du das dort (siehe
+  <a href="../02-mitglieder-zaehlpunkte/#beitrittsgebuhr-eines-mitglieds">Beitrittsgebühr eines Mitglieds</a>).</li>
+<li>Eine <strong>Vorschau</strong> zeigt die Gebühr, verrechnet ist sie erst mit <strong>Abrechnung durchführen</strong>.</li>
+</ul>
+<p>Beim Speichern einer Gebühr über 0 fragt eegFaktura nach, wenn</p>
+<ul>
+<li>aktive Mitglieder mit diesem Tarif noch nie in eegFaktura mit Energie abgerechnet wurden: „N aktive Mitglieder mit
+  diesem Tarif wurden in eegfaktura noch nie mit Energie abgerechnet und bekommen die Beitrittsgebühr mit ihrer
+  nächsten Abrechnung.“ Mitglieder, die früher außerhalb von eegFaktura abgerechnet wurden, zählen hier mit — erfasse
+  bei ihnen „außerhalb bezahlt“, wenn sie die Gebühr nicht bekommen sollen;</li>
+<li>der USt-Satz der Gebühr in deinen Tarifen sonst nicht vorkommt. Eine Rechnung kann höchstens zwei verschiedene
+  USt-Sätze über 0 % enthalten; mit einem dritten bricht die Abrechnung ab.</li>
+</ul>
+<p>Speichern kannst du in beiden Fällen.</p>
 <h2 id="einen-tarif-andern">Einen Tarif ändern<a class="headerlink" href="#einen-tarif-andern" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p>Wähle den Tarif, ändere die Werte und klicke auf <strong>Änderungen speichern</strong>.</p>
 <blockquote>
@@ -786,6 +839,7 @@ ganzen Abrechnungszeitraum. Bereits <strong>abgerechnete</strong> Läufe ändern
 <li><strong>Strom:</strong> beim Zählpunkt unter <strong>Details und Adresse → Tarif</strong> (Verbrauchertarife für Verbraucher, Erzeugertarife
   für Erzeuger).</li>
 </ul>
+<p>Die Auswahl ist wie die Tarifliste nach Namen sortiert.</p>
 <p>Zählpunkte ohne Tarif werden nicht abgerechnet. Die <a href="../05-abrechnung/#vorschau-erstellen">Prüfung vor der Abrechnung</a>
 weist darauf hin.</p>
 <h2 id="einen-tarif-loschen">Einen Tarif löschen<a class="headerlink" href="#einen-tarif-loschen" title="Link zu diesem Abschnitt">&para;</a></h2>

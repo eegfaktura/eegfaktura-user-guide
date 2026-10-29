@@ -720,7 +720,12 @@ Tagesansicht blätterst du mit den Pfeilen; sie beginnt beim letzten Tag mit Dat
 <li>Bei Energiedaten: Wähle unter <strong>Zeitspanne auswählen</strong> den <strong>Zeitraum</strong>.</li>
 <li>Klicke auf <strong>Export</strong>. Du bekommst eine Excel-Datei.</li>
 </ol>
-<p>Die Excel-Datei hat zwei Blätter:</p>
+<p>Im <strong>Stammdaten</strong>-Export stehen im Blatt „Mitglieder“ nach „Mitgliedstarif“ die Spalten „Beitrittsgebühr (€)“ und
+„Beitrittsgebühr Status“, mit den Status-Texten wie beim
+<a href="../02-mitglieder-zaehlpunkte/#beitrittsgebuhr-eines-mitglieds">Mitglied</a>; hat der Tarif eines Mitglieds keine Gebühr,
+bleiben beide Zellen leer. Ist die Abrechnung gerade nicht
+erreichbar, sagt eegFaktura das; der Export enthält dann alle Mitglieder, nur die Status-Spalte bleibt leer.</p>
+<p>Die Excel-Datei mit den Energiedaten hat zwei Blätter:</p>
 <ul>
 <li><strong>Summary</strong>: Summen der Gemeinschaft (Verbrauch, Erzeugung, Eigendeckung, Überschuss, Mengenbilanz — sie sollte
   nahe 0 sein) und je Zählpunkt, ab wann und bis wann Daten da sind und ob sie <strong>vollständig</strong> sind.</li>
@@ -808,7 +813,9 @@ auch die Karten in der Mitgliederliste.</p>
 <h2 id="energiedaten-importieren">Energiedaten importieren<a class="headerlink" href="#energiedaten-importieren" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p>Der Knopf mit der Wolke öffnet <strong>Upload Daten für …</strong>. Mit <strong>Stammdaten</strong> liest du Mitglieder und Zählpunkte aus einer
 Excel-Datei ein (Blatt „EEG Stammdaten“). Nur bei Gemeinschaften <strong>ohne Online-Anbindung</strong> gibt es zusätzlich
-<strong>Energiedaten</strong> (Blatt „Energiedaten“). Wähle die Datei und klicke auf <strong>Import</strong>.</p>
+<strong>Energiedaten</strong> (Blatt „Energiedaten“). Heißt das Blatt in deiner Datei anders, trägst du seinen Namen unter
+<strong>Sheet-Name</strong> ein. Wähle die Datei mit dem Stern oder ziehe sie in das Fenster (eine Datei je Import) und klicke auf
+<strong>Import</strong>.</p>
 
 
 

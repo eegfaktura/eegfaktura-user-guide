@@ -431,10 +431,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#zeitraum-filter-und-sortierung" class="md-nav__link">
+  <a href="#anzeige-zeitraum-und-sortierung" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zeitraum, Filter und Sortierung
+        Anzeige, Zeitraum und Sortierung
       
     </span>
   </a>
@@ -479,6 +479,17 @@
   
     <nav class="md-nav" aria-label="Ein Mitglied ansehen und ändern">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beitrittsgebuhr-eines-mitglieds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beitrittsgebühr eines Mitglieds
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#neues-mitglied-zulassen" class="md-nav__link">
@@ -817,22 +828,28 @@ Der Balken unter dem Wert zeigt den Anteil des Zählpunkts.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="zeitraum-filter-und-sortierung">Zeitraum, Filter und Sortierung<a class="headerlink" href="#zeitraum-filter-und-sortierung" title="Link zu diesem Abschnitt">&para;</a></h3>
+<h3 id="anzeige-zeitraum-und-sortierung">Anzeige, Zeitraum und Sortierung<a class="headerlink" href="#anzeige-zeitraum-und-sortierung" title="Link zu diesem Abschnitt">&para;</a></h3>
 <ul>
-<li><strong>Periode</strong> zeigt alle Mitglieder. Den Zeitraum (z. B. „Okt-Dez 2026“) wählst du darunter.</li>
-<li>Der zweite Reiter filtert die Liste. Über das Filter-Symbol wählst du <strong>Alle</strong>, <strong>Aktive</strong> oder <strong>Inaktive</strong>;
-  voreingestellt ist <strong>Inaktive</strong>. Der Filter zeigt die Mitglieder der Gemeinschaft unabhängig vom Zeitraum, jedes
-  mit genau den Zählpunkten, die passen:<ul>
+<li>Oben steht <strong>Anzeige:</strong> mit der gewählten Ansicht. Ein Klick darauf öffnet die Auswahl <strong>Standard</strong>, <strong>Alle</strong>,
+  <strong>Aktive</strong> oder <strong>Inaktive</strong>; die Wahl gilt nach <strong>Übernehmen</strong>. Fährst du mit der Maus über den Eintrag, erklärt
+  ein Hinweis die gewählte Ansicht.<ul>
+<li><strong>Standard</strong> (voreingestellt): die Mitglieder mit Zählpunkten, die im gewählten Zeitraum aktiv sind, dazu
+  Zählpunkte mit offenem Problem. Das ist die Ansicht für die Abrechnung. Den Zeitraum (z. B. „Okt-Dez 2026“)
+  wählst du darunter.</li>
+<li><strong>Alle</strong>, <strong>Aktive</strong> und <strong>Inaktive</strong> zeigen die Mitglieder der Gemeinschaft mit dem Stand heute, unabhängig vom
+  Zeitraum, jedes mit genau den Zählpunkten, die passen:<ul>
 <li><strong>Aktive</strong>: Zählpunkte mit dem Status aktiv.</li>
 <li><strong>Inaktive</strong>: alle anderen Zählpunkte, z. B. Anmeldung läuft, abgewiesen, aufgehoben oder ausgetreten. Dazu
   aktive Zählpunkte, bei denen eine Aktion nötig ist (etwa eine laufende Aufhebung), und Mitglieder, die noch
   zugelassen werden müssen. Hier findest du also alles, was einen Blick braucht.</li>
-<li><strong>Alle</strong>: jedes Mitglied mit allen Zählpunkten. Ein Mitglied ganz ohne Zählpunkt steht nur dann in der Liste,
-  wenn es noch zugelassen werden muss.</li>
+<li><strong>Alle</strong>: jedes Mitglied mit allen Zählpunkten. Ein Mitglied ganz ohne Zählpunkt steht nur dann in der
+  Liste, wenn es noch zugelassen werden muss.</li>
 </ul>
 </li>
 </ul>
-<p><img alt="Filteroptionen" src="../images/mitglieder-filter.png" /></p>
+</li>
+</ul>
+<p><img alt="Anzeige" src="../images/mitglieder-filter.png" /></p>
 <ul>
 <li>Das Pfeil-Symbol ganz rechts öffnet die <strong>Sortierung</strong>: Mitgliedsnummer (voreingestellt), Nachname, Vorname,
   Mitglied seit (neueste bzw. älteste zuerst), Aktiviert seit (neueste zuerst), Einzugsart oder Ort. Mit dem Haken
@@ -871,9 +888,10 @@ grau „inaktiv“, hat das Mitglied keinen aktiven Zählpunkt mehr.</p>
 <h3 id="unten-in-der-liste">Unten in der Liste<a class="headerlink" href="#unten-in-der-liste" title="Link zu diesem Abschnitt">&para;</a></h3>
 <ul>
 <li>Der Schalter <strong>€</strong> wechselt in den <strong>Abrechnungsmodus</strong>. Er gehört zur Abrechnung und wird im Kapitel
-  Abrechnung beschrieben.</li>
+  <a href="../05-abrechnung/#abrechnungsmodus">Abrechnung</a> beschrieben.</li>
 <li>Mit den Symbolen daneben wechselst du zwischen Mitgliedern und Zählpunkten und blendest Verbraucher oder Erzeuger
-  ein und aus.</li>
+  ein und aus. Fährst du mit der Maus darüber, steht da, was sie tun: „Nur Mitglieder (Zählpunkte einklappen)“,
+  „Nur Zählpunkte“, „Nur Erzeuger“, „Nur Verbraucher“.</li>
 </ul>
 <h2 id="ein-mitglied-ansehen-und-andern">Ein Mitglied ansehen und ändern<a class="headerlink" href="#ein-mitglied-ansehen-und-andern" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p>Ein Klick auf ein Mitglied öffnet rechts seine Daten, zunächst mit dem ersten Zählpunkt:</p>
@@ -916,6 +934,62 @@ grau „inaktiv“, hat das Mitglied keinen aktiven Zählpunkt mehr.</p>
 <li><strong>Optionals</strong>: Mitglied seit.</li>
 </ul>
 <p>Änderungen werden gespeichert, sobald du ein Feld verlässt.</p>
+<h3 id="beitrittsgebuhr-eines-mitglieds">Beitrittsgebühr eines Mitglieds<a class="headerlink" href="#beitrittsgebuhr-eines-mitglieds" title="Link zu diesem Abschnitt">&para;</a></h3>
+<p>Hat ein Tarif deiner Gemeinschaft eine <a href="../04-tarife/#beitrittsgebuhr">Beitrittsgebühr</a>, steht unter dem
+<strong>Mitglieds-Tarif</strong> die Zeile <strong>Beitrittsgebühr:</strong> mit dem Stand für dieses Mitglied:</p>
+<table>
+<thead>
+<tr>
+<th>Anzeige</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>verrechnet mit <em>Belegnummer</em> vom <em>Datum</em></td>
+<td>Die Gebühr steht auf dieser endgültigen Rechnung.</td>
+</tr>
+<tr>
+<td>außerhalb bezahlt am <em>Datum</em> (<em>Notiz</em>)</td>
+<td>Ihr habt eine Zahlung außerhalb von eegFaktura erfasst; die Gebühr wird nicht verrechnet.</td>
+</tr>
+<tr>
+<td>zur Verrechnung im nächsten Abrechnungslauf vorgemerkt</td>
+<td>Die Gebühr kommt mit der nächsten endgültigen Abrechnung.</td>
+</tr>
+<tr>
+<td>offen – wird mit der ersten Energieabrechnung verrechnet</td>
+<td>Das Mitglied wurde noch nie mit Energie abgerechnet; die Gebühr kommt automatisch mit seiner ersten Abrechnung.</td>
+</tr>
+<tr>
+<td>nicht verrechnet – Mitglied wurde schon abgerechnet</td>
+<td>Das Mitglied wurde schon vor der Gebühr abgerechnet; automatisch bekommt es sie nicht mehr.</td>
+</tr>
+<tr>
+<td>kein Tarif mit Beitrittsgebühr</td>
+<td>Der Mitglieds-Tarif dieses Mitglieds hat keine Beitrittsgebühr.</td>
+</tr>
+</tbody>
+</table>
+<p>Darunter stehen, je nach Stand, diese Knöpfe:</p>
+<ul>
+<li><strong>Beitrittsgebühr nachverrechnen</strong> merkt die Gebühr für den nächsten endgültigen Abrechnungslauf vor, auch wenn das
+  Mitglied schon abgerechnet wurde. eegFaktura nennt vorher Tarif, Betrag und Umsatzsteuer; es gilt der Tarifstand beim
+  Abrechnen. Bestätigt wird mit <strong>Nachverrechnen</strong>. Den Knopf gibt es nur, wenn noch keine Gebühr verrechnet und keine
+  Zahlung erfasst ist und der Mitglieds-Tarif eine Gebühr hat.</li>
+<li><strong>Vormerkung zurücknehmen</strong> hebt das Nachverrechnen wieder auf, solange es noch nicht abgerechnet ist.</li>
+<li><strong>Außerhalb bezahlt erfassen</strong>: Hat das Mitglied die Gebühr z. B. bar beim Beitritt bezahlt, trägst du das <strong>Datum
+  der Zahlung</strong> ein (Pflicht) und optional eine kurze Notiz. Einen Betrag gibt es nicht. Danach wird ihm die Gebühr
+  nicht mehr verrechnet, auch nicht mit der ersten Abrechnung.</li>
+<li><strong>Zahlung korrigieren</strong> und <strong>Zahlung entfernen</strong> ändern bzw. löschen die erfasste Zahlung; ohne sie gilt wieder der
+  Stand ohne Zahlung (offen, oder „nicht verrechnet“, wenn das Mitglied schon abgerechnet wurde).</li>
+</ul>
+<p>Vormerken und „außerhalb bezahlt“ schließen sich aus. Ist die Gebühr einmal verrechnet, lässt sich nichts mehr ändern.</p>
+<p>Wählst du für ein Mitglied, das schon abgerechnet wurde, einen Tarif mit Beitrittsgebühr, weist eegFaktura beim Tarif
+darauf hin: „Dieses Mitglied wurde schon abgerechnet – die Beitrittsgebühr wird ihm nicht mehr automatisch
+verrechnet. …“ Zuweisen kannst du den Tarif trotzdem; mit <strong>Beitrittsgebühr nachverrechnen</strong> kommt die Gebühr dann
+in den nächsten Abrechnungslauf.</p>
+<p>Ist die Abrechnung gerade nicht erreichbar, fehlen die Zeile und die Knöpfe.</p>
 <h3 id="neues-mitglied-zulassen">Neues Mitglied zulassen<a class="headerlink" href="#neues-mitglied-zulassen" title="Link zu diesem Abschnitt">&para;</a></h3>
 <p>Ein neues Mitglied — von dir angelegt oder über eine Registrierung hereingekommen — steht zuerst orange mit „!“ in
 der Liste und wartet auf die Zulassung. Rechts fragt eegFaktura: „Möchtest du <em>Nachname</em> in deine EEG aufnehmen?“</p>
@@ -1027,8 +1101,10 @@ richtest du dich: Ist der Fehler behoben (z. B. Nummer korrigiert), meldest du d
 Online-Anbindung gleich beim Netzbetreiber an.</p>
 <h2 id="stammdaten-aus-excel-importieren">Stammdaten aus Excel importieren<a class="headerlink" href="#stammdaten-aus-excel-importieren" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p>Viele Mitglieder auf einmal — z. B. beim Umstieg auf eegFaktura — liest du aus einer Excel-Datei ein: oben in der
-Mitgliederliste der Knopf mit der Wolke, <strong>Stammdaten</strong>, Blatt „EEG Stammdaten“, <strong>Import</strong>. Eine Vorlage gibt es
-hier (die Spalte <strong>Einzugsart</strong> fügst du bei Bedarf selbst hinzu):
+Mitgliederliste der Knopf mit der Wolke, <strong>Stammdaten</strong>, <strong>Sheet-Name</strong> (voreingestellt „EEG Stammdaten“; heißt das
+Blatt in deiner Datei anders, trägst du hier seinen Namen ein), die Datei mit dem Stern wählen oder in das Fenster
+ziehen, <strong>Import</strong>. Es geht eine Datei je Import. Eine Vorlage gibt es hier (die Spalte <strong>Einzugsart</strong> fügst du bei
+Bedarf selbst hinzu):
 <a href="https://github.com/eegfaktura/eegfaktura-backend/raw/master/tests/260716-vorlage-import-stammdaten.xlsx">Vorlage Stammdatenimport (Excel)</a>.</p>
 <p>Wichtige Spalten:</p>
 <table>
@@ -1115,9 +1191,16 @@ hier (die Spalte <strong>Einzugsart</strong> fügst du bei Bedarf selbst hinzu):
   übersteigen — senke den Faktor zuerst in der einen Gemeinschaft, bevor du ihn in der anderen erhöhst.</li>
 </ul>
 <h2 id="dokumente-eines-mitglieds">Dokumente eines Mitglieds<a class="headerlink" href="#dokumente-eines-mitglieds" title="Link zu diesem Abschnitt">&para;</a></h2>
-<p>Unter <strong>Dokumente</strong> legst du Unterlagen zum Mitglied ab, z. B. den unterschriebenen Beitritt. <strong>Hochladen</strong> (bzw.
-<strong>Hinzufügen</strong>) öffnet das Fenster zum Hochladen; erlaubt sind PDF, PNG und JPEG:</p>
+<p>Unter <strong>Dokumente</strong> legst du Unterlagen zum Mitglied ab, z. B. den unterschriebenen Beitritt. Sie stehen dort unter
+<strong>Verträge</strong>. <strong>Hochladen</strong> (bzw. <strong>Hinzufügen</strong>) öffnet das Fenster zum Hochladen; erlaubt sind PDF, PNG und JPEG:</p>
 <p><img alt="Dokumente hochladen" src="../images/dokumente-hochladen.png" /></p>
+<ul>
+<li>Mit <strong>Datei auswählen</strong> fügst du eine Datei hinzu; du kannst auch mehrere Dateien auf einmal in das Fenster ziehen.
+  Andere Dateiarten nimmt eegFaktura nicht und nennt sie in einem Hinweis. Mit dem Papierkorb nimmst du eine Datei
+  wieder aus der Liste; <strong>Hochladen</strong> lädt alle hoch.</li>
+<li>Ziehst du Dateien direkt auf den Bereich <strong>Verträge</strong> eines Mitglieds, öffnet sich das Fenster gleich mit diesen
+  Dateien. Hochgeladen wird erst mit <strong>Hochladen</strong>.</li>
+</ul>
 <p>Ein Klick auf ein Dokument öffnet es, das Papierkorb-Symbol löscht es endgültig. Dieselben Anmeldedokumente kannst
 du auch beim <a href="#neues-mitglied-zulassen">Zulassen</a> hochladen.</p>
 <h2 id="prozesse-beim-netzbetreiber">Prozesse beim Netzbetreiber<a class="headerlink" href="#prozesse-beim-netzbetreiber" title="Link zu diesem Abschnitt">&para;</a></h2>
