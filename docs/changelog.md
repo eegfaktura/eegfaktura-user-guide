@@ -3,6 +3,50 @@
 Neue Funktionen von eegFaktura, die du als EEG-Admin bemerkst. Die Kapitel beschreiben jeweils den aktuellen
 Stand.
 
+## Seit 29.10.2026
+
+### Einmalige Beitrittsgebühr
+
+Ein Mitgliedstarif kann eine einmalige **Beitrittsgebühr** haben, mit eigener Umsatzsteuer-Einstellung. eegFaktura
+verrechnet sie jedem Mitglied einmal, auf seiner ersten Rechnung mit Energie. Beim Mitglied unter **Details** siehst du
+den Stand („Beitrittsgebühr: …“) und kannst die Gebühr **nachverrechnen** (für schon abgerechnete Mitglieder) oder
+**außerhalb bezahlt** erfassen. Der Stammdaten-Export hat zwei neue Spalten dazu.
+Siehe [Tarife](04-tarife.md#beitrittsgebuhr) und
+[Mitglieder & Zählpunkte](02-mitglieder-zaehlpunkte.md#beitrittsgebuhr-eines-mitglieds).
+
+### Abrechnung ohne Auswahl
+
+Abgerechnet wird immer die ganze Gemeinschaft (alle aktiven Mitglieder mit Tarif); die Haken in der Mitgliederliste
+gibt es nicht mehr. Der Schalter **€** zeigt beim Darüberfahren, was er tut, oder warum er gesperrt ist. Ein Zeitraum
+ganz ohne Energiedaten wird nicht abgerechnet.
+Siehe [Abrechnung](05-abrechnung.md#abrechnungsmodus).
+
+### Mitgliederliste
+
+- Statt der zwei Reiter gibt es eine Auswahl **Anzeige**: **Standard** (die Mitglieder des gewählten Zeitraums, wie
+  bisher „Periode“), **Alle**, **Aktive** oder **Inaktive**. Hinweise beim Darüberfahren erklären die Ansicht und die
+  Knöpfe unten.
+- Beim Import (Wolke) kannst du die Datei in das Fenster ziehen, und der eingetragene **Sheet-Name** wird jetzt
+  verwendet.
+
+Siehe [Mitglieder & Zählpunkte](02-mitglieder-zaehlpunkte.md#anzeige-zeitraum-und-sortierung).
+
+### Verträge per Drag & Drop
+
+Dokumente eines Mitglieds (PDF, JPEG, PNG) ziehst du in das Fenster zum Hochladen, mehrere auf einmal, oder direkt auf
+den Bereich **Verträge** des Mitglieds.
+Siehe [Dokumente eines Mitglieds](02-mitglieder-zaehlpunkte.md#dokumente-eines-mitglieds).
+
+### Tarife
+
+Die Tarifliste ist in Mitgliedstarife, Erzeugertarife und Verbrauchertarife gruppiert, nach Namen sortiert, mit
+einklappbaren Gruppen, Suche (Lupe) und kleineren Karten. Die Tarifauswahl bei Mitglied und Zählpunkt ist gleich
+sortiert. Siehe [Tarife](04-tarife.md#die-tarifliste).
+
+### E-Mail-Texte
+
+Ein neu eingefügtes Bild ist zunächst klein (200 px). Siehe [E-Mail-Texte](03-email-texte.md#bilder).
+
 ## Herbst 2026 (seit 28.10.2026)
 
 ### E-Mail-Texte selbst gestalten
@@ -35,7 +79,7 @@ Siehe [Dashboard](01-anmeldung.md#dashboard).
 
 Filter **Alle / Aktive / Inaktive** und eine wählbare Sortierung, z. B. nach Ort oder Einzugsart; „Mitglieder mit
 nötiger Aktion oben“ lässt sich abschalten.
-Siehe [Mitglieder & Zählpunkte](02-mitglieder-zaehlpunkte.md#zeitraum-filter-und-sortierung).
+Siehe [Mitglieder & Zählpunkte](02-mitglieder-zaehlpunkte.md#anzeige-zeitraum-und-sortierung).
 
 ### Prozesse
 

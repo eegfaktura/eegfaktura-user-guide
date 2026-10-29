@@ -29,6 +29,15 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
   `requests` with certifi (PYSEC-2026-4320) dropped, it is only used by plugins this site does not enable.
 
 ### Changed
+- Brought in line with the production release of 29.10.2026 (web 1.18.0, backend 1.13.0, billing 1.7.0), each point
+  checked against the code: joining fee in the member tariff, its status line and actions in the member details and the
+  two export columns (chapters 2, 4, 5, 6); member list „Anzeige“ (Standard / Alle / Aktive / Inaktive) and tooltips;
+  billing always covers the whole community, € switch tooltip, no run without energy, final runs one at a time
+  (chapter 5); drag & drop and the sheet name in the import dialog, drag & drop for contracts (chapters 2, 6); grouped,
+  sorted and searchable tariff list (chapter 4); new mail images start small (chapter 3); „Was ist neu?“ lists the
+  release. Screenshots of the changed screens retaken on the local stack at the release state;
+  `scripts/prepare-local-stack.sql` gives the fixture member tariff a joining fee, the screenshot scripts follow the new
+  member list (no check boxes, „Anzeige“) and add `tarife-beitrittsgebuehr.png`.
 - Brought in line with the production release of 28.10.2026 (web 1.14.0, backend 1.10.0, billing 1.5.0), each
   point checked against the code: member list filters Alle/Aktive/Inaktive and the new sort options (chapter 2);
   mail texts: font size, image size, pasting/dropping images, fixed footer, link rules, 3 images and no PDF for

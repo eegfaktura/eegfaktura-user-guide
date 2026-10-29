@@ -37,6 +37,10 @@ UPDATE base.meteringpoint SET tariff_id = '00000000-0000-4000-a100-00000000000b'
 UPDATE base.participant SET "tariffId" = '00000000-0000-4000-a100-00000000000a'
  WHERE tenant = 'RC100100' AND status = 'ACTIVE' AND "tariffId" IS NULL;
 
+-- a joining fee on the member tariff "Tarif A" (web 1.15 / billing 1.6): the member details show its status line
+UPDATE base.tariff SET "joiningFee" = 50, "joiningFeeUseVat" = false, "joiningFeeVatInPercent" = 0
+ WHERE id = '00000000-0000-4000-a100-00000000000a' AND tenant = 'RC100100' AND type = 'EEG';
+
 -- billing settings of RC100100
 INSERT INTO billingj.billing_config (id, tenant_id, before_items_text_invoice, after_items_text_invoice,
        terms_text_invoice, before_items_text_credit_note, after_items_text_credit_note, terms_text_credit_note,

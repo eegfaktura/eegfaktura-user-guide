@@ -72,7 +72,8 @@ EEG**; er kommt aus den Angaben des Belegs, und dort gibt es zusätzlich den Pla
 Mit eingeschaltetem eigenem Text kannst du Bilder (PNG oder JPEG) in den Text einfügen: mit **Bild einfügen**, durch
 Einfügen aus der Zwischenablage oder indem du die Bilddatei in den Text ziehst. Breitere Bilder werden auf 1200 px
 verkleinert. Fotos (JPEG) verlieren vor dem Hochladen ihre versteckten Angaben, z. B. den Aufnahmeort.
-Klickst du ein Bild an, stellst du unter **Bildgröße** **Klein**, **Mittel** oder **Groß** ein.
+Ein neues Bild ist zunächst **Klein** (200 px breit). Klickst du ein Bild an, stellst du unter **Bildgröße**
+**Klein**, **Mittel** oder **Groß** ein.
 
 Unter dem Text stehen die Grenzen der jeweiligen Mail:
 

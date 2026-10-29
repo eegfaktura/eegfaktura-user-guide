@@ -41,6 +41,8 @@ Die Positionen sind je Zählpunkt gruppiert („Zählpunkt AT… – Anlagenname
 - bei Verbrauchern mit Freikontingent eine Zeile „Menge (…) = Verbrauch (…) abzgl. freie kWh (…)“,
 - die **Zählpunktgebühr**, wenn der Tarif eine hat,
 - auf Rechnungen der **Mitgliedsbeitrag** des Mitglieds-Tarifs,
+- auf der ersten Rechnung mit Energie (oder nach **Beitrittsgebühr nachverrechnen**) einmal die **Beitrittsgebühr**,
+  siehe [Tarife](04-tarife.md#beitrittsgebuhr),
 - Umsatzsteuer und Summen, darunter die Texte aus den Abrechnungseinstellungen und die Fußzeile.
 
 Der Anlagenname des Zählpunkts erscheint auf dem Beleg — praktisch, wenn ein Mitglied mehrere Anlagen hat.
@@ -48,16 +50,19 @@ Der Anlagenname des Zählpunkts erscheint auf dem Beleg — praktisch, wenn ein 
 ## Abrechnungsmodus
 
 1. Öffne **Mitglieder** und wähle oben den **Zeitraum** (z. B. „Jul-Sep 2026“). Jeder Zeitraum hat seinen eigenen
-   Abrechnungslauf.
-2. Hake die Mitglieder an, die abgerechnet werden sollen — der Haken ganz oben wählt alle aktiven Mitglieder mit
-   Tarif.
-
-    > **Wichtig:** Hake **alle** Mitglieder an, die in diesem Zeitraum abgerechnet werden sollen. Ein Zeitraum lässt
-    > sich nur **einmal** endgültig abrechnen; Mitglieder, die dabei nicht angehakt waren, kannst du für diesen Zeitraum
-    > nicht nachträglich abrechnen.
-3. Schalte unten links den Schalter **€** ein. eegFaktura erklärt den Ablauf; bestätige mit **OK**.
+   Abrechnungslauf. Die Anzeige **Standard** zeigt die Mitglieder dieses Zeitraums.
+2. Schalte unten links den Schalter **€** ein. eegFaktura erklärt den Ablauf; bestätige mit **OK**.
 
 ![Hinweis zum Abrechnungsmodus](images/abrechnung-modus.png)
+
+Abgerechnet wird immer die **ganze Gemeinschaft**: alle aktiven Mitglieder mit Tarif (am Mitglied oder an einem
+angemeldeten Zählpunkt). Auswählen musst du niemanden. Zählpunkte ohne Tarif nennt die
+[Prüfung vor der Abrechnung](#vorschau-erstellen) unter **Tarif**.
+
+Der Schalter **€** lässt sich einschalten, sobald die Energiedaten des Zeitraums geladen sind und darin mindestens ein
+abrechenbares Mitglied vorkommt. Fährst du mit der Maus darüber, steht da „Abrechnungsmodus aktivieren“ bzw.
+„Abrechnungsmodus beenden“ — oder, solange er gesperrt ist, der Grund, z. B. „Bitte zuerst einen Zeitraum wählen.“
+oder „Im Zeitraum gibt es keine abrechenbaren Mitglieder (aktiv, mit Tarif).“
 
 Im Abrechnungsmodus zeigen die Zählpunkt-Karten Beträge in € statt kWh.
 
@@ -74,10 +79,14 @@ Wähle das **Rechnungsdatum** und klicke auf **Vorschau erstellen**. Vorher prü
 | **Energiebilanz** | ob Produktion, Verbrauch und Verteilung zusammenpassen |
 | **Vollständigkeit** | Zählpunkte mit fehlenden Viertelstunden |
 
-Die Prüfung umfasst alle aktiven Zählpunkte der Gemeinschaft, nicht nur die angehakten Mitglieder. Die Pfeile klappen
+Die Prüfung umfasst alle aktiven Zählpunkte der Gemeinschaft. Die Pfeile klappen
 die Details auf. Warnungen halten dich nicht auf (**Trotzdem Vorschau erstellen**), sie zeigen
 aber, wo die Abrechnung noch unvollständig ist. Fehlende Daten forderst du unter
 [Prozesse → Zählpunktdaten nachfordern](08-prozesse.md#zahlpunktdaten-nachfordern) an.
+
+Sind die Energiedaten des Zeitraums noch nicht geladen oder gibt es darin kein abrechenbares Mitglied, startet
+eegFaktura nach der Prüfung keinen Lauf und nennt unter „Abrechnung nicht möglich“ den Grund. Ein Zeitraum ganz ohne
+Energiedaten wird also nicht abgerechnet.
 
 Die Vorschau erstellt Belege mit dem Zusatz „Vorschau“ und ohne Nummern:
 
@@ -89,6 +98,8 @@ Die Vorschau erstellt Belege mit dem Zusatz „Vorschau“ und ohne Nummern:
   steuerliche Beratung.
 - Den **Mitgliedsbeitrag** bekommt ein Mitglied nur, wenn es im Zeitraum mindestens einen Zählpunkt mit Energiedaten
   hat.
+- Ist eine [Beitrittsgebühr](04-tarife.md#beitrittsgebuhr) fällig, steht sie in den Beträgen des Mitglieds in einer
+  eigenen Zeile „Beitrittsgebühr:“ und ist in seiner Summe enthalten.
 - **ZIP** lädt alle Vorschau-Belege als PDF herunter (Dateinamen mit der Mitgliedsnummer am Ende, z. B.
   `Abr_YM-2026-9_Rechnung_Vorschau_042.pdf`), **EXCEL** eine Aufstellung aller Positionen.
 - **Vorschau Akt.** rechnet die Vorschau neu, z. B. nachdem du einen Tarif geändert oder Daten nachgefordert hast.
@@ -96,7 +107,7 @@ Die Vorschau erstellt Belege mit dem Zusatz „Vorschau“ und ohne Nummern:
 ## Abrechnung durchführen
 
 Passt die Vorschau, klicke auf **Abrechnung durchführen**. Die endgültigen Belege werden dabei **neu berechnet** — mit
-den Tarifen, Stammdaten und Energiedaten im Moment des Klicks und mit den gerade angehakten Mitgliedern. Hat sich seit
+den Tarifen, Stammdaten und Energiedaten im Moment des Klicks. Hat sich seit
 der Vorschau etwas geändert, erstelle sie mit **Vorschau Akt.** direkt davor neu. eegFaktura prüft noch einmal und
 warnt ausdrücklich:
 
@@ -104,6 +115,10 @@ warnt ausdrücklich:
 
 > **Die Abrechnung ist endgültig.** Die Belege bekommen fortlaufende Nummern und lassen sich danach nicht mehr ändern
 > oder löschen. Ein Belegdatum in der Zukunft ist nicht erlaubt.
+
+Endgültige Läufe einer Gemeinschaft laufen nacheinander: Startest du einen, während ein anderer noch läuft (z. B.
+für einen zweiten Zeitraum), bricht er ab mit „Ein endgültiger Abrechnungslauf dieser Gemeinschaft läuft gerade –
+bitte nach dessen Ende erneut starten“.
 
 Belege mit dem Betrag 0 werden nicht erstellt. Erzeuger ohne UID bekommen eine **Gutschrift**, Erzeuger mit UID eine
 **Gutschrift im Reverse-Charge-Verfahren** (mit den Texten „Gutschriften für Mitgliedstyp Firma“).
