@@ -8,6 +8,8 @@ import re
 
 from playwright.sync_api import Page
 
+LIST_READY = "Anzeige: Standard"  # the member list has loaded (its view choice, default „Standard“)
+
 FINAL_PERIOD = "Jul-Sep 2026"  # the period that gets a final billing run in the local stack
 FINAL_RANGE = "01.07.2026 – 30.09.2026"
 FINAL_PERIOD_ID = "/YQ/Abr_YQ-2026-3"  # how the billing API names that period (end of the billing-run URL)  # as the check dialog shows it: the final run is confirmed only for this
@@ -22,9 +24,15 @@ def chapter_tariffs(page: Page, shot, step, goto) -> None:
         page.get_by_role("button", name="Änderungen speichern").wait_for()
         shot("tarife-liste", page)
 
+    def joining_fee():
+        # the member tariff with its joining fee (prepare-local-stack.sql sets one on "Tarif A"); nothing is saved
+        page.get_by_text("Tarif A", exact=True).first.click()
+        page.get_by_text("Einmalige Beitrittsgebühr", exact=True).first.wait_for()
+        shot("tarife-beitrittsgebuehr", page)
+
     def new_time_tariff():
         # the new-tariff form with a time-based consumer tariff; nothing is saved
-        page.locator(".ratePane ion-toolbar ion-button").first.click()
+        page.locator(".ratePane ion-toolbar ion-button").last.click()  # the plus (the magnifier comes first)
         page.get_by_text("Verbraucher", exact=True).first.click()
         page.get_by_text("Zeitbasiert", exact=True).first.click()
         page.get_by_text("Zeitraum 1 aktiv", exact=False).first.wait_for()
@@ -39,14 +47,15 @@ def chapter_tariffs(page: Page, shot, step, goto) -> None:
         shot("tarife-loeschen-gesperrt", page)
         page.locator("ion-alert button", has_text="Abbrechen").click()
 
-    for name, fn in (("tarife-liste", tariff_list), ("tarife-neu-zeitbasiert", new_time_tariff),
+    for name, fn in (("tarife-liste", tariff_list), ("tarife-beitrittsgebuehr", joining_fee),
+                     ("tarife-neu-zeitbasiert", new_time_tariff),
                      ("tarife-loeschen-gesperrt", delete_blocked)):
         step(name, fn)
 
 
 def _billing_mode(page: Page, goto) -> None:
-    goto(page, "/page/participants", "Periode")
-    page.locator("ion-checkbox").first.click()  # all members
+    goto(page, "/page/participants", LIST_READY)
+    # the € switch can be switched on once the energy report of the period is loaded (the whole community is billed)
     page.locator("label.eeg-sliding-box").first.click()
 
 
@@ -125,7 +134,7 @@ def chapter_billing(page: Page, shot, step, goto) -> None:
         page.get_by_role("button", name="Schließen").click()
 
     def invoices_of_member():
-        goto(page, "/page/participants", "Periode")
+        goto(page, "/page/participants", LIST_READY)
         page.locator("div.participant").first.click()
         page.locator("ion-item.eeg-item-box", has_text="Meine Rechnungen").click()
         page.get_by_text("Rechnungen", exact=True).first.wait_for()
@@ -146,7 +155,7 @@ def chapter_billing(page: Page, shot, step, goto) -> None:
 
 def chapter_energy(page: Page, shot, step, goto) -> None:
     def meter_chart():
-        goto(page, "/page/participants", "Periode")
+        goto(page, "/page/participants", LIST_READY)
         # an active consumer with data (the fixture's first metering point has a warning and no chart)
         page.locator("div.participant ion-card", has_text=METER_WITH_DATA).first.click()
         page.get_by_text("Energiedaten", exact=True).first.wait_for()
@@ -179,7 +188,7 @@ def chapter_messages_documents(page: Page, shot, step, goto) -> None:
         shot("nachrichten", page, fit=False)  # a long list: the first messages are enough
 
     def documents():
-        goto(page, "/page/participants", "Periode")
+        goto(page, "/page/participants", LIST_READY)
         page.locator("div.participant").first.click()
         page.locator("ion-item.eeg-item-box", has_text="Dokumente").click()
         page.get_by_role("button", name="Hochladen").first.click()

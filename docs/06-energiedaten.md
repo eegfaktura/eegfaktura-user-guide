@@ -41,7 +41,13 @@ Der Knopf mit dem Pfeil nach unten oben in der Mitgliederliste öffnet **Downloa
 2. Bei Energiedaten: Wähle unter **Zeitspanne auswählen** den **Zeitraum**.
 3. Klicke auf **Export**. Du bekommst eine Excel-Datei.
 
-Die Excel-Datei hat zwei Blätter:
+Im **Stammdaten**-Export stehen im Blatt „Mitglieder“ nach „Mitgliedstarif“ die Spalten „Beitrittsgebühr (€)“ und
+„Beitrittsgebühr Status“, mit den Status-Texten wie beim
+[Mitglied](02-mitglieder-zaehlpunkte.md#beitrittsgebuhr-eines-mitglieds); hat der Tarif eines Mitglieds keine Gebühr,
+bleiben beide Zellen leer. Ist die Abrechnung gerade nicht
+erreichbar, sagt eegFaktura das; der Export enthält dann alle Mitglieder, nur die Status-Spalte bleibt leer.
+
+Die Excel-Datei mit den Energiedaten hat zwei Blätter:
 
 - **Summary**: Summen der Gemeinschaft (Verbrauch, Erzeugung, Eigendeckung, Überschuss, Mengenbilanz — sie sollte
   nahe 0 sein) und je Zählpunkt, ab wann und bis wann Daten da sind und ob sie **vollständig** sind.
@@ -87,4 +93,6 @@ auch die Karten in der Mitgliederliste.
 
 Der Knopf mit der Wolke öffnet **Upload Daten für …**. Mit **Stammdaten** liest du Mitglieder und Zählpunkte aus einer
 Excel-Datei ein (Blatt „EEG Stammdaten“). Nur bei Gemeinschaften **ohne Online-Anbindung** gibt es zusätzlich
-**Energiedaten** (Blatt „Energiedaten“). Wähle die Datei und klicke auf **Import**.
+**Energiedaten** (Blatt „Energiedaten“). Heißt das Blatt in deiner Datei anders, trägst du seinen Namen unter
+**Sheet-Name** ein. Wähle die Datei mit dem Stern oder ziehe sie in das Fenster (eine Datei je Import) und klicke auf
+**Import**.

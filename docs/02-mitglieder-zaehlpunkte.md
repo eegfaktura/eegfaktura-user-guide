@@ -19,20 +19,24 @@ Der Balken unter dem Wert zeigt den Anteil des Zählpunkts.
 | Pfeil nach unten | **Export**: Daten für einen Zeitraum herunterladen |
 | Plus | **Neues Mitglied** anlegen (siehe unten) |
 
-### Zeitraum, Filter und Sortierung
+### Anzeige, Zeitraum und Sortierung
 
-- **Periode** zeigt alle Mitglieder. Den Zeitraum (z. B. „Okt-Dez 2026“) wählst du darunter.
-- Der zweite Reiter filtert die Liste. Über das Filter-Symbol wählst du **Alle**, **Aktive** oder **Inaktive**;
-  voreingestellt ist **Inaktive**. Der Filter zeigt die Mitglieder der Gemeinschaft unabhängig vom Zeitraum, jedes
-  mit genau den Zählpunkten, die passen:
-    - **Aktive**: Zählpunkte mit dem Status aktiv.
-    - **Inaktive**: alle anderen Zählpunkte, z. B. Anmeldung läuft, abgewiesen, aufgehoben oder ausgetreten. Dazu
-      aktive Zählpunkte, bei denen eine Aktion nötig ist (etwa eine laufende Aufhebung), und Mitglieder, die noch
-      zugelassen werden müssen. Hier findest du also alles, was einen Blick braucht.
-    - **Alle**: jedes Mitglied mit allen Zählpunkten. Ein Mitglied ganz ohne Zählpunkt steht nur dann in der Liste,
-      wenn es noch zugelassen werden muss.
+- Oben steht **Anzeige:** mit der gewählten Ansicht. Ein Klick darauf öffnet die Auswahl **Standard**, **Alle**,
+  **Aktive** oder **Inaktive**; die Wahl gilt nach **Übernehmen**. Fährst du mit der Maus über den Eintrag, erklärt
+  ein Hinweis die gewählte Ansicht.
+    - **Standard** (voreingestellt): die Mitglieder mit Zählpunkten, die im gewählten Zeitraum aktiv sind, dazu
+      Zählpunkte mit offenem Problem. Das ist die Ansicht für die Abrechnung. Den Zeitraum (z. B. „Okt-Dez 2026“)
+      wählst du darunter.
+    - **Alle**, **Aktive** und **Inaktive** zeigen die Mitglieder der Gemeinschaft mit dem Stand heute, unabhängig vom
+      Zeitraum, jedes mit genau den Zählpunkten, die passen:
+        - **Aktive**: Zählpunkte mit dem Status aktiv.
+        - **Inaktive**: alle anderen Zählpunkte, z. B. Anmeldung läuft, abgewiesen, aufgehoben oder ausgetreten. Dazu
+          aktive Zählpunkte, bei denen eine Aktion nötig ist (etwa eine laufende Aufhebung), und Mitglieder, die noch
+          zugelassen werden müssen. Hier findest du also alles, was einen Blick braucht.
+        - **Alle**: jedes Mitglied mit allen Zählpunkten. Ein Mitglied ganz ohne Zählpunkt steht nur dann in der
+          Liste, wenn es noch zugelassen werden muss.
 
-  ![Filteroptionen](images/mitglieder-filter.png)
+  ![Anzeige](images/mitglieder-filter.png)
 
 - Das Pfeil-Symbol ganz rechts öffnet die **Sortierung**: Mitgliedsnummer (voreingestellt), Nachname, Vorname,
   Mitglied seit (neueste bzw. älteste zuerst), Aktiviert seit (neueste zuerst), Einzugsart oder Ort. Mit dem Haken
@@ -57,9 +61,10 @@ grau „inaktiv“, hat das Mitglied keinen aktiven Zählpunkt mehr.
 ### Unten in der Liste
 
 - Der Schalter **€** wechselt in den **Abrechnungsmodus**. Er gehört zur Abrechnung und wird im Kapitel
-  Abrechnung beschrieben.
+  [Abrechnung](05-abrechnung.md#abrechnungsmodus) beschrieben.
 - Mit den Symbolen daneben wechselst du zwischen Mitgliedern und Zählpunkten und blendest Verbraucher oder Erzeuger
-  ein und aus.
+  ein und aus. Fährst du mit der Maus darüber, steht da, was sie tun: „Nur Mitglieder (Zählpunkte einklappen)“,
+  „Nur Zählpunkte“, „Nur Erzeuger“, „Nur Verbraucher“.
 
 ## Ein Mitglied ansehen und ändern
 
@@ -87,6 +92,42 @@ Ein Klick auf ein Mitglied öffnet rechts seine Daten, zunächst mit dem ersten 
 - **Optionals**: Mitglied seit.
 
 Änderungen werden gespeichert, sobald du ein Feld verlässt.
+
+### Beitrittsgebühr eines Mitglieds
+
+Hat ein Tarif deiner Gemeinschaft eine [Beitrittsgebühr](04-tarife.md#beitrittsgebuhr), steht unter dem
+**Mitglieds-Tarif** die Zeile **Beitrittsgebühr:** mit dem Stand für dieses Mitglied:
+
+| Anzeige | Bedeutung |
+|---------|-----------|
+| verrechnet mit *Belegnummer* vom *Datum* | Die Gebühr steht auf dieser endgültigen Rechnung. |
+| außerhalb bezahlt am *Datum* (*Notiz*) | Ihr habt eine Zahlung außerhalb von eegFaktura erfasst; die Gebühr wird nicht verrechnet. |
+| zur Verrechnung im nächsten Abrechnungslauf vorgemerkt | Die Gebühr kommt mit der nächsten endgültigen Abrechnung. |
+| offen – wird mit der ersten Energieabrechnung verrechnet | Das Mitglied wurde noch nie mit Energie abgerechnet; die Gebühr kommt automatisch mit seiner ersten Abrechnung. |
+| nicht verrechnet – Mitglied wurde schon abgerechnet | Das Mitglied wurde schon vor der Gebühr abgerechnet; automatisch bekommt es sie nicht mehr. |
+| kein Tarif mit Beitrittsgebühr | Der Mitglieds-Tarif dieses Mitglieds hat keine Beitrittsgebühr. |
+
+Darunter stehen, je nach Stand, diese Knöpfe:
+
+- **Beitrittsgebühr nachverrechnen** merkt die Gebühr für den nächsten endgültigen Abrechnungslauf vor, auch wenn das
+  Mitglied schon abgerechnet wurde. eegFaktura nennt vorher Tarif, Betrag und Umsatzsteuer; es gilt der Tarifstand beim
+  Abrechnen. Bestätigt wird mit **Nachverrechnen**. Den Knopf gibt es nur, wenn noch keine Gebühr verrechnet und keine
+  Zahlung erfasst ist und der Mitglieds-Tarif eine Gebühr hat.
+- **Vormerkung zurücknehmen** hebt das Nachverrechnen wieder auf, solange es noch nicht abgerechnet ist.
+- **Außerhalb bezahlt erfassen**: Hat das Mitglied die Gebühr z. B. bar beim Beitritt bezahlt, trägst du das **Datum
+  der Zahlung** ein (Pflicht) und optional eine kurze Notiz. Einen Betrag gibt es nicht. Danach wird ihm die Gebühr
+  nicht mehr verrechnet, auch nicht mit der ersten Abrechnung.
+- **Zahlung korrigieren** und **Zahlung entfernen** ändern bzw. löschen die erfasste Zahlung; ohne sie gilt wieder der
+  Stand ohne Zahlung (offen, oder „nicht verrechnet“, wenn das Mitglied schon abgerechnet wurde).
+
+Vormerken und „außerhalb bezahlt“ schließen sich aus. Ist die Gebühr einmal verrechnet, lässt sich nichts mehr ändern.
+
+Wählst du für ein Mitglied, das schon abgerechnet wurde, einen Tarif mit Beitrittsgebühr, weist eegFaktura beim Tarif
+darauf hin: „Dieses Mitglied wurde schon abgerechnet – die Beitrittsgebühr wird ihm nicht mehr automatisch
+verrechnet. …“ Zuweisen kannst du den Tarif trotzdem; mit **Beitrittsgebühr nachverrechnen** kommt die Gebühr dann
+in den nächsten Abrechnungslauf.
+
+Ist die Abrechnung gerade nicht erreichbar, fehlen die Zeile und die Knöpfe.
 
 ### Neues Mitglied zulassen
 
@@ -169,8 +210,10 @@ Online-Anbindung gleich beim Netzbetreiber an.
 ## Stammdaten aus Excel importieren
 
 Viele Mitglieder auf einmal — z. B. beim Umstieg auf eegFaktura — liest du aus einer Excel-Datei ein: oben in der
-Mitgliederliste der Knopf mit der Wolke, **Stammdaten**, Blatt „EEG Stammdaten“, **Import**. Eine Vorlage gibt es
-hier (die Spalte **Einzugsart** fügst du bei Bedarf selbst hinzu):
+Mitgliederliste der Knopf mit der Wolke, **Stammdaten**, **Sheet-Name** (voreingestellt „EEG Stammdaten“; heißt das
+Blatt in deiner Datei anders, trägst du hier seinen Namen ein), die Datei mit dem Stern wählen oder in das Fenster
+ziehen, **Import**. Es geht eine Datei je Import. Eine Vorlage gibt es hier (die Spalte **Einzugsart** fügst du bei
+Bedarf selbst hinzu):
 [Vorlage Stammdatenimport (Excel)](https://github.com/eegfaktura/eegfaktura-backend/raw/master/tests/260716-vorlage-import-stammdaten.xlsx).
 
 Wichtige Spalten:
@@ -223,10 +266,16 @@ So verhält sich der Import:
 
 ## Dokumente eines Mitglieds
 
-Unter **Dokumente** legst du Unterlagen zum Mitglied ab, z. B. den unterschriebenen Beitritt. **Hochladen** (bzw.
-**Hinzufügen**) öffnet das Fenster zum Hochladen; erlaubt sind PDF, PNG und JPEG:
+Unter **Dokumente** legst du Unterlagen zum Mitglied ab, z. B. den unterschriebenen Beitritt. Sie stehen dort unter
+**Verträge**. **Hochladen** (bzw. **Hinzufügen**) öffnet das Fenster zum Hochladen; erlaubt sind PDF, PNG und JPEG:
 
 ![Dokumente hochladen](images/dokumente-hochladen.png)
+
+- Mit **Datei auswählen** fügst du eine Datei hinzu; du kannst auch mehrere Dateien auf einmal in das Fenster ziehen.
+  Andere Dateiarten nimmt eegFaktura nicht und nennt sie in einem Hinweis. Mit dem Papierkorb nimmst du eine Datei
+  wieder aus der Liste; **Hochladen** lädt alle hoch.
+- Ziehst du Dateien direkt auf den Bereich **Verträge** eines Mitglieds, öffnet sich das Fenster gleich mit diesen
+  Dateien. Hochgeladen wird erst mit **Hochladen**.
 
 Ein Klick auf ein Dokument öffnet es, das Papierkorb-Symbol löscht es endgültig. Dieselben Anmeldedokumente kannst
 du auch beim [Zulassen](#neues-mitglied-zulassen) hochladen.

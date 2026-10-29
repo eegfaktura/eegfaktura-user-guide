@@ -47,6 +47,7 @@ OVERLAYS = "ion-alert, ion-modal, ion-popover, ion-picker"
 ONLY = sys.argv[1] if len(sys.argv) > 1 else ""
 # the community with online connection of SCREENSHOT_MULTI_USER (only there the menu has "Prozesse")
 ONLINE_COMMUNITY = os.environ.get("SCREENSHOT_ONLINE_COMMUNITY", "GC106668")
+LIST_READY = "Anzeige: Standard"  # the member list has loaded (its view choice, default „Standard“)
 
 failed: list[str] = []
 written: list[str] = []
@@ -165,7 +166,7 @@ def chapter_switch_community(page: Page) -> None:
 
 def chapter_members(page: Page) -> None:
     def member_meter():
-        goto(page, "/page/participants", "Periode")
+        goto(page, "/page/participants", LIST_READY)
         page.locator("div.participant").first.click()  # opens the member with its first metering point
         page.locator("ion-item.eeg-item-box", has_text="Details und Adresse").wait_for()
         shot("mitglied-zaehlpunkt", page)
@@ -182,9 +183,8 @@ def chapter_members(page: Page) -> None:
         close_overlays(page)
 
     def filter_dialog():
-        tab = page.locator(".period-filter-menu > div.item").nth(1)
-        tab.locator("ion-icon").first.click()
-        page.locator("ion-alert", has_text="Filteroptionen").wait_for()
+        page.locator(".period-filter-menu > div.item").first.click()
+        page.locator("ion-alert", has_text="Inaktive").wait_for()
         shot("mitglieder-filter", page)
         close_overlays(page)
 
