@@ -3,6 +3,16 @@
 Neue Funktionen von eegFaktura, die du als EEG-Admin bemerkst. Die Kapitel beschreiben jeweils den aktuellen
 Stand.
 
+## Herbst 2026 (nächste Version)
+
+### Keine Offline-Registrierung mehr
+
+Die Netzbetreiber unterstützen die Anmeldung mit **Aktivierungs-Code** (Offline-Registrierung) nicht mehr. Beim
+Anlegen eines Zählpunkts, beim **Zulassen** und unter **Prozesse → Zählpunkt aktivieren** gibt es die Auswahl
+Offline-Registrierung daher nicht mehr. Zählpunkte werden immer online beim Netzbetreiber angemeldet; das Mitglied
+bestätigt danach die Datenfreigabe.
+Siehe [Mitglieder & Zählpunkte](02-mitglieder-zaehlpunkte.md#neues-mitglied-zulassen).
+
 ## Herbst 2026 (seit 29.10.2026)
 
 ### Einmalige Beitrittsgebühr

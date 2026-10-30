@@ -5,6 +5,10 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 ## [Unreleased]
 
 ### Removed
+- Mitglieder & Zählpunkte, Prozesse: the offline registration with an activation code (checkbox
+  „Offline-Registrierung“, field „Aktivierungs-Code“, ONLINE/OFFLINE switch in „Zulassen“) — grid operators no longer
+  support it; eegFaktura registers metering points online only (eegfaktura-web#246, eegfaktura-backend#129).
+  „Was ist neu?“ has a short note.
 - Überblick: the role "Mitglied mit Zugang" — eegFaktura has no member login today; the guide names EEG-Admins only.
 
 ### Added
