@@ -28,9 +28,8 @@ Für heute und spätere Tage gibt es noch keine Daten. Zählpunkte, die in der l
 ## Zählpunkt aktivieren
 
 Meldet einen noch nicht aktiven Zählpunkt (erneut) beim Netzbetreiber an, z. B. nach einer Abweisung, wenn der Fehler
-behoben ist. Wähle **Mitglied** und **Zählpunkt**. Hast du vom Netzbetreiber einen **Aktivierungs-Code**, hake
-**Offline-Registrierung** an und trage ihn ein. Bei der Online-Anmeldung muss das Mitglied die Datenfreigabe danach
-bestätigen; es bekommt dazu die Mail „Freigabe-Aufforderung“.
+behoben ist. Wähle **Mitglied** und **Zählpunkt**. Zählpunkte werden immer online beim Netzbetreiber angemeldet: Das
+Mitglied muss die Datenfreigabe danach bestätigen; es bekommt dazu die Mail „Freigabe-Aufforderung“.
 
 ## Zählpunkt abmelden
 
