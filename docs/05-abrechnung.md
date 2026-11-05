@@ -222,7 +222,8 @@ jedem Monatsbeginn. Wurde noch nie endgültig abgerechnet, gilt das neue Interva
 - **Eine Berechnung, die gerade läuft**, z. B. eine Abrechnung, die du eben gestartet hast. Warte, bis sie fertig ist,
   und versuche es dann noch einmal.
 
-Eine **Vorschau** hält den Wechsel nicht auf. Sie ist nicht endgültig und zählt nicht als abgerechnet.
+Eine **fertige Vorschau** hält den Wechsel nicht auf. Sie ist nicht endgültig und zählt nicht als abgerechnet. Nur solange
+eine Vorschau gerade rechnet, wartet der Wechsel wie bei jeder laufenden Berechnung.
 
 ### Was sich ändert und was nicht
 
