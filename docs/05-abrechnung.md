@@ -229,8 +229,8 @@ Eine **Vorschau** hält den Wechsel nicht auf. Sie ist nicht endgültig und zäh
 - Bestehende Belege, ihre Nummern und Exporte bleiben unverändert. Schon abgerechnete Zeiträume werden nicht neu
   berechnet.
 - Nach dem Wechsel bietet eegFaktura bei der Abrechnung die Zeiträume des neuen Intervalls an.
-- **Mitgliedsbeitrag, Grund- und Zählpunktgebühr** werden **je Abrechnung** verrechnet. Bleibt der Tarif gleich, ändert
-  sich mit dem Intervall also der Jahresbetrag: Ein Mitgliedsbeitrag von 5 € ergibt monatlich abgerechnet 60 € im Jahr,
+- **Mitgliedsbeitrag, Zählpunktgebühr und kostenlose Energie (kWh)** gelten **je Abrechnung**. Bleibt der Tarif gleich,
+  ändert sich mit dem Intervall also der Jahresbetrag: Ein Mitgliedsbeitrag von 5 € ergibt monatlich abgerechnet 60 € im Jahr,
   vierteljährlich abgerechnet 20 €. Prüfe deshalb vor dem Wechsel die [Tarife](04-tarife.md) und passe die Beträge an.
 - Die einmalige [Beitrittsgebühr](04-tarife.md#beitrittsgebuhr) ist nicht betroffen.
 
