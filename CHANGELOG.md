@@ -4,6 +4,16 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 
 ## [Unreleased]
 
+### Added
+- Abrechnung: section „Abrechnungszeitraum wechseln“ (vfeeg-development/eegfaktura-platform#230; the dialog in
+  eegfaktura-web links to its anchor `#abrechnungszeitraum-wechseln`): who can change the interval, from when the new
+  one applies (start of the period after the last final billing, everything before billed; example monthly →
+  quarterly), what blocks it (open periods, a running calculation; a preview does not), what stays (documents,
+  numbers, exports) and that membership fee, metering-point fee and free kWh are charged per run, so the yearly amount
+  changes with the interval. The decision and informing the members are the community's matter. Anmeldung → EEG-Seite
+  no longer calls the interval „fest eingestellt“ and links the section. To be merged with the web release that
+  brings the dialog.
+
 ### Removed
 - Überblick: the role "Mitglied mit Zugang" — eegFaktura has no member login today; the guide names EEG-Admins only.
 

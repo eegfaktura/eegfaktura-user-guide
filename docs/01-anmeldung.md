@@ -87,7 +87,7 @@ Der Menüpunkt mit dem **Namen deiner Gemeinschaft** öffnet die EEG-Seite mit i
 
 | Bereich | Inhalt |
 |---------|--------|
-| **Einstellungen** | Auswahl Gemeinschaft, **Abrechnungszeitraum** (fest eingestellt) |
+| **Einstellungen** | Auswahl Gemeinschaft, **Abrechnungszeitraum** (siehe [Abrechnungszeitraum wechseln](05-abrechnung.md#abrechnungszeitraum-wechseln)) |
 | **Allgemeines** | EC-Nummer, Gemeinschafts-ID, Rechtsform, EEG Bezeichnung, Firmennummer, Umsatzsteuer ID, Steuernummer, Verteilung |
 | **Netzbetreiber** | Netzbetreiber-ID und -Name |
 | **E-Mail-Texte** | Zugang zu den [E-Mail-Texten](03-email-texte.md) (nur EEG-Admins) |
