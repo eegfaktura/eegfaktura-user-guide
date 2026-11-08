@@ -3,6 +3,16 @@
 Neue Funktionen von eegFaktura, die du als EEG-Admin bemerkst. Die Kapitel beschreiben jeweils den aktuellen
 Stand.
 
+## In der Pilot-Zone
+
+--8<-- "pilot.md"
+
+### EEG-Seite: Abrechnungsintervall unter „Allgemeines“
+
+Die Karte **Einstellungen** auf der EEG-Seite entfällt. Die Gemeinschaft wechselst du nur noch im
+[Benutzermenü](01-anmeldung.md#gemeinschaft-wechseln). Das Intervall heißt **Abrechnungsintervall** und steht als erstes
+Feld unter **Allgemeines**. Siehe [Abrechnung](05-abrechnung.md#abrechnungszeitraum-wechseln).
+
 ## Herbst 2026 (seit 08.11.2026)
 
 ### Abrechnungszeitraum wechseln

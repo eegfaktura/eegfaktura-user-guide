@@ -186,12 +186,14 @@ Information. Ein Klick öffnet das PDF:
 
 Belege mit „Vorschau“ im Namen stammen aus einer Vorschau und sind nicht gültig.
 
-## Abrechnungszeitraum wechseln
+## Abrechnungsintervall wechseln {#abrechnungszeitraum-wechseln}
+
+--8<-- "pilot.md"
 
 Ob deine Gemeinschaft monatlich, vierteljährlich, halbjährlich oder jährlich abrechnet, stellst du auf der
-**EEG-Seite** unter **Einstellungen → Abrechnungszeitraum** ein. Ändern können das nur EEG-Admins.
+**EEG-Seite** unter **Allgemeines → Abrechnungsintervall** ein. Ändern können das nur EEG-Admins.
 
-Wählst du einen anderen Wert, öffnet sich der Dialog **Abrechnungszeitraum wechseln**. eegFaktura prüft dort zuerst, ob
+Wählst du einen anderen Wert, öffnet sich der Dialog **Abrechnungsintervall wechseln**. eegFaktura prüft dort zuerst, ob
 der Wechsel möglich ist, und zeigt:
 
 - das bisherige und das neue Intervall,
