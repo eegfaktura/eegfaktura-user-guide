@@ -135,12 +135,13 @@ Ein neues Mitglied — von dir angelegt oder über eine Registrierung hereingeko
 der Liste und wartet auf die Zulassung. Rechts fragt eegFaktura: „Möchtest du *Nachname* in deine EEG aufnehmen?“
 
 - **Ja, Zulassen** öffnet den Dialog „*Name* zulassen“. Dort kannst du **Anmeldedokumente** hochladen (z. B. den
-  unterschriebenen Beitritt) und je Zählpunkt angeben, ob er per **Offline-Registrierung** mit einem
-  **Aktivierungs-Code** angemeldet wird. Mit **Zulassen** wird das Mitglied aufgenommen.
+  unterschriebenen Beitritt) und die Zählpunkte auswählen, die angemeldet werden sollen. Mit **Zulassen** wird das
+  Mitglied aufgenommen.
 - **Nein, Löschen** löscht das Mitglied mit allen Zählpunkten. Das lässt sich nicht rückgängig machen.
 
 Erst mit dem Zulassen meldet eegFaktura die Zählpunkte bei Gemeinschaften mit Online-Anbindung beim Netzbetreiber
-an. Bei Gemeinschaften ohne Online-Anbindung werden sie damit aktiv.
+an. Zählpunkte werden immer online beim Netzbetreiber angemeldet; das Mitglied bestätigt danach die Datenfreigabe.
+Bei Gemeinschaften ohne Online-Anbindung werden sie damit aktiv.
 
 ## Zählpunkte
 
@@ -162,7 +163,7 @@ Ist ein Zählpunkt nicht aktiv, steht über den Details ein Hinweis zum Stand:
 | Hinweis | Bedeutung |
 |---------|-----------|
 | Antwort des Netzbetreibers noch ausstehend. | Die Anmeldung ist beim Netzbetreiber, er hat noch nicht geantwortet. |
-| Zustimmung des Mitglieds noch ausstehend. | Das Mitglied muss die Datenfreigabe noch bestätigen; bei der Online-Anmeldung bekommt es dazu die Mail „Freigabe-Aufforderung“. |
+| Zustimmung des Mitglieds noch ausstehend. | Das Mitglied muss die Datenfreigabe noch bestätigen; es bekommt dazu die Mail „Freigabe-Aufforderung“. |
 | Abschlussmeldung vom Netzbetreiber noch ausstehend. | Das Mitglied hat zugestimmt, die Abschlussmeldung des Netzbetreibers fehlt noch. |
 | Zählpunkt wurde vom Netzbetreiber abgewiesen. | Der Netzbetreiber hat die Anmeldung abgelehnt. |
 | Zählpunkt wurde vom Netzbetreiber nicht angenommen. | Die Anmeldung war ungültig, z. B. weil die Zählpunktnummer nicht gefunden wurde. |
@@ -193,8 +194,6 @@ Einen ungültigen Zählpunkt, der nie angemeldet wurde, kannst du hier mit **Lö
 4. Wähle **Verbraucher** oder **Erzeuger**, den **Tarif**, gib die **Zählpunktnummer** (33 Zeichen, beginnt mit
    `AT`) und den **Teilnahmefaktor in %** ein. Mit **Adresse vom Besitzer übernehmen** wird die Adresse des
    Mitglieds eingetragen.
-    - Hast du vom Netzbetreiber einen **Aktivierungs-Code** (Offline-Registrierung), hakst du
-      **Offline-Registrierung** an und trägst den Code ein.
     - Bei Gemeinschaften ohne Online-Anbindung wählst du zusätzlich den **Status** („Noch nicht registriert“ oder
       „Bereits registriert“) und das Datum **Aktiv seit …**.
 5. Klicke auf **Registrieren**. Verlässt du die Seite vor dem Speichern, fragt eegFaktura nach.
