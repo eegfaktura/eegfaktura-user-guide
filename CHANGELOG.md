@@ -4,6 +4,12 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 
 ## [Unreleased]
 
+### Changed
+- Production release of 08.11.2026: the pilot features of 06.–08.11.2026 are live everywhere. The hint „Derzeit nur in
+  der Pilot-Zone“ is removed from all sections (`--8<-- "pilot.md"`), „Was ist neu?“ lists them under „Herbst 2026
+  (seit 08.11.2026)“. `snippets/pilot.md` stays for the next pilot features. Screenshots of the user menu, the
+  community picker and the dashboard still show the earlier state (follow-up).
+
 ### Added
 - Standard for features that run only in the pilot zone (README „Features in the pilot zone“): shared hint
   `snippets/pilot.md` („Derzeit nur in der Pilot-Zone“), included with `--8<-- "pilot.md"` (pymdownx.snippets, part
