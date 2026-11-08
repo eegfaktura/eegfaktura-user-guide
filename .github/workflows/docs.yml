@@ -4,14 +4,18 @@ name: User Guide (MkDocs)
 # repository's `gh-pages` branch (GitHub Pages: Settings → Pages → branch
 # gh-pages, folder /). Same pattern as the member-onboarding user guide.
 #
-# scan + build run for pull requests and main with a read-only token; only
-# deploy (push to main, after both passed) gets write access. No checkout keeps
-# its token in .git/config (persist-credentials: false).
+# build runs for pull requests and main with a read-only token; only deploy (push to main, after the build passed)
+# gets write access. The dependency scan runs for pull requests (where the pinned requirements change), weekly and by
+# hand, but no longer gates the deploy: the site is static and the scanned packages only build it, and an outage of
+# a scanner download must not hold back the guide (decision 08.11.2026). No checkout keeps its token in .git/config
+# (persist-credentials: false).
 
 on:
   push:
     branches: [main]
   pull_request:
+  schedule:
+    - cron: '23 5 * * 1'
   workflow_dispatch:
 
 concurrency:
@@ -31,6 +35,7 @@ env:
 jobs:
   scan:
     name: Vulnerable dependencies (Trivy + OSV-Scanner)
+    if: github.event_name != 'push'
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
@@ -105,7 +110,7 @@ jobs:
   deploy:
     name: Publish to gh-pages
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: [scan, build]
+    needs: [build]
     runs-on: ubuntu-24.04
     permissions:
       contents: write   # push to gh-pages

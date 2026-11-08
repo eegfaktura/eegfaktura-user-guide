@@ -47,8 +47,9 @@ Jul-Sep 2026 (confirmed only when the check dialog shows that period). They run 
 
 ## Publishing
 
-Every merge to `main` builds the site and pushes it to the `gh-pages` branch (`.github/workflows/docs.yml`).
-Pull requests only scan (Trivy, OSV-Scanner) and build (`--strict`).
+Every merge to `main` builds the site (`--strict`) and pushes it to the `gh-pages` branch
+(`.github/workflows/docs.yml`). The dependency scan (Trivy, OSV-Scanner) runs for pull requests, weekly (Monday) and
+by hand; it does not hold back the deploy (08.11.2026: a scanner download outage had stopped the publishing).
 
 ## Features in the pilot zone (standard)
 

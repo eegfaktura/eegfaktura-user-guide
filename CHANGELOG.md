@@ -5,6 +5,11 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 ## [Unreleased]
 
 ### Changed
+- CI: the dependency scan (Trivy + OSV-Scanner) no longer gates the deploy. It runs for pull requests, weekly and by
+  hand; a merge to `main` publishes after the strict build only. On 08.11.2026 a 504 from the OSV-Scanner download
+  held back the published guide (the pilot hints stayed online) although the build was green.
+
+### Changed
 - Production release of 08.11.2026: the pilot features of 06.–08.11.2026 are live everywhere. The hint „Derzeit nur in
   der Pilot-Zone“ is removed from all sections (`--8<-- "pilot.md"`), „Was ist neu?“ lists them under „Herbst 2026
   (seit 08.11.2026)“. `snippets/pilot.md` stays for the next pilot features. Screenshots of the user menu, the
