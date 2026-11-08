@@ -5,6 +5,10 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 ## [Unreleased]
 
 ### Changed
+- EEG page without the card „Einstellungen“ (platform#245, pilot): the interval is „Abrechnungsintervall“ under
+  „Allgemeines“ (chapters Anmeldung & Oberfläche, Abrechnung, „Was ist neu?“ with the pilot hint). The section keeps the
+  id `abrechnungszeitraum-wechseln`, so the help link of eegfaktura-web and older links still land there. The
+  screenshot of the EEG page still shows the earlier state.
 - CI: the dependency scan (Trivy + OSV-Scanner) no longer gates the deploy. It runs for pull requests, weekly and by
   hand; a merge to `main` publishes after the strict build only. On 08.11.2026 a 504 from the OSV-Scanner download
   held back the published guide (the pilot hints stayed online) although the build was green.
