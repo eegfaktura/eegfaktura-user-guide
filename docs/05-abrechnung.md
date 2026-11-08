@@ -223,12 +223,13 @@ jedem Monatsbeginn. Wurde noch nie endgültig abgerechnet, gilt das neue Interva
 
 - **Noch nicht abgerechnete Zeiträume** vor dem neuen Beginn (siehe Beispiel). Der Dialog nennt sie und den
   frühestmöglichen Beginn.
-- **Lücken in den letzten 12 Monaten:** Fehlt in den 12 Monaten bis zur letzten endgültigen Abrechnung ein Monat ohne
-  endgültige Abrechnung, geht der Wechsel nicht; die Meldung nennt den Monat (z. B. „Februar 2026 ist noch nicht
+- **Lücken in den letzten 12 Monaten:** Ist in den 12 Monaten bis einschließlich zum letzten endgültig abgerechneten
+  Monat ein Monat nicht endgültig abgerechnet, geht der Wechsel nicht; die Meldung nennt den Monat (z. B. „Februar 2026 ist noch nicht
   endgültig abgerechnet.“). Ältere Lücken halten den Wechsel nicht auf, die Meldung weist aber darauf hin (z. B.
   „Hinweis: März bis Mai 2024 wurden nicht endgültig abgerechnet.“). Monate vor der allerersten endgültigen Abrechnung
   zählen nicht.
-- **Eine Berechnung, die gerade läuft**, z. B. eine Abrechnung, die du eben gestartet hast. Warte, bis sie fertig ist,
+- **Eine Berechnung, die gerade läuft** für einen Zeitraum, den der Wechsel betrifft, z. B. eine Abrechnung, die du eben
+  gestartet hast. Warte, bis sie fertig ist,
   und versuche es dann noch einmal.
 
 Eine **fertige Vorschau** hält den Wechsel nicht auf. Sie ist nicht endgültig und zählt nicht als abgerechnet. Nur solange

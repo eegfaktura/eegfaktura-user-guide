@@ -55,7 +55,7 @@ Das Anfordern allein ändert den Zählpunkt nicht: Er bleibt aktiv, die Anfrage 
 
 | Antwort | Folge |
 |---|---|
-| Abmeldung bestätigt | Der Zählpunkt wird **inaktiv** ab dem Ende, das du angefordert hast. Das Mitglied bekommt die Mail „Zählpunkt inaktiv“. |
+| Abmeldung bestätigt | Der Zählpunkt wird **inaktiv** ab dem Ende, das du angefordert hast, und das Mitglied bekommt die Mail „Zählpunkt inaktiv“. War er schon vorher inaktiv (z. B. weil das Mitglied die Freigabe selbst aufgehoben hat), bleibt alles, wie es war, und es geht keine Mail hinaus. |
 | abgelehnt: keine Datenfreigabe vorhanden, oder die Datenfreigabe ist abgelaufen | Der Zählpunkt war beim Netzbetreiber schon nicht mehr Teil der Gemeinschaft und wird **inaktiv**. Eine Mail geht nicht hinaus. |
 | abgelehnt aus einem anderen Grund (z. B. Prozessdatum falsch) | Der Zählpunkt **bleibt aktiv**. Prüfe den Grund und fordere die Abmeldung ggf. erneut an. |
 

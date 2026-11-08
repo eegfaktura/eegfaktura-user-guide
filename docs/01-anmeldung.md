@@ -131,7 +131,8 @@ Unter **Allgemeines** stehen zwei weitere Felder, beide nur zur Anzeige:
   EEG regional (Erneuerbare-Energie-Gemeinschaft, regional), GEA (Gemeinschaftliche Erzeugungsanlage), BEG
   (Bürgerenergiegemeinschaft), P2P (Peer-to-Peer) oder EVA (Eigenversorgungsanlage).
 - **Nahebereich**: die Netzebene, die alle Zählpunkte der Gemeinschaft verbindet, mit der amtlichen Bezeichnung
-  laut ElWG. Der Wert kommt aus der Zählpunktliste des Netzbetreibers.
+  laut ElWG. Der Wert ist aus dem Modell vorbelegt und wird mit jeder Zählpunktliste des Netzbetreibers
+  aktualisiert; bei P2P und EVA steht er bis zur ersten Zählpunktliste auf „unbekannt“.
 
 | Nahebereich | Bezeichnung |
 |---|---|
@@ -151,9 +152,10 @@ Liegt noch kein Wert vor, steht „unbekannt“.
 
 Für Gemeinschaften mit dem Modell **P2P** oder **EVA** bietet eegFaktura keine Abrechnung an. Es fehlen deshalb der
 Menüpunkt **Tarife**, die Abrechnung und die Rechnungen, die Tarifauswahl bei Mitgliedern und Zählpunkten, die
-Lastschrift-Felder, die Abrechnungseinstellungen, der Abrechnungszeitraum und die Creditor-ID. Energiedaten,
-Dashboard, Zählpunkte und Prozesse funktionieren wie bei einer BEG: Zählpunkte können bei mehreren Netzbetreibern
-liegen, und **Zählpunktliste anfordern** fragt nach dem Netzbetreiber.
+Lastschrift-Felder, die Abrechnungseinstellungen, der Abrechnungszeitraum, die Creditor-ID, die Rechnungs-Mail unter
+**E-Mail-Texte** und auf dem Dashboard die **Tarife** der Übersicht EEG und die **Energiemengen**. Energiedaten,
+Zählpunkte und Prozesse funktionieren wie bei einer BEG: Zählpunkte können bei mehreren Netzbetreibern liegen, und
+**Zählpunktliste anfordern** fragt nach dem Netzbetreiber.
 
 > **Tipp:** EEG Bezeichnung, Kontaktperson, Adresse, Telefon, E-Mail und Webseite der Gemeinschaft stehen im
 > Kontaktblock der Mails an deine Mitglieder (siehe [E-Mail-Texte](03-email-texte.md)), und die E-Mail-Adresse
