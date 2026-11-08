@@ -50,6 +50,24 @@ Jul-Sep 2026 (confirmed only when the check dialog shows that period). They run 
 Every merge to `main` builds the site and pushes it to the `gh-pages` branch (`.github/workflows/docs.yml`).
 Pull requests only scan (Trivy, OSV-Scanner) and build (`--strict`).
 
+## Features in the pilot zone (standard)
+
+A feature that runs only in the pilot zone (a small number of friendly users) is documented **right away**, as it will
+be in production, and marked with the shared hint `snippets/pilot.md` („Derzeit nur in der Pilot-Zone“):
+
+- Write the text for the **final state**. Only the hint line is pilot-specific; no sentences like „in der allgemeinen
+  Version …“ or „in der Pilot-Zone anders“, so nothing else has to change at the production release.
+- Put the line `--8<-- "pilot.md"` (pymdownx.snippets) directly under the heading of each section that describes
+  pilot behaviour, followed by a blank line. A table row cannot carry the hint: link from it to the section that does.
+- „Was ist neu?“ (`docs/changelog.md`) lists the features under **„In der Pilot-Zone“**, with the hint below that
+  heading.
+- Screenshots stay on the production state until the production release.
+
+**At the production release:** delete every line `--8<-- "pilot.md"` of the released features
+(`grep -rn 'pilot.md' docs`), rename „In der Pilot-Zone“ in `docs/changelog.md` to the release date (move the entries
+of features that stay in pilot into a new „In der Pilot-Zone“ section), update the screenshots, add a CHANGELOG
+entry. Leave `snippets/pilot.md` in place for the next pilot features.
+
 ## Rules
 
 - Versions are pinned (direct and transitive), at least 7 days old when pinned; new external sources only after

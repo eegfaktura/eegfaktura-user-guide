@@ -188,6 +188,8 @@ Belege mit „Vorschau“ im Namen stammen aus einer Vorschau und sind nicht gü
 
 ## Abrechnungszeitraum wechseln
 
+--8<-- "pilot.md"
+
 Ob deine Gemeinschaft monatlich, vierteljährlich, halbjährlich oder jährlich abrechnet, stellst du auf der
 **EEG-Seite** unter **Einstellungen → Abrechnungszeitraum** ein. Ändern können das nur EEG-Admins.
 
@@ -198,7 +200,9 @@ der Wechsel möglich ist, und zeigt:
 - ab wann das neue Intervall gilt, oder warum der Wechsel noch nicht geht und wann er frühestens möglich ist,
 - den Zeitraum, der zuletzt endgültig abgerechnet wurde.
 
-Mit **Wechseln** speicherst du die Änderung, mit **Abbrechen** bleibt alles, wie es war.
+Mit **Wechseln** speicherst du die Änderung, mit **Abbrechen** bleibt alles, wie es war. Nach dem Wechsel ist bei der
+Abrechnung gleich der erste offene Zeitraum des neuen Intervalls ausgewählt, und die Meldung nennt ihn (z. B.
+„Als Nächstes abzurechnen: 2. Quartal 2026.“).
 
 ### Ab wann das neue Intervall gilt
 
@@ -219,6 +223,11 @@ jedem Monatsbeginn. Wurde noch nie endgültig abgerechnet, gilt das neue Interva
 
 - **Noch nicht abgerechnete Zeiträume** vor dem neuen Beginn (siehe Beispiel). Der Dialog nennt sie und den
   frühestmöglichen Beginn.
+- **Lücken in den letzten 12 Monaten:** Fehlt in den 12 Monaten bis zur letzten endgültigen Abrechnung ein Monat ohne
+  endgültige Abrechnung, geht der Wechsel nicht; die Meldung nennt den Monat (z. B. „Februar 2026 ist noch nicht
+  endgültig abgerechnet.“). Ältere Lücken halten den Wechsel nicht auf, die Meldung weist aber darauf hin (z. B.
+  „Hinweis: März bis Mai 2024 wurden nicht endgültig abgerechnet.“). Monate vor der allerersten endgültigen Abrechnung
+  zählen nicht.
 - **Eine Berechnung, die gerade läuft**, z. B. eine Abrechnung, die du eben gestartet hast. Warte, bis sie fertig ist,
   und versuche es dann noch einmal.
 
