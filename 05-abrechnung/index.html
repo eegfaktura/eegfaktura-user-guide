@@ -599,6 +599,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#abrechnungszeitraum-wechseln" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abrechnungszeitraum wechseln
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Abrechnungszeitraum wechseln">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ab-wann-das-neue-intervall-gilt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ab wann das neue Intervall gilt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#was-den-wechsel-aufhalt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Was den Wechsel aufhält
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#was-sich-andert-und-was-nicht" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Was sich ändert und was nicht
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sache-der-gemeinschaft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sache der Gemeinschaft
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -930,6 +991,65 @@ E-Mail-Adressen deshalb vorher und gib Mitgliedern ohne Mail ihren Beleg aus dem
 Information. Ein Klick öffnet das PDF:</p>
 <p><img alt="Belege eines Mitglieds" src="../images/abrechnung-meine-rechnungen.png" /></p>
 <p>Belege mit „Vorschau“ im Namen stammen aus einer Vorschau und sind nicht gültig.</p>
+<h2 id="abrechnungszeitraum-wechseln">Abrechnungszeitraum wechseln<a class="headerlink" href="#abrechnungszeitraum-wechseln" title="Link zu diesem Abschnitt">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Derzeit nur in der Pilot-Zone</p>
+<p>Diese Funktion bzw. dieses Verhalten gibt es derzeit nur in der <strong>Pilot-Zone</strong> für eine kleine Zahl von
+Friendly Usern. In der allgemeinen Version von eegFaktura kommt es mit einem der nächsten Releases; bis dahin kann
+es dort noch anders aussehen.</p>
+</div>
+<p>Ob deine Gemeinschaft monatlich, vierteljährlich, halbjährlich oder jährlich abrechnet, stellst du auf der
+<strong>EEG-Seite</strong> unter <strong>Einstellungen → Abrechnungszeitraum</strong> ein. Ändern können das nur EEG-Admins.</p>
+<p>Wählst du einen anderen Wert, öffnet sich der Dialog <strong>Abrechnungszeitraum wechseln</strong>. eegFaktura prüft dort zuerst, ob
+der Wechsel möglich ist, und zeigt:</p>
+<ul>
+<li>das bisherige und das neue Intervall,</li>
+<li>ab wann das neue Intervall gilt, oder warum der Wechsel noch nicht geht und wann er frühestens möglich ist,</li>
+<li>den Zeitraum, der zuletzt endgültig abgerechnet wurde.</li>
+</ul>
+<p>Mit <strong>Wechseln</strong> speicherst du die Änderung, mit <strong>Abbrechen</strong> bleibt alles, wie es war. Nach dem Wechsel ist bei der
+Abrechnung gleich der erste offene Zeitraum des neuen Intervalls ausgewählt, und die Meldung nennt ihn (z. B.
+„Als Nächstes abzurechnen: 2. Quartal 2026.“).</p>
+<h3 id="ab-wann-das-neue-intervall-gilt">Ab wann das neue Intervall gilt<a class="headerlink" href="#ab-wann-das-neue-intervall-gilt" title="Link zu diesem Abschnitt">&para;</a></h3>
+<p>Das neue Intervall gilt ab dem Beginn des Zeitraums, der auf die letzte <strong>endgültige</strong> Abrechnung folgt. Dafür muss
+alles bis dahin im bisherigen Intervall abgerechnet sein. So kann kein Zeitraum doppelt abgerechnet werden oder
+übrig bleiben.</p>
+<p><strong>Beispiel:</strong> Deine Gemeinschaft rechnet monatlich ab und will auf vierteljährlich wechseln.</p>
+<ul>
+<li><strong>Bis März abgerechnet:</strong> Der Wechsel gilt ab April. Als Nächstes rechnest du das 2. Quartal ab.</li>
+<li><strong>Bis Februar abgerechnet:</strong> Der Wechsel geht noch nicht, denn das 1. Quartal enthält Jänner und Februar, die schon
+  abgerechnet sind. Rechne zuerst März noch monatlich ab. Danach ist der Wechsel ab April möglich.</li>
+</ul>
+<p>Genauso wirkt ein Wechsel auf halbjährlich zum 1. Jänner oder 1. Juli, auf jährlich zum 1. Jänner und auf monatlich zu
+jedem Monatsbeginn. Wurde noch nie endgültig abgerechnet, gilt das neue Intervall sofort.</p>
+<h3 id="was-den-wechsel-aufhalt">Was den Wechsel aufhält<a class="headerlink" href="#was-den-wechsel-aufhalt" title="Link zu diesem Abschnitt">&para;</a></h3>
+<ul>
+<li><strong>Noch nicht abgerechnete Zeiträume</strong> vor dem neuen Beginn (siehe Beispiel). Der Dialog nennt sie und den
+  frühestmöglichen Beginn.</li>
+<li><strong>Lücken in den letzten 12 Monaten:</strong> Ist in den 12 Monaten bis einschließlich zum letzten endgültig abgerechneten
+  Monat ein Monat nicht endgültig abgerechnet, geht der Wechsel nicht; die Meldung nennt den Monat (z. B. „Februar 2026 ist noch nicht
+  endgültig abgerechnet.“). Ältere Lücken halten den Wechsel nicht auf, die Meldung weist aber darauf hin (z. B.
+  „Hinweis: März bis Mai 2024 wurden nicht endgültig abgerechnet.“). Monate vor der allerersten endgültigen Abrechnung
+  zählen nicht.</li>
+<li><strong>Eine Berechnung, die gerade läuft</strong> für einen Zeitraum, den der Wechsel betrifft, z. B. eine Abrechnung, die du eben
+  gestartet hast. Warte, bis sie fertig ist,
+  und versuche es dann noch einmal.</li>
+</ul>
+<p>Eine <strong>fertige Vorschau</strong> hält den Wechsel nicht auf. Sie ist nicht endgültig und zählt nicht als abgerechnet. Nur solange
+eine Vorschau gerade rechnet, wartet der Wechsel wie bei jeder laufenden Berechnung.</p>
+<h3 id="was-sich-andert-und-was-nicht">Was sich ändert und was nicht<a class="headerlink" href="#was-sich-andert-und-was-nicht" title="Link zu diesem Abschnitt">&para;</a></h3>
+<ul>
+<li>Bestehende Belege, ihre Nummern und Exporte bleiben unverändert. Schon abgerechnete Zeiträume werden nicht neu
+  berechnet.</li>
+<li>Nach dem Wechsel bietet eegFaktura bei der Abrechnung die Zeiträume des neuen Intervalls an.</li>
+<li><strong>Mitgliedsbeitrag, Zählpunktgebühr und kostenlose Energie (kWh)</strong> gelten <strong>je Abrechnung</strong>. Bleibt der Tarif gleich,
+  ändert sich mit dem Intervall also der Jahresbetrag: Ein Mitgliedsbeitrag von 5 € ergibt monatlich abgerechnet 60 € im Jahr,
+  vierteljährlich abgerechnet 20 €. Prüfe deshalb vor dem Wechsel die <a href="../04-tarife/">Tarife</a> und passe die Beträge an.</li>
+<li>Die einmalige <a href="../04-tarife/#beitrittsgebuhr">Beitrittsgebühr</a> ist nicht betroffen.</li>
+</ul>
+<h3 id="sache-der-gemeinschaft">Sache der Gemeinschaft<a class="headerlink" href="#sache-der-gemeinschaft" title="Link zu diesem Abschnitt">&para;</a></h3>
+<p>Ob die Gemeinschaft das Intervall wechselt, entscheidet sie selbst. Auch die Mitglieder informiert die Gemeinschaft
+selbst — eegFaktura schickt ihnen dazu keine Nachricht.</p>
 
 
 

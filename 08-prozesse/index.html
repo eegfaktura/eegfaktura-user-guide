@@ -598,6 +598,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Zählpunkt abmelden">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#was-nach-dem-anfordern-passiert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Was nach dem Anfordern passiert
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -734,6 +751,39 @@ später wieder teilnehmen, ist eine neue Anmeldung nötig.</p>
 <li>Klicke auf <strong>Anfordern</strong> und bestätige „Datenfreigabe aufheben“ mit <strong>Aufheben</strong>.</li>
 </ol>
 <p>Fehlt eegFaktura die Kennung der Datenfreigabe, fordere zuerst die <strong>Teilnehmerliste</strong> an (siehe unten).</p>
+<h3 id="was-nach-dem-anfordern-passiert">Was nach dem Anfordern passiert<a class="headerlink" href="#was-nach-dem-anfordern-passiert" title="Link zu diesem Abschnitt">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Derzeit nur in der Pilot-Zone</p>
+<p>Diese Funktion bzw. dieses Verhalten gibt es derzeit nur in der <strong>Pilot-Zone</strong> für eine kleine Zahl von
+Friendly Usern. In der allgemeinen Version von eegFaktura kommt es mit einem der nächsten Releases; bis dahin kann
+es dort noch anders aussehen.</p>
+</div>
+<p>Das Anfordern allein ändert den Zählpunkt nicht: Er bleibt aktiv, die Anfrage steht in der Prozess History und in den
+<a href="../07-nachrichten/">Nachrichten</a>. Erst die <strong>Antwort des Netzbetreibers</strong> entscheidet:</p>
+<table>
+<thead>
+<tr>
+<th>Antwort</th>
+<th>Folge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Abmeldung bestätigt</td>
+<td>Der Zählpunkt wird <strong>inaktiv</strong> ab dem Ende, das du angefordert hast, und das Mitglied bekommt die Mail „Zählpunkt inaktiv“. War er schon vorher inaktiv (z. B. weil das Mitglied die Freigabe selbst aufgehoben hat), bleibt alles, wie es war, und es geht keine Mail hinaus.</td>
+</tr>
+<tr>
+<td>abgelehnt: keine Datenfreigabe vorhanden, oder die Datenfreigabe ist abgelaufen</td>
+<td>Der Zählpunkt war beim Netzbetreiber schon nicht mehr Teil der Gemeinschaft und wird <strong>inaktiv</strong>. Eine Mail geht nicht hinaus.</td>
+</tr>
+<tr>
+<td>abgelehnt aus einem anderen Grund (z. B. Prozessdatum falsch)</td>
+<td>Der Zählpunkt <strong>bleibt aktiv</strong>. Prüfe den Grund und fordere die Abmeldung ggf. erneut an.</td>
+</tr>
+</tbody>
+</table>
+<p>Die Benachrichtigung zu einer Ablehnung nennt den Grund des Netzbetreibers, z. B. „Keine Datenfreigabe vorhanden“
+oder „ConsentID abgelaufen“.</p>
 <h2 id="teilnahmefaktor-andern">Teilnahmefaktor ändern<a class="headerlink" href="#teilnahmefaktor-andern" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p>Ändert, welchen Anteil ein Zählpunkt an der Gemeinschaft hat.</p>
 <p><img alt="Teilnahmefaktor ändern" src="../images/prozesse-teilnahmefaktor.png" /></p>
