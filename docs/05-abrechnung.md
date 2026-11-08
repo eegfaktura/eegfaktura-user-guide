@@ -185,3 +185,67 @@ Information. Ein Klick öffnet das PDF:
 ![Belege eines Mitglieds](images/abrechnung-meine-rechnungen.png)
 
 Belege mit „Vorschau“ im Namen stammen aus einer Vorschau und sind nicht gültig.
+
+## Abrechnungszeitraum wechseln
+
+--8<-- "pilot.md"
+
+Ob deine Gemeinschaft monatlich, vierteljährlich, halbjährlich oder jährlich abrechnet, stellst du auf der
+**EEG-Seite** unter **Einstellungen → Abrechnungszeitraum** ein. Ändern können das nur EEG-Admins.
+
+Wählst du einen anderen Wert, öffnet sich der Dialog **Abrechnungszeitraum wechseln**. eegFaktura prüft dort zuerst, ob
+der Wechsel möglich ist, und zeigt:
+
+- das bisherige und das neue Intervall,
+- ab wann das neue Intervall gilt, oder warum der Wechsel noch nicht geht und wann er frühestens möglich ist,
+- den Zeitraum, der zuletzt endgültig abgerechnet wurde.
+
+Mit **Wechseln** speicherst du die Änderung, mit **Abbrechen** bleibt alles, wie es war. Nach dem Wechsel ist bei der
+Abrechnung gleich der erste offene Zeitraum des neuen Intervalls ausgewählt, und die Meldung nennt ihn (z. B.
+„Als Nächstes abzurechnen: 2. Quartal 2026.“).
+
+### Ab wann das neue Intervall gilt
+
+Das neue Intervall gilt ab dem Beginn des Zeitraums, der auf die letzte **endgültige** Abrechnung folgt. Dafür muss
+alles bis dahin im bisherigen Intervall abgerechnet sein. So kann kein Zeitraum doppelt abgerechnet werden oder
+übrig bleiben.
+
+**Beispiel:** Deine Gemeinschaft rechnet monatlich ab und will auf vierteljährlich wechseln.
+
+- **Bis März abgerechnet:** Der Wechsel gilt ab April. Als Nächstes rechnest du das 2. Quartal ab.
+- **Bis Februar abgerechnet:** Der Wechsel geht noch nicht, denn das 1. Quartal enthält Jänner und Februar, die schon
+  abgerechnet sind. Rechne zuerst März noch monatlich ab. Danach ist der Wechsel ab April möglich.
+
+Genauso wirkt ein Wechsel auf halbjährlich zum 1. Jänner oder 1. Juli, auf jährlich zum 1. Jänner und auf monatlich zu
+jedem Monatsbeginn. Wurde noch nie endgültig abgerechnet, gilt das neue Intervall sofort.
+
+### Was den Wechsel aufhält
+
+- **Noch nicht abgerechnete Zeiträume** vor dem neuen Beginn (siehe Beispiel). Der Dialog nennt sie und den
+  frühestmöglichen Beginn.
+- **Lücken in den letzten 12 Monaten:** Ist in den 12 Monaten bis einschließlich zum letzten endgültig abgerechneten
+  Monat ein Monat nicht endgültig abgerechnet, geht der Wechsel nicht; die Meldung nennt den Monat (z. B. „Februar 2026 ist noch nicht
+  endgültig abgerechnet.“). Ältere Lücken halten den Wechsel nicht auf, die Meldung weist aber darauf hin (z. B.
+  „Hinweis: März bis Mai 2024 wurden nicht endgültig abgerechnet.“). Monate vor der allerersten endgültigen Abrechnung
+  zählen nicht.
+- **Eine Berechnung, die gerade läuft** für einen Zeitraum, den der Wechsel betrifft, z. B. eine Abrechnung, die du eben
+  gestartet hast. Warte, bis sie fertig ist,
+  und versuche es dann noch einmal.
+
+Eine **fertige Vorschau** hält den Wechsel nicht auf. Sie ist nicht endgültig und zählt nicht als abgerechnet. Nur solange
+eine Vorschau gerade rechnet, wartet der Wechsel wie bei jeder laufenden Berechnung.
+
+### Was sich ändert und was nicht
+
+- Bestehende Belege, ihre Nummern und Exporte bleiben unverändert. Schon abgerechnete Zeiträume werden nicht neu
+  berechnet.
+- Nach dem Wechsel bietet eegFaktura bei der Abrechnung die Zeiträume des neuen Intervalls an.
+- **Mitgliedsbeitrag, Zählpunktgebühr und kostenlose Energie (kWh)** gelten **je Abrechnung**. Bleibt der Tarif gleich,
+  ändert sich mit dem Intervall also der Jahresbetrag: Ein Mitgliedsbeitrag von 5 € ergibt monatlich abgerechnet 60 € im Jahr,
+  vierteljährlich abgerechnet 20 €. Prüfe deshalb vor dem Wechsel die [Tarife](04-tarife.md) und passe die Beträge an.
+- Die einmalige [Beitrittsgebühr](04-tarife.md#beitrittsgebuhr) ist nicht betroffen.
+
+### Sache der Gemeinschaft
+
+Ob die Gemeinschaft das Intervall wechselt, entscheidet sie selbst. Auch die Mitglieder informiert die Gemeinschaft
+selbst — eegFaktura schickt ihnen dazu keine Nachricht.

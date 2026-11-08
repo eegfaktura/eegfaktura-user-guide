@@ -32,23 +32,31 @@ Ganz unten öffnet **Info** das Impressum.
 
 ## Benutzermenü und Abmelden
 
+--8<-- "pilot.md"
+
 Ein Klick auf dein **Benutzersymbol** oben im Menü öffnet das Benutzermenü:
 
 ![Benutzermenü](images/oberflaeche-benutzermenue.png)
 
 - deine **E-Mail-Adresse**,
-- **Auswahl Gemeinschaft**: die Gemeinschaft, die du gerade bearbeitest,
+- **Aktuelle Gemeinschaft**: Nummer und Name der Gemeinschaft, die du gerade bearbeitest (nur Anzeige),
+- **Gemeinschaft wechseln**: öffnet die Auswahl der Gemeinschaften (nur wenn du mehrere betreust, siehe unten),
 - **Passwort ändern**: führt zur Kontoseite, auf der du dein Passwort änderst,
 - **Abmelden**: meldet dich ab.
 
 ## Gemeinschaft wechseln
 
-Betreust du mehrere Gemeinschaften, wählst du unter **Auswahl Gemeinschaft** im Benutzermenü die gewünschte aus
-und bestätigst mit **OK**. Alle Seiten zeigen danach die Daten dieser Gemeinschaft.
+--8<-- "pilot.md"
+
+Betreust du mehrere Gemeinschaften, klickst du im Benutzermenü auf **Gemeinschaft wechseln**. Es öffnet sich die
+Liste **Auswahl Gemeinschaft**, die aktuelle Gemeinschaft ist mit einem Häkchen markiert. Oben steht ein **Suchfeld**:
+Tippe die Nummer oder einen Teil des Namens ein (Groß- und Kleinschreibung und Akzente spielen keine Rolle, „sonnen“
+findet „EEG Sonnenfeld“). Ein Klick auf eine Gemeinschaft wechselt sofort; alle Seiten zeigen danach ihre Daten. Hast
+du gerade ungespeicherte Eingaben, fragt eegFaktura vorher nach.
 
 ![Gemeinschaft wechseln](images/oberflaeche-gemeinschaft-wechseln.png)
 
-Dieselbe Auswahl findest du auch auf der EEG-Seite unter **Einstellungen**. eegFaktura merkt sich deine Wahl für
+Eine Auswahl ohne Suche findest du auch auf der EEG-Seite unter **Einstellungen**. eegFaktura merkt sich deine Wahl für
 die nächste Anmeldung im selben Browser.
 
 ## Dashboard
@@ -59,12 +67,26 @@ Das **Dashboard** zeigt die wichtigsten Zahlen der Gemeinschaft, meist für den 
 
 | Bereich | Inhalt |
 |---------|--------|
-| **Übersicht EEG** | Mitglieder „Stand heute“ (aktive, inaktive, in Anmeldung), aktive Zählpunkte (Abnehmer und Einspeiser), Tarife mit der Anzahl ihrer Zählpunkte; in derselben Liste darunter die Mitgliedsbeitrags-Tarife mit der Anzahl aktiver Mitglieder und, wenn aktive Mitglieder keinen haben, die Zeile „ohne Mitgliedsbeitrag“ |
+| **Übersicht EEG** | Mitglieder, Zählpunkte und Tarife mit dem Stand von heute (siehe [unten](#ubersicht-eeg)) |
 | **Übersicht Stromproduktion und Verteilung** | **Produziert**, **Verteilt** und **EVU** (Bezug vom Energieversorger), jeweils mit der vorherigen Periode zum Vergleich; darunter die **Energiemengen** „Eingekauft“ und „Verkauft“ |
 | **Lastverlauf** | Balken für EEG, EVU und Erzeugung über den Zeitraum, darüber die **Bilanz** (siehe unten); auffällige Balken tragen ein „!“ |
 | **Tagesverlauf** | Verlauf über den Tag (EEG, EVU, Erzeugt) |
 
 Die Fragezeichen-Symbole neben den Werten erklären, wie eine Zahl entsteht.
+
+### Übersicht EEG
+
+--8<-- "pilot.md"
+
+Die Kachel zeigt alle Zahlen mit dem Stand von heute, unabhängig vom gewählten Zeitraum; oben steht „Stand heute“.
+
+- **Mitglieder:** aktive, inaktive und, falls vorhanden, „in Anmeldung“.
+- **Zählpunkte:** aktive, inaktive und, falls vorhanden, „in Anmeldung“ (Zählpunkte, deren Anmeldung beim
+  Netzbetreiber noch läuft, zählen nicht zu den aktiven); darunter die aktiven Abnehmer und Einspeiser.
+- **Tarife**, getrennt in **Energietarife** (Anzahl der aktiven Zählpunkte je Tarif) und **Mitgliedsbeitrag** (Anzahl
+  der aktiven Mitglieder je Tarif, dazu „ohne Mitgliedsbeitrag“).
+
+Die anderen Kacheln zeigen den gewählten Zeitraum.
 
 **Bilanzdifferenz:** Produktion minus Eigendeckung minus Überschuss. Sind alle Energiedaten da, ist sie 0, und
 eegFaktura zeigt „Bilanz ausgeglichen“ (sehr kleine Werte sind Rundung). Eine Differenz steht rot da: **negativ**
@@ -87,8 +109,8 @@ Der Menüpunkt mit dem **Namen deiner Gemeinschaft** öffnet die EEG-Seite mit i
 
 | Bereich | Inhalt |
 |---------|--------|
-| **Einstellungen** | Auswahl Gemeinschaft, **Abrechnungszeitraum** (fest eingestellt) |
-| **Allgemeines** | EC-Nummer, Gemeinschafts-ID, Rechtsform, EEG Bezeichnung, Firmennummer, Umsatzsteuer ID, Steuernummer, Verteilung |
+| **Einstellungen** | Auswahl Gemeinschaft, **Abrechnungszeitraum** (siehe [Abrechnungszeitraum wechseln](05-abrechnung.md#abrechnungszeitraum-wechseln)) |
+| **Allgemeines** | EC-Nummer, Gemeinschafts-ID, Rechtsform, EEG Bezeichnung, Firmennummer, Umsatzsteuer ID, Steuernummer, Verteilung, **Modell** und **Nahebereich** (siehe [unten](#modell-und-nahebereich)) |
 | **Netzbetreiber** | Netzbetreiber-ID und -Name |
 | **E-Mail-Texte** | Zugang zu den [E-Mail-Texten](03-email-texte.md) (nur EEG-Admins) |
 | **Adresse**, **Kontakt** | Anschrift, Kontaktperson, Telefon, E-Mail-Adresse der Gemeinschaft |
@@ -98,6 +120,42 @@ Der Menüpunkt mit dem **Namen deiner Gemeinschaft** öffnet die EEG-Seite mit i
 
 Ändern können die Felder nur EEG-Admins. Eine Änderung wird gespeichert, sobald du das Feld verlässt; einen
 eigenen Speichern-Knopf gibt es nicht. EC-Nummer, Gemeinschafts-ID und Verteilung lassen sich nicht ändern.
+
+### Modell und Nahebereich
+
+--8<-- "pilot.md"
+
+Unter **Allgemeines** stehen zwei weitere Felder, beide nur zur Anzeige:
+
+- **Modell**: die Art der Gemeinschaft, mit Kurz- und Langform: EEG lokal (Erneuerbare-Energie-Gemeinschaft, lokal),
+  EEG regional (Erneuerbare-Energie-Gemeinschaft, regional), GEA (Gemeinschaftliche Erzeugungsanlage), BEG
+  (Bürgerenergiegemeinschaft), P2P (Peer-to-Peer) oder EVA (Eigenversorgungsanlage).
+- **Nahebereich**: die Netzebene, die alle Zählpunkte der Gemeinschaft verbindet, mit der amtlichen Bezeichnung
+  laut ElWG. Der Wert ist aus dem Modell vorbelegt und wird mit jeder Zählpunktliste des Netzbetreibers
+  aktualisiert; bei P2P und EVA steht er bis zur ersten Zählpunktliste auf „unbekannt“.
+
+| Nahebereich | Bezeichnung |
+|---|---|
+| 1 | Haupt-/Steigleitung |
+| 2 | Standortbereich – gemeinsame Sammelschiene |
+| 3 | Lokalbereich – gleiche Trafostation |
+| 4 | Regionalbereich – gleiches Umspannwerk eines Netzbetreibers |
+| 5 | Regionalbereich – gleiches Umspannwerk verschiedener Netzbetreiber |
+| 6 | Gebotszone – mehrere Umspannwerke eines Netzbetreibers |
+| 7 | Gebotszone – mehrere Umspannwerke verschiedener Netzbetreiber |
+
+Liegt noch kein Wert vor, steht „unbekannt“.
+
+### Peer-to-Peer und Eigenversorgung
+
+--8<-- "pilot.md"
+
+Für Gemeinschaften mit dem Modell **P2P** oder **EVA** bietet eegFaktura keine Abrechnung an. Es fehlen deshalb der
+Menüpunkt **Tarife**, die Abrechnung und die Rechnungen, die Tarifauswahl bei Mitgliedern und Zählpunkten, die
+Lastschrift-Felder, die Abrechnungseinstellungen, der Abrechnungszeitraum, die Creditor-ID, die Rechnungs-Mail unter
+**E-Mail-Texte** und auf dem Dashboard die **Tarife** der Übersicht EEG und die **Energiemengen**. Energiedaten,
+Zählpunkte und Prozesse funktionieren wie bei einer BEG: Zählpunkte können bei mehreren Netzbetreibern liegen, und
+**Zählpunktliste anfordern** fragt nach dem Netzbetreiber.
 
 > **Tipp:** EEG Bezeichnung, Kontaktperson, Adresse, Telefon, E-Mail und Webseite der Gemeinschaft stehen im
 > Kontaktblock der Mails an deine Mitglieder (siehe [E-Mail-Texte](03-email-texte.md)), und die E-Mail-Adresse

@@ -4,6 +4,24 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 
 ## [Unreleased]
 
+### Added
+- Standard for features that run only in the pilot zone (README „Features in the pilot zone“): shared hint
+  `snippets/pilot.md` („Derzeit nur in der Pilot-Zone“), included with `--8<-- "pilot.md"` (pymdownx.snippets, part
+  of the pinned pymdown-extensions) under each heading; removed by deleting those lines at the production release.
+- Pilot features of 06.–08.11.2026, each with the hint: Abrechnungszeitraum wechseln with the 12-month gap rule and the
+  first open period after the change (web 1.20.0–1.21.0, backend 1.16.0–1.17.0); Zählpunkt abmelden — inactive only
+  after the grid operator's answer, reason of a rejection (platform#238); Dashboard „Übersicht EEG“ with today's
+  state; EEG-Seite „Modell“ (long form) and „Nahebereich“ (ElWG names), P2P/EVA without billing (platform#229);
+  „Gemeinschaft wechseln“ with a search field and „Aktuelle Gemeinschaft“ in the user menu (platform#241). „Was ist
+  neu?“ lists them under „In der Pilot-Zone“.
+- Abrechnung: section „Abrechnungszeitraum wechseln“ (vfeeg-development/eegfaktura-platform#230; the dialog in
+  eegfaktura-web links to its anchor `#abrechnungszeitraum-wechseln`): who can change the interval, from when the new
+  one applies (start of the period after the last final billing, everything before billed; example monthly →
+  quarterly), what blocks it (open periods, a running calculation; a preview does not), what stays (documents,
+  numbers, exports) and that membership fee, metering-point fee and free kWh are charged per run, so the yearly amount
+  changes with the interval. The decision and informing the members are the community's matter. Anmeldung → EEG-Seite
+  no longer calls the interval „fest eingestellt“ and links the section. Published with the pilot hint (see above).
+
 ### Removed
 - Mitglieder & Zählpunkte, Prozesse: the offline registration with an activation code (checkbox
   „Offline-Registrierung“, field „Aktivierungs-Code“, ONLINE/OFFLINE switch in „Zulassen“) — grid operators no longer

@@ -78,6 +78,10 @@ markdown_extensions:
   - pymdownx.inlinehilite
   # No mermaid fence: mkdocs-material would load mermaid@11 unpinned from unpkg at runtime
   # (supply-chain rule: fixed versions only). Diagrams go in as images or tables.
+  # Snippets: shared text blocks from snippets/ (not part of the site), e.g. the pilot hint pilot.md (README)
+  - pymdownx.snippets:
+      base_path: [snippets]
+      check_paths: true
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
