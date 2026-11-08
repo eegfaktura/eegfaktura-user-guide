@@ -3,6 +3,40 @@
 Neue Funktionen von eegFaktura, die du als EEG-Admin bemerkst. Die Kapitel beschreiben jeweils den aktuellen
 Stand.
 
+## In der Pilot-Zone
+
+--8<-- "pilot.md"
+
+### Abrechnungszeitraum wechseln
+
+EEG-Admins wechseln das Abrechnungsintervall (monatlich, vierteljährlich, halbjährlich, jährlich) selbst auf der
+EEG-Seite. eegFaktura prüft, ab wann der Wechsel möglich ist, und nennt, was ihn aufhält.
+Siehe [Abrechnung](05-abrechnung.md#abrechnungszeitraum-wechseln).
+
+### Zählpunkt abmelden: inaktiv erst nach der Antwort
+
+Ein Zählpunkt wird erst inaktiv, wenn der Netzbetreiber die Abmeldung bestätigt (oder sie ablehnt, weil keine
+Datenfreigabe mehr besteht). Eine Ablehnung zeigt den Grund des Netzbetreibers.
+Siehe [Prozesse](08-prozesse.md#was-nach-dem-anfordern-passiert).
+
+### Dashboard: Übersicht EEG mit dem Stand heute
+
+Die Kachel **Übersicht EEG** zeigt Mitglieder, Zählpunkte und Tarife einheitlich mit dem Stand von heute; Zählpunkte
+in Anmeldung stehen extra, die Tarife sind in Energietarife und Mitgliedsbeitrag getrennt.
+Siehe [Dashboard](01-anmeldung.md#ubersicht-eeg).
+
+### EEG-Seite: Modell und Nahebereich
+
+Die EEG-Seite zeigt das **Modell** der Gemeinschaft mit Lang- und Kurzform und den **Nahebereich** mit der amtlichen
+Bezeichnung laut ElWG. Für **Peer-to-Peer** und **Eigenversorgung** bietet eegFaktura keine Abrechnung an.
+Siehe [EEG-Seite](01-anmeldung.md#modell-und-nahebereich).
+
+### Gemeinschaft wechseln mit Suche
+
+Wer mehrere Gemeinschaften betreut, wechselt über **Gemeinschaft wechseln** im Benutzermenü und findet die Gemeinschaft
+über ein Suchfeld. Das Benutzermenü zeigt die aktuelle Gemeinschaft.
+Siehe [Gemeinschaft wechseln](01-anmeldung.md#gemeinschaft-wechseln).
+
 ## Herbst 2026 (seit 29.10.2026)
 
 ### Einmalige Beitrittsgebühr
