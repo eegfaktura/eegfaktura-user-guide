@@ -48,8 +48,6 @@ Fehlt eegFaktura die Kennung der Datenfreigabe, fordere zuerst die **Teilnehmerl
 
 ### Was nach dem Anfordern passiert
 
---8<-- "pilot.md"
-
 Das Anfordern allein ändert den Zählpunkt nicht: Er bleibt aktiv, die Anfrage steht in der Prozess History und in den
 [Nachrichten](07-nachrichten.md). Erst die **Antwort des Netzbetreibers** entscheidet:
 
