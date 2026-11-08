@@ -188,8 +188,6 @@ Belege mit „Vorschau“ im Namen stammen aus einer Vorschau und sind nicht gü
 
 ## Abrechnungszeitraum wechseln
 
---8<-- "pilot.md"
-
 Ob deine Gemeinschaft monatlich, vierteljährlich, halbjährlich oder jährlich abrechnet, stellst du auf der
 **EEG-Seite** unter **Einstellungen → Abrechnungszeitraum** ein. Ändern können das nur EEG-Admins.
 

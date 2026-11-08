@@ -32,8 +32,6 @@ Ganz unten öffnet **Info** das Impressum.
 
 ## Benutzermenü und Abmelden
 
---8<-- "pilot.md"
-
 Ein Klick auf dein **Benutzersymbol** oben im Menü öffnet das Benutzermenü:
 
 ![Benutzermenü](images/oberflaeche-benutzermenue.png)
@@ -45,8 +43,6 @@ Ein Klick auf dein **Benutzersymbol** oben im Menü öffnet das Benutzermenü:
 - **Abmelden**: meldet dich ab.
 
 ## Gemeinschaft wechseln
-
---8<-- "pilot.md"
 
 Betreust du mehrere Gemeinschaften, klickst du im Benutzermenü auf **Gemeinschaft wechseln**. Es öffnet sich die
 Liste **Auswahl Gemeinschaft**, die aktuelle Gemeinschaft ist mit einem Häkchen markiert. Oben steht ein **Suchfeld**:
@@ -75,8 +71,6 @@ Das **Dashboard** zeigt die wichtigsten Zahlen der Gemeinschaft, meist für den 
 Die Fragezeichen-Symbole neben den Werten erklären, wie eine Zahl entsteht.
 
 ### Übersicht EEG
-
---8<-- "pilot.md"
 
 Die Kachel zeigt alle Zahlen mit dem Stand von heute, unabhängig vom gewählten Zeitraum; oben steht „Stand heute“.
 
@@ -123,8 +117,6 @@ eigenen Speichern-Knopf gibt es nicht. EC-Nummer, Gemeinschafts-ID und Verteilun
 
 ### Modell und Nahebereich
 
---8<-- "pilot.md"
-
 Unter **Allgemeines** stehen zwei weitere Felder, beide nur zur Anzeige:
 
 - **Modell**: die Art der Gemeinschaft, mit Kurz- und Langform: EEG lokal (Erneuerbare-Energie-Gemeinschaft, lokal),
@@ -147,8 +139,6 @@ Unter **Allgemeines** stehen zwei weitere Felder, beide nur zur Anzeige:
 Liegt noch kein Wert vor, steht „unbekannt“.
 
 ### Peer-to-Peer und Eigenversorgung
-
---8<-- "pilot.md"
 
 Für Gemeinschaften mit dem Modell **P2P** oder **EVA** bietet eegFaktura keine Abrechnung an. Es fehlen deshalb der
 Menüpunkt **Tarife**, die Abrechnung und die Rechnungen, die Tarifauswahl bei Mitgliedern und Zählpunkten, die
