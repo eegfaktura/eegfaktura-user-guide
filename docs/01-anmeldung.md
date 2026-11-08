@@ -52,8 +52,7 @@ du gerade ungespeicherte Eingaben, fragt eegFaktura vorher nach.
 
 ![Gemeinschaft wechseln](images/oberflaeche-gemeinschaft-wechseln.png)
 
-Eine Auswahl ohne Suche findest du auch auf der EEG-Seite unter **Einstellungen**. eegFaktura merkt sich deine Wahl für
-die nächste Anmeldung im selben Browser.
+eegFaktura merkt sich deine Wahl für die nächste Anmeldung im selben Browser.
 
 ## Dashboard
 
