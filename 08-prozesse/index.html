@@ -737,9 +737,8 @@ eegFaktura „Die Anforderung wurde an den Netzbetreiber gesendet.“ oder den G
 überspringt eegFaktura und sagt das. Das Ergebnis kommt als <strong>Zusammenfassung Energiedaten-Anforderung</strong> unter Nachrichten.</p>
 <h2 id="zahlpunkt-aktivieren">Zählpunkt aktivieren<a class="headerlink" href="#zahlpunkt-aktivieren" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p>Meldet einen noch nicht aktiven Zählpunkt (erneut) beim Netzbetreiber an, z. B. nach einer Abweisung, wenn der Fehler
-behoben ist. Wähle <strong>Mitglied</strong> und <strong>Zählpunkt</strong>. Hast du vom Netzbetreiber einen <strong>Aktivierungs-Code</strong>, hake
-<strong>Offline-Registrierung</strong> an und trage ihn ein. Bei der Online-Anmeldung muss das Mitglied die Datenfreigabe danach
-bestätigen; es bekommt dazu die Mail „Freigabe-Aufforderung“.</p>
+behoben ist. Wähle <strong>Mitglied</strong> und <strong>Zählpunkt</strong>. Zählpunkte werden immer online beim Netzbetreiber angemeldet: Das
+Mitglied muss die Datenfreigabe danach bestätigen; es bekommt dazu die Mail „Freigabe-Aufforderung“.</p>
 <h2 id="zahlpunkt-abmelden">Zählpunkt abmelden<a class="headerlink" href="#zahlpunkt-abmelden" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p>Hebt die Datenfreigabe eines Zählpunkts beim Netzbetreiber auf — der Zählpunkt verlässt die Gemeinschaft. Soll er
 später wieder teilnehmen, ist eine neue Anmeldung nötig.</p>
@@ -752,12 +751,6 @@ später wieder teilnehmen, ist eine neue Anmeldung nötig.</p>
 </ol>
 <p>Fehlt eegFaktura die Kennung der Datenfreigabe, fordere zuerst die <strong>Teilnehmerliste</strong> an (siehe unten).</p>
 <h3 id="was-nach-dem-anfordern-passiert">Was nach dem Anfordern passiert<a class="headerlink" href="#was-nach-dem-anfordern-passiert" title="Link zu diesem Abschnitt">&para;</a></h3>
-<div class="admonition info">
-<p class="admonition-title">Derzeit nur in der Pilot-Zone</p>
-<p>Diese Funktion bzw. dieses Verhalten gibt es derzeit nur in der <strong>Pilot-Zone</strong> für eine kleine Zahl von
-Friendly Usern. In der allgemeinen Version von eegFaktura kommt es mit einem der nächsten Releases; bis dahin kann
-es dort noch anders aussehen.</p>
-</div>
 <p>Das Anfordern allein ändert den Zählpunkt nicht: Er bleibt aktiv, die Anfrage steht in der Prozess History und in den
 <a href="../07-nachrichten/">Nachrichten</a>. Erst die <strong>Antwort des Netzbetreibers</strong> entscheidet:</p>
 <table>

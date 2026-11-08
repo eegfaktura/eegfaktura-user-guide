@@ -995,12 +995,13 @@ in den nächsten Abrechnungslauf.</p>
 der Liste und wartet auf die Zulassung. Rechts fragt eegFaktura: „Möchtest du <em>Nachname</em> in deine EEG aufnehmen?“</p>
 <ul>
 <li><strong>Ja, Zulassen</strong> öffnet den Dialog „<em>Name</em> zulassen“. Dort kannst du <strong>Anmeldedokumente</strong> hochladen (z. B. den
-  unterschriebenen Beitritt) und je Zählpunkt angeben, ob er per <strong>Offline-Registrierung</strong> mit einem
-  <strong>Aktivierungs-Code</strong> angemeldet wird. Mit <strong>Zulassen</strong> wird das Mitglied aufgenommen.</li>
+  unterschriebenen Beitritt) und die Zählpunkte auswählen, die angemeldet werden sollen. Mit <strong>Zulassen</strong> wird das
+  Mitglied aufgenommen.</li>
 <li><strong>Nein, Löschen</strong> löscht das Mitglied mit allen Zählpunkten. Das lässt sich nicht rückgängig machen.</li>
 </ul>
 <p>Erst mit dem Zulassen meldet eegFaktura die Zählpunkte bei Gemeinschaften mit Online-Anbindung beim Netzbetreiber
-an. Bei Gemeinschaften ohne Online-Anbindung werden sie damit aktiv.</p>
+an. Zählpunkte werden immer online beim Netzbetreiber angemeldet; das Mitglied bestätigt danach die Datenfreigabe.
+Bei Gemeinschaften ohne Online-Anbindung werden sie damit aktiv.</p>
 <h2 id="zahlpunkte">Zählpunkte<a class="headerlink" href="#zahlpunkte" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p>Ein Klick auf eine Zählpunkt-Karte zeigt dessen Daten. Über dem Zählpunkt steht seine Nummer; das Pfeilkreuz
 daneben <strong>verschiebt</strong> den Zählpunkt zu einem anderen Mitglied (bisherige Rechnungen bleiben beim alten Mitglied).</p>
@@ -1028,7 +1029,7 @@ Pfeil-Symbol ändern; eegFaktura warnt vorher, denn die Änderung wird <strong>n
 </tr>
 <tr>
 <td>Zustimmung des Mitglieds noch ausstehend.</td>
-<td>Das Mitglied muss die Datenfreigabe noch bestätigen; bei der Online-Anmeldung bekommt es dazu die Mail „Freigabe-Aufforderung“.</td>
+<td>Das Mitglied muss die Datenfreigabe noch bestätigen; es bekommt dazu die Mail „Freigabe-Aufforderung“.</td>
 </tr>
 <tr>
 <td>Abschlussmeldung vom Netzbetreiber noch ausstehend.</td>
@@ -1084,8 +1085,6 @@ richtest du dich: Ist der Fehler behoben (z. B. Nummer korrigiert), meldest du d
    <code>AT</code>) und den <strong>Teilnahmefaktor in %</strong> ein. Mit <strong>Adresse vom Besitzer übernehmen</strong> wird die Adresse des
    Mitglieds eingetragen.</p>
 <ul>
-<li>Hast du vom Netzbetreiber einen <strong>Aktivierungs-Code</strong> (Offline-Registrierung), hakst du
-  <strong>Offline-Registrierung</strong> an und trägst den Code ein.</li>
 <li>Bei Gemeinschaften ohne Online-Anbindung wählst du zusätzlich den <strong>Status</strong> („Noch nicht registriert“ oder
   „Bereits registriert“) und das Datum <strong>Aktiv seit …</strong>.</li>
 </ul>
