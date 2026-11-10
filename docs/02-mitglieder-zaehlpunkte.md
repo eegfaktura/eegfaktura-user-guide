@@ -6,8 +6,9 @@ Unter **Mitglieder** verwaltest du die Mitglieder deiner Gemeinschaft und ihre Z
 
 ![Mitgliederliste](images/oberflaeche-start.png)
 
-Jedes Mitglied steht mit seinem Namen in der Liste, darunter eine Karte je **Zählpunkt** mit der Energiemenge im
-gewählten Zeitraum. Das Symbol zeigt die Richtung: ein **Stecker** für Verbrauch, ein **Solarmodul** für Erzeugung.
+Jedes Mitglied steht mit seinem Namen und dahinter in Klammern seiner Mitgliedsnummer in der Liste, z. B.
+„Max Mustermann (001)“; ein Mitglied ohne Nummer nur mit dem Namen. Darunter steht eine Karte je **Zählpunkt** mit
+der Energiemenge im gewählten Zeitraum. Das Symbol zeigt die Richtung: ein **Stecker** für Verbrauch, ein **Solarmodul** für Erzeugung.
 Der Balken unter dem Wert zeigt den Anteil des Zählpunkts.
 
 ### Knöpfe oben
@@ -18,6 +19,21 @@ Der Balken unter dem Wert zeigt den Anteil des Zählpunkts.
 | Wolke mit Pfeil nach oben | **Import**: Stammdaten (Mitglieder und Zählpunkte) aus einer Excel-Datei einlesen; bei Gemeinschaften ohne Online-Anbindung auch Energiedaten |
 | Pfeil nach unten | **Export**: Daten für einen Zeitraum herunterladen |
 | Plus | **Neues Mitglied** anlegen (siehe unten) |
+
+### Suche
+
+--8<-- "pilot.md"
+
+Die Lupe oben blendet ein Suchfeld ein; die Liste filtert beim Tippen. Gesucht wird in Nachname, Vorname,
+Mitgliedsnummer und E-Mail des Mitglieds sowie in Zählpunktnummer und Anlagenname seiner Zählpunkte.
+
+- **Mehrere Begriffe** trennst du mit Leerzeichen. Gefunden werden die Mitglieder, bei denen **jeder** Begriff
+  vorkommt, egal in welcher Reihenfolge: „huber maria“ findet Maria Huber, „huber 0815“ ein Mitglied Huber, bei dem
+  „0815“ in der Mitgliedsnummer oder einer Zählpunktnummer vorkommt.
+- **Trifft ein Begriff das Mitglied selbst** (Name, Nummer, E-Mail), siehst du alle seine Zählpunkte: „markt“ zeigt
+  bei der „Marktgemeinde …“ jeden Zählpunkt.
+- **Begriffe, die nur bei Zählpunkten vorkommen** (Anlagenname, Zählpunktnummer), grenzen die Zählpunkte ein:
+  „markt pumpwerk“ zeigt bei der Marktgemeinde nur die Pumpwerke, „pv dach“ nur die Anlage „PV Dach“.
 
 ### Anzeige, Zeitraum und Sortierung
 
@@ -88,7 +104,8 @@ Ein Klick auf ein Mitglied öffnet rechts seine Daten, zunächst mit dem ersten 
 - **Kontakt**: Mitglieds-Nr, Titel, Vorname und Nachname (bei Firmen der Firmenname), **Mitglieds-Tarif**,
   Adresse, Telefon, E-Mail, UID.
 - **Bankdaten**: IBAN, Kontoinhaber, **Einzugsart** (Kein SEPA, B2B oder CORE); bei Lastschrift zusätzlich
-  Bankverbindung, Mandatsreferenz und Mandatsdatum.
+  **Bank (optional)**, Mandatsreferenz und Mandatsdatum. Den Namen der Bank musst du nicht eintragen; er steht nur auf
+  der Rechnung und im Stammdaten-Export.
 - **Optionals**: Mitglied seit.
 
 Änderungen werden gespeichert, sobald du ein Feld verlässt.
@@ -111,8 +128,10 @@ Darunter stehen, je nach Stand, diese Knöpfe:
 
 - **Beitrittsgebühr nachverrechnen** merkt die Gebühr für den nächsten endgültigen Abrechnungslauf vor, auch wenn das
   Mitglied schon abgerechnet wurde. eegFaktura nennt vorher Tarif, Betrag und Umsatzsteuer; es gilt der Tarifstand beim
-  Abrechnen. Bestätigt wird mit **Nachverrechnen**. Den Knopf gibt es nur, wenn noch keine Gebühr verrechnet und keine
-  Zahlung erfasst ist und der Mitglieds-Tarif eine Gebühr hat.
+  Abrechnen. Bestätigt wird mit **Nachverrechnen**. Den Knopf gibt es nur beim Stand „nicht verrechnet – Mitglied wurde
+  schon abgerechnet“, also wenn das Mitglied schon mit Energie abgerechnet wurde, noch keine Gebühr verrechnet und
+  keine Zahlung erfasst ist. Beim Stand „offen“ braucht es ihn nicht: Die Gebühr kommt dann ohnehin mit der ersten
+  endgültigen Energieabrechnung.
 - **Vormerkung zurücknehmen** hebt das Nachverrechnen wieder auf, solange es noch nicht abgerechnet ist.
 - **Außerhalb bezahlt erfassen**: Hat das Mitglied die Gebühr z. B. bar beim Beitritt bezahlt, trägst du das **Datum
   der Zahlung** ein (Pflicht) und optional eine kurze Notiz. Einen Betrag gibt es nicht. Danach wird ihm die Gebühr
@@ -201,6 +220,14 @@ Einen ungültigen Zählpunkt, der nie angemeldet wurde, kannst du hier mit **Lö
    [Neues Mitglied zulassen](#neues-mitglied-zulassen)) — erst dann werden die Zählpunkte beim Netzbetreiber
    angemeldet bzw. aktiv. Den Fortschritt siehst du am Status des Zählpunkts.
 
+### Zählpunkt vor dem Registrieren ändern oder entfernen
+
+--8<-- "pilot.md"
+
+Einen schon eingetragenen Zählpunkt kannst du vor dem **Registrieren** noch korrigieren: Klicke auf seine Karte, ändere
+die Angaben und klicke auf **Übernehmen**. **Entfernen** nimmt ihn wieder aus der Liste. Jede Zählpunktnummer steht
+nur einmal in der Liste: Trägst du eine Nummer ein, die schon dasteht, ersetzt der neue Eintrag den alten.
+
 ### Zählpunkt zu einem bestehenden Mitglied hinzufügen
 
 Klicke in der Mitgliederliste beim Mitglied auf **+**. Das Formular ist dasselbe wie oben; gespeichert wird mit
@@ -258,6 +285,10 @@ So verhält sich der Import:
   ([Zählpunkt abmelden](08-prozesse.md#zahlpunkt-abmelden)) statt das Mitglied zu löschen — so bleiben seine Daten und
   Belege erhalten. Bei importierten Zählpunkten fehlt eegFaktura manchmal die Kennung der Datenfreigabe; dann zuerst
   die Teilnehmerliste anfordern.
+- **Zählpunkt schon vergeben:** Ist ein Zählpunkt schon einem anderen Mitglied deiner Gemeinschaft zugeordnet, lässt
+  er sich nicht noch einmal anlegen. Verschiebe ihn beim anderen Mitglied mit dem Pfeilkreuz oder melde ihn dort ab.
+  Hat das Mitglied den Zählpunkt schon (z. B. inaktiv nach einer Abmeldung), meldest du ihn unter
+  **Prozesse → Zählpunkt aktivieren** wieder an.
 - **Ein Zählpunkt wechselt den Besitzer** (z. B. Mieterwechsel): Verschiebe ihn mit dem Pfeilkreuz zum neuen Mitglied
   oder melde ihn beim alten ab und beim neuen an; bisherige Rechnungen bleiben beim alten Mitglied.
 - **Teilnahmefaktor:** 1 bis 100 %. Nimmt ein Zählpunkt an mehreren Gemeinschaften teil, darf die Summe 100 % nicht

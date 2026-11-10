@@ -38,13 +38,14 @@ Ein Klick auf dein **Benutzersymbol** oben im Menü öffnet das Benutzermenü:
 
 - deine **E-Mail-Adresse**,
 - **Aktuelle Gemeinschaft**: Nummer und Name der Gemeinschaft, die du gerade bearbeitest (nur Anzeige),
-- **Gemeinschaft wechseln**: öffnet die Auswahl der Gemeinschaften (nur wenn du mehrere betreust, siehe unten),
+- **Gemeinschaft wechseln**: öffnet die Auswahl der Gemeinschaften (siehe unten),
 - **Passwort ändern**: führt zur Kontoseite, auf der du dein Passwort änderst,
 - **Abmelden**: meldet dich ab.
 
 ## Gemeinschaft wechseln
 
-Betreust du mehrere Gemeinschaften, klickst du im Benutzermenü auf **Gemeinschaft wechseln**. Es öffnet sich die
+Die Gemeinschaft, die du bearbeitest, wählst du im Benutzermenü mit **Gemeinschaft wechseln**. Den Eintrag gibt es
+immer, auch wenn du nur eine Gemeinschaft betreust. Es öffnet sich die
 Liste **Auswahl Gemeinschaft**, die aktuelle Gemeinschaft ist mit einem Häkchen markiert. Oben steht ein **Suchfeld**:
 Tippe die Nummer oder einen Teil des Namens ein (Groß- und Kleinschreibung und Akzente spielen keine Rolle, „sonnen“
 findet „EEG Sonnenfeld“). Ein Klick auf eine Gemeinschaft wechselt sofort; alle Seiten zeigen danach ihre Daten. Hast

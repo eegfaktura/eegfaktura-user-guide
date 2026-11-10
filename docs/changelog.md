@@ -13,6 +13,50 @@ Die Karte **Einstellungen** auf der EEG-Seite entfällt. Die Gemeinschaft wechse
 [Benutzermenü](01-anmeldung.md#gemeinschaft-wechseln). Das Intervall heißt **Abrechnungsintervall** und steht als erstes
 Feld unter **Allgemeines**. Siehe [Abrechnung](05-abrechnung.md#abrechnungszeitraum-wechseln).
 
+### Mitgliederliste: Mitgliedsnummer nach dem Namen
+
+Jedes Mitglied steht mit seiner Mitgliedsnummer in Klammern in der Liste, z. B. „Max Mustermann (001)“.
+Siehe [Mitglieder & Zählpunkte](02-mitglieder-zaehlpunkte.md#die-mitgliederliste).
+
+### Suche mit mehreren Begriffen
+
+Die Suche in der Mitgliederliste versteht mehrere Begriffe in beliebiger Reihenfolge, z. B. „huber maria“; gefunden
+wird, wer alle Begriffe enthält. Begriffe, die nur bei Zählpunkten vorkommen, grenzen die Zählpunkte ein
+(„markt pumpwerk“). Siehe [Suche](02-mitglieder-zaehlpunkte.md#suche).
+
+### Mitglied registrieren: Zählpunkt korrigieren oder entfernen
+
+Ein eingetragener Zählpunkt lässt sich vor dem Registrieren ändern (**Übernehmen**) oder wieder **Entfernen**; jede
+Nummer steht nur einmal in der Liste. Der Name der Bank heißt **Bank (optional)** und muss nicht ausgefüllt werden.
+Siehe [Mitglieder & Zählpunkte](02-mitglieder-zaehlpunkte.md#zahlpunkt-vor-dem-registrieren-andern-oder-entfernen).
+
+### Beitrittsgebühr nachverrechnen nur für schon abgerechnete Mitglieder
+
+Den Knopf **Beitrittsgebühr nachverrechnen** gibt es nur noch für Mitglieder, die schon mit Energie abgerechnet wurden.
+Bei allen anderen kommt die Gebühr ohnehin mit der ersten endgültigen Energieabrechnung.
+Siehe [Beitrittsgebühr eines Mitglieds](02-mitglieder-zaehlpunkte.md#beitrittsgebuhr-eines-mitglieds).
+
+### Stammdaten-Export nach Mitgliedsnummer sortiert
+
+Das Blatt „Mitglieder“ im Stammdaten-Export ist nach der Mitgliedsnummer sortiert.
+Siehe [Energiedaten exportieren](06-energiedaten.md#energiedaten-exportieren).
+
+### Klarere Meldungen beim Anlegen
+
+Ist ein Zählpunkt schon einem anderen Mitglied zugeordnet, hat das Mitglied ihn schon, oder ist eine E-Mail-Adresse
+ungültig, sagt eegFaktura das in einem Satz statt mit einem Fehlercode wie „E_1104_…“. Die Felder TechCode und
+FuelCode beim Zählpunkt werden nicht mehr angezeigt. Siehe [Gut zu wissen](02-mitglieder-zaehlpunkte.md#gut-zu-wissen).
+
+### Rechnungen mit Tausenderpunkt
+
+Auf neu erstellten Belegen stehen alle Zahlen mit Tausenderpunkt, z. B. „21.345,00 kWh“.
+Siehe [Was auf einem Beleg steht](05-abrechnung.md#was-auf-einem-beleg-steht).
+
+### Gemeinschaft wechseln immer im Benutzermenü
+
+Den Eintrag **Gemeinschaft wechseln** gibt es im Benutzermenü immer, auch wenn du nur eine Gemeinschaft betreust.
+Siehe [Gemeinschaft wechseln](01-anmeldung.md#gemeinschaft-wechseln).
+
 ## Herbst 2026 (seit 08.11.2026)
 
 ### Abrechnungszeitraum wechseln
