@@ -431,6 +431,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#suche" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suche
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#anzeige-zeitraum-und-sortierung" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -546,6 +557,17 @@
   
     <nav class="md-nav" aria-label="Neues Mitglied anlegen">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zahlpunkt-vor-dem-registrieren-andern-oder-entfernen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zählpunkt vor dem Registrieren ändern oder entfernen
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#zahlpunkt-zu-einem-bestehenden-mitglied-hinzufugen" class="md-nav__link">
@@ -798,8 +820,9 @@
 <p>Unter <strong>Mitglieder</strong> verwaltest du die Mitglieder deiner Gemeinschaft und ihre Zählpunkte.</p>
 <h2 id="die-mitgliederliste">Die Mitgliederliste<a class="headerlink" href="#die-mitgliederliste" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p><img alt="Mitgliederliste" src="../images/oberflaeche-start.png" /></p>
-<p>Jedes Mitglied steht mit seinem Namen in der Liste, darunter eine Karte je <strong>Zählpunkt</strong> mit der Energiemenge im
-gewählten Zeitraum. Das Symbol zeigt die Richtung: ein <strong>Stecker</strong> für Verbrauch, ein <strong>Solarmodul</strong> für Erzeugung.
+<p>Jedes Mitglied steht mit seinem Namen und dahinter in Klammern seiner Mitgliedsnummer in der Liste, z. B.
+„Max Mustermann (001)“; ein Mitglied ohne Nummer nur mit dem Namen. Darunter steht eine Karte je <strong>Zählpunkt</strong> mit
+der Energiemenge im gewählten Zeitraum. Das Symbol zeigt die Richtung: ein <strong>Stecker</strong> für Verbrauch, ein <strong>Solarmodul</strong> für Erzeugung.
 Der Balken unter dem Wert zeigt den Anteil des Zählpunkts.</p>
 <h3 id="knopfe-oben">Knöpfe oben<a class="headerlink" href="#knopfe-oben" title="Link zu diesem Abschnitt">&para;</a></h3>
 <table>
@@ -828,6 +851,24 @@ Der Balken unter dem Wert zeigt den Anteil des Zählpunkts.</p>
 </tr>
 </tbody>
 </table>
+<h3 id="suche">Suche<a class="headerlink" href="#suche" title="Link zu diesem Abschnitt">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Derzeit nur in der Pilot-Zone</p>
+<p>Diese Funktion bzw. dieses Verhalten gibt es derzeit nur in der <strong>Pilot-Zone</strong> für eine kleine Zahl von
+Friendly Usern. In der allgemeinen Version von eegFaktura kommt es mit einem der nächsten Releases; bis dahin kann
+es dort noch anders aussehen.</p>
+</div>
+<p>Die Lupe oben blendet ein Suchfeld ein; die Liste filtert beim Tippen. Gesucht wird in Nachname, Vorname,
+Mitgliedsnummer und E-Mail des Mitglieds sowie in Zählpunktnummer und Anlagenname seiner Zählpunkte.</p>
+<ul>
+<li><strong>Mehrere Begriffe</strong> trennst du mit Leerzeichen. Gefunden werden die Mitglieder, bei denen <strong>jeder</strong> Begriff
+  vorkommt, egal in welcher Reihenfolge: „huber maria“ findet Maria Huber, „huber 0815“ ein Mitglied Huber, bei dem
+  „0815“ in der Mitgliedsnummer oder einer Zählpunktnummer vorkommt.</li>
+<li><strong>Trifft ein Begriff das Mitglied selbst</strong> (Name, Nummer, E-Mail), siehst du alle seine Zählpunkte: „markt“ zeigt
+  bei der „Marktgemeinde …“ jeden Zählpunkt.</li>
+<li><strong>Begriffe, die nur bei Zählpunkten vorkommen</strong> (Anlagenname, Zählpunktnummer), grenzen die Zählpunkte ein:
+  „markt pumpwerk“ zeigt bei der Marktgemeinde nur die Pumpwerke, „pv dach“ nur die Anlage „PV Dach“.</li>
+</ul>
 <h3 id="anzeige-zeitraum-und-sortierung">Anzeige, Zeitraum und Sortierung<a class="headerlink" href="#anzeige-zeitraum-und-sortierung" title="Link zu diesem Abschnitt">&para;</a></h3>
 <ul>
 <li>Oben steht <strong>Anzeige:</strong> mit der gewählten Ansicht. Ein Klick darauf öffnet die Auswahl <strong>Standard</strong>, <strong>Alle</strong>,
@@ -930,7 +971,8 @@ grau „inaktiv“, hat das Mitglied keinen aktiven Zählpunkt mehr.</p>
 <li><strong>Kontakt</strong>: Mitglieds-Nr, Titel, Vorname und Nachname (bei Firmen der Firmenname), <strong>Mitglieds-Tarif</strong>,
   Adresse, Telefon, E-Mail, UID.</li>
 <li><strong>Bankdaten</strong>: IBAN, Kontoinhaber, <strong>Einzugsart</strong> (Kein SEPA, B2B oder CORE); bei Lastschrift zusätzlich
-  Bankverbindung, Mandatsreferenz und Mandatsdatum.</li>
+  <strong>Bank (optional)</strong>, Mandatsreferenz und Mandatsdatum. Den Namen der Bank musst du nicht eintragen; er steht nur auf
+  der Rechnung und im Stammdaten-Export.</li>
 <li><strong>Optionals</strong>: Mitglied seit.</li>
 </ul>
 <p>Änderungen werden gespeichert, sobald du ein Feld verlässt.</p>
@@ -975,8 +1017,10 @@ grau „inaktiv“, hat das Mitglied keinen aktiven Zählpunkt mehr.</p>
 <ul>
 <li><strong>Beitrittsgebühr nachverrechnen</strong> merkt die Gebühr für den nächsten endgültigen Abrechnungslauf vor, auch wenn das
   Mitglied schon abgerechnet wurde. eegFaktura nennt vorher Tarif, Betrag und Umsatzsteuer; es gilt der Tarifstand beim
-  Abrechnen. Bestätigt wird mit <strong>Nachverrechnen</strong>. Den Knopf gibt es nur, wenn noch keine Gebühr verrechnet und keine
-  Zahlung erfasst ist und der Mitglieds-Tarif eine Gebühr hat.</li>
+  Abrechnen. Bestätigt wird mit <strong>Nachverrechnen</strong>. Den Knopf gibt es nur beim Stand „nicht verrechnet – Mitglied wurde
+  schon abgerechnet“, also wenn das Mitglied schon mit Energie abgerechnet wurde, noch keine Gebühr verrechnet und
+  keine Zahlung erfasst ist. Beim Stand „offen“ braucht es ihn nicht: Die Gebühr kommt dann ohnehin mit der ersten
+  endgültigen Energieabrechnung.</li>
 <li><strong>Vormerkung zurücknehmen</strong> hebt das Nachverrechnen wieder auf, solange es noch nicht abgerechnet ist.</li>
 <li><strong>Außerhalb bezahlt erfassen</strong>: Hat das Mitglied die Gebühr z. B. bar beim Beitritt bezahlt, trägst du das <strong>Datum
   der Zahlung</strong> ein (Pflicht) und optional eine kurze Notiz. Einen Betrag gibt es nicht. Danach wird ihm die Gebühr
@@ -1094,6 +1138,16 @@ richtest du dich: Ist der Fehler behoben (z. B. Nummer korrigiert), meldest du d
    <a href="#neues-mitglied-zulassen">Neues Mitglied zulassen</a>) — erst dann werden die Zählpunkte beim Netzbetreiber
    angemeldet bzw. aktiv. Den Fortschritt siehst du am Status des Zählpunkts.</li>
 </ol>
+<h3 id="zahlpunkt-vor-dem-registrieren-andern-oder-entfernen">Zählpunkt vor dem Registrieren ändern oder entfernen<a class="headerlink" href="#zahlpunkt-vor-dem-registrieren-andern-oder-entfernen" title="Link zu diesem Abschnitt">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Derzeit nur in der Pilot-Zone</p>
+<p>Diese Funktion bzw. dieses Verhalten gibt es derzeit nur in der <strong>Pilot-Zone</strong> für eine kleine Zahl von
+Friendly Usern. In der allgemeinen Version von eegFaktura kommt es mit einem der nächsten Releases; bis dahin kann
+es dort noch anders aussehen.</p>
+</div>
+<p>Einen schon eingetragenen Zählpunkt kannst du vor dem <strong>Registrieren</strong> noch korrigieren: Klicke auf seine Karte, ändere
+die Angaben und klicke auf <strong>Übernehmen</strong>. <strong>Entfernen</strong> nimmt ihn wieder aus der Liste. Jede Zählpunktnummer steht
+nur einmal in der Liste: Trägst du eine Nummer ein, die schon dasteht, ersetzt der neue Eintrag den alten.</p>
 <h3 id="zahlpunkt-zu-einem-bestehenden-mitglied-hinzufugen">Zählpunkt zu einem bestehenden Mitglied hinzufügen<a class="headerlink" href="#zahlpunkt-zu-einem-bestehenden-mitglied-hinzufugen" title="Link zu diesem Abschnitt">&para;</a></h3>
 <p>Klicke in der Mitgliederliste beim Mitglied auf <strong>+</strong>. Das Formular ist dasselbe wie oben; gespeichert wird mit
 <strong>Registrieren</strong>. Ist das Mitglied schon zugelassen, meldet eegFaktura den neuen Zählpunkt bei Gemeinschaften mit
@@ -1184,6 +1238,10 @@ Bedarf selbst hinzu):
   (<a href="../08-prozesse/#zahlpunkt-abmelden">Zählpunkt abmelden</a>) statt das Mitglied zu löschen — so bleiben seine Daten und
   Belege erhalten. Bei importierten Zählpunkten fehlt eegFaktura manchmal die Kennung der Datenfreigabe; dann zuerst
   die Teilnehmerliste anfordern.</li>
+<li><strong>Zählpunkt schon vergeben:</strong> Ist ein Zählpunkt schon einem anderen Mitglied deiner Gemeinschaft zugeordnet, lässt
+  er sich nicht noch einmal anlegen. Verschiebe ihn beim anderen Mitglied mit dem Pfeilkreuz oder melde ihn dort ab.
+  Hat das Mitglied den Zählpunkt schon (z. B. inaktiv nach einer Abmeldung), meldest du ihn unter
+  <strong>Prozesse → Zählpunkt aktivieren</strong> wieder an.</li>
 <li><strong>Ein Zählpunkt wechselt den Besitzer</strong> (z. B. Mieterwechsel): Verschiebe ihn mit dem Pfeilkreuz zum neuen Mitglied
   oder melde ihn beim alten ab und beim neuen an; bisherige Rechnungen bleiben beim alten Mitglied.</li>
 <li><strong>Teilnahmefaktor:</strong> 1 bis 100 %. Nimmt ein Zählpunkt an mehreren Gemeinschaften teil, darf die Summe 100 % nicht
