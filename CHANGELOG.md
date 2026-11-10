@@ -5,6 +5,13 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 ## [Unreleased]
 
 ### Changed
+- Pilot features of 10.11.2026 (web 1.23.0/1.23.1, backend 1.18.0, billing 1.11.0): member number in brackets in the
+  member list; search with several terms (new section „Suche“, pilot hint); correct or remove a metering point before
+  „Registrieren“ (new section, pilot hint) and „Bank (optional)“; „Beitrittsgebühr nachverrechnen“ only for members
+  already billed with energy; master data export sorted by member number; thousands separator on new invoices;
+  „Gemeinschaft wechseln“ always in the user menu; a „Gut zu wissen“ hint for a metering point that is already
+  assigned. „Was ist neu?“ lists them under „In der Pilot-Zone“. Screenshots of the member list, the registration
+  and the user menu still show the earlier state.
 - EEG page without the card „Einstellungen“ (platform#245, pilot): the interval is „Abrechnungsintervall“ under
   „Allgemeines“ (chapters Anmeldung & Oberfläche, Abrechnung, „Was ist neu?“ with the pilot hint). The section keeps the
   id `abrechnungszeitraum-wechseln`, so the help link of eegfaktura-web and older links still land there. The

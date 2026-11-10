@@ -48,6 +48,9 @@ Die Positionen sind je Zählpunkt gruppiert („Zählpunkt AT… – Anlagenname
 
 Der Anlagenname des Zählpunkts erscheint auf dem Beleg — praktisch, wenn ein Mitglied mehrere Anlagen hat.
 
+Alle Zahlen stehen mit Tausenderpunkt, z. B. „21.345,00 kWh“ oder „1.234,56“ €. Das gilt für Belege, die neu erstellt
+werden; schon erstellte Belege behalten ihr PDF.
+
 ## Abrechnungsmodus
 
 1. Öffne **Mitglieder** und wähle oben den **Zeitraum** (z. B. „Jul-Sep 2026“). Jeder Zeitraum hat seinen eigenen
