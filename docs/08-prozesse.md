@@ -39,9 +39,18 @@ später wieder teilnehmen, ist eine neue Anmeldung nötig.
 ![Zählpunkt abmelden](images/prozesse-abmelden.png)
 
 1. Wähle **Mitglied** und **Zählpunkt** (mehrere möglich).
-2. Wähle unter **Zeitraum** das Ende der Teilnahme (frühestens morgen). Das Feld **Begründung (optional)** wird
-   derzeit nicht an den Netzbetreiber übermittelt.
+2. Wähle unter **Zeitraum** das Ende der Teilnahme (frühestens morgen). Optional trägst du eine
+   [Begründung](#begrundung) ein.
 3. Klicke auf **Anfordern** und bestätige „Datenfreigabe aufheben“ mit **Aufheben**.
+
+### Begründung
+
+--8<-- "pilot.md"
+
+Die **Begründung (optional)** geht mit der Abmeldung an den Netzbetreiber und wird in der Prozess History gespeichert.
+Trag deshalb keine personenbezogenen Daten ein. Sie darf höchstens 50 Zeichen lang sein; ein Zähler unter dem Feld
+zeigt, wie viele es sind. Bei mehr als 50 Zeichen bleibt **Anfordern** gesperrt. Die Bestätigung vor dem Absenden
+nennt die Begründung noch einmal.
 
 Fehlt eegFaktura die Kennung der Datenfreigabe, fordere zuerst die **Teilnehmerliste** an (siehe unten).
 
