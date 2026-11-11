@@ -139,10 +139,10 @@ Liegt noch kein Wert vor, steht „unbekannt“.
 
 ### Peer-to-Peer und Eigenversorgung
 
-Für Gemeinschaften mit dem Modell **P2P** oder **EVA** bietet eegFaktura keine Abrechnung an. Es fehlen deshalb der
-Menüpunkt **Tarife**, die Abrechnung und die Rechnungen, die Tarifauswahl bei Mitgliedern und Zählpunkten, die
-Lastschrift-Felder, die Abrechnungseinstellungen, der Abrechnungszeitraum, die Creditor-ID, die Rechnungs-Mail unter
-**E-Mail-Texte** und auf dem Dashboard die **Tarife** der Übersicht EEG und die **Energiemengen**. Energiedaten,
+Für Gemeinschaften mit dem Modell **P2P** oder **EVA** gibt es alle Funktionen wie bei einer EEG, die Abrechnung aber
+nur als **Vorschau**: Du kannst Tarife anlegen und zuweisen, eine [Vorschau erstellen](05-abrechnung.md#vorschau-erstellen)
+und die Belege als ZIP oder Excel herunterladen, etwa als Vorlage-Rechnungen. Eine endgültige Abrechnung gibt es nicht;
+statt **Abrechnung durchführen** steht ein Hinweis, und es werden keine Rechnungen per Mail verschickt. Energiedaten,
 Zählpunkte und Prozesse funktionieren wie bei einer BEG: Zählpunkte können bei mehreren Netzbetreibern liegen, und
 **Zählpunktliste anfordern** fragt nach dem Netzbetreiber.
 

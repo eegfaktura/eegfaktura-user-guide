@@ -110,6 +110,9 @@ Die Vorschau erstellt Belege mit dem Zusatz „Vorschau“ und ohne Nummern:
 
 ## Abrechnung durchführen
 
+Bei Gemeinschaften mit dem Modell **P2P** oder **EVA** gibt es nur die Vorschau, keine endgültige Abrechnung (siehe
+[Peer-to-Peer und Eigenversorgung](01-anmeldung.md#peer-to-peer-und-eigenversorgung)).
+
 Passt die Vorschau, klicke auf **Abrechnung durchführen**. Die endgültigen Belege werden dabei **neu berechnet** — mit
 den Tarifen, Stammdaten und Energiedaten im Moment des Klicks. Hat sich seit
 der Vorschau etwas geändert, erstelle sie mit **Vorschau Akt.** direkt davor neu. eegFaktura prüft noch einmal und
