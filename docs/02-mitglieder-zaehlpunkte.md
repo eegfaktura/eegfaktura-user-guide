@@ -22,8 +22,6 @@ Der Balken unter dem Wert zeigt den Anteil des Zählpunkts.
 
 ### Suche
 
---8<-- "pilot.md"
-
 Die Lupe oben blendet ein Suchfeld ein; die Liste filtert beim Tippen. Gesucht wird in Nachname, Vorname,
 Mitgliedsnummer und E-Mail des Mitglieds sowie in Zählpunktnummer und Anlagenname seiner Zählpunkte.
 
@@ -221,8 +219,6 @@ Einen ungültigen Zählpunkt, der nie angemeldet wurde, kannst du hier mit **Lö
    angemeldet bzw. aktiv. Den Fortschritt siehst du am Status des Zählpunkts.
 
 ### Zählpunkt vor dem Registrieren ändern oder entfernen
-
---8<-- "pilot.md"
 
 Einen schon eingetragenen Zählpunkt kannst du vor dem **Registrieren** noch korrigieren: Klicke auf seine Karte, ändere
 die Angaben und klicke auf **Übernehmen**. **Entfernen** nimmt ihn wieder aus der Liste. Jede Zählpunktnummer steht

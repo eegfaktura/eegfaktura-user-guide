@@ -3,9 +3,13 @@
 Neue Funktionen von eegFaktura, die du als EEG-Admin bemerkst. Die Kapitel beschreiben jeweils den aktuellen
 Stand.
 
-## In der Pilot-Zone
+## Herbst 2026 (seit 11.11.2026)
 
---8<-- "pilot.md"
+### Peer-to-Peer und Eigenversorgung: Abrechnung als Vorschau
+
+Bei **P2P** und **EVA** gibt es jetzt alle Funktionen wie bei einer EEG, die Abrechnung aber nur als Vorschau, etwa für
+Vorlage-Rechnungen. Eine endgültige Abrechnung und der Mailversand bleiben gesperrt.
+Siehe [Peer-to-Peer und Eigenversorgung](01-anmeldung.md#peer-to-peer-und-eigenversorgung).
 
 ### EEG-Seite: Abrechnungsintervall unter „Allgemeines“
 
