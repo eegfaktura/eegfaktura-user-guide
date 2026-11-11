@@ -191,8 +191,6 @@ Belege mit „Vorschau“ im Namen stammen aus einer Vorschau und sind nicht gü
 
 ## Abrechnungsintervall wechseln {#abrechnungszeitraum-wechseln}
 
---8<-- "pilot.md"
-
 Ob deine Gemeinschaft monatlich, vierteljährlich, halbjährlich oder jährlich abrechnet, stellst du auf der
 **EEG-Seite** unter **Allgemeines → Abrechnungsintervall** ein. Ändern können das nur EEG-Admins.
 

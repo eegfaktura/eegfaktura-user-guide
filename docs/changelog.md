@@ -3,9 +3,7 @@
 Neue Funktionen von eegFaktura, die du als EEG-Admin bemerkst. Die Kapitel beschreiben jeweils den aktuellen
 Stand.
 
-## In der Pilot-Zone
-
---8<-- "pilot.md"
+## Herbst 2026 (seit 11.11.2026)
 
 ### EEG-Seite: Abrechnungsintervall unter „Allgemeines“
 

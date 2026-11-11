@@ -5,6 +5,9 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 ## [Unreleased]
 
 ### Changed
+- Pilot hints removed with the prod release of 11.11.2026 (web 1.23.1, backend 1.18.0, billing 1.11.0): the sections
+  „Suche“, „Zählpunkt vor dem Registrieren ändern oder entfernen“ and „Abrechnungsintervall wechseln“ apply to all;
+  „Was ist neu?“ lists the entries under „Herbst 2026 (seit 11.11.2026)“.
 - Pilot features of 10.11.2026 (web 1.23.0/1.23.1, backend 1.18.0, billing 1.11.0): member number in brackets in the
   member list; search with several terms (new section „Suche“, pilot hint); correct or remove a metering point before
   „Registrieren“ (new section, pilot hint) and „Bank (optional)“; „Beitrittsgebühr nachverrechnen“ only for members
