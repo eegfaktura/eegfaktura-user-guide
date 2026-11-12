@@ -53,7 +53,7 @@ Mitgliedsnummer und E-Mail des Mitglieds sowie in Zählpunktnummer und Anlagenna
   ![Anzeige](images/mitglieder-filter.png)
 
 - Das Pfeil-Symbol ganz rechts öffnet die **Sortierung**: Mitgliedsnummer (voreingestellt), Nachname, Vorname,
-  Mitglied seit (neueste bzw. älteste zuerst), Aktiviert seit (neueste zuerst), Einzugsart oder Ort. Mit dem Haken
+  Mitglied seit (neueste bzw. älteste zuerst), Aktiv ab (neueste zuerst), Einzugsart oder Ort. Mit dem Haken
   **Mitglieder mit nötiger Aktion oben** bleiben Mitglieder, bei denen etwas zu tun ist, vor den anderen; ohne Haken
   gilt die Sortierung für alle gleich. Die Wahl gilt nach **Übernehmen** und bleibt in deinem Browser gespeichert.
 
@@ -212,7 +212,7 @@ Einen ungültigen Zählpunkt, der nie angemeldet wurde, kannst du hier mit **Lö
    `AT`) und den **Teilnahmefaktor in %** ein. Mit **Adresse vom Besitzer übernehmen** wird die Adresse des
    Mitglieds eingetragen.
     - Bei Gemeinschaften ohne Online-Anbindung wählst du zusätzlich den **Status** („Noch nicht registriert“ oder
-      „Bereits registriert“) und das Datum **Aktiv seit …**.
+      „Bereits registriert“) und das Datum **Aktiv ab …**.
 5. Klicke auf **Registrieren**. Verlässt du die Seite vor dem Speichern, fragt eegFaktura nach.
 6. Das Mitglied steht jetzt als **ausstehend** in der Liste. **Lasse es zu** (siehe
    [Neues Mitglied zulassen](#neues-mitglied-zulassen)) — erst dann werden die Zählpunkte beim Netzbetreiber
@@ -274,7 +274,7 @@ So verhält sich der Import:
 - **Mitglied ohne Konto:** Wähle die Einzugsart **Kein SEPA**; die IBAN darf dann leer bleiben.
 - **Anlagenname:** Hat ein Zählpunkt einen Anlagennamen, steht in der Liste dieser Name statt der Nummer, in den
   Prozessen „Name – Nummer“ — praktisch bei mehreren Anlagen eines Mitglieds.
-- **Aktiv seit:** Bei Online-Anmeldungen setzt eegFaktura das Datum aus der Meldung des Netzbetreibers, beim Import
+- **Aktiv ab:** Bei Online-Anmeldungen setzt eegFaktura das Datum aus der Meldung des Netzbetreibers, beim Import
   aus der Spalte „registriert seit“. Es begrenzt, ab wann Energiedaten angefordert und abgerechnet werden; ändere es nur, wenn es nicht
   zum Netzbetreiber passt.
 - **Ein Mitglied verlässt die Gemeinschaft:** Melde seine Zählpunkte ab
