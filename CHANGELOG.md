@@ -5,6 +5,8 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 ## [Unreleased]
 
 ### Changed
+- „Aktiv seit“ of a metering point is now called „Aktiv ab“ (eegfaktura-web, platform#257): the date often lies in
+  the future when a metering point is added; also in the member list sort „Aktiv ab (neueste zuerst)“.
 - Pilot hints removed with the prod release of 11.11.2026 (web 1.23.1, backend 1.18.0, billing 1.11.0): the sections
   „Suche“, „Zählpunkt vor dem Registrieren ändern oder entfernen“ and „Abrechnungsintervall wechseln“ apply to all;
   „Was ist neu?“ lists the entries under „Herbst 2026 (seit 11.11.2026)“.
