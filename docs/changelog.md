@@ -3,6 +3,15 @@
 Neue Funktionen von eegFaktura, die du als EEG-Admin bemerkst. Die Kapitel beschreiben jeweils den aktuellen
 Stand.
 
+## In der Pilot-Zone
+
+--8<-- "pilot.md"
+
+### Dashboard: Sommer und Winter
+
+Lastverlauf und Tagesverlauf zeigen über das Zahnrad jetzt auch das **Sommerhalbjahr** (April bis September) und das
+**Winterhalbjahr** (Oktober bis März). Siehe [Sommer und Winter](01-anmeldung.md#sommer-und-winter).
+
 ## Herbst 2026 (seit 11.11.2026)
 
 ### Peer-to-Peer und Eigenversorgung: Abrechnung als Vorschau

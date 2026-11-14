@@ -4,6 +4,11 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 
 ## [Unreleased]
 
+### Added
+- Dashboard summer and winter (platform#258, pilot): new section „Sommer und Winter“ in chapter 1 (pilot hint):
+  the row „Sommer/Winter“ in the period popover of „Lastverlauf“ and „Tagesverlauf“; „Was ist neu?“ lists it under
+  „In der Pilot-Zone“.
+
 ### Changed
 - Pilot hints removed with the prod release of 11.11.2026 (web 1.23.1, backend 1.18.0, billing 1.11.0): the sections
   „Suche“, „Zählpunkt vor dem Registrieren ändern oder entfernen“ and „Abrechnungsintervall wechseln“ apply to all;

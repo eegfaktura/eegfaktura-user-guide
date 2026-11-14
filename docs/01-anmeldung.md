@@ -95,6 +95,16 @@ ein Hinweis darunter nennt die Zählpunkte, die deshalb fehlen.
 den Pfeilen blätterst du tageweise. Nur diese Kachel wechselt in die Tagesansicht; möglich sind Tage mit
 Energiedaten bis gestern. Eine andere Zeile im Zahnrad-Menü führt zurück zum Zeitraum.
 
+### Sommer und Winter
+
+--8<-- "pilot.md"
+
+Über das Zahnrad von Lastverlauf oder Tagesverlauf wählst du in der Zeile **Sommer/Winter** ein Halbjahr:
+**Sommer** ist April bis September, **Winter** Oktober bis März über den Jahreswechsel, z. B. „Winter 2026/27“.
+Angeboten werden die Halbjahre, für die es Energiedaten gibt, das neueste zuerst. So vergleichst du etwa den
+Tagesverlauf im Sommer und im Winter, um Tarife nach Tageszeit zu planen. Wie beim Tag wechselt nur diese Kachel;
+die Übersicht und die Mitgliederliste behalten ihren Zeitraum.
+
 ## EEG-Seite
 
 Der Menüpunkt mit dem **Namen deiner Gemeinschaft** öffnet die EEG-Seite mit ihren Stammdaten:
