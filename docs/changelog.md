@@ -7,6 +7,11 @@ Stand.
 
 --8<-- "pilot.md"
 
+### Zählpunkt abmelden: Begründung geht an den Netzbetreiber
+
+Die optionale **Begründung** beim Abmelden eines Zählpunkts wird jetzt an den Netzbetreiber übermittelt und in der
+Prozess History gespeichert, höchstens 50 Zeichen. Siehe [Begründung](08-prozesse.md#begrundung).
+
 ### Dashboard: Sommer und Winter
 
 In der Liste **Halbjahr** von Lastverlauf und Tagesverlauf gibt es jetzt auch das **Sommerhalbjahr** („Apr-Sep“) und
