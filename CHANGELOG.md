@@ -4,6 +4,11 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 
 ## [Unreleased]
 
+### Added
+- Dashboard summer and winter (platform#258, pilot): new section „Sommer und Winter“ in chapter 1 (pilot hint):
+  summer and winter in the list „Halbjahr“ of „Lastverlauf“ and „Tagesverlauf“; „Was ist neu?“ lists it under
+  „In der Pilot-Zone“.
+
 ### Changed
 - Revoke reason (eegfaktura-backend#127, eegfaktura-web#245, eegfaktura-eda-xp#59, pilot): „Zählpunkt abmelden“ no longer
   says the „Begründung“ is not sent; new section „Begründung“ (pilot hint): sent to the grid operator, stored in the
