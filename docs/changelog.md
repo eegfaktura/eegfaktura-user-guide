@@ -9,8 +9,8 @@ Stand.
 
 ### Dashboard: Sommer und Winter
 
-Lastverlauf und Tagesverlauf zeigen über das Zahnrad jetzt auch das **Sommerhalbjahr** (April bis September) und das
-**Winterhalbjahr** (Oktober bis März). Siehe [Sommer und Winter](01-anmeldung.md#sommer-und-winter).
+In der Liste **Halbjahr** von Lastverlauf und Tagesverlauf gibt es jetzt auch das **Sommerhalbjahr** („Apr-Sep“) und
+das **Winterhalbjahr** („Okt-Mär“). Siehe [Sommer und Winter](01-anmeldung.md#sommer-und-winter).
 
 ## Herbst 2026 (seit 11.11.2026)
 

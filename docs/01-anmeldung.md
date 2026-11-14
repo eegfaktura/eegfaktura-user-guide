@@ -99,9 +99,9 @@ Energiedaten bis gestern. Eine andere Zeile im Zahnrad-Menü führt zurück zum 
 
 --8<-- "pilot.md"
 
-Über das Zahnrad von Lastverlauf oder Tagesverlauf wählst du in der Zeile **Sommer/Winter** ein Halbjahr:
-**Sommer** ist April bis September, **Winter** Oktober bis März über den Jahreswechsel, z. B. „Winter 2026/27“.
-Angeboten werden die Halbjahre, für die es Energiedaten gibt, das neueste zuerst. So vergleichst du etwa den
+Über das Zahnrad von Lastverlauf oder Tagesverlauf bietet die Liste **Halbjahr** neben den Kalender-Halbjahren auch
+das **Sommerhalbjahr** (April bis September, z. B. „Apr-Sep 2026“) und das **Winterhalbjahr** (Oktober bis März
+über den Jahreswechsel, z. B. „Okt 2026-Mär 2027“), das neueste zuerst und nur mit Energiedaten. So vergleichst du etwa den
 Tagesverlauf im Sommer und im Winter, um Tarife nach Tageszeit zu planen. Wie beim Tag wechselt nur diese Kachel;
 die Übersicht und die Mitgliederliste behalten ihren Zeitraum.
 

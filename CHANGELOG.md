@@ -6,7 +6,7 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 
 ### Added
 - Dashboard summer and winter (platform#258, pilot): new section „Sommer und Winter“ in chapter 1 (pilot hint):
-  the row „Sommer/Winter“ in the period popover of „Lastverlauf“ and „Tagesverlauf“; „Was ist neu?“ lists it under
+  summer and winter in the list „Halbjahr“ of „Lastverlauf“ and „Tagesverlauf“; „Was ist neu?“ lists it under
   „In der Pilot-Zone“.
 
 ### Changed
