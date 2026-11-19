@@ -45,8 +45,6 @@ später wieder teilnehmen, ist eine neue Anmeldung nötig.
 
 ### Begründung
 
---8<-- "pilot.md"
-
 Die **Begründung (optional)** geht mit der Abmeldung an den Netzbetreiber und wird in der Prozess History gespeichert.
 Trag deshalb keine personenbezogenen Daten ein. Sie darf höchstens 50 Zeichen lang sein; ein Zähler unter dem Feld
 zeigt, wie viele es sind. Bei mehr als 50 Zeichen bleibt **Anfordern** gesperrt. Die Bestätigung vor dem Absenden

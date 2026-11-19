@@ -74,6 +74,10 @@ Ein Tarif der Art **Mitglied** kann zusätzlich zum laufenden Mitgliedsbeitrag e
 haben (Abschnitt **Einmalige Beitrittsgebühr**):
 
 - **Beitrittsgebühr in € (einmalig, netto)**, auch mit Cent (z. B. 49,90). Leer oder 0 heißt: keine Beitrittsgebühr.
+- **Bezeichnung auf der Rechnung:** So heißt die Position auf der Rechnung. Vorgegeben ist „Beitrittsgebühr“; nennt
+  ihr die Gebühr in euren Unterlagen anders, z. B. „Einmalige Einrichtungsgebühr“, trägst du hier euren Begriff ein.
+  Höchstens 80 Zeichen, nur Zeichen, die die Rechnung drucken kann (Buchstaben auch mit Umlaut und Akzent, Ziffern,
+  Satzzeichen, €; keine Emojis). Bei einer Gebühr über 0 muss das Feld ausgefüllt sein.
 - **Umsatzsteuer für die Beitrittsgebühr anführen** und **Umsatzsteuer der Beitrittsgebühr in %** (ganze Zahl über
   0) — eine eigene Einstellung, unabhängig vom Mitgliedsbeitrag. Welche Steuer gilt, klärst du bitte mit deiner
   Steuerberatung.
@@ -87,8 +91,9 @@ So verrechnet eegFaktura die Gebühr:
 - **Einmal je Mitglied**, im ersten endgültigen Abrechnungslauf, in dem das Mitglied **Energie** abgerechnet bekommt —
   egal ob Bezug oder Einspeisung. Ein Lauf nur mit Mitgliedsbeitrag oder Zählpunktgebühr (z. B. weil der Zählpunkt
   noch nicht aktiv ist) löst sie nicht aus.
-- Sie steht als eigene Position „Beitrittsgebühr“ immer auf einer **Rechnung**, nie auf einer Gutschrift. Ein reiner
-  Erzeuger bekommt dafür eine eigene Rechnung.
+- Sie steht als eigene Position mit der **Bezeichnung auf der Rechnung** immer auf einer **Rechnung**, nie auf einer
+  Gutschrift. Ein reiner Erzeuger bekommt dafür eine eigene Rechnung. Die Bezeichnung ändert nichts daran, ob die
+  Gebühr fällig ist; bereits erstellte Rechnungen behalten ihren Text.
 - Es gilt der Tarifstand **beim Abrechnen**. Nach einem Tarifwechsel wird keine zweite Gebühr fällig.
 - Mitglieder, die in eegFaktura **schon mit Energie abgerechnet** wurden, bekommen die Gebühr nicht automatisch. Willst
   du sie trotzdem verrechnen, nutzt du beim Mitglied **Beitrittsgebühr nachverrechnen**; hat ein Mitglied außerhalb
