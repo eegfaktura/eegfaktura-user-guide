@@ -453,6 +453,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#nach-energiemenge-sortieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nach Energiemenge sortieren
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#farben" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -887,13 +898,39 @@ Mitgliedsnummer und E-Mail des Mitglieds sowie in Zählpunktnummer und Anlagenna
 <p><img alt="Anzeige" src="../images/mitglieder-filter.png" /></p>
 <ul>
 <li>Das Pfeil-Symbol ganz rechts öffnet die <strong>Sortierung</strong>: Mitgliedsnummer (voreingestellt), Nachname, Vorname,
-  Mitglied seit (neueste bzw. älteste zuerst), Aktiv ab (neueste zuerst), Einzugsart oder Ort. Mit dem Haken
+  Mitglied seit (neueste bzw. älteste zuerst), Aktiv ab (neueste zuerst), Einzugsart, Ort oder Energiemenge (siehe
+  <a href="#nach-energiemenge-sortieren">Nach Energiemenge sortieren</a>). Mit dem Haken
   <strong>Mitglieder mit nötiger Aktion oben</strong> bleiben Mitglieder, bei denen etwas zu tun ist, vor den anderen; ohne Haken
   gilt die Sortierung für alle gleich. Die Wahl gilt nach <strong>Übernehmen</strong> und bleibt in deinem Browser gespeichert.</li>
 </ul>
 <p><img alt="Sortierung" src="../images/mitglieder-sortierung.png" /></p>
 <ul>
 <li>Bei jedem Mitglied stehen die Verbraucher vor den Erzeugern.</li>
+</ul>
+<h3 id="nach-energiemenge-sortieren">Nach Energiemenge sortieren<a class="headerlink" href="#nach-energiemenge-sortieren" title="Link zu diesem Abschnitt">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Derzeit nur in der Pilot-Zone</p>
+<p>Diese Funktion bzw. dieses Verhalten gibt es derzeit nur in der <strong>Pilot-Zone</strong> für eine kleine Zahl von
+Friendly Usern. In der allgemeinen Version von eegFaktura kommt es mit einem der nächsten Releases; bis dahin kann
+es dort noch anders aussehen.</p>
+</div>
+<p>In der <strong>Sortierung</strong> gibt es <strong>Energiemenge (größte zuerst)</strong> und <strong>Energiemenge (kleinste zuerst)</strong>. Sortiert wird
+nach den kWh im gewählten Zeitraum, die auch auf den Zählpunkten stehen: beim Verbraucher die Energie aus der
+Gemeinschaft, beim Erzeuger die Einspeisung in die Gemeinschaft.</p>
+<ul>
+<li>Wähle unten in der Liste zuerst <strong>Nur Erzeuger</strong> oder <strong>Nur Verbraucher</strong>. Vorher sind die beiden Einträge grau,
+  mit dem Hinweis „Für die Sortierung nach Energiemenge zuerst Erzeuger oder Verbraucher wählen.“ In der Ansicht
+  <strong>Nur Mitglieder</strong> gibt es sie nicht.</li>
+<li>Mit <strong>Nur Zählpunkte</strong> steht jeder Zählpunkt für sich, sortiert über alle Mitglieder. So siehst du z. B. die
+  größten Erzeuger der Gemeinschaft oben.</li>
+<li>Werden die Mitglieder angezeigt, zählt die Summe ihrer Zählpunkte; die Zählpunkte eines Mitglieds sind ebenfalls
+  nach Energiemenge sortiert. Im Abrechnungsmodus bleiben die Zählpunkte immer beim Mitglied, die Reihenfolge richtet
+  sich auch dort nach den kWh.</li>
+<li>Ein Zählpunkt ohne Energiedaten im Zeitraum zählt als 0 kWh und steht bei „kleinste zuerst“ oben.</li>
+<li>Der Haken <strong>Mitglieder mit nötiger Aktion oben</strong> gilt auch hier. Gleiche Werte bleiben nach der Mitgliedsnummer
+  geordnet.</li>
+<li>Nimmst du die Auswahl Erzeuger oder Verbraucher wieder weg oder wechselst zu <strong>Nur Mitglieder</strong>, sortiert die
+  Liste nach der Mitgliedsnummer. Deine Wahl bleibt gespeichert und gilt wieder, sobald die Energiemenge wählbar ist.</li>
 </ul>
 <h3 id="farben">Farben<a class="headerlink" href="#farben" title="Link zu diesem Abschnitt">&para;</a></h3>
 <table>
