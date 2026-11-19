@@ -5,6 +5,9 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 ## [Unreleased]
 
 ### Added
+- Member list sort by energy (platform#259, eegfaktura-web 1.27.0, pilot): new section „Nach Energiemenge sortieren“
+  in chapter 2 (pilot hint), the sort list there names „Energiemenge“; „Was ist neu?“ lists it under „In der
+  Pilot-Zone“. The screenshot of the sort menu still shows the earlier state.
 - Dashboard summer and winter (platform#258, pilot): new section „Sommer und Winter“ in chapter 1 (pilot hint):
   summer and winter in the list „Halbjahr“ of „Lastverlauf“ and „Tagesverlauf“; „Was ist neu?“ lists it under
   „In der Pilot-Zone“.
