@@ -53,13 +53,36 @@ Mitgliedsnummer und E-Mail des Mitglieds sowie in Zählpunktnummer und Anlagenna
   ![Anzeige](images/mitglieder-filter.png)
 
 - Das Pfeil-Symbol ganz rechts öffnet die **Sortierung**: Mitgliedsnummer (voreingestellt), Nachname, Vorname,
-  Mitglied seit (neueste bzw. älteste zuerst), Aktiv ab (neueste zuerst), Einzugsart oder Ort. Mit dem Haken
+  Mitglied seit (neueste bzw. älteste zuerst), Aktiv ab (neueste zuerst), Einzugsart, Ort oder Energiemenge (siehe
+  [Nach Energiemenge sortieren](#nach-energiemenge-sortieren)). Mit dem Haken
   **Mitglieder mit nötiger Aktion oben** bleiben Mitglieder, bei denen etwas zu tun ist, vor den anderen; ohne Haken
   gilt die Sortierung für alle gleich. Die Wahl gilt nach **Übernehmen** und bleibt in deinem Browser gespeichert.
 
   ![Sortierung](images/mitglieder-sortierung.png)
 
 - Bei jedem Mitglied stehen die Verbraucher vor den Erzeugern.
+
+### Nach Energiemenge sortieren
+
+--8<-- "pilot.md"
+
+In der **Sortierung** gibt es **Energiemenge (größte zuerst)** und **Energiemenge (kleinste zuerst)**. Sortiert wird
+nach den kWh im gewählten Zeitraum, die auch auf den Zählpunkten stehen: beim Verbraucher die Energie aus der
+Gemeinschaft, beim Erzeuger die Einspeisung in die Gemeinschaft.
+
+- Wähle unten in der Liste zuerst **Nur Erzeuger** oder **Nur Verbraucher**. Vorher sind die beiden Einträge grau,
+  mit dem Hinweis „Für die Sortierung nach Energiemenge zuerst Erzeuger oder Verbraucher wählen.“ In der Ansicht
+  **Nur Mitglieder** gibt es sie nicht.
+- Mit **Nur Zählpunkte** steht jeder Zählpunkt für sich, sortiert über alle Mitglieder. So siehst du z. B. die
+  größten Erzeuger der Gemeinschaft oben.
+- Werden die Mitglieder angezeigt, zählt die Summe ihrer Zählpunkte; die Zählpunkte eines Mitglieds sind ebenfalls
+  nach Energiemenge sortiert. Im Abrechnungsmodus bleiben die Zählpunkte immer beim Mitglied, die Reihenfolge richtet
+  sich auch dort nach den kWh.
+- Ein Zählpunkt ohne Energiedaten im Zeitraum zählt als 0 kWh und steht bei „kleinste zuerst“ oben.
+- Der Haken **Mitglieder mit nötiger Aktion oben** gilt auch hier. Gleiche Werte bleiben nach der Mitgliedsnummer
+  geordnet.
+- Nimmst du die Auswahl Erzeuger oder Verbraucher wieder weg oder wechselst zu **Nur Mitglieder**, sortiert die
+  Liste nach der Mitgliedsnummer. Deine Wahl bleibt gespeichert und gilt wieder, sobald die Energiemenge wählbar ist.
 
 ### Farben
 

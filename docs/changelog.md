@@ -3,6 +3,16 @@
 Neue Funktionen von eegFaktura, die du als EEG-Admin bemerkst. Die Kapitel beschreiben jeweils den aktuellen
 Stand.
 
+## In der Pilot-Zone
+
+--8<-- "pilot.md"
+
+### Mitgliederliste nach Energiemenge sortieren
+
+Die Mitgliederliste lässt sich nach der Energiemenge im gewählten Zeitraum sortieren, größte oder kleinste zuerst,
+sobald unten **Nur Erzeuger** oder **Nur Verbraucher** gewählt ist. Siehe
+[Nach Energiemenge sortieren](02-mitglieder-zaehlpunkte.md#nach-energiemenge-sortieren).
+
 ## Herbst 2026 (seit 19.11.2026)
 
 ### Beitrittsgebühr: eigene Bezeichnung auf der Rechnung
