@@ -3,9 +3,16 @@
 Neue Funktionen von eegFaktura, die du als EEG-Admin bemerkst. Die Kapitel beschreiben jeweils den aktuellen
 Stand.
 
-## In der Pilot-Zone
+## Herbst 2026 (seit 19.11.2026)
 
---8<-- "pilot.md"
+### Beitrittsgebühr: eigene Bezeichnung auf der Rechnung
+
+Im Mitgliedstarif legst du mit **Bezeichnung auf der Rechnung** fest, wie die Beitrittsgebühr auf der Rechnung heißt,
+z. B. „Einmalige Einrichtungsgebühr“. Vorgegeben ist „Beitrittsgebühr“. Siehe [Beitrittsgebühr](04-tarife.md#beitrittsgebuhr).
+
+### Zählpunkt: „Aktiv ab“ statt „Aktiv seit“
+
+Das Datum am Zählpunkt heißt **Aktiv ab**, auch in der Sortierung der Mitgliederliste. Der Wert bleibt gleich.
 
 ### Zählpunkt abmelden: Begründung geht an den Netzbetreiber
 

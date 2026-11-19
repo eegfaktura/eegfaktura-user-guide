@@ -45,8 +45,6 @@ später wieder teilnehmen, ist eine neue Anmeldung nötig.
 
 ### Begründung
 
---8<-- "pilot.md"
-
 Die **Begründung (optional)** geht mit der Abmeldung an den Netzbetreiber und wird in der Prozess History gespeichert.
 Trag deshalb keine personenbezogenen Daten ein. Sie darf höchstens 50 Zeichen lang sein; ein Zähler unter dem Feld
 zeigt, wie viele es sind. Bei mehr als 50 Zeichen bleibt **Anfordern** gesperrt. Die Bestätigung vor dem Absenden
@@ -130,7 +128,7 @@ Eine angenommene Anforderung (ANTWORT_PT) heißt noch nicht, dass die Daten da s
 | Kein Smart Meter / Noch kein fernauslesbarer Zähler eingebaut | ohne Smart Meter (bzw. ohne Fernauslesung) geht die Teilnahme noch nicht: Netzbetreiber fragen, wann getauscht wird |
 | Kunde hat optiert | das Mitglied hat Viertelstundenwerte im Smart Meter abgelehnt (Opt-out): das Mitglied muss beim Netzbetreiber wieder einwilligen |
 | Zählpunkt nicht versorgt | für den Zählpunkt gibt es keinen Liefervertrag mit einem Energieversorger |
-| Zählpunkt nicht dem Lieferanten zugeordnet | oft liegt der angefragte Zeitraum vor dem Aktivierungsdatum: Zeitraum ab „Aktiv seit“ wählen |
+| Zählpunkt nicht dem Lieferanten zugeordnet | oft liegt der angefragte Zeitraum vor dem Aktivierungsdatum: Zeitraum ab „Aktiv ab“ wählen |
 | konkurrierende Prozesse | ein früherer Vorgang zum selben Zählpunkt läuft noch: abwarten und später erneut senden |
 | Prozessdatum falsch | beim Teilnahmefaktor meist: außerhalb 9–17 Uhr gesendet |
 | Teilnahmefaktor von 100 % würde überschritten werden / Summe … übersteigt 100% | der Zählpunkt nimmt schon an einer anderen Gemeinschaft teil: dort zuerst den Faktor senken |

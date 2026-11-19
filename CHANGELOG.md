@@ -10,9 +10,15 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
   „In der Pilot-Zone“.
 
 ### Changed
+- Pilot hints removed with the prod release of 19.11.2026 (web 1.26.0, backend 1.20.0, billing 1.13.0, eda-xp 1.6.0):
+  „Sommer und Winter“ and „Begründung“ apply to all; „Was ist neu?“ lists them under „Herbst 2026 (seit 19.11.2026)“,
+  with „Aktiv ab“ and the joining fee text. Chapter Tarife: new field „Bezeichnung auf der Rechnung“ of the joining
+  fee (platform#260). The screenshot of the tariff dialog still shows the earlier state.
 - Revoke reason (eegfaktura-backend#127, eegfaktura-web#245, eegfaktura-eda-xp#59, pilot): „Zählpunkt abmelden“ no longer
   says the „Begründung“ is not sent; new section „Begründung“ (pilot hint): sent to the grid operator, stored in the
   process history, at most 50 characters, no personal data. „Was ist neu?“ lists it under „In der Pilot-Zone“.
+- „Aktiv seit“ of a metering point is now called „Aktiv ab“ (eegfaktura-web, platform#257): the date often lies in
+  the future when a metering point is added; also in the member list sort „Aktiv ab (neueste zuerst)“.
 - Pilot hints removed with the prod release of 11.11.2026 (web 1.23.1, backend 1.18.0, billing 1.11.0): the sections
   „Suche“, „Zählpunkt vor dem Registrieren ändern oder entfernen“ and „Abrechnungsintervall wechseln“ apply to all;
   „Was ist neu?“ lists the entries under „Herbst 2026 (seit 11.11.2026)“.
