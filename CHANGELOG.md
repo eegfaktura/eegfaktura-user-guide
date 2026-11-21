@@ -13,6 +13,9 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
   „In der Pilot-Zone“.
 
 ### Changed
+- Pilot hint removed with the prod release of 21.11.2026 (web 1.27.0): „Nach Energiemenge sortieren“ applies to
+  all; „Was ist neu?“ lists it under „Herbst 2026 (seit 21.11.2026)“. The screenshot of the sort menu still shows the
+  earlier state.
 - Pilot hints removed with the prod release of 19.11.2026 (web 1.26.0, backend 1.20.0, billing 1.13.0, eda-xp 1.6.0):
   „Sommer und Winter“ and „Begründung“ apply to all; „Was ist neu?“ lists them under „Herbst 2026 (seit 19.11.2026)“,
   with „Aktiv ab“ and the joining fee text. Chapter Tarife: new field „Bezeichnung auf der Rechnung“ of the joining

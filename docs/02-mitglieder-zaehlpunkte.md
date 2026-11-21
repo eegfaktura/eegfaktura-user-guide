@@ -64,8 +64,6 @@ Mitgliedsnummer und E-Mail des Mitglieds sowie in Zählpunktnummer und Anlagenna
 
 ### Nach Energiemenge sortieren
 
---8<-- "pilot.md"
-
 In der **Sortierung** gibt es **Energiemenge (größte zuerst)** und **Energiemenge (kleinste zuerst)**. Sortiert wird
 nach den kWh im gewählten Zeitraum, die auch auf den Zählpunkten stehen: beim Verbraucher die Energie aus der
 Gemeinschaft, beim Erzeuger die Einspeisung in die Gemeinschaft.
