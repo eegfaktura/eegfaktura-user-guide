@@ -605,6 +605,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Stammdaten aus Excel importieren">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import-zuerst-mit-wenigen-mitgliedern-testen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Import zuerst mit wenigen Mitgliedern testen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1233,13 +1250,65 @@ Bedarf selbst hinzu):
 <ul>
 <li>Zählpunkte, die beim Netzbetreiber <strong>schon aktiv</strong> sind, importierst du mit Status aktiv — mit <code>NEW</code> würden sie
   erneut angemeldet.</li>
-<li>Ein Mitglied mit gleichem Vor- und Nachnamen wie ein vorhandenes gilt als <strong>dasselbe</strong>: Es bekommt nur die neuen
-  Zählpunkte, seine übrigen Daten werden <strong>nicht</strong> geändert.</li>
+<li>Ein Mitglied mit gleichem Vor- und Nachnamen wie ein vorhandenes gilt als <strong>dasselbe</strong>: Es bekommt die Zählpunkte
+  aus der Datei, seine übrigen Daten werden <strong>nicht</strong> geändert. Hat es einen dieser Zählpunkte schon, wird für dieses
+  Mitglied nichts importiert (Fehler unter Nachrichten) — nimm dann nur die neuen Zählpunkte in die Datei.</li>
 <li>Ein Fehler betrifft nur das jeweilige Mitglied; die übrigen Zeilen werden trotzdem importiert. Datumsfelder dürfen
   Excel-Datum oder Text (<code>TT.MM.JJJJ</code>) sein.</li>
 <li>Hinweise und Fehler (z. B. doppelte Mitgliedsnummer, Zählpunkt mit falscher Länge) kommen als Nachricht
   <strong>„Excel Stammdaten importiert — Hinweise: …“</strong> unter <a href="../07-nachrichten/">Nachrichten</a>.</li>
 <li>Die Einzugsart gilt nur für Mitglieder, die der Import neu anlegt.</li>
+</ul>
+<h3 id="import-zuerst-mit-wenigen-mitgliedern-testen">Import zuerst mit wenigen Mitgliedern testen<a class="headerlink" href="#import-zuerst-mit-wenigen-mitgliedern-testen" title="Link zu diesem Abschnitt">&para;</a></h3>
+<p>Bevor du alle Mitglieder einliest, probiere den Import mit <strong>zwei oder drei Mitgliedern</strong> aus. So siehst du, ob die
+Spalten passen, ohne dass sich Fehler in Hunderten Mitgliedern wiederfinden.</p>
+<blockquote>
+<p><strong>Wichtig:</strong> Ein Mitglied, dessen Zählpunkte in der Spalte <strong>Zählpunktstatus</strong> als aktiv eingetragen sind
+(<code>ACTIVE</code>, <code>ACTIVATED</code> oder <code>REGISTERED</code>), kannst du nach dem Import <strong>nicht mehr löschen</strong>. Deshalb läuft der Test
+mit dem Status <code>NEW</code>: Solche Mitglieder lassen sich wieder löschen.</p>
+</blockquote>
+<p><strong>1. Testdatei anlegen.</strong> Kopiere deine Importdatei und lass darin nur zwei oder drei Mitglieder stehen, am besten
+verschiedene Fälle: einen Verbraucher, einen Erzeuger, ein Mitglied mit mehreren Zählpunkten, ein Mitglied mit
+Einzugsart <strong>Kein SEPA</strong>. Nimm nur Mitglieder, die <strong>noch nicht</strong> in eegFaktura stehen. Ein Mitglied mit gleichem
+Vor- und Nachnamen gilt als dasselbe, und dessen neue Zählpunkte könntest du nicht mehr mit dem Mitglied löschen.
+Setze in der Testdatei die Spalte <strong>Zählpunktstatus</strong> in <strong>allen</strong> Zeilen auf <code>NEW</code>, auch bei mehreren Zeilen
+desselben Mitglieds.</p>
+<p><strong>2. Importieren.</strong> Lies die Testdatei wie oben beschrieben ein. Der Import selbst schickt <strong>nichts</strong> an den
+Netzbetreiber.</p>
+<p><strong>3. Prüfen.</strong></p>
+<ul>
+<li>Unter <a href="../07-nachrichten/">Nachrichten</a> nach der Nachricht <strong>„Excel Stammdaten importiert — Hinweise: …“</strong> sehen.
+  Jeder Hinweis nennt ein Mitglied oder einen Zählpunkt, den du in der großen Datei auch korrigieren solltest. Kommt
+  keine solche Nachricht, gab es nichts zu beanstanden.</li>
+<li>In der Mitgliederliste jedes Testmitglied öffnen: Name, Adresse, E-Mail, Bankverbindung und Einzugsart, die
+  Zählpunkte mit Energierichtung, Teilnahmefaktor und Anlagenname.</li>
+</ul>
+<p><strong>4. Testmitglieder wieder löschen.</strong> Die Testmitglieder stehen orange mit „!“ in der Liste. Öffne jedes. Rechts steht
+die Frage „Möchtest du <em>Nachname</em> in deine EEG aufnehmen?“ (siehe <a href="#neues-mitglied-zulassen">Neues Mitglied zulassen</a>).
+Klicke auf <strong>Nein, Löschen</strong> und bestätige die Rückfrage mit <strong>Löschen</strong>. Lösche <strong>alle</strong> Testmitglieder. Ein
+übrig gebliebenes Testmitglied würde der große Import nicht mehr richtigstellen (siehe unten).</p>
+<div class="admonition danger">
+<p class="admonition-title">Nicht auf „Ja, Zulassen“ klicken</p>
+<p>Bei Gemeinschaften mit Online-Anbindung meldet eegFaktura die Zählpunkte damit beim Netzbetreiber an. Ohne
+Online-Anbindung werden sie aktiv. In beiden Fällen lässt sich das Mitglied danach nicht mehr löschen.</p>
+</div>
+<p><strong>5. Korrigieren und wiederholen.</strong> Passe die große Datei an. Wiederhole den Test mit den Schritten 2 bis 4, bis
+keine Hinweise mehr kommen, und lösche die Testmitglieder jedes Mal wieder.</p>
+<p><strong>6. Alle Mitglieder importieren.</strong> Trage in der großen Datei bei Zählpunkten, die beim Netzbetreiber schon aktiv
+sind, den Status aktiv und unter „registriert seit“ das tatsächliche Datum ein. Importiere dann die vollständige
+Datei.</p>
+<p>Gut zu wissen:</p>
+<ul>
+<li><strong>Aktiven Status mitprüfen:</strong> Den Status aktiv und das Datum „registriert seit“ prüft der Test mit <code>NEW</code> nicht.
+  Willst du auch das sehen, importiere vor Schritt 6 zuerst <strong>einige echte Mitglieder</strong> mit ihrem richtigen Status
+  und prüfe sie. Diese Mitglieder bleiben in eegFaktura. <strong>Nimm sie danach aus der großen Datei heraus</strong>, sonst
+  meldet der große Import für jedes von ihnen einen Fehler.</li>
+<li><strong>Ein erneuter Import ändert keine vorhandenen Mitglieder.</strong> Einen Fehler an einem schon importierten Mitglied
+  korrigierst du direkt beim Mitglied in eegFaktura.</li>
+<li><strong>Ein Testmitglied wurde nicht gelöscht:</strong> Steht es auch in der großen Datei, meldet der Import für dieses Mitglied
+  einen Fehler (unter Nachrichten) und lässt es mit dem Teststatus stehen. Lösche es mit <strong>Nein, Löschen</strong> und
+  importiere eine Datei nur mit diesem Mitglied noch einmal.</li>
+<li>Ist beim großen Import etwas schiefgegangen, wende dich an den <a href="../einrichtung-hilfe/#hilfe-und-support">Support</a>.</li>
 </ul>
 <h2 id="gut-zu-wissen">Gut zu wissen<a class="headerlink" href="#gut-zu-wissen" title="Link zu diesem Abschnitt">&para;</a></h2>
 <ul>
