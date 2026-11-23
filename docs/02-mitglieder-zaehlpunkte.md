@@ -286,6 +286,54 @@ So verhält sich der Import:
   **„Excel Stammdaten importiert — Hinweise: …“** unter [Nachrichten](07-nachrichten.md).
 - Die Einzugsart gilt nur für Mitglieder, die der Import neu anlegt.
 
+### Import zuerst mit wenigen Mitgliedern testen
+
+Bevor du alle Mitglieder einliest, probiere den Import mit **zwei oder drei Mitgliedern** aus. So siehst du, ob die
+Spalten passen, ohne dass sich Fehler in Hunderten Mitgliedern wiederfinden.
+
+> **Wichtig:** Mitglieder, deren Zählpunkte als aktiv importiert wurden (`ACTIVE`, `ACTIVATED`, `REGISTERED`), kannst
+> du in eegFaktura **nicht mehr löschen**. Löschen lässt sich nur ein Mitglied, dessen Zählpunkte noch nie beim
+> Netzbetreiber angemeldet waren. Deshalb läuft der Test mit dem Status `NEW`.
+
+**1. Testdatei anlegen.** Kopiere deine Importdatei und lass darin nur zwei oder drei Mitglieder stehen, am besten
+verschiedene Fälle: einen Verbraucher, einen Erzeuger, ein Mitglied mit mehreren Zählpunkten, ein Mitglied mit
+Einzugsart **Kein SEPA**. Setze in der Testdatei die Spalte **Zählpunktstatus** bei allen Zeilen auf `NEW`.
+
+**2. Importieren.** Lies die Testdatei wie oben beschrieben ein. Der Import selbst schickt **nichts** an den
+Netzbetreiber, auch nicht bei `NEW`.
+
+**3. Prüfen.**
+
+- Unter [Nachrichten](07-nachrichten.md) die Nachricht **„Excel Stammdaten importiert — Hinweise: …“** lesen. Jeder
+  Hinweis betrifft eine Zeile, die du in der großen Datei auch korrigieren solltest.
+- In der Mitgliederliste jedes Testmitglied öffnen: Name, Adresse, E-Mail, Bankverbindung und Einzugsart, die
+  Zählpunkte mit Energierichtung, Teilnahmefaktor und Anlagenname.
+
+**4. Testmitglieder wieder löschen.** Die Testmitglieder erscheinen mit der Frage **„Möchtest du … in deine EEG
+aufnehmen?“**. Klicke bei jedem auf **Nein, Löschen**.
+
+!!! danger "Nicht auf „Ja, Zulassen“ klicken"
+    Bei Gemeinschaften mit Online-Anbindung meldet eegFaktura die Zählpunkte damit beim Netzbetreiber an.
+
+**5. Korrigieren und wiederholen.** Passe die große Datei an, und wiederhole den Test, bis keine Hinweise mehr
+kommen.
+
+**6. Alle Mitglieder importieren.** Importiere jetzt die vollständige Datei mit dem richtigen Zählpunktstatus.
+Zählpunkte, die beim Netzbetreiber schon aktiv sind, bekommen den Status aktiv und in „registriert seit“ das
+tatsächliche Datum.
+
+Gut zu wissen:
+
+- Den Status aktiv und das Datum „registriert seit“ kann der Test mit `NEW` nicht prüfen. Willst du auch das sehen,
+  importiere danach zuerst **einige echte Mitglieder** mit ihrem richtigen Status und prüfe sie, bevor du den Rest
+  einliest. Diese Mitglieder bleiben in eegFaktura, Fehler korrigierst du direkt beim Mitglied.
+- Ein erneuter Import **ändert keine vorhandenen Mitglieder**. Ein Mitglied mit gleichem Vor- und Nachnamen bekommt
+  nur neue Zählpunkte. Einen Fehler an einem schon importierten Mitglied korrigierst du deshalb in eegFaktura selbst.
+  Ein neuer Import ändert daran nichts.
+- Steht in der großen Datei ein Mitglied, das schon vom Test her in eegFaktura liegt (weil du es nicht gelöscht hast),
+  gilt es als dasselbe Mitglied. Es bekommt dann nur die neuen Zählpunkte, und seine Daten bleiben wie beim Test.
+- Ist beim großen Import etwas schiefgegangen, wende dich an den [Support](einrichtung-hilfe.md#hilfe-und-support).
+
 ## Gut zu wissen
 
 - **Mehrere E-Mail-Adressen** eines Mitglieds trennst du mit `;` (ohne Leerzeichen); Mails gehen an alle gültigen
