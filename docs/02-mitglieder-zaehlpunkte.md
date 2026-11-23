@@ -278,8 +278,9 @@ So verhält sich der Import:
 
 - Zählpunkte, die beim Netzbetreiber **schon aktiv** sind, importierst du mit Status aktiv — mit `NEW` würden sie
   erneut angemeldet.
-- Ein Mitglied mit gleichem Vor- und Nachnamen wie ein vorhandenes gilt als **dasselbe**: Es bekommt nur die neuen
-  Zählpunkte, seine übrigen Daten werden **nicht** geändert.
+- Ein Mitglied mit gleichem Vor- und Nachnamen wie ein vorhandenes gilt als **dasselbe**: Es bekommt die Zählpunkte
+  aus der Datei, seine übrigen Daten werden **nicht** geändert. Hat es einen dieser Zählpunkte schon, wird für dieses
+  Mitglied nichts importiert (Fehler unter Nachrichten) — nimm dann nur die neuen Zählpunkte in die Datei.
 - Ein Fehler betrifft nur das jeweilige Mitglied; die übrigen Zeilen werden trotzdem importiert. Datumsfelder dürfen
   Excel-Datum oder Text (`TT.MM.JJJJ`) sein.
 - Hinweise und Fehler (z. B. doppelte Mitgliedsnummer, Zählpunkt mit falscher Länge) kommen als Nachricht

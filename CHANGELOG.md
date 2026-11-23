@@ -16,6 +16,8 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
   „In der Pilot-Zone“.
 
 ### Changed
+- Chapter 2, import: an existing member does not get „only the new metering points“ — if it already has one of the
+  file's metering points, nothing is imported for it (error under Nachrichten). Pre-existing wrong statement.
 - Pilot hint removed with the prod release of 21.11.2026 (web 1.27.0): „Nach Energiemenge sortieren“ applies to
   all; „Was ist neu?“ lists it under „Herbst 2026 (seit 21.11.2026)“. The screenshot of the sort menu still shows the
   earlier state.
