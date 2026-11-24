@@ -1241,6 +1241,14 @@ Bedarf selbst hinzu):
 <td><code>CORE</code>, <code>B2B</code> oder <code>Kein SEPA</code></td>
 </tr>
 <tr>
+<td>MandatRef</td>
+<td>Mandatsreferenz für die Lastschrift; bei <code>CORE</code> und <code>B2B</code> immer ausfüllen</td>
+</tr>
+<tr>
+<td>MandatDat</td>
+<td>Datum, an dem das Mitglied das Mandat unterschrieben hat (Excel-Datum oder <code>TT.MM.JJJJ</code>); bei <code>CORE</code> und <code>B2B</code> immer ausfüllen</td>
+</tr>
+<tr>
 <td>ObjektName</td>
 <td>wird als Anlagenname übernommen</td>
 </tr>
@@ -1257,7 +1265,7 @@ Bedarf selbst hinzu):
   Excel-Datum oder Text (<code>TT.MM.JJJJ</code>) sein.</li>
 <li>Hinweise und Fehler (z. B. doppelte Mitgliedsnummer, Zählpunkt mit falscher Länge) kommen als Nachricht
   <strong>„Excel Stammdaten importiert — Hinweise: …“</strong> unter <a href="../07-nachrichten/">Nachrichten</a>.</li>
-<li>Die Einzugsart gilt nur für Mitglieder, die der Import neu anlegt.</li>
+<li>Einzugsart, Mandatsreferenz und Mandatsdatum gelten nur für Mitglieder, die der Import neu anlegt.</li>
 </ul>
 <h3 id="import-zuerst-mit-wenigen-mitgliedern-testen">Import zuerst mit wenigen Mitgliedern testen<a class="headerlink" href="#import-zuerst-mit-wenigen-mitgliedern-testen" title="Link zu diesem Abschnitt">&para;</a></h3>
 <p>Bevor du alle Mitglieder einliest, probiere den Import mit <strong>zwei oder drei Mitgliedern</strong> aus. So siehst du, ob die
