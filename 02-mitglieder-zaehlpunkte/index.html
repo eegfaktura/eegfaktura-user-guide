@@ -1192,9 +1192,10 @@ Online-Anbindung gleich beim Netzbetreiber an.</p>
 <p>Viele Mitglieder auf einmal — z. B. beim Umstieg auf eegFaktura — liest du aus einer Excel-Datei ein: oben in der
 Mitgliederliste der Knopf mit der Wolke, <strong>Stammdaten</strong>, <strong>Sheet-Name</strong> (voreingestellt „EEG Stammdaten“; heißt das
 Blatt in deiner Datei anders, trägst du hier seinen Namen ein), die Datei mit dem Stern wählen oder in das Fenster
-ziehen, <strong>Import</strong>. Es geht eine Datei je Import. Eine Vorlage gibt es hier (die Spalte <strong>Einzugsart</strong> fügst du bei
-Bedarf selbst hinzu):
-<a href="https://github.com/eegfaktura/eegfaktura-backend/raw/master/tests/260716-vorlage-import-stammdaten.xlsx">Vorlage Stammdatenimport (Excel)</a>.</p>
+ziehen, <strong>Import</strong>. Es geht eine Datei je Import. Eine Vorlage mit allen Spalten gibt es hier; Zeile 5 erklärt jede
+Spalte:
+<a href="https://github.com/eegfaktura/eegfaktura-backend/raw/master/tests/261124-vorlage-import-stammdaten.xlsx">Vorlage Stammdatenimport (Excel)</a>.
+Ältere Vorlagen funktionieren weiter: eegFaktura erkennt die Spalten an ihrer Überschrift, nicht an der Position.</p>
 <p>Wichtige Spalten:</p>
 <table>
 <thead>
@@ -1242,7 +1243,7 @@ Bedarf selbst hinzu):
 </tr>
 <tr>
 <td>MandatRef</td>
-<td>Mandatsreferenz für die Lastschrift; bei <code>CORE</code> und <code>B2B</code> immer ausfüllen</td>
+<td>Mandatsreferenz für die Lastschrift. Leer: Die Abrechnung nimmt die Mitgliedsnummer. Die Bank nimmt sie nur ohne Leerzeichen und Umlaute an (höchstens 35 Zeichen) – sonst die Mandatsreferenz ausfüllen</td>
 </tr>
 <tr>
 <td>MandatDat</td>
@@ -1251,6 +1252,14 @@ Bedarf selbst hinzu):
 <tr>
 <td>ObjektName</td>
 <td>wird als Anlagenname übernommen</td>
+</tr>
+<tr>
+<td>Mitgliedstarif</td>
+<td>Name eines aktiven Mitgliedstarifs eurer Gemeinschaft, so geschrieben wie im Stammdaten-Export (Groß-/Kleinschreibung egal). Leer: kein Tarif. Steht das Mitglied in mehreren Zeilen, zählt die erste ausgefüllte</td>
+</tr>
+<tr>
+<td>Zp. Tarifname</td>
+<td>Name eines aktiven Zählpunkttarifs, passend zur Energierichtung (Verbrauch bzw. Erzeugung). Leer: kein Tarif</td>
 </tr>
 </tbody>
 </table>
@@ -1265,7 +1274,14 @@ Bedarf selbst hinzu):
   Excel-Datum oder Text (<code>TT.MM.JJJJ</code>) sein.</li>
 <li>Hinweise und Fehler (z. B. doppelte Mitgliedsnummer, Zählpunkt mit falscher Länge) kommen als Nachricht
   <strong>„Excel Stammdaten importiert — Hinweise: …“</strong> unter <a href="../07-nachrichten/">Nachrichten</a>.</li>
-<li>Einzugsart, Mandatsreferenz und Mandatsdatum gelten nur für Mitglieder, die der Import neu anlegt.</li>
+<li>Einzugsart, Mandatsreferenz, Mandatsdatum und Mitgliedstarif gelten nur für Mitglieder, die der Import neu
+  anlegt. Der Zählpunkttarif gilt für jeden neu angelegten Zählpunkt, auch bei einem schon vorhandenen Mitglied.</li>
+<li>Einen unbekannten Tarifnamen oder einen Tarif der falschen Art meldet der Import; das Mitglied bzw. der Zählpunkt
+  wird dann ohne Tarif angelegt.</li>
+<li>Bekommt ein neues Mitglied einen Tarif mit <a href="../04-tarife/#beitrittsgebuhr">Beitrittsgebühr</a>, weist die Nachricht
+  darauf hin: Die Gebühr wird mit der ersten Energieabrechnung verrechnet, auch wenn das Mitglied sie schon früher
+  bezahlt hat (z. B. vor dem Umstieg). Dann beim Mitglied <strong>Außerhalb bezahlt erfassen</strong>, siehe
+  <a href="#beitrittsgebuhr-eines-mitglieds">Beitrittsgebühr eines Mitglieds</a>.</li>
 </ul>
 <h3 id="import-zuerst-mit-wenigen-mitgliedern-testen">Import zuerst mit wenigen Mitgliedern testen<a class="headerlink" href="#import-zuerst-mit-wenigen-mitgliedern-testen" title="Link zu diesem Abschnitt">&para;</a></h3>
 <p>Bevor du alle Mitglieder einliest, probiere den Import mit <strong>zwei oder drei Mitgliedern</strong> aus. So siehst du, ob die
