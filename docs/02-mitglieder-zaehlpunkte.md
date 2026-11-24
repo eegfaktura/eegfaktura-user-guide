@@ -272,6 +272,8 @@ Wichtige Spalten:
 | Zugeteilte Menge in Prozent | Teilnahmefaktor (1–100); leer oder 0 wird 100 % |
 | email | mehrere Adressen mit `;` trennen; ist eine Adresse ungültig, wird das Mitglied ohne E-Mail angelegt (mit Hinweis) |
 | Einzugsart | `CORE`, `B2B` oder `Kein SEPA` |
+| MandatRef | Mandatsreferenz für die Lastschrift; bei `CORE` und `B2B` immer ausfüllen |
+| MandatDat | Datum, an dem das Mitglied das Mandat unterschrieben hat (Excel-Datum oder `TT.MM.JJJJ`); bei `CORE` und `B2B` immer ausfüllen |
 | ObjektName | wird als Anlagenname übernommen |
 
 So verhält sich der Import:
@@ -285,7 +287,7 @@ So verhält sich der Import:
   Excel-Datum oder Text (`TT.MM.JJJJ`) sein.
 - Hinweise und Fehler (z. B. doppelte Mitgliedsnummer, Zählpunkt mit falscher Länge) kommen als Nachricht
   **„Excel Stammdaten importiert — Hinweise: …“** unter [Nachrichten](07-nachrichten.md).
-- Die Einzugsart gilt nur für Mitglieder, die der Import neu anlegt.
+- Einzugsart, Mandatsreferenz und Mandatsdatum gelten nur für Mitglieder, die der Import neu anlegt.
 
 ### Import zuerst mit wenigen Mitgliedern testen
 
