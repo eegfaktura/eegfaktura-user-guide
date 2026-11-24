@@ -5,6 +5,8 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 ## [Unreleased]
 
 ### Added
+- Chapter 2, master data import: the columns `MandatRef` (mandate reference) and `MandatDat` (mandate date) are
+  documented; the import read them already. For `CORE`/`B2B` both should be filled.
 - Chapter 2, „Import zuerst mit wenigen Mitgliedern testen“: test the master data import with two or three members
   (status `NEW`), check them, delete them with „Nein, Löschen“, then import all; members imported as active cannot
   be deleted by the community (platform#264).
