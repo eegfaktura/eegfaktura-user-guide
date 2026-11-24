@@ -3,6 +3,15 @@
 Neue Funktionen von eegFaktura, die du als EEG-Admin bemerkst. Die Kapitel beschreiben jeweils den aktuellen
 Stand.
 
+## Herbst 2026 (seit 24.11.2026)
+
+### Stammdatenimport: Tarife und neue Vorlage
+
+Der Excel-Import übernimmt jetzt auch den **Mitgliedstarif** und den **Zählpunkttarif** (Spalten „Mitgliedstarif“
+und „Zp. Tarifname“). Eine leere Mandatsreferenz bleibt leer, die Abrechnung nimmt dann die Mitgliedsnummer. Die
+neue Vorlage enthält alle Spalten samt Einzugsart und Mandat. Siehe
+[Stammdaten aus Excel importieren](02-mitglieder-zaehlpunkte.md#stammdaten-aus-excel-importieren).
+
 ## Herbst 2026 (seit 21.11.2026)
 
 ### Mitgliederliste nach Energiemenge sortieren

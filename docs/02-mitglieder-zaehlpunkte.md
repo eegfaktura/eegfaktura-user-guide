@@ -255,9 +255,10 @@ Online-Anbindung gleich beim Netzbetreiber an.
 Viele Mitglieder auf einmal — z. B. beim Umstieg auf eegFaktura — liest du aus einer Excel-Datei ein: oben in der
 Mitgliederliste der Knopf mit der Wolke, **Stammdaten**, **Sheet-Name** (voreingestellt „EEG Stammdaten“; heißt das
 Blatt in deiner Datei anders, trägst du hier seinen Namen ein), die Datei mit dem Stern wählen oder in das Fenster
-ziehen, **Import**. Es geht eine Datei je Import. Eine Vorlage gibt es hier (die Spalte **Einzugsart** fügst du bei
-Bedarf selbst hinzu):
-[Vorlage Stammdatenimport (Excel)](https://github.com/eegfaktura/eegfaktura-backend/raw/master/tests/260716-vorlage-import-stammdaten.xlsx).
+ziehen, **Import**. Es geht eine Datei je Import. Eine Vorlage mit allen Spalten gibt es hier; Zeile 5 erklärt jede
+Spalte:
+[Vorlage Stammdatenimport (Excel)](https://github.com/eegfaktura/eegfaktura-backend/raw/master/tests/261124-vorlage-import-stammdaten.xlsx).
+Ältere Vorlagen funktionieren weiter: eegFaktura erkennt die Spalten an ihrer Überschrift, nicht an der Position.
 
 Wichtige Spalten:
 
@@ -272,9 +273,11 @@ Wichtige Spalten:
 | Zugeteilte Menge in Prozent | Teilnahmefaktor (1–100); leer oder 0 wird 100 % |
 | email | mehrere Adressen mit `;` trennen; ist eine Adresse ungültig, wird das Mitglied ohne E-Mail angelegt (mit Hinweis) |
 | Einzugsart | `CORE`, `B2B` oder `Kein SEPA` |
-| MandatRef | Mandatsreferenz für die Lastschrift; bei `CORE` und `B2B` immer ausfüllen |
+| MandatRef | Mandatsreferenz für die Lastschrift. Leer: Die Abrechnung nimmt die Mitgliedsnummer. Die Bank nimmt sie nur ohne Leerzeichen und Umlaute an (höchstens 35 Zeichen) – sonst die Mandatsreferenz ausfüllen |
 | MandatDat | Datum, an dem das Mitglied das Mandat unterschrieben hat (Excel-Datum oder `TT.MM.JJJJ`); bei `CORE` und `B2B` immer ausfüllen |
 | ObjektName | wird als Anlagenname übernommen |
+| Mitgliedstarif | Name eines aktiven Mitgliedstarifs eurer Gemeinschaft, so geschrieben wie im Stammdaten-Export (Groß-/Kleinschreibung egal). Leer: kein Tarif. Steht das Mitglied in mehreren Zeilen, zählt die erste ausgefüllte |
+| Zp. Tarifname | Name eines aktiven Zählpunkttarifs, passend zur Energierichtung (Verbrauch bzw. Erzeugung). Leer: kein Tarif |
 
 So verhält sich der Import:
 
@@ -287,7 +290,14 @@ So verhält sich der Import:
   Excel-Datum oder Text (`TT.MM.JJJJ`) sein.
 - Hinweise und Fehler (z. B. doppelte Mitgliedsnummer, Zählpunkt mit falscher Länge) kommen als Nachricht
   **„Excel Stammdaten importiert — Hinweise: …“** unter [Nachrichten](07-nachrichten.md).
-- Einzugsart, Mandatsreferenz und Mandatsdatum gelten nur für Mitglieder, die der Import neu anlegt.
+- Einzugsart, Mandatsreferenz, Mandatsdatum und Mitgliedstarif gelten nur für Mitglieder, die der Import neu
+  anlegt. Der Zählpunkttarif gilt für jeden neu angelegten Zählpunkt, auch bei einem schon vorhandenen Mitglied.
+- Einen unbekannten Tarifnamen oder einen Tarif der falschen Art meldet der Import; das Mitglied bzw. der Zählpunkt
+  wird dann ohne Tarif angelegt.
+- Bekommt ein neues Mitglied einen Tarif mit [Beitrittsgebühr](04-tarife.md#beitrittsgebuhr), weist die Nachricht
+  darauf hin: Die Gebühr wird mit der ersten Energieabrechnung verrechnet, auch wenn das Mitglied sie schon früher
+  bezahlt hat (z. B. vor dem Umstieg). Dann beim Mitglied **Außerhalb bezahlt erfassen**, siehe
+  [Beitrittsgebühr eines Mitglieds](#beitrittsgebuhr-eines-mitglieds).
 
 ### Import zuerst mit wenigen Mitgliedern testen
 
