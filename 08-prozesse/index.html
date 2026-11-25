@@ -765,7 +765,9 @@ später wieder teilnehmen, ist eine neue Anmeldung nötig.</p>
 Trag deshalb keine personenbezogenen Daten ein. Sie darf höchstens 50 Zeichen lang sein; ein Zähler unter dem Feld
 zeigt, wie viele es sind. Bei mehr als 50 Zeichen bleibt <strong>Anfordern</strong> gesperrt. Die Bestätigung vor dem Absenden
 nennt die Begründung noch einmal.</p>
-<p>Fehlt eegFaktura die Kennung der Datenfreigabe, fordere zuerst die <strong>Teilnehmerliste</strong> an (siehe unten).</p>
+<p>Fehlt eegFaktura die Kennung der Datenfreigabe (Consent-ID), meldet eegFaktura das beim Anfordern. Fordere dann zuerst
+die <strong>Teilnehmerliste</strong> an (siehe unten). Sobald sie da ist, ist die Kennung eingetragen, und du forderst die Abmeldung
+noch einmal an.</p>
 <h3 id="was-nach-dem-anfordern-passiert">Was nach dem Anfordern passiert<a class="headerlink" href="#was-nach-dem-anfordern-passiert" title="Link zu diesem Abschnitt">&para;</a></h3>
 <p>Das Anfordern allein ändert den Zählpunkt nicht: Er bleibt aktiv, die Anfrage steht in der Prozess History und in den
 <a href="../07-nachrichten/">Nachrichten</a>. Erst die <strong>Antwort des Netzbetreibers</strong> entscheidet:</p>
@@ -806,9 +808,15 @@ gilt ab dem nächsten Tag. Außerhalb dieser Zeit warnt eegFaktura, weil der Net
 falsch“ ablehnt.</p>
 </blockquote>
 <h2 id="teilnehmerliste-anfordern">Teilnehmerliste anfordern<a class="headerlink" href="#teilnehmerliste-anfordern" title="Link zu diesem Abschnitt">&para;</a></h2>
-<p>Fordert beim Netzbetreiber die Liste aller Zählpunkte der Gemeinschaft an. Die Antwort kommt später; die
-verantwortliche Person der EEG bekommt eine E-Mail. Bei Bürgerenergiegemeinschaften wählst du zuerst die
-<strong>Netzbetreiber-ID</strong>.</p>
+<p>Fordert beim Netzbetreiber die Liste aller Zählpunkte der Gemeinschaft an. Bei Bürgerenergiegemeinschaften wählst du
+zuerst die <strong>Netzbetreiber-ID</strong>.</p>
+<p>Die Antwort kommt später. eegFaktura übernimmt sie dann <strong>selbst</strong>: Bei jedem Zählpunkt aus der Liste, der in
+eegFaktura einem Mitglied zugeordnet ist, wird er auf aktiv gesetzt und die <strong>Kennung der Datenfreigabe
+(Consent-ID)</strong> eingetragen. Du musst nichts erfassen. Die verantwortliche Person der EEG bekommt die Liste zusätzlich
+als Excel-Datei per E-Mail — zur Information; ist die Mail da, sind die Daten schon übernommen.</p>
+<p>Steht ein Zählpunkt nicht in der Liste, ist seine Datenfreigabe beim Netzbetreiber meist schon beendet. Eine
+Abmeldung lehnt der Netzbetreiber dann mit „Keine Datenfreigabe vorhanden“ ab, und eegFaktura setzt den Zählpunkt auf
+inaktiv (siehe <a href="#was-nach-dem-anfordern-passiert">Was nach dem Anfordern passiert</a>).</p>
 <h2 id="prozess-history">Prozess History<a class="headerlink" href="#prozess-history" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p>Zeigt die Kommunikation mit dem Netzbetreiber, standardmäßig der letzten 14 Tage (Zeitraum oben rechts):</p>
 <p><img alt="Prozess History" src="../images/prozesse-history.png" /></p>
