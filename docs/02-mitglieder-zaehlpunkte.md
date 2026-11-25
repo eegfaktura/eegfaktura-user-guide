@@ -369,8 +369,9 @@ Gut zu wissen:
   zum Netzbetreiber passt.
 - **Ein Mitglied verlässt die Gemeinschaft:** Melde seine Zählpunkte ab
   ([Zählpunkt abmelden](08-prozesse.md#zahlpunkt-abmelden)) statt das Mitglied zu löschen — so bleiben seine Daten und
-  Belege erhalten. Bei importierten Zählpunkten fehlt eegFaktura manchmal die Kennung der Datenfreigabe; dann zuerst
-  die Teilnehmerliste anfordern.
+  Belege erhalten. Bei importierten Zählpunkten fehlt eegFaktura manchmal die Kennung der Datenfreigabe (Consent-ID);
+  dann zuerst die [Teilnehmerliste anfordern](08-prozesse.md#teilnehmerliste-anfordern) — eegFaktura trägt die
+  Kennung beim Eintreffen der Liste selbst ein, danach die Abmeldung noch einmal anfordern.
 - **Zählpunkt schon vergeben:** Ist ein Zählpunkt schon einem anderen Mitglied deiner Gemeinschaft zugeordnet, lässt
   er sich nicht noch einmal anlegen. Verschiebe ihn beim anderen Mitglied mit dem Pfeilkreuz oder melde ihn dort ab.
   Hat das Mitglied den Zählpunkt schon (z. B. inaktiv nach einer Abmeldung), meldest du ihn unter
