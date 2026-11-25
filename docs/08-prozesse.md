@@ -50,7 +50,9 @@ Trag deshalb keine personenbezogenen Daten ein. Sie darf höchstens 50 Zeichen l
 zeigt, wie viele es sind. Bei mehr als 50 Zeichen bleibt **Anfordern** gesperrt. Die Bestätigung vor dem Absenden
 nennt die Begründung noch einmal.
 
-Fehlt eegFaktura die Kennung der Datenfreigabe, fordere zuerst die **Teilnehmerliste** an (siehe unten).
+Fehlt eegFaktura die Kennung der Datenfreigabe (Consent-ID), meldet eegFaktura das beim Anfordern. Fordere dann zuerst
+die **Teilnehmerliste** an (siehe unten). Sobald sie da ist, ist die Kennung eingetragen, und du forderst die Abmeldung
+noch einmal an.
 
 ### Was nach dem Anfordern passiert
 
@@ -81,9 +83,17 @@ oder „ConsentID abgelaufen“.
 
 ## Teilnehmerliste anfordern
 
-Fordert beim Netzbetreiber die Liste aller Zählpunkte der Gemeinschaft an. Die Antwort kommt später; die
-verantwortliche Person der EEG bekommt eine E-Mail. Bei Bürgerenergiegemeinschaften wählst du zuerst die
-**Netzbetreiber-ID**.
+Fordert beim Netzbetreiber die Liste aller Zählpunkte der Gemeinschaft an. Bei Bürgerenergiegemeinschaften wählst du
+zuerst die **Netzbetreiber-ID**.
+
+Die Antwort kommt später. eegFaktura übernimmt sie dann **selbst**: Bei jedem Zählpunkt aus der Liste, der in
+eegFaktura einem Mitglied zugeordnet ist, wird er auf aktiv gesetzt und die **Kennung der Datenfreigabe
+(Consent-ID)** eingetragen. Du musst nichts erfassen. Die verantwortliche Person der EEG bekommt die Liste zusätzlich
+als Excel-Datei per E-Mail — zur Information; ist die Mail da, sind die Daten schon übernommen.
+
+Steht ein Zählpunkt nicht in der Liste, ist seine Datenfreigabe beim Netzbetreiber meist schon beendet. Eine
+Abmeldung lehnt der Netzbetreiber dann mit „Keine Datenfreigabe vorhanden“ ab, und eegFaktura setzt den Zählpunkt auf
+inaktiv (siehe [Was nach dem Anfordern passiert](#was-nach-dem-anfordern-passiert)).
 
 ## Prozess History
 
