@@ -58,9 +58,9 @@ eegFaktura merkt sich deine Wahl für die nächste Anmeldung im selben Browser.
 ## Dashboard
 
 Das **Dashboard** zeigt die wichtigsten Zahlen der Gemeinschaft, meist für den gewählten **Zeitraum**. Den Zeitraum
-wählst du in der **Mitgliederliste**; das Dashboard übernimmt ihn. Für **Lastverlauf** und **Tagesverlauf** kannst du
-über das Zahnrad der Kachel einen anderen Zeitraum wählen (Jahr, Halbjahr, Vierteljahr, Monat oder Tag) — das ändert
-nur diese Kachel.
+wählst du in der **Mitgliederliste**; das Dashboard übernimmt ihn. **Lastverlauf** und **Tagesverlauf** haben ein
+eigenes Zahnrad für einen anderen Zeitraum (Jahr, Halbjahr, Vierteljahr, Monat oder Tag); es ändert nur diese Kachel
+(siehe [Einzelner Tag](#einzelner-tag)).
 
 ![Dashboard](images/dashboard.png)
 

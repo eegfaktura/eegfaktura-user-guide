@@ -228,7 +228,12 @@ Bei Abweisung oder Nichtannahme steht der **Grund** fett dahinter, z. B. „Kund
 richtest du dich: Ist der Fehler behoben (z. B. Nummer korrigiert), meldest du den Zählpunkt unter
 **Prozesse → Zählpunkt aktivieren** erneut an.
 
-Einen nicht angenommenen Zählpunkt, der noch nie aktiv war, kannst du hier mit **Löschen** entfernen.
+Steht kein Grund da, sieh in der **Prozess History** nach. Bei „Noch kein fernauslesbarer Zähler eingebaut“ oder
+„Summe der gemeldeten Aufteilungsschlüssel übersteigt 100%“ läuft die Anmeldung beim Netzbetreiber weiter: **nicht
+löschen und nicht neu anmelden** (siehe [Häufige Ablehnungsgründe](08-prozesse.md#haufige-ablehnungsgrunde)).
+
+Einen nicht angenommenen Zählpunkt, der noch nie aktiv war, kannst du hier mit **Löschen** entfernen — außer in den
+beiden Fällen oben.
 
 ## Neues Mitglied anlegen
 
@@ -293,7 +298,7 @@ Wichtige Spalten:
 | Gemeinschafts-ID | Pflicht, muss zur Gemeinschaft passen |
 | Name 1 / Name 2 | Vorname / Nachname (bei Firmen: Firmenname / Nachname der Kontaktperson). Groß-/Kleinschreibung zählt beim Wiedererkennen. Ist „Name 1“ leer, muss „Name 2“ „Nachname Vorname“ enthalten |
 | BusinessRole | `business` für eine Firma, sonst privat |
-| Mitglied seit | Excel-Datum oder `TT.MM.JJJJ`; leer = heute |
+| Mitglied seit | Excel-Datum oder `TT.MM.JJJJ`; leer = Spalte „Dokument unterschrieben“ (ältere Vorlagen), sonst heute |
 | Zählpunkt | genau 33 Zeichen |
 | Energierichtung | `CONSUMPTION` (Verbraucher, auch leer) oder `GENERATION` (Erzeuger) |
 | Zählpunktstatus | Pflicht. `ACTIVE`, `ACTIVATED` oder `REGISTERED` → wird als **aktiv** übernommen; `NEW` → wird neu angemeldet; andere Werte → Zeile wird nicht importiert |

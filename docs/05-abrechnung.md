@@ -100,14 +100,13 @@ Die Vorschau erstellt Belege ohne Nummer: Im PDF steht statt der Nummer „-- E 
 
 ![Vorschau](images/abrechnung-vorschau.png)
 
-Die Knöpfe sind in der Oberfläche großgeschrieben, z. B. „VORSCHAU ERSTELLEN“.
-
 - Die Tabelle zeigt Rechnungen und Gutschriften netto, USt und brutto; **Saldo Zahlungen (brutto)** ist die zu
   erwartende Kontobewegung. Der Pfeil links davon klappt die Aufstellung zu und auf.
 - Darunter steht je nach euren Verbrauchertarifen **Marge bei Regelbesteuerung (netto)** (Tarife mit USt) oder
-  **Marge bei Kleinunternehmerregelung (brutto)** (Tarife ohne USt), bei gemischten Tarifen beide. Gibt es
-  Gutschriften an Erzeuger mit UID, zeigt eegFaktura zusätzlich „Rechnerische USt bei Reverse Charge (20 %)“ oder,
-  wenn auf solchen Gutschriften USt ausgewiesen ist, einen gelben Hinweis. Das sind rechnerische Werte zur
+  **Marge bei Kleinunternehmerregelung (brutto)** (Tarife ohne USt), bei gemischten Tarifen beide. Bei
+  Kleinunternehmerregelung oder gemischten Tarifen zeigt eegFaktura für Gutschriften ohne USt an Erzeuger mit UID
+  zusätzlich „Rechnerische USt bei Reverse Charge (20 %)“; ist auf solchen Gutschriften USt ausgewiesen, steht dort
+  ein gelber Hinweis. Das sind rechnerische Werte zur
   Orientierung, keine Buchungsbeträge und keine steuerliche Beratung.
 - Den **Mitgliedsbeitrag** bekommt ein Mitglied nur, wenn es im Zeitraum mindestens einen Zählpunkt mit Energiedaten
   hat.

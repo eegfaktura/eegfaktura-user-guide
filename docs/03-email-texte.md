@@ -84,7 +84,7 @@ Unter dem Text stehen die Grenzen der jeweiligen Mail:
 | | Freigabe-Aufforderung, Zählpunkt aktiv, Zählpunkt inaktiv | Rechnung / Gutschrift |
 |---|---|---|
 | Bilder | höchstens 3, je höchstens 1 MB | höchstens 3 |
-| alle Bilder zusammen | höchstens 6 MB (mit 3 × 1 MB nie erreicht) | höchstens 500 KB |
+| alle Bilder zusammen | — (3 × 1 MB) | höchstens 500 KB |
 | PDF-Anhang | keiner | keiner — der Beleg ist immer angehängt |
 
 Neu hochgeladene Bilder sind **Entwürfe**: Sie werden erst mit dem Speichern verwendet.
@@ -95,8 +95,8 @@ Damit eure Mails nicht im Spam landen, prüft eegFaktura die Links beim Speicher
 Testmail:
 
 - höchstens **3 Links** je Mail; E-Mail-Links (`mailto:` — ein Klick öffnet eine neue Mail) zählen mit,
-- höchstens **2 Domains**. Die Domain ist der Teil der Adresse zwischen `https://` und dem nächsten `/`;
-  `portal.netz.at` und `www.netz.at` zählen als eine. E-Mail-Links zählen hier nicht,
+- höchstens **2 Domains**. Es zählt die Hauptdomain, z. B. `netz.at`: `portal.netz.at` und `www.netz.at` zählen
+  als eine. E-Mail-Links zählen hier nicht,
 - die feste Zeile unten zählt bei beidem nicht mit,
 - Links beginnen mit `https://` oder `mailto:`,
 - keine Kurz-Links (z. B. bit.ly) und keine Adressen, die nur aus Zahlen bestehen (IP-Adressen),

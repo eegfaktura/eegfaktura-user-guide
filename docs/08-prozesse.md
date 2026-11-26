@@ -157,16 +157,23 @@ Eine angenommene Anforderung (ANTWORT_PT) heißt noch nicht, dass die Daten da s
 | Kunde hat Datenfreigabe abgelehnt | das Mitglied hat im Portal abgelehnt (oft versehentlich): mit dem Mitglied klären, dann unter **Zählpunkt aktivieren** neu anmelden |
 | Kunde hat auf Datenfreigabe nicht reagiert (Timeout) | das Mitglied hat nicht rechtzeitig zugestimmt: erinnern und neu anmelden |
 | Kein Smart Meter | ohne Smart Meter geht die Teilnahme nicht: Netzbetreiber fragen, wann getauscht wird |
-| Noch kein fernauslesbarer Zähler eingebaut | beim Netzbetreiber keine Ablehnung, sondern ein Hinweis: die Anmeldung läuft dort weiter, die Teilnahme beginnt erst, wenn der Smart Meter eingebaut und in Betrieb ist. eegFaktura zeigt den Zählpunkt bis dahin aber als „nicht angenommen“, und das Mitglied bekommt unter Umständen keine Mail „Freigabe-Aufforderung“. Melde den Zählpunkt nicht neu an; bitte das Mitglied, die Datenfreigabe im Portal des Netzbetreibers zu bestätigen. Mit dem Abschluss der Anmeldung wird der Zählpunkt aktiv. Manche Netzbetreiber melden das auch bei einem eingebauten Smart Meter, der noch nicht in Betrieb ist |
+| Noch kein fernauslesbarer Zähler eingebaut | kein Smart Meter in Betrieb (manche Netzbetreiber melden das auch, wenn er eingebaut, aber noch nicht in Betrieb ist) — **siehe Hinweis unter der Tabelle** |
 | Kunde hat optiert | das Mitglied hat Viertelstundenwerte im Smart Meter abgelehnt (Opt-out): das Mitglied muss beim Netzbetreiber wieder einwilligen |
 | Zählpunkt nicht versorgt | für den Zählpunkt gibt es keinen Liefervertrag mit einem Energieversorger |
 | Zählpunkt nicht dem Lieferanten zugeordnet | oft liegt der angefragte Zeitraum vor dem Aktivierungsdatum: Zeitraum ab „Aktiv ab“ wählen |
 | konkurrierende Prozesse | ein früherer Vorgang zum selben Zählpunkt läuft noch: abwarten und später erneut senden |
 | Prozessdatum falsch | beim Teilnahmefaktor meist: außerhalb 9–17 Uhr gesendet |
 | Teilnahmefaktor von 100 % würde überschritten werden | der Zählpunkt nimmt schon an einer anderen Gemeinschaft teil: dort zuerst den Faktor senken |
-| Summe der gemeldeten Aufteilungsschlüssel übersteigt 100% | nur beim statischen Verteilmodell: die Verteilungsfaktoren der Gemeinschaft ergeben zusammen mehr als 100 %. Beim Netzbetreiber ist das ein Hinweis (er versteht die Faktoren dann als Anteile), die Anmeldung läuft dort weiter; eegFaktura zeigt den Zählpunkt aber als „nicht angenommen“. Prüfe die Verteilungsfaktoren und melde den Zählpunkt nicht neu an |
+| Summe der gemeldeten Aufteilungsschlüssel übersteigt 100% | nur beim statischen Verteilmodell: die Verteilungsfaktoren der Gemeinschaft ergeben zusammen mehr als 100 % (der Netzbetreiber versteht sie dann als Anteile); prüfe die Faktoren — **siehe Hinweis unter der Tabelle** |
 | Teilnahme-Limit wird überschritten | der Zählpunkt nimmt schon an der höchstzulässigen Zahl von Gemeinschaften teil (derzeit 5) |
 | Keine Daten im angeforderten Zeitraum vorhanden | der Netzbetreiber hat für den Zeitraum (noch) keine Werte: später erneut anfordern |
+
+!!! warning "„Noch kein fernauslesbarer Zähler“ und „Summe … übersteigt 100%“: die Anmeldung läuft weiter"
+    Beim Netzbetreiber sind beide keine Ablehnung, sondern nur ein Hinweis: Die Anmeldung läuft dort weiter, die
+    Teilnahme beginnt, sobald der Smart Meter in Betrieb ist. eegFaktura zeigt den Zählpunkt bis dahin aber als
+    „nicht angenommen“, und das Mitglied bekommt unter Umständen keine Mail „Freigabe-Aufforderung“.
+    **Lösche den Zählpunkt nicht und melde ihn nicht neu an.** Bitte das Mitglied, die Datenfreigabe im Portal des
+    Netzbetreibers zu bestätigen. Mit dem Abschluss der Anmeldung wird der Zählpunkt aktiv.
 
 Unbekannte Gründe zeigt eegFaktura als Nummer. Kommt dieselbe Ablehnung immer wieder, prüfe Zählpunktnummer und
 Netzbetreiber-ID auf Tippfehler oder Leerzeichen.
