@@ -3,6 +3,19 @@
 Neue Funktionen von eegFaktura, die du als EEG-Admin bemerkst. Die Kapitel beschreiben jeweils den aktuellen
 Stand.
 
+## Herbst 2026 (seit 25.11.2026)
+
+### Menü: Handbuch
+
+Im Menü öffnet **Handbuch** dieses Benutzerhandbuch in einem neuen Tab.
+Siehe [Die Oberfläche](01-anmeldung.md#die-oberflache).
+
+### Zählpunkt hinzufügen: Teilnahmefaktor vorbelegt
+
+Fügst du einem bestehenden Mitglied einen Zählpunkt hinzu, ist der **Teilnahmefaktor in %** mit 100 vorbelegt, wie
+beim Anlegen eines neuen Mitglieds. Siehe
+[Zählpunkt zu einem bestehenden Mitglied hinzufügen](02-mitglieder-zaehlpunkte.md#zahlpunkt-zu-einem-bestehenden-mitglied-hinzufugen).
+
 ## Herbst 2026 (seit 24.11.2026)
 
 ### Stammdatenimport: Tarife und neue Vorlage
@@ -122,7 +135,8 @@ Siehe [Dashboard](01-anmeldung.md#ubersicht-eeg).
 ### EEG-Seite: Modell und Nahebereich
 
 Die EEG-Seite zeigt das **Modell** der Gemeinschaft mit Lang- und Kurzform und den **Nahebereich** mit der amtlichen
-Bezeichnung laut ElWG. Für **Peer-to-Peer** und **Eigenversorgung** bietet eegFaktura keine Abrechnung an.
+Bezeichnung laut ElWG. Für **Peer-to-Peer** und **Eigenversorgung** gab es zunächst keine Abrechnung; seit
+11.11.2026 gibt es sie als Vorschau (siehe oben).
 Siehe [EEG-Seite](01-anmeldung.md#modell-und-nahebereich).
 
 ### Gemeinschaft wechseln mit Suche

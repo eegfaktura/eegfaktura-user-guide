@@ -2,8 +2,11 @@
 
 ## Was ist eegFaktura?
 
-eegFaktura ist die Verwaltungs- und Abrechnungssoftware für **Erneuerbare-Energie-Gemeinschaften (EEG)** und
-**Bürgerenergiegemeinschaften (BEG)** in Österreich. Damit verwaltest du als EEG-Admin
+eegFaktura ist die Verwaltungs- und Abrechnungssoftware für Energiegemeinschaften in Österreich:
+**Erneuerbare-Energie-Gemeinschaften (EEG)**, **Bürgerenergiegemeinschaften (BEG)** und **Gemeinschaftliche
+Erzeugungsanlagen (GEA)**; für Peer-to-Peer (P2P) und Eigenversorgungsanlagen (EVA) mit Einschränkungen (siehe
+[Peer-to-Peer und Eigenversorgung](01-anmeldung.md#peer-to-peer-und-eigenversorgung)). Damit verwaltest du als
+EEG-Admin
 
 - die **Mitglieder** deiner Gemeinschaft mit ihren Kontakt- und Bankdaten,
 - ihre **Zählpunkte** (Verbrauch und Erzeugung) und deren Anmeldung beim Netzbetreiber,
@@ -23,10 +26,13 @@ Nachrichten lesen, E-Mail-Texte gestalten, abrechnen.
 
 Den Zugang (Benutzername, Gemeinschaften) richtet der Betreiber deiner eegFaktura-Installation ein.
 
+In eegFaktura öffnest du dieses Handbuch über **Handbuch** im Menü.
+
 ## Kapitel
 
 | Kapitel | Inhalt |
 |---------|--------|
+| [Was ist neu?](changelog.md) | neue Funktionen, nach Datum |
 | [Einrichtung & Hilfe](einrichtung-hilfe.md) | Anbindung an die Netzbetreiber, Datenfreigabe der Mitglieder, Datenschutz, Support |
 | [Anmeldung & Oberfläche](01-anmeldung.md) | Anmelden, Menü, Gemeinschaft wechseln, Dashboard, EEG-Seite |
 | [Mitglieder & Zählpunkte](02-mitglieder-zaehlpunkte.md) | Mitgliederliste, Mitglied anlegen, Zählpunkte, Status, Prozesse beim Netzbetreiber |

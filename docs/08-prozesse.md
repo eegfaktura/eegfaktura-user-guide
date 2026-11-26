@@ -2,12 +2,15 @@
 
 Unter **Prozesse** löst du Vorgänge beim Netzbetreiber aus. Den Menüpunkt gibt es nur für EEG-Admins von
 Gemeinschaften mit **Online-Anbindung**. eegFaktura verschickt die Anfrage über die Marktkommunikation (EDA); die
-Antwort kommt später unter [Nachrichten](07-nachrichten.md).
+Antwort kommt später, meist unter [Nachrichten](07-nachrichten.md) — wo es anders ist, steht es beim jeweiligen
+Prozess.
 
-Jedes Formular zeigt oben die **Gemeinschafts-ID**. In der Zählpunkt-Auswahl steht jeder Zählpunkt mit
-**Verbraucher** oder **Erzeuger**, dem Anlagennamen (falls vergeben) und der Nummer; je nach Formular folgt noch der
-Status oder der Teilnahmefaktor. Nach **Anfordern** meldet
-eegFaktura „Die Anforderung wurde an den Netzbetreiber gesendet.“ oder den Grund, warum es nicht geklappt hat.
+Die Formulare zum Nachfordern, Aktivieren, Abmelden und zum Teilnahmefaktor zeigen oben die **Gemeinschafts-ID**. In
+der Zählpunkt-Auswahl steht jeder Zählpunkt mit **Verbraucher** oder **Erzeuger**, dem Anlagennamen (falls vergeben)
+und der Nummer; je nach Formular folgt noch der Status (englisch, z. B. ACTIVE oder INACTIVE) oder der
+Teilnahmefaktor. Nach **Anfordern** fragt eegFaktura noch einmal nach; erst wenn du bestätigst (**Senden**,
+**Anfordern** bzw. **Aufheben**), geht die Anfrage hinaus. Danach meldet eegFaktura „Die Anforderung wurde an den
+Netzbetreiber gesendet.“ oder den Grund, warum es nicht geklappt hat.
 
 ![Prozesse](images/prozesse.png)
 
@@ -28,8 +31,9 @@ Für heute und spätere Tage gibt es noch keine Daten. Zählpunkte, die in der l
 ## Zählpunkt aktivieren
 
 Meldet einen noch nicht aktiven Zählpunkt (erneut) beim Netzbetreiber an, z. B. nach einer Abweisung, wenn der Fehler
-behoben ist. Wähle **Mitglied** und **Zählpunkt**. Zählpunkte werden immer online beim Netzbetreiber angemeldet: Das
-Mitglied muss die Datenfreigabe danach bestätigen; es bekommt dazu die Mail „Freigabe-Aufforderung“.
+behoben ist. Wähle **Mitglied** und **Zählpunkt**, klicke auf **Anfordern** und bestätige mit **Senden**. Zählpunkte
+werden immer online beim Netzbetreiber angemeldet: Das Mitglied muss die Datenfreigabe danach bestätigen; es bekommt
+dazu die Mail „Freigabe-Aufforderung“.
 
 ## Zählpunkt abmelden
 
@@ -74,22 +78,29 @@ oder „ConsentID abgelaufen“.
 
 ![Teilnahmefaktor ändern](images/prozesse-teilnahmefaktor.png)
 
-1. Wähle **Mitglied** und **Zählpunkt** (die Auswahl zeigt am Ende den aktuellen Faktor).
-2. Gib den neuen **Teilnahmefaktor in %** ein (1–100) und klicke auf **Anfordern**.
+1. Wähle **Mitglied** und **Zählpunkt** (mehrere möglich; die Auswahl zeigt am Ende den aktuellen Faktor).
+2. Gib den neuen **Teilnahmefaktor in %** ein (1–100), klicke auf **Anfordern** und bestätige mit **Senden**.
 
 > Der Netzbetreiber nimmt Änderungen **nur zwischen 9 und 17 Uhr** an, **eine pro Tag** je Zählpunkt; die Änderung
 > gilt ab dem nächsten Tag. Außerhalb dieser Zeit warnt eegFaktura, weil der Netzbetreiber sonst mit „Prozessdatum
 > falsch“ ablehnt.
 
+In eegFaktura ändert sich der Faktor erst, wenn der Netzbetreiber bestätigt hat (ANTWORT_CPF in der
+[Prozess History](#prozess-history)). Eine Nachricht kommt nur bei einer Ablehnung.
+
 ## Teilnehmerliste anfordern
 
-Fordert beim Netzbetreiber die Liste aller Zählpunkte der Gemeinschaft an. Bei Bürgerenergiegemeinschaften wählst du
-zuerst die **Netzbetreiber-ID**.
+Fordert beim Netzbetreiber die Liste aller Zählpunkte der Gemeinschaft an. Bei BEG, P2P und EVA wählst du zuerst die
+**Netzbetreiber-ID**. Klicke dann auf **Zählpunktliste anfordern** und bestätige mit **Anfordern**; eegFaktura meldet
+„Zählpunktliste konnte erfolgreich angefordert werden.“
 
 Die Antwort kommt später. eegFaktura übernimmt sie dann **selbst**: Bei jedem Zählpunkt aus der Liste, der in
 eegFaktura einem Mitglied zugeordnet ist, wird er auf aktiv gesetzt und die **Kennung der Datenfreigabe
-(Consent-ID)** eingetragen. Du musst nichts erfassen. Die verantwortliche Person der EEG bekommt die Liste zusätzlich
-als Excel-Datei per E-Mail — zur Information; ist die Mail da, sind die Daten schon übernommen.
+(Consent-ID)** eingetragen. Auch der Teilnahmefaktor der Zählpunkte, der Nahebereich und bei EEGs das Modell
+(lokal/regional) werden aus der Liste übernommen. Du musst nichts erfassen. Die Liste geht zusätzlich als Excel-Datei
+an die **E-Mail-Adresse der Gemeinschaft** (EEG-Seite → Kontakt) — zur Information; ist die Mail da, sind die Daten
+schon übernommen. Ist dort keine Adresse eingetragen, gibt es keine Mail; die Daten werden trotzdem übernommen. Eine
+Nachricht in eegFaktura gibt es dazu nicht.
 
 Steht ein Zählpunkt nicht in der Liste, ist seine Datenfreigabe beim Netzbetreiber meist schon beendet. Eine
 Abmeldung lehnt der Netzbetreiber dann mit „Keine Datenfreigabe vorhanden“ ab, und eegFaktura setzt den Zählpunkt auf
@@ -110,9 +121,11 @@ Zeigt die Kommunikation mit dem Netzbetreiber, standardmäßig der letzten 14 Ta
 | **Versenden der Energiedaten** | Energiedaten, die der Netzbetreiber geschickt hat (von – bis) |
 
 Jeder Bereich lässt sich nach Zählpunkt, Name, Mitgliedsnummer oder Conversation-ID durchsuchen. Je Zählpunkt stehen
-die Schritte mit Datum (TT.MM.JJJJ) und Uhrzeit, **Protokoll** und **Status** bzw. **Info**.
+die Schritte mit Datum (TT.MM.JJJJ) und Uhrzeit, **Protokoll** und, je nach Bereich, **Status**, **Info** oder
+**Zustimmung endet am**. Unter „Versenden der Energiedaten“ steht statt des Protokolls, von wann bis wann die Daten
+reichen.
 
-**Eine Ablehnung lesen:** In der Spalte Protokoll steht dann ABLEHNUNG, in Status oder Info der Grund, z. B.
+**Eine Ablehnung lesen:** In der Spalte Protokoll steht dann ABLEHNUNG, in der Spalte daneben der Grund, z. B.
 „Zählpunkt nicht gefunden“, „Kunde hat Datenfreigabe abgelehnt“ oder „Prozessdatum falsch“.
 
 **Zeitraum groß genug wählen:** Die History zeigt nur Schritte im gewählten Zeitraum. Liegt der Beginn eines Vorgangs
@@ -126,13 +139,14 @@ Alle Nachrichten je Prozess mit den Beschreibungen der ebUtilities und Beispiele
 
 | Bereich | Ablauf |
 |---------|--------|
-| Anmeldung Teilnahme Online | ANFORDERUNG_ECON (eegFaktura meldet an) → ANTWORT_ECON (Netzbetreiber bestätigt den Eingang) → ZUSTIMMUNG_ECON (Mitglied hat zugestimmt) → ABSCHLUSS_ECON (Zählpunkt aufgenommen); oder ABLEHNUNG_ECON |
+| Anmeldung Teilnahme Online | ANFORDERUNG_ECON (eegFaktura meldet an) → ANTWORT_ECON (Netzbetreiber bestätigt den Eingang) → ZUSTIMMUNG_ECON (Mitglied hat zugestimmt) → ABSCHLUSS_ECON (Zählpunkt aufgenommen); oder ABLEHNUNG_ECON; ABBRUCH_ECON, wenn die Anmeldung nach der Zustimmung abgebrochen wird (Zustimmung entzogen oder keine stabile Verbindung zum Zähler) |
 | Datenfreigabe-Aufhebung | AUFHEBUNG_CCMS (eegFaktura hebt auf), ANTWORT_CCMS / ABLEHNUNG_CCMS; AUFHEBUNG_CCMC, wenn das Mitglied aufhebt; AUFHEBUNG_CCMI, wenn der Netzbetreiber aufhebt |
 | Anfordern von Energiedaten | ANFORDERUNG_PT → ANTWORT_PT oder ABLEHNUNG_PT |
 | Änderung des Teilnahmefaktors | ANFORDERUNG_CPF (mit neuem Faktor) → ANTWORT_CPF oder ABLEHNUNG_CPF |
-| Versenden der Energiedaten | DATEN_CRMSG: Energiedaten sind eingetroffen (von – bis) |
+| Versenden der Energiedaten | kein Protokoll: je Lieferung eine Zeile mit „Energiedaten von“ und „Energiedaten bis“ |
 
-Eine angenommene Anforderung (ANTWORT_PT) heißt noch nicht, dass die Daten da sind — das zeigt erst DATEN_CRMSG.
+Eine angenommene Anforderung (ANTWORT_PT) heißt noch nicht, dass die Daten da sind — das zeigt erst ein Eintrag unter
+**Versenden der Energiedaten**.
 
 ## Häufige Ablehnungsgründe
 
@@ -143,15 +157,23 @@ Eine angenommene Anforderung (ANTWORT_PT) heißt noch nicht, dass die Daten da s
 | Kunde hat Datenfreigabe abgelehnt | das Mitglied hat im Portal abgelehnt (oft versehentlich): mit dem Mitglied klären, dann unter **Zählpunkt aktivieren** neu anmelden |
 | Kunde hat auf Datenfreigabe nicht reagiert (Timeout) | das Mitglied hat nicht rechtzeitig zugestimmt: erinnern und neu anmelden |
 | Kein Smart Meter | ohne Smart Meter geht die Teilnahme nicht: Netzbetreiber fragen, wann getauscht wird |
-| Noch kein fernauslesbarer Zähler eingebaut | keine Ablehnung, sondern ein Hinweis: die Anmeldung läuft weiter, die Teilnahme beginnt erst, wenn der Smart Meter eingebaut und in Betrieb ist; du musst nichts tun. Manche Netzbetreiber melden das auch bei einem eingebauten Smart Meter, der noch nicht in Betrieb ist |
+| Noch kein fernauslesbarer Zähler eingebaut | kein Smart Meter in Betrieb (manche Netzbetreiber melden das auch, wenn er eingebaut, aber noch nicht in Betrieb ist) — **siehe Hinweis unter der Tabelle** |
 | Kunde hat optiert | das Mitglied hat Viertelstundenwerte im Smart Meter abgelehnt (Opt-out): das Mitglied muss beim Netzbetreiber wieder einwilligen |
 | Zählpunkt nicht versorgt | für den Zählpunkt gibt es keinen Liefervertrag mit einem Energieversorger |
 | Zählpunkt nicht dem Lieferanten zugeordnet | oft liegt der angefragte Zeitraum vor dem Aktivierungsdatum: Zeitraum ab „Aktiv ab“ wählen |
 | konkurrierende Prozesse | ein früherer Vorgang zum selben Zählpunkt läuft noch: abwarten und später erneut senden |
 | Prozessdatum falsch | beim Teilnahmefaktor meist: außerhalb 9–17 Uhr gesendet |
-| Teilnahmefaktor von 100 % würde überschritten werden / Summe … übersteigt 100% | der Zählpunkt nimmt schon an einer anderen Gemeinschaft teil: dort zuerst den Faktor senken |
+| Teilnahmefaktor von 100 % würde überschritten werden | der Zählpunkt nimmt schon an einer anderen Gemeinschaft teil: dort zuerst den Faktor senken |
+| Summe der gemeldeten Aufteilungsschlüssel übersteigt 100% | nur beim statischen Verteilmodell: die Verteilungsfaktoren der Gemeinschaft ergeben zusammen mehr als 100 % (der Netzbetreiber versteht sie dann als Anteile); prüfe die Faktoren — **siehe Hinweis unter der Tabelle** |
 | Teilnahme-Limit wird überschritten | der Zählpunkt nimmt schon an der höchstzulässigen Zahl von Gemeinschaften teil (derzeit 5) |
 | Keine Daten im angeforderten Zeitraum vorhanden | der Netzbetreiber hat für den Zeitraum (noch) keine Werte: später erneut anfordern |
+
+!!! warning "„Noch kein fernauslesbarer Zähler“ und „Summe … übersteigt 100%“: die Anmeldung läuft weiter"
+    Beim Netzbetreiber sind beide keine Ablehnung, sondern nur ein Hinweis: Die Anmeldung läuft dort weiter, die
+    Teilnahme beginnt, sobald der Smart Meter in Betrieb ist. eegFaktura zeigt den Zählpunkt bis dahin aber als
+    „nicht angenommen“, und das Mitglied bekommt unter Umständen keine Mail „Freigabe-Aufforderung“.
+    **Lösche den Zählpunkt nicht und melde ihn nicht neu an.** Bitte das Mitglied, die Datenfreigabe im Portal des
+    Netzbetreibers zu bestätigen. Mit dem Abschluss der Anmeldung wird der Zählpunkt aktiv.
 
 Unbekannte Gründe zeigt eegFaktura als Nummer. Kommt dieselbe Ablehnung immer wieder, prüfe Zählpunktnummer und
 Netzbetreiber-ID auf Tippfehler oder Leerzeichen.
