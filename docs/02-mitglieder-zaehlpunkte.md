@@ -8,8 +8,10 @@ Unter **Mitglieder** verwaltest du die Mitglieder deiner Gemeinschaft und ihre Z
 
 Jedes Mitglied steht mit seinem Namen und dahinter in Klammern seiner Mitgliedsnummer in der Liste, z. B.
 „Max Mustermann (001)“; ein Mitglied ohne Nummer nur mit dem Namen. Darunter steht eine Karte je **Zählpunkt** mit
-der Energiemenge im gewählten Zeitraum. Das Symbol zeigt die Richtung: ein **Stecker** für Verbrauch, ein **Solarmodul** für Erzeugung.
-Der Balken unter dem Wert zeigt den Anteil des Zählpunkts.
+der Energiemenge im gewählten Zeitraum. Das Symbol zeigt die Richtung: ein **Stecker** für Verbrauch, ein
+**Solarmodul** für Erzeugung. Abgewiesene, aufgehobene, ungültige und inaktive Zählpunkte tragen stattdessen ein „!“.
+Der Balken unter dem Wert zeigt, welcher Teil des Verbrauchs aus der Gemeinschaft kam bzw. welcher Teil der Erzeugung
+in die Gemeinschaft ging. Ein neuer Zählpunkt (orange) hat noch keinen Wert und keinen Balken.
 
 ### Knöpfe oben
 
@@ -17,7 +19,7 @@ Der Balken unter dem Wert zeigt den Anteil des Zählpunkts.
 |-------|----------|
 | Lupe | **Suche**: blendet ein Suchfeld ein, die Liste filtert beim Tippen |
 | Wolke mit Pfeil nach oben | **Import**: Stammdaten (Mitglieder und Zählpunkte) aus einer Excel-Datei einlesen; bei Gemeinschaften ohne Online-Anbindung auch Energiedaten |
-| Pfeil nach unten | **Export**: Daten für einen Zeitraum herunterladen |
+| Pfeil nach unten | **Export**: Energiedaten für einen Zeitraum oder die Stammdaten herunterladen |
 | Plus | **Neues Mitglied** anlegen (siehe unten) |
 
 ### Suche
@@ -87,11 +89,15 @@ Gemeinschaft, beim Erzeuger die Einspeisung in die Gemeinschaft.
 | Farbe des Zählpunkts | Bedeutung |
 |----------------------|-----------|
 | Dunkelgrün | Zählpunkt ist aktiv (oder inaktiv mit früheren Daten) |
-| Orange | Anmeldung läuft noch, z. B. wartet eegFaktura auf den Netzbetreiber oder auf die Zustimmung des Mitglieds |
-| Rot | vom Netzbetreiber abgewiesen, aufgehoben oder ungültig |
+| Orange | neu angelegt und noch nicht angemeldet, oder eegFaktura wartet auf die Zustimmung des Mitglieds |
+| Rot | vom Netzbetreiber abgewiesen, aufgehoben oder ungültig; derzeit auch, solange die erste Antwort oder die Abschlussmeldung des Netzbetreibers noch aussteht |
 
-Ein Mitglied, das noch zugelassen werden muss, steht orange mit einem „!“ in der Liste. Steht neben einem Namen
-grau „inaktiv“, hat das Mitglied keinen aktiven Zählpunkt mehr.
+Rot heißt also nicht immer, dass etwas zu tun ist. Was gerade gilt, sagt der Hinweis beim Zählpunkt (siehe
+[Status eines Zählpunkts](#status-eines-zahlpunkts)).
+
+Ein Mitglied, das noch zugelassen werden muss, steht orange mit einem „!“ in der Liste; bei einem importierten
+Mitglied sind nur die Zählpunkte orange. Steht neben einem Namen grau „inaktiv“, hat das Mitglied keinen aktiven
+Zählpunkt mehr.
 
 ### Unten in der Liste
 
@@ -127,7 +133,9 @@ Ein Klick auf ein Mitglied öffnet rechts seine Daten, zunächst mit dem ersten 
   der Rechnung und im Stammdaten-Export.
 - **Optionals**: Mitglied seit.
 
-Änderungen werden gespeichert, sobald du ein Feld verlässt.
+Änderungen werden gespeichert, sobald du ein Feld verlässt. Über dem Formular steht, ob alles gespeichert ist
+(„Alle Änderungen gespeichert“). Ein ungültiges Feld wird nicht gespeichert; eegFaktura markiert es und fragt nach,
+bevor du das Mitglied verlässt. Ist die E-Mail-Adresse ungültig, steht neben dem Namen „E-Mail ungültig“.
 
 ### Beitrittsgebühr eines Mitglieds
 
@@ -177,9 +185,12 @@ der Liste und wartet auf die Zulassung. Rechts fragt eegFaktura: „Möchtest du
   Mitglied aufgenommen.
 - **Nein, Löschen** löscht das Mitglied mit allen Zählpunkten. Das lässt sich nicht rückgängig machen.
 
-Erst mit dem Zulassen meldet eegFaktura die Zählpunkte bei Gemeinschaften mit Online-Anbindung beim Netzbetreiber
-an. Zählpunkte werden immer online beim Netzbetreiber angemeldet; das Mitglied bestätigt danach die Datenfreigabe.
-Bei Gemeinschaften ohne Online-Anbindung werden sie damit aktiv.
+Was das Zulassen bewirkt, hängt von der Gemeinschaft ab:
+
+- **Mit Online-Anbindung:** eegFaktura meldet die angehakten Zählpunkte beim Netzbetreiber an; das Mitglied bestätigt
+  danach die Datenfreigabe. Vor dem Zulassen wird nichts angemeldet. Einen nicht angehakten Zählpunkt meldest du
+  später unter **Prozesse → Zählpunkt aktivieren** an.
+- **Ohne Online-Anbindung:** Alle Zählpunkte des Mitglieds werden mit dem Zulassen aktiv.
 
 ## Zählpunkte
 
@@ -187,9 +198,10 @@ Ein Klick auf eine Zählpunkt-Karte zeigt dessen Daten. Über dem Zählpunkt ste
 daneben **verschiebt** den Zählpunkt zu einem anderen Mitglied (bisherige Rechnungen bleiben beim alten Mitglied).
 
 - **Details und Adresse**: Richtung, Tarif, Zählpunktnummer, Teilnahmefaktor, Wechselrichter, Transformator,
-  Anlagen-Nr., Anlagenname und die Adresse des Zählpunkts.
+  Anlagen-Nr., Anlagenname, die Adresse des Zählpunkts und das Datum **Aktiv ab …**; je nach Gemeinschaft auch
+  Verteilungsfaktor und Netzbetreiber.
 - **Zählpunkt aktiv**: zeigt, ob der Zählpunkt aktiv ist (nur Anzeige).
-- **Energiedaten**: ein Diagramm der Energiedaten des Zählpunkts (nur bei aktiven Zählpunkten).
+- **Energiedaten**: ein Diagramm der Energiedaten des Zählpunkts (bei aktiven und früher aktiven Zählpunkten).
 
 Die **Richtung** (Verbraucher/Erzeuger) eines angemeldeten Zählpunkts ist gesperrt. Ein EEG-Admin kann sie über das
 Pfeil-Symbol ändern; eegFaktura warnt vorher, denn die Änderung wird **nicht** an den Netzbetreiber gemeldet.
@@ -212,11 +224,11 @@ Ist ein Zählpunkt nicht aktiv, steht über den Details ein Hinweis zum Stand:
 | Zählpunkt wurde archiviert. | Der Zählpunkt ist abgeschlossen und nur noch zur Ansicht da. |
 | Zählpunkt hat eine Warnung, bitte die Prozess History prüfen. | Beim Netzbetreiber gab es eine Unstimmigkeit, siehe **Prozesse → Prozess History**. |
 
-Bei Abweisung oder Nichtannahme steht der **Grund** fett darunter, z. B. „Kunde hat Datenfreigabe abgelehnt“. Danach
+Bei Abweisung oder Nichtannahme steht der **Grund** fett dahinter, z. B. „Kunde hat Datenfreigabe abgelehnt“. Danach
 richtest du dich: Ist der Fehler behoben (z. B. Nummer korrigiert), meldest du den Zählpunkt unter
 **Prozesse → Zählpunkt aktivieren** erneut an.
 
-Einen ungültigen Zählpunkt, der nie angemeldet wurde, kannst du hier mit **Löschen** entfernen.
+Einen nicht angenommenen Zählpunkt, der noch nie aktiv war, kannst du hier mit **Löschen** entfernen.
 
 ## Neues Mitglied anlegen
 
@@ -227,19 +239,29 @@ Lege zuerst die [Tarife](04-tarife.md) an — beim Zählpunkt wählst du einen d
     ![Neues Mitglied](images/mitglied-anlegen.png)
 
 2. Wähle **Privat** oder **Firma** und fülle **Allgemeines** aus. Pflicht sind Vorname und Nachname (bzw.
-   Firmenname), Straße, Hausnummer, Postleitzahl, Ort, E-Mail und die **Einzugsart**. Die **Mitglieds-Nr** ist
+   Firmenname), Straße, Hausnummer, Postleitzahl, Ort, E-Mail und die **Einzugsart**; bei **CORE** und **B2B** auch
+   IBAN, Kontoinhaber, Mandatsreferenz (mit der Mitglieds-Nr vorbelegt) und Mandatsdatum. Die **Mitglieds-Nr** ist
    mit der nächsten freien Nummer vorbelegt.
+    - Unter **Optional** steht das Datum **Aktiv am …**, vorbelegt mit heute. eegFaktura speichert es als „Mitglied
+      seit“ und meldet die Zählpunkte beim Zulassen ab diesem Tag beim Netzbetreiber an, frühestens ab morgen.
 3. Jedes Mitglied braucht mindestens einen Zählpunkt: Klicke auf **Zählpunkt hinzufügen**.
 
     ![Zählpunkt beim neuen Mitglied](images/mitglied-anlegen-zaehlpunkt.png)
 
-4. Wähle **Verbraucher** oder **Erzeuger**, den **Tarif**, gib die **Zählpunktnummer** (33 Zeichen, beginnt mit
-   `AT`) und den **Teilnahmefaktor in %** ein. Mit **Adresse vom Besitzer übernehmen** wird die Adresse des
-   Mitglieds eingetragen.
+4. Wähle **Verbraucher** oder **Erzeuger** und den **Tarif**. Gib die **Zählpunktnummer** ein: 33 Zeichen, `AT`,
+   dann sechs Ziffern des Netzbetreibers, dann 25 Ziffern oder Großbuchstaben. Leerzeichen und Striche entfernt
+   eegFaktura beim Einfügen. Der **Teilnahmefaktor in %** ist mit 100 vorbelegt. Die Adresse des Zählpunkts ist
+   Pflicht; mit **Adresse vom Besitzer übernehmen** wird die Adresse des Mitglieds eingetragen.
+    - Bei Gemeinschaften mit Online-Anbindung lässt du das Datum **Aktiv ab …** leer: Es kommt mit der Meldung des
+      Netzbetreibers.
     - Bei Gemeinschaften ohne Online-Anbindung wählst du zusätzlich den **Status** („Noch nicht registriert“ oder
-      „Bereits registriert“) und das Datum **Aktiv ab …**.
-5. Klicke auf **Registrieren**. Verlässt du die Seite vor dem Speichern, fragt eegFaktura nach.
-6. Das Mitglied steht jetzt als **ausstehend** in der Liste. **Lasse es zu** (siehe
+      „Bereits registriert“) und trägst **Aktiv ab …** ein.
+5. Klicke auf **Hinzufügen** — erst damit steht der Zählpunkt in der Liste. Weitere Zählpunkte fügst du genauso
+   hinzu.
+6. Klicke auf **Registrieren**. Verlässt du die Seite vor dem Speichern, fragt eegFaktura nach.
+   **Achtung:** Ohne **Hinzufügen** wird das Mitglied ohne Zählpunkt angelegt. Du findest es dann nur unter
+   **Anzeige: Alle** oder **Inaktive**.
+7. Das Mitglied steht jetzt orange mit „!“ in der Liste und wartet auf die Zulassung. **Lasse es zu** (siehe
    [Neues Mitglied zulassen](#neues-mitglied-zulassen)) — erst dann werden die Zählpunkte beim Netzbetreiber
    angemeldet bzw. aktiv. Den Fortschritt siehst du am Status des Zählpunkts.
 
@@ -251,16 +273,16 @@ nur einmal in der Liste: Trägst du eine Nummer ein, die schon dasteht, ersetzt 
 
 ### Zählpunkt zu einem bestehenden Mitglied hinzufügen
 
-Klicke in der Mitgliederliste beim Mitglied auf **+**. Das Formular ist dasselbe wie oben; gespeichert wird mit
-**Registrieren**. Ist das Mitglied schon zugelassen, meldet eegFaktura den neuen Zählpunkt bei Gemeinschaften mit
+Klicke in der Mitgliederliste beim Mitglied auf **+**. Bei einem Mitglied, das orange mit „!“ auf die Zulassung
+wartet, gibt es das **+** noch nicht. Das Formular ist dasselbe wie oben; gespeichert wird mit **Registrieren**. Ist das Mitglied schon zugelassen, meldet eegFaktura den neuen Zählpunkt bei Gemeinschaften mit
 Online-Anbindung gleich beim Netzbetreiber an.
 ## Stammdaten aus Excel importieren
 
 Viele Mitglieder auf einmal — z. B. beim Umstieg auf eegFaktura — liest du aus einer Excel-Datei ein: oben in der
 Mitgliederliste der Knopf mit der Wolke, **Stammdaten**, **Sheet-Name** (voreingestellt „EEG Stammdaten“; heißt das
 Blatt in deiner Datei anders, trägst du hier seinen Namen ein), die Datei mit dem Stern wählen oder in das Fenster
-ziehen, **Import**. Es geht eine Datei je Import. Eine Vorlage mit allen Spalten gibt es hier; Zeile 5 erklärt jede
-Spalte:
+ziehen, **Import**. Es geht eine Datei je Import. Eine Vorlage mit allen Spalten gibt es hier; Zeile 5 erklärt die
+wichtigsten Spalten:
 [Vorlage Stammdatenimport (Excel)](https://github.com/eegfaktura/eegfaktura-backend/raw/master/tests/261124-vorlage-import-stammdaten.xlsx).
 Ältere Vorlagen funktionieren weiter: eegFaktura erkennt die Spalten an ihrer Überschrift, nicht an der Position.
 
@@ -269,14 +291,16 @@ Wichtige Spalten:
 | Spalte | Hinweis |
 |--------|---------|
 | Gemeinschafts-ID | Pflicht, muss zur Gemeinschaft passen |
-| Name 1 / Name 2 | Vorname / Nachname (bei Firmen: Firmenname / Nachname der Kontaktperson). Groß-/Kleinschreibung zählt beim Wiedererkennen |
+| Name 1 / Name 2 | Vorname / Nachname (bei Firmen: Firmenname / Nachname der Kontaktperson). Groß-/Kleinschreibung zählt beim Wiedererkennen. Ist „Name 1“ leer, muss „Name 2“ „Nachname Vorname“ enthalten |
+| BusinessRole | `business` für eine Firma, sonst privat |
+| Mitglied seit | Excel-Datum oder `TT.MM.JJJJ`; leer = heute |
 | Zählpunkt | genau 33 Zeichen |
 | Energierichtung | `CONSUMPTION` (Verbraucher, auch leer) oder `GENERATION` (Erzeuger) |
 | Zählpunktstatus | Pflicht. `ACTIVE`, `ACTIVATED` oder `REGISTERED` → wird als **aktiv** übernommen; `NEW` → wird neu angemeldet; andere Werte → Zeile wird nicht importiert |
 | registriert seit | ab wann der Zählpunkt aktiv ist; **leer = 1. Jänner des laufenden Jahres**. Ältere Energiedaten werden davor weder angefordert noch abgerechnet — beim Umstieg das tatsächliche Datum eintragen |
 | Zugeteilte Menge in Prozent | Teilnahmefaktor (1–100); leer oder 0 wird 100 % |
 | email | mehrere Adressen mit `;` trennen; ist eine Adresse ungültig, wird das Mitglied ohne E-Mail angelegt (mit Hinweis) |
-| Einzugsart | `CORE`, `B2B` oder `Kein SEPA` |
+| Einzugsart | `CORE`, `B2B` oder `Kein SEPA`. Leer: kein Einzug; hat das Mitglied eine IBAN, kommt ein Hinweis |
 | MandatRef | Mandatsreferenz für die Lastschrift. Leer: Die Abrechnung nimmt die Mitgliedsnummer. Die Bank nimmt sie nur ohne Leerzeichen und Umlaute an (höchstens 35 Zeichen) – sonst die Mandatsreferenz ausfüllen |
 | MandatDat | Datum, an dem das Mitglied das Mandat unterschrieben hat (Excel-Datum oder `TT.MM.JJJJ`); bei `CORE` und `B2B` immer ausfüllen |
 | ObjektName | wird als Anlagenname übernommen |
@@ -290,10 +314,21 @@ So verhält sich der Import:
 - Ein Mitglied mit gleichem Vor- und Nachnamen wie ein vorhandenes gilt als **dasselbe**: Es bekommt die Zählpunkte
   aus der Datei, seine übrigen Daten werden **nicht** geändert. Hat es einen dieser Zählpunkte schon, wird für dieses
   Mitglied nichts importiert (Fehler unter Nachrichten) — nimm dann nur die neuen Zählpunkte in die Datei.
+- Zählpunkte mit `NEW` bei einem schon zugelassenen Mitglied legt der Import nur an. Melde sie danach unter
+  **Prozesse → Zählpunkt aktivieren** an.
 - Ein Fehler betrifft nur das jeweilige Mitglied; die übrigen Zeilen werden trotzdem importiert. Datumsfelder dürfen
   Excel-Datum oder Text (`TT.MM.JJJJ`) sein.
 - Hinweise und Fehler (z. B. doppelte Mitgliedsnummer, Zählpunkt mit falscher Länge) kommen als Nachricht
-  **„Excel Stammdaten importiert — Hinweise: …“** unter [Nachrichten](07-nachrichten.md).
+  **„Excel Stammdaten importiert — Hinweise: …“** unter [Nachrichten](07-nachrichten.md). Die Hinweise stehen
+  derzeit großteils auf Englisch. Die häufigsten:
+    - „Rows skipped: 'Gemeinschafts-ID' …“: Die Gemeinschafts-ID fehlt oder passt nicht zu deiner Gemeinschaft.
+    - „Len not equal 33“: Die Zählpunktnummer hat nicht 33 Zeichen.
+    - „Participant has wrong status“: Der Zählpunktstatus ist leer oder kein erlaubter Wert.
+    - „unknown 'Energierichtung'“: Erlaubt sind `CONSUMPTION` und `GENERATION`.
+    - „no active tariff named …“: Einen aktiven Tarif mit diesem Namen gibt es nicht.
+    - „MitgliedsNr … is already assigned …“ oder „… is used by several members“: Die Mitgliedsnummer ist schon
+      vergeben oder steht in der Datei bei mehreren Mitgliedern.
+    - „… have no direct debit type“: Mitglieder mit IBAN, aber ohne Einzugsart; sie werden nicht eingezogen.
 - Einzugsart, Mandatsreferenz, Mandatsdatum und Mitgliedstarif gelten nur für Mitglieder, die der Import neu
   anlegt. Der Zählpunkttarif gilt für jeden neu angelegten Zählpunkt, auch bei einem schon vorhandenen Mitglied.
 - Einen unbekannten Tarifnamen oder einen Tarif der falschen Art meldet der Import; das Mitglied bzw. der Zählpunkt
@@ -330,7 +365,8 @@ Netzbetreiber.
 - In der Mitgliederliste jedes Testmitglied öffnen: Name, Adresse, E-Mail, Bankverbindung und Einzugsart, die
   Zählpunkte mit Energierichtung, Teilnahmefaktor und Anlagenname.
 
-**4. Testmitglieder wieder löschen.** Die Testmitglieder stehen orange mit „!“ in der Liste. Öffne jedes. Rechts steht
+**4. Testmitglieder wieder löschen.** Bei den Testmitgliedern sind die Zählpunkte orange, der Name selbst ist es
+bei importierten Mitgliedern nicht. Öffne jedes. Rechts steht
 die Frage „Möchtest du *Nachname* in deine EEG aufnehmen?“ (siehe [Neues Mitglied zulassen](#neues-mitglied-zulassen)).
 Klicke auf **Nein, Löschen** und bestätige die Rückfrage mit **Löschen**. Lösche **alle** Testmitglieder. Ein
 übrig gebliebenes Testmitglied würde der große Import nicht mehr richtigstellen (siehe unten).
@@ -369,7 +405,8 @@ Gut zu wissen:
   erfundene Adresse ein — an sie wird geschickt.
 - **Mitglied ohne Konto:** Wähle die Einzugsart **Kein SEPA**; die IBAN darf dann leer bleiben.
 - **Anlagenname:** Hat ein Zählpunkt einen Anlagennamen, steht in der Liste dieser Name statt der Nummer, in den
-  Prozessen „Name – Nummer“ — praktisch bei mehreren Anlagen eines Mitglieds.
+  Prozessen „Verbraucher - Name - Nummer“ bzw. „Erzeuger - Name - Nummer“ — praktisch bei mehreren Anlagen eines
+  Mitglieds.
 - **Aktiv ab:** Bei Online-Anmeldungen setzt eegFaktura das Datum aus der Meldung des Netzbetreibers, beim Import
   aus der Spalte „registriert seit“. Es begrenzt, ab wann Energiedaten angefordert und abgerechnet werden; ändere es nur, wenn es nicht
   zum Netzbetreiber passt.
@@ -381,7 +418,9 @@ Gut zu wissen:
 - **Zählpunkt schon vergeben:** Ist ein Zählpunkt schon einem anderen Mitglied deiner Gemeinschaft zugeordnet, lässt
   er sich nicht noch einmal anlegen. Verschiebe ihn beim anderen Mitglied mit dem Pfeilkreuz oder melde ihn dort ab.
   Hat das Mitglied den Zählpunkt schon (z. B. inaktiv nach einer Abmeldung), meldest du ihn unter
-  **Prozesse → Zählpunkt aktivieren** wieder an.
+  **Prozesse → Zählpunkt aktivieren** wieder an. War der Zählpunkt bei diesem Mitglied schon einmal angelegt und
+  wurde verschoben oder archiviert, lässt er sich dort nicht neu anlegen — wende dich an den
+  [Support](einrichtung-hilfe.md#hilfe-und-support).
 - **Ein Zählpunkt wechselt den Besitzer** (z. B. Mieterwechsel): Verschiebe ihn mit dem Pfeilkreuz zum neuen Mitglied
   oder melde ihn beim alten ab und beim neuen an; bisherige Rechnungen bleiben beim alten Mitglied.
 - **Teilnahmefaktor:** 1 bis 100 %. Nimmt ein Zählpunkt an mehreren Gemeinschaften teil, darf die Summe 100 % nicht
@@ -396,7 +435,8 @@ Unter **Dokumente** legst du Unterlagen zum Mitglied ab, z. B. den unterschriebe
 
 - Mit **Datei auswählen** fügst du eine Datei hinzu; du kannst auch mehrere Dateien auf einmal in das Fenster ziehen.
   Andere Dateiarten nimmt eegFaktura nicht und nennt sie in einem Hinweis. Mit dem Papierkorb nimmst du eine Datei
-  wieder aus der Liste; **Hochladen** lädt alle hoch.
+  wieder aus der Liste; **Hochladen** lädt alle hoch. Zeigt die Dateiauswahl eine `.jpg`-Datei nicht an, ziehe sie
+  in das Fenster.
 - Ziehst du Dateien direkt auf den Bereich **Verträge** eines Mitglieds, öffnet sich das Fenster gleich mit diesen
   Dateien. Hochgeladen wird erst mit **Hochladen**.
 
