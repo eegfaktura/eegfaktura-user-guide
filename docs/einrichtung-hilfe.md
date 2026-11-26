@@ -49,10 +49,10 @@ Dieses Handbuch beschreibt die Bedienung von eegFaktura. Hintergrundwissen, das 
 
 | Thema | Wo |
 |-------|----|
-| Umsatzsteuer bei Rechnungen und Gutschriften je Mitgliedstyp | [docs.eegfaktura.at](https://docs.eegfaktura.at/books/workflowprozesse/page/die-umsatzsteuerlich-korrekte-ausfuhrung-von-rechnungen-und-gutschriften) |
-| Messreihen und OBIS-Codes der Energiedaten | [docs.eegfaktura.at](https://docs.eegfaktura.at/books/workflowprozesse/page/energiedaten-herunterladen) |
-| Datenkontrolle in der Praxis, Excel-Vorlage für Viertelstundenwerte | [docs.eegfaktura.at](https://docs.eegfaktura.at/books/workflowprozesse/page/datenkontrolle-energie) |
-| Nachrichten je Prozess mit den Beschreibungen der ebUtilities | [docs.eegfaktura.at](https://docs.eegfaktura.at/books/workflowprozesse/page/prozess-history) |
+| Umsatzsteuer bei Rechnungen und Gutschriften je Mitgliedstyp | [docs.eegfaktura.at](https://docs.eegfaktura.at/books/hintergrundwissen/page/die-umsatzsteuerlich-korrekte-ausfuhrung-von-rechnungen-und-gutschriften) |
+| Messreihen und OBIS-Codes der Energiedaten | [docs.eegfaktura.at](https://docs.eegfaktura.at/books/hintergrundwissen/page/energiedaten-herunterladen) |
+| Datenkontrolle in der Praxis, Excel-Vorlage für Viertelstundenwerte | [docs.eegfaktura.at](https://docs.eegfaktura.at/books/hintergrundwissen/page/datenkontrolle-energie) |
+| Nachrichten je Prozess mit den Beschreibungen der ebUtilities | [docs.eegfaktura.at](https://docs.eegfaktura.at/books/hintergrundwissen/page/prozess-history) |
 | Anleitungen der Netzbetreiber-Portale | [docs.eegfaktura.at](https://docs.eegfaktura.at/shelves/netz-betreiber-infos) |
 
 ## Hilfe und Support

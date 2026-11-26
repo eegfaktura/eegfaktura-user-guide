@@ -83,7 +83,7 @@ Abgerechnet wird beim Erzeuger **Erzeugung minus Überschuss**, also der in der 
 auch die Karten in der Mitgliederliste.
 
 Die Codes der Messreihen (OBIS) und ihre Geschichte seit der Mehrfachteilnahme beschreibt
-[Energiedaten herunterladen](https://docs.eegfaktura.at/books/workflowprozesse/page/energiedaten-herunterladen) auf
+[Energiedaten herunterladen](https://docs.eegfaktura.at/books/hintergrundwissen/page/energiedaten-herunterladen) auf
 docs.eegfaktura.at.
 
 ### Typische Effekte

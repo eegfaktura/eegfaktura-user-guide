@@ -46,7 +46,7 @@ unter den Positionen, z. B. für einen Hinweis zur Steuer, den dir deine Steuerb
 Erzeuger- und Verbrauchertarifen gedruckt, nicht beim Mitgliedstarif.
 
 Welche Steuer gilt, klärst du bitte mit deiner Steuerberatung.
-[Hintergrund zu Mitgliedstypen und Steuersätzen (keine Steuerberatung)](https://docs.eegfaktura.at/books/workflowprozesse/page/die-umsatzsteuerlich-korrekte-ausfuhrung-von-rechnungen-und-gutschriften).
+[Hintergrund zu Mitgliedstypen und Steuersätzen (keine Steuerberatung)](https://docs.eegfaktura.at/books/hintergrundwissen/page/die-umsatzsteuerlich-korrekte-ausfuhrung-von-rechnungen-und-gutschriften).
 
 Ohne den Haken stehen die Positionen dieses Tarifs auf dem Beleg mit **0 %** in der USt-Spalte, und für sie gibt es
 keine eigene USt-Summenzeile.
