@@ -24,3 +24,7 @@ Jede Nachricht hat unten Datum, Uhrzeit und die Art. Die häufigsten:
 
 Nachrichten lassen sich nicht als gelesen markieren oder löschen. Läuft gerade eine Nachforderung, lädt die Seite
 jede Minute neu.
+
+Kommt nach einer Anmeldung oder Nachforderung auch nach Stunden nicht einmal die Bestätigung des Netzbetreibers
+(„angenommen“ bzw. „gestartet“), wende dich an den [Support](einrichtung-hilfe.md#hilfe-und-support). Die
+Energiedaten selbst brauchen länger (siehe [Wie lange dauert es?](08-prozesse.md#wie-lange-dauert-es)).

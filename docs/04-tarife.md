@@ -33,7 +33,7 @@ Zählpunktgebühr und Umsatzsteuer.
 
 1. Klicke oben in der Tarifliste auf **+**.
 2. Wähle die Art: **Mitglied**, **Erzeuger** oder **Verbraucher**. Die Art lässt sich später nicht mehr ändern.
-3. Gib die **Tarifbezeichnung** ein. Erlaubt sind Buchstaben ohne Umlaute, Ziffern, Leerzeichen, `-` und `_`; jeder
+3. Gib die **Tarifbezeichnung** ein. Erlaubt sind Buchstaben (auch Umlaute und ß), Ziffern, Leerzeichen, `-` und `_`; jeder
    Name darf nur einmal vorkommen.
 4. Fülle die Bestandteile aus (siehe unten) und klicke auf **Änderungen speichern**. Ein Zahlenfeld, das du leerst,
    zählt als 0.
@@ -42,7 +42,8 @@ Zählpunktgebühr und Umsatzsteuer.
 
 Hake **Umsatzsteuer anführen** an, wenn auf dem Beleg Umsatzsteuer ausgewiesen werden soll. Dann trägst du
 **Umsatzsteuer in %** und optional einen **Zusatztext für Umsatzsteuer** ein. Welche Steuer gilt, klärst du bitte
-mit deiner Steuerberatung.
+mit deiner Steuerberatung. Hintergrund zu den Mitgliedstypen und Steuersätzen:
+[Umsatzsteuer bei Rechnungen und Gutschriften](https://docs.eegfaktura.at/books/workflowprozesse/page/die-umsatzsteuerlich-korrekte-ausfuhrung-von-rechnungen-und-gutschriften).
 
 Ohne den Haken stehen die Positionen dieses Tarifs auf dem Beleg mit **0 %** in der USt-Spalte, und für sie gibt es
 keine eigene USt-Summenzeile.
@@ -119,6 +120,14 @@ Wähle den Tarif, ändere die Werte und klicke auf **Änderungen speichern**.
 > **Wichtig:** Eine Abrechnung rechnet immer mit dem Tarif, wie er **beim Erstellen** der Abrechnung gilt — für den
 > ganzen Abrechnungszeitraum. Bereits **abgerechnete** Läufe ändern sich nicht. Eine **Vorschau**, die vor der
 > Änderung erstellt wurde, musst du mit **Vorschau Akt.** neu rechnen lassen.
+
+**Bewährt hat sich:**
+
+- Ändere einen bestehenden Tarif, statt einen neuen anzulegen — dann musst du ihn nicht jedem Zählpunkt neu zuweisen.
+- Schreibe den Zeitraum in die **Tarifbezeichnung** (sie steht auf dem Beleg), z. B. „Standard 2027“, und passe sie
+  beim Ändern der Preise an.
+- Ändere die Preise erst, wenn der alte Zeitraum abgerechnet ist; sonst rechnet die letzte Abrechnung des alten
+  Zeitraums schon mit den neuen Preisen.
 
 ## Tarife zuweisen
 

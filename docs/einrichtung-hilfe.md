@@ -38,7 +38,22 @@ Datenfreigabe, Viertelstundenwerte einschalten), steht in den Anleitungen der bi
 
 eegFaktura speichert die Daten der Mitglieder auf den Servern des VFEEG und verarbeitet sie für die Verrechnung.
 Darauf sollten eure Beitrittserklärung bzw. eure Verträge mit den Mitgliedern hinweisen. Wie ihr Beitrittserklärung und
-Datenverarbeitung rechtlich gestaltet, klärt bitte mit eurer Rechtsberatung oder dem VFEEG.
+Datenverarbeitung rechtlich gestaltet, klärt bitte mit eurer Rechtsberatung oder dem VFEEG. Vorlagen für Verträge mit
+den Mitgliedern bietet die Österreichische Koordinationsstelle für Energiegemeinschaften in ihrem
+[Downloadbereich](https://energiegemeinschaften.gv.at/downloadbereich/).
+
+## Weiterführende Informationen
+
+Dieses Handbuch beschreibt die Bedienung von eegFaktura. Hintergrundwissen, das darüber hinausgeht, steht auf
+**docs.eegfaktura.at**:
+
+| Thema | Wo |
+|-------|----|
+| Umsatzsteuer bei Rechnungen und Gutschriften je Mitgliedstyp | [docs.eegfaktura.at](https://docs.eegfaktura.at/books/workflowprozesse/page/die-umsatzsteuerlich-korrekte-ausfuhrung-von-rechnungen-und-gutschriften) |
+| Messreihen und OBIS-Codes der Energiedaten | [docs.eegfaktura.at](https://docs.eegfaktura.at/books/workflowprozesse/page/energiedaten-herunterladen) |
+| Datenkontrolle in der Praxis, Excel-Vorlage für Viertelstundenwerte | [docs.eegfaktura.at](https://docs.eegfaktura.at/books/workflowprozesse/page/datenkontrolle-energie) |
+| Nachrichten je Prozess mit den Beschreibungen der ebUtilities | [docs.eegfaktura.at](https://docs.eegfaktura.at/books/workflowprozesse/page/prozess-history) |
+| Anleitungen der Netzbetreiber-Portale | [docs.eegfaktura.at](https://docs.eegfaktura.at/shelves/netz-betreiber-infos) |
 
 ## Hilfe und Support
 

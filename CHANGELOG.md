@@ -5,6 +5,20 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 ## [Unreleased]
 
 ### Added
+- Consolidation with the BookStack book „Workflow/Prozesse“ on docs.eegfaktura.at (the guide is the leading
+  documentation; BookStack keeps background knowledge only). Taken over from there:
+  - chapter 1: how to read the bars of „Lastverlauf“ and „Tagesverlauf“;
+  - chapter 2: create the tariffs first; remind a member whose consent is pending; without a smart meter the
+    completion can take long; after a direction change pick a tariff of the new direction (the old one stays);
+  - chapter 4: proven practice when changing tariffs; link to the VAT background page;
+  - chapter 6: link to the OBIS background page;
+  - chapter 7: no answer after hours → support;
+  - chapter 8: choose a large enough period in the process history; „Noch kein fernauslesbarer Zähler eingebaut“ gets
+    its own row — a hint, not a rejection (EC_REQ_ONL: the registration continues), also for a smart meter not yet
+    in operation; participation limit 5; a monthly data check routine; links to the
+    BookStack pages on messages and data control;
+  - „Einrichtung & Hilfe“: contract templates of the coordination office; new section „Weiterführende
+    Informationen“ with the BookStack pages that remain.
 - Chapter 2, master data import: the columns `MandatRef` (mandate reference) and `MandatDat` (mandate date) are
   documented; the import read them already. For `CORE`/`B2B` both should be filled.
 - Chapter 2, „Import zuerst mit wenigen Mitgliedern testen“: test the master data import with two or three members
@@ -18,6 +32,11 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
   „In der Pilot-Zone“.
 
 ### Changed
+- Chapter 4, „Einen Tarif anlegen“ (tracking web 261126-mm2): the tariff name allows umlauts and ß (platform#228);
+  the guide still said „ohne Umlaute“. Pre-existing wrong statement.
+- Chapter 2, „Gut zu wissen“, member without e-mail (tracking web 261126-mm1): „leave the field empty“ cannot be done,
+  the form requires an e-mail. Now: only the master data import creates a member without e-mail; it gets no mails;
+  no made-up address. Pre-existing wrong statement.
 - Chapter 2, import: an existing member does not get „only the new metering points“ — if it already has one of the
   file's metering points, nothing is imported for it (error under Nachrichten). Pre-existing wrong statement.
 - Pilot hint removed with the prod release of 21.11.2026 (web 1.27.0): „Nach Energiemenge sortieren“ applies to
