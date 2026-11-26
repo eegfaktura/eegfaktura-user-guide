@@ -5,6 +5,19 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 ## [Unreleased]
 
 ### Added
+- Consolidation with the BookStack book „Workflow/Prozesse“ on docs.eegfaktura.at (the guide is the leading
+  documentation; BookStack keeps background knowledge only). Taken over from there:
+  - chapter 1: how to read the bars of „Lastverlauf“ and „Tagesverlauf“;
+  - chapter 2: create the tariffs first; remind a member whose consent is pending; without a smart meter the
+    completion can take long; after a direction change pick a tariff of the new direction (the old one stays);
+  - chapter 4: proven practice when changing tariffs; link to the VAT background page;
+  - chapter 6: link to the OBIS background page;
+  - chapter 7: no answer after hours → support;
+  - chapter 8: choose a large enough period in the process history; „noch kein fernauslesbarer Zähler“ also for a
+    smart meter that is not yet in operation; participation limit 5; a monthly data check routine; links to the
+    BookStack pages on messages and data control;
+  - „Einrichtung & Hilfe“: contract templates of the coordination office; new section „Weiterführende
+    Informationen“ with the BookStack pages that remain.
 - Chapter 2, master data import: the columns `MandatRef` (mandate reference) and `MandatDat` (mandate date) are
   documented; the import read them already. For `CORE`/`B2B` both should be filled.
 - Chapter 2, „Import zuerst mit wenigen Mitgliedern testen“: test the master data import with two or three members

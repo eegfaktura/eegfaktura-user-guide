@@ -81,6 +81,10 @@ Der Netzbetreiber schickt je Zählpunkt mehrere Messreihen. eegFaktura verwendet
 Abgerechnet wird beim Erzeuger **Erzeugung minus Überschuss**, also der in der Gemeinschaft verteilte Teil. Das zeigen
 auch die Karten in der Mitgliederliste.
 
+Die Codes der Messreihen (OBIS) und ihre Geschichte seit der Mehrfachteilnahme beschreibt
+[Energiedaten herunterladen](https://docs.eegfaktura.at/books/workflowprozesse/page/energiedaten-herunterladen) auf
+docs.eegfaktura.at.
+
 ### Typische Effekte
 
 - **Zeitumstellung:** Ein Tag der Umstellung hat 92 bzw. 100 Viertelstunden statt 96 — beim Nachrechnen von Hand

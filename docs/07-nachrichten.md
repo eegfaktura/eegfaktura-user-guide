@@ -24,3 +24,6 @@ Jede Nachricht hat unten Datum, Uhrzeit und die Art. Die häufigsten:
 
 Nachrichten lassen sich nicht als gelesen markieren oder löschen. Läuft gerade eine Nachforderung, lädt die Seite
 jede Minute neu.
+
+Bleibt nach einer Anmeldung oder Nachforderung auch nach Stunden jede Rückmeldung aus, wende dich an den
+[Support](einrichtung-hilfe.md#hilfe-und-support).

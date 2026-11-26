@@ -193,6 +193,7 @@ daneben **verschiebt** den Zählpunkt zu einem anderen Mitglied (bisherige Rechn
 
 Die **Richtung** (Verbraucher/Erzeuger) eines angemeldeten Zählpunkts ist gesperrt. Ein EEG-Admin kann sie über das
 Pfeil-Symbol ändern; eegFaktura warnt vorher, denn die Änderung wird **nicht** an den Netzbetreiber gemeldet.
+Der bisherige Tarif bleibt dabei stehen: Wähle danach einen Tarif der neuen Richtung.
 
 ### Status eines Zählpunkts
 
@@ -201,8 +202,8 @@ Ist ein Zählpunkt nicht aktiv, steht über den Details ein Hinweis zum Stand:
 | Hinweis | Bedeutung |
 |---------|-----------|
 | Antwort des Netzbetreibers noch ausstehend. | Die Anmeldung ist beim Netzbetreiber, er hat noch nicht geantwortet. |
-| Zustimmung des Mitglieds noch ausstehend. | Das Mitglied muss die Datenfreigabe noch bestätigen; es bekommt dazu die Mail „Freigabe-Aufforderung“. |
-| Abschlussmeldung vom Netzbetreiber noch ausstehend. | Das Mitglied hat zugestimmt, die Abschlussmeldung des Netzbetreibers fehlt noch. |
+| Zustimmung des Mitglieds noch ausstehend. | Das Mitglied muss die Datenfreigabe noch bestätigen; es bekommt dazu die Mail „Freigabe-Aufforderung“. Dauert es länger, erinnere das Mitglied — nach Ablauf der Frist lehnt der Netzbetreiber ab. |
+| Abschlussmeldung vom Netzbetreiber noch ausstehend. | Das Mitglied hat zugestimmt, die Abschlussmeldung des Netzbetreibers fehlt noch. Ohne Smart Meter kann das dauern, bis der Netzbetreiber ihn eingebaut hat; du musst dafür nichts tun. |
 | Zählpunkt wurde vom Netzbetreiber abgewiesen. | Der Netzbetreiber hat die Anmeldung abgelehnt. |
 | Zählpunkt wurde vom Netzbetreiber nicht angenommen. | Die Anmeldung war ungültig, z. B. weil die Zählpunktnummer nicht gefunden wurde. |
 | Zählpunkt wurde vom Netzbetreiber aufgehoben. | Der Netzbetreiber hat die Teilnahme beendet. |
@@ -217,6 +218,8 @@ richtest du dich: Ist der Fehler behoben (z. B. Nummer korrigiert), meldest du d
 Einen ungültigen Zählpunkt, der nie angemeldet wurde, kannst du hier mit **Löschen** entfernen.
 
 ## Neues Mitglied anlegen
+
+Lege zuerst die [Tarife](04-tarife.md) an — beim Zählpunkt wählst du einen davon aus.
 
 1. Klicke in der Mitgliederliste oben auf **Plus**. Es öffnet sich **Registrieren**.
 

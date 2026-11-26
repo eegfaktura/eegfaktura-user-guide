@@ -115,6 +115,13 @@ die Schritte mit Datum (TT.MM.JJJJ) und Uhrzeit, **Protokoll** und **Status** bz
 **Eine Ablehnung lesen:** In der Spalte Protokoll steht dann ABLEHNUNG, in Status oder Info der Grund, z. B.
 „Zählpunkt nicht gefunden“, „Kunde hat Datenfreigabe abgelehnt“ oder „Prozessdatum falsch“.
 
+**Zeitraum groß genug wählen:** Die History zeigt nur Schritte im gewählten Zeitraum. Liegt der Beginn eines Vorgangs
+davor, fehlen seine ersten Schritte. Bei „konkurrierende Prozesse“ hilft ein größerer Zeitraum, den Vorgang zu finden,
+der noch läuft.
+
+Alle Nachrichten je Prozess mit den Beschreibungen der ebUtilities und Beispielen:
+[Prozess History](https://docs.eegfaktura.at/books/workflowprozesse/page/prozess-history) auf docs.eegfaktura.at.
+
 ### Nachrichtenarten in der Spalte Protokoll
 
 | Bereich | Ablauf |
@@ -135,14 +142,14 @@ Eine angenommene Anforderung (ANTWORT_PT) heißt noch nicht, dass die Daten da s
 | Zählpunkt befindet sich nicht im Bereich der Energiegemeinschaft | der Zählpunkt liegt außerhalb des Gebiets der Gemeinschaft; häufig ist auch ein Einspeisezählpunkt beim Netzbetreiber noch nicht fertig eingerichtet |
 | Kunde hat Datenfreigabe abgelehnt | das Mitglied hat im Portal abgelehnt (oft versehentlich): mit dem Mitglied klären, dann unter **Zählpunkt aktivieren** neu anmelden |
 | Kunde hat auf Datenfreigabe nicht reagiert (Timeout) | das Mitglied hat nicht rechtzeitig zugestimmt: erinnern und neu anmelden |
-| Kein Smart Meter / Noch kein fernauslesbarer Zähler eingebaut | ohne Smart Meter (bzw. ohne Fernauslesung) geht die Teilnahme noch nicht: Netzbetreiber fragen, wann getauscht wird |
+| Kein Smart Meter / Noch kein fernauslesbarer Zähler eingebaut | ohne Smart Meter (bzw. ohne Fernauslesung) geht die Teilnahme noch nicht: Netzbetreiber fragen, wann getauscht wird. Manche Netzbetreiber melden das auch, wenn der Smart Meter eingebaut, aber noch nicht in Betrieb ist |
 | Kunde hat optiert | das Mitglied hat Viertelstundenwerte im Smart Meter abgelehnt (Opt-out): das Mitglied muss beim Netzbetreiber wieder einwilligen |
 | Zählpunkt nicht versorgt | für den Zählpunkt gibt es keinen Liefervertrag mit einem Energieversorger |
 | Zählpunkt nicht dem Lieferanten zugeordnet | oft liegt der angefragte Zeitraum vor dem Aktivierungsdatum: Zeitraum ab „Aktiv ab“ wählen |
 | konkurrierende Prozesse | ein früherer Vorgang zum selben Zählpunkt läuft noch: abwarten und später erneut senden |
 | Prozessdatum falsch | beim Teilnahmefaktor meist: außerhalb 9–17 Uhr gesendet |
 | Teilnahmefaktor von 100 % würde überschritten werden / Summe … übersteigt 100% | der Zählpunkt nimmt schon an einer anderen Gemeinschaft teil: dort zuerst den Faktor senken |
-| Teilnahme-Limit wird überschritten | der Zählpunkt nimmt schon an der höchstzulässigen Zahl von Gemeinschaften teil |
+| Teilnahme-Limit wird überschritten | der Zählpunkt nimmt schon an der höchstzulässigen Zahl von Gemeinschaften teil (derzeit 5) |
 | Keine Daten im angeforderten Zeitraum vorhanden | der Netzbetreiber hat für den Zeitraum (noch) keine Werte: später erneut anfordern |
 
 Unbekannte Gründe zeigt eegFaktura als Nummer. Kommt dieselbe Ablehnung immer wieder, prüfe Zählpunktnummer und
@@ -157,4 +164,9 @@ Erfahrungswerte aus der Praxis, je nach Netzbetreiber verschieden:
   später noch. Rechne daher nicht unmittelbar nach dem Ende eines Zeitraums ab, sondern prüfe vorher die
   [Vollständigkeit](05-abrechnung.md#vorschau-erstellen).
 - Fehlen Daten ein, zwei Tage nach einer Störung noch immer, fordere sie nach; erst danach lohnt ein Ticket.
+- **Bewährte Routine:** Prüfe die Energiedaten einmal im Monat, etwa in der ersten Woche (Bilanzdifferenz im
+  Dashboard oder Mengenbilanz im Export). Fehlt etwas, fordere es nach. Fehlt es ein, zwei Tage später noch immer,
+  wende dich an den Netzbetreiber oder den Support. Mehr dazu, mit einer Excel-Vorlage für den Vergleich der
+  Viertelstundenwerte: [Datenkontrolle Energie](https://docs.eegfaktura.at/books/workflowprozesse/page/datenkontrolle-energie)
+  auf docs.eegfaktura.at.
 
