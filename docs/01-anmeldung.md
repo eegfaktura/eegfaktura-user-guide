@@ -70,11 +70,12 @@ Das **Dashboard** zeigt die wichtigsten Zahlen der Gemeinschaft, meist für den 
 
 Die Fragezeichen-Symbole neben den Werten erklären, wie eine Zahl entsteht.
 
-**Lastverlauf und Tagesverlauf lesen:** Der gestapelte Balken zeigt den Verbrauch der Mitglieder — unten der Teil aus
-der Gemeinschaft (**EEG**), darüber der Bezug vom Energieversorger (**EVU**). Daneben steht die **Erzeugung**. Ist
-der Erzeugungsbalken höher als der EEG-Teil, konnte die Gemeinschaft den Rest nicht an ihre Mitglieder verteilen.
-Der Tagesverlauf zeigt, zu welchen Tageszeiten das passiert — hilfreich, wenn ihr überlegt, welche Verbraucher gut
-zur Gemeinschaft passen.
+**Lastverlauf und Tagesverlauf lesen:** Über einen Zeitraum zeigen beide Kacheln gestapelte Balken für den Verbrauch
+der Mitglieder — unten der Teil aus der Gemeinschaft (**EEG**), darüber der Bezug vom Energieversorger (**EVU**).
+Daneben steht die Erzeugung (**Erzeugt**). Ist dieser Balken höher als der EEG-Teil, konnte die Gemeinschaft den Rest
+nicht an ihre Mitglieder verteilen — oder es fehlen noch Daten (siehe Bilanzdifferenz). Der Tagesverlauf zeigt, zu
+welchen Tageszeiten das passiert — hilfreich, wenn ihr überlegt, welche Verbraucher gut zur Gemeinschaft passen. In
+der Ansicht eines einzelnen Tags zeigt der Lastverlauf Linien statt Balken.
 
 ### Übersicht EEG
 

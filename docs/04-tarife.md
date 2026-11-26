@@ -124,7 +124,8 @@ Wähle den Tarif, ändere die Werte und klicke auf **Änderungen speichern**.
 **Bewährt hat sich:**
 
 - Ändere einen bestehenden Tarif, statt einen neuen anzulegen — dann musst du ihn nicht jedem Zählpunkt neu zuweisen.
-- Schreibe den Zeitraum in die Bezeichnung, z. B. „Standard 2027“.
+- Schreibe den Zeitraum in die **Tarifbezeichnung** (sie steht auf dem Beleg), z. B. „Standard 2027“, und passe sie
+  beim Ändern der Preise an.
 - Ändere die Preise erst, wenn der alte Zeitraum abgerechnet ist; sonst rechnet die letzte Abrechnung des alten
   Zeitraums schon mit den neuen Preisen.
 

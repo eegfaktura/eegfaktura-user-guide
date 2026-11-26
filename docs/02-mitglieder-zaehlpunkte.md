@@ -193,7 +193,8 @@ daneben **verschiebt** den Zählpunkt zu einem anderen Mitglied (bisherige Rechn
 
 Die **Richtung** (Verbraucher/Erzeuger) eines angemeldeten Zählpunkts ist gesperrt. Ein EEG-Admin kann sie über das
 Pfeil-Symbol ändern; eegFaktura warnt vorher, denn die Änderung wird **nicht** an den Netzbetreiber gemeldet.
-Der bisherige Tarif bleibt dabei stehen: Wähle danach einen Tarif der neuen Richtung.
+Der bisherige Tarif bleibt dabei gespeichert, auch wenn das Feld ihn nicht mehr anzeigt: Wähle danach einen Tarif
+der neuen Richtung.
 
 ### Status eines Zählpunkts
 
@@ -202,7 +203,7 @@ Ist ein Zählpunkt nicht aktiv, steht über den Details ein Hinweis zum Stand:
 | Hinweis | Bedeutung |
 |---------|-----------|
 | Antwort des Netzbetreibers noch ausstehend. | Die Anmeldung ist beim Netzbetreiber, er hat noch nicht geantwortet. |
-| Zustimmung des Mitglieds noch ausstehend. | Das Mitglied muss die Datenfreigabe noch bestätigen; es bekommt dazu die Mail „Freigabe-Aufforderung“. Dauert es länger, erinnere das Mitglied — nach Ablauf der Frist lehnt der Netzbetreiber ab. |
+| Zustimmung des Mitglieds noch ausstehend. | Das Mitglied muss die Datenfreigabe noch bestätigen; es bekommt dazu die Mail „Freigabe-Aufforderung“. Dauert es länger, erinnere das Mitglied — nach Ablauf der Frist (30 Arbeitstage) lehnt der Netzbetreiber ab. |
 | Abschlussmeldung vom Netzbetreiber noch ausstehend. | Das Mitglied hat zugestimmt, die Abschlussmeldung des Netzbetreibers fehlt noch. Ohne Smart Meter kann das dauern, bis der Netzbetreiber ihn eingebaut hat; du musst dafür nichts tun. |
 | Zählpunkt wurde vom Netzbetreiber abgewiesen. | Der Netzbetreiber hat die Anmeldung abgelehnt. |
 | Zählpunkt wurde vom Netzbetreiber nicht angenommen. | Die Anmeldung war ungültig, z. B. weil die Zählpunktnummer nicht gefunden wurde. |
@@ -364,8 +365,8 @@ Gut zu wissen:
   Adressen.
 - **Mitglied ohne E-Mail:** Beim Anlegen und Ändern verlangt eegFaktura eine E-Mail-Adresse. Ohne Adresse kommt ein
   Mitglied nur über den [Stammdaten-Import](#stammdaten-aus-excel-importieren) in die Liste (Spalte leer); es bekommt
-  dann keine Mails, und um später seine Daten zu ändern, brauchst du eine Adresse. Trage keine erfundene Adresse
-  ein — an sie wird geschickt.
+  dann keine Mails. Das Feld E-Mail selbst kannst du danach nur mit einer gültigen Adresse speichern. Trage keine
+  erfundene Adresse ein — an sie wird geschickt.
 - **Mitglied ohne Konto:** Wähle die Einzugsart **Kein SEPA**; die IBAN darf dann leer bleiben.
 - **Anlagenname:** Hat ein Zählpunkt einen Anlagennamen, steht in der Liste dieser Name statt der Nummer, in den
   Prozessen „Name – Nummer“ — praktisch bei mehreren Anlagen eines Mitglieds.

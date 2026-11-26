@@ -142,7 +142,8 @@ Eine angenommene Anforderung (ANTWORT_PT) heißt noch nicht, dass die Daten da s
 | Zählpunkt befindet sich nicht im Bereich der Energiegemeinschaft | der Zählpunkt liegt außerhalb des Gebiets der Gemeinschaft; häufig ist auch ein Einspeisezählpunkt beim Netzbetreiber noch nicht fertig eingerichtet |
 | Kunde hat Datenfreigabe abgelehnt | das Mitglied hat im Portal abgelehnt (oft versehentlich): mit dem Mitglied klären, dann unter **Zählpunkt aktivieren** neu anmelden |
 | Kunde hat auf Datenfreigabe nicht reagiert (Timeout) | das Mitglied hat nicht rechtzeitig zugestimmt: erinnern und neu anmelden |
-| Kein Smart Meter / Noch kein fernauslesbarer Zähler eingebaut | ohne Smart Meter (bzw. ohne Fernauslesung) geht die Teilnahme noch nicht: Netzbetreiber fragen, wann getauscht wird. Manche Netzbetreiber melden das auch, wenn der Smart Meter eingebaut, aber noch nicht in Betrieb ist |
+| Kein Smart Meter | ohne Smart Meter geht die Teilnahme nicht: Netzbetreiber fragen, wann getauscht wird |
+| Noch kein fernauslesbarer Zähler eingebaut | keine Ablehnung, sondern ein Hinweis: die Anmeldung läuft weiter, die Teilnahme beginnt erst, wenn der Smart Meter eingebaut und in Betrieb ist; du musst nichts tun. Manche Netzbetreiber melden das auch bei einem eingebauten Smart Meter, der noch nicht in Betrieb ist |
 | Kunde hat optiert | das Mitglied hat Viertelstundenwerte im Smart Meter abgelehnt (Opt-out): das Mitglied muss beim Netzbetreiber wieder einwilligen |
 | Zählpunkt nicht versorgt | für den Zählpunkt gibt es keinen Liefervertrag mit einem Energieversorger |
 | Zählpunkt nicht dem Lieferanten zugeordnet | oft liegt der angefragte Zeitraum vor dem Aktivierungsdatum: Zeitraum ab „Aktiv ab“ wählen |
@@ -165,8 +166,7 @@ Erfahrungswerte aus der Praxis, je nach Netzbetreiber verschieden:
   [Vollständigkeit](05-abrechnung.md#vorschau-erstellen).
 - Fehlen Daten ein, zwei Tage nach einer Störung noch immer, fordere sie nach; erst danach lohnt ein Ticket.
 - **Bewährte Routine:** Prüfe die Energiedaten einmal im Monat, etwa in der ersten Woche (Bilanzdifferenz im
-  Dashboard oder Mengenbilanz im Export). Fehlt etwas, fordere es nach. Fehlt es ein, zwei Tage später noch immer,
-  wende dich an den Netzbetreiber oder den Support. Mehr dazu, mit einer Excel-Vorlage für den Vergleich der
+  Dashboard oder Mengenbilanz im Export) und fordere Fehlendes nach. Mehr dazu, mit einer Excel-Vorlage für den Vergleich der
   Viertelstundenwerte: [Datenkontrolle Energie](https://docs.eegfaktura.at/books/workflowprozesse/page/datenkontrolle-energie)
   auf docs.eegfaktura.at.
 
