@@ -166,7 +166,7 @@ Erfahrungswerte aus der Praxis, je nach Netzbetreiber verschieden:
   [Vollständigkeit](05-abrechnung.md#vorschau-erstellen).
 - Fehlen Daten ein, zwei Tage nach einer Störung noch immer, fordere sie nach; erst danach lohnt ein Ticket.
 - **Bewährte Routine:** Prüfe die Energiedaten einmal im Monat, etwa in der ersten Woche (Bilanzdifferenz im
-  Dashboard oder Mengenbilanz im Export) und fordere Fehlendes nach. Mehr dazu, mit einer Excel-Vorlage für den Vergleich der
-  Viertelstundenwerte: [Datenkontrolle Energie](https://docs.eegfaktura.at/books/workflowprozesse/page/datenkontrolle-energie)
+  Dashboard oder Mengenbilanz im Export) und fordere Fehlendes nach. Mehr dazu, mit einer Excel-Vorlage für den
+  Vergleich der Viertelstundenwerte: [Datenkontrolle Energie](https://docs.eegfaktura.at/books/workflowprozesse/page/datenkontrolle-energie)
   auf docs.eegfaktura.at.
 

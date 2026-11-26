@@ -13,8 +13,9 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
   - chapter 4: proven practice when changing tariffs; link to the VAT background page;
   - chapter 6: link to the OBIS background page;
   - chapter 7: no answer after hours → support;
-  - chapter 8: choose a large enough period in the process history; „noch kein fernauslesbarer Zähler“ also for a
-    smart meter that is not yet in operation; participation limit 5; a monthly data check routine; links to the
+  - chapter 8: choose a large enough period in the process history; „Noch kein fernauslesbarer Zähler eingebaut“ gets
+    its own row — a hint, not a rejection (EC_REQ_ONL: the registration continues), also for a smart meter not yet
+    in operation; participation limit 5; a monthly data check routine; links to the
     BookStack pages on messages and data control;
   - „Einrichtung & Hilfe“: contract templates of the coordination office; new section „Weiterführende
     Informationen“ with the BookStack pages that remain.
