@@ -4,6 +4,21 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 
 ## [Unreleased]
 
+### Fixed
+- Review of the whole guide against the current code and the ebUtilities process descriptions valid since 05.10.2026
+  (tracking workspace W-261126-mm1): about 60 wrong, outdated or unclear statements corrected, one commit per chapter.
+  The most important:
+  - chapter 5: a producer with UID does not get an automatic reverse-charge credit note; only the „Firma“ texts are
+    used, VAT comes from the tariff, eegFaktura prints no reverse-charge note by itself;
+  - chapter 2: the step „Hinzufügen“ when registering a member, the field „Aktiv am …“, colours of the metering point
+    cards as the code shows them today (platform#277);
+  - chapter 8: codes 182/183 as eegFaktura shows them today (platform#276), the process history columns, ABBRUCH_ECON;
+  - chapters 1 and 6: „EVU“ in the overview is the surplus; where the period is chosen; the producer card text;
+  - chapters 3, 5, 7: invoice mail placeholders and copy, sending again, SEPA prerequisites, missing message types;
+  - „Was ist neu?“: the P2P/EVA entry of 08.11. and the menu entry „Handbuch“.
+  Not changed yet: the EDA link under „Einrichtung & Hilfe“ (waits for confirmation which EDA form applies).
+- `mkdocs.yml`: `validation` reports broken links and anchors as warnings, so `--strict` catches them.
+
 ### Added
 - Consolidation with the BookStack book „Workflow/Prozesse“ on docs.eegfaktura.at (the guide is the leading
   documentation; BookStack keeps background knowledge only). Taken over from there:
