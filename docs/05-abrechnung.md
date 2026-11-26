@@ -6,7 +6,7 @@ Mitgliedsbeitrag) und **Gutschriften** (Einspeisung). Abrechnen können nur EEG-
 Der Ablauf in Kurzform:
 
 1. [Abrechnungseinstellungen](#abrechnungseinstellungen) einmalig anlegen.
-2. In der Mitgliederliste den **Abrechnungsmodus** einschalten und den Zeitraum wählen.
+2. In der Mitgliederliste den Zeitraum wählen und den **Abrechnungsmodus** einschalten.
 3. Eine **Vorschau** erstellen und prüfen — so oft du willst.
 4. **Abrechnung durchführen** — endgültig, mit fortlaufenden Nummern.
 5. Belege **senden**, als ZIP oder Excel herunterladen, **SEPA**-Dateien erzeugen.
@@ -22,9 +22,9 @@ hinzufügen**):
 |------|-------|
 | **Rechnungen: Text vor / nach Positionen, Abschlusstext** | Texte auf jeder Rechnung, z. B. Zahlungsbedingungen |
 | **Präfix / Startwert für Rechnungsnummern** | Die Nummer setzt sich aus Präfix, Jahr des Belegdatums und laufender Nummer zusammen, z. B. `RE20260004`; die laufende Nummer beginnt je Jahr beim Startwert |
-| **Gutschriften für Mitgliedstyp Privat: Texte** | Texte auf Gutschriften an Privatpersonen |
+| **Gutschriften für Mitgliedstyp Privat: Texte** | Texte auf Gutschriften an Mitglieder **ohne UID** |
 | **Präfix / Startwert für Gutschriftennummern** | wie bei den Rechnungen, z. B. `GS20260001` |
-| **Gutschriften für Mitgliedstyp Firma: Texte** | Texte auf Gutschriften an Firmen (mit UID: Reverse Charge) |
+| **Gutschriften für Mitgliedstyp Firma: Texte** | Texte auf Gutschriften an Mitglieder **mit UID**. Es zählt das Feld UID beim Mitglied, nicht Privat oder Firma |
 | **Text für Fußzeile** | steht unten auf jedem Beleg |
 | **Dokumentennummer: Anzahl Stellen** | Länge der laufenden Nummer (1–6, mit führenden Nullen) |
 | **Bild für Logo** | das Logo oben auf den Belegen |
@@ -39,7 +39,9 @@ Die Positionen sind je Zählpunkt gruppiert („Zählpunkt AT… – Anlagenname
 
 - die **Energiemenge** mit Arbeitspreis (bei zeitbasierten Tarifen je Zeitraum),
 - bei Verbrauchern mit Freikontingent eine Zeile „Menge (…) = Verbrauch (…) abzgl. freie kWh (…)“,
-- die **Zählpunktgebühr**, wenn der Tarif eine hat,
+- die **Zählpunktgebühr**, wenn der Tarif eine hat: immer auf der Rechnung, auch für Erzeuger-Zählpunkte (ein reiner
+  Erzeuger bekommt dafür eine Rechnung neben der Gutschrift). Bei Verbrauchern gilt die USt des Tarifs, bei Erzeugern
+  **USt. für Zählpunktgebühr in %**,
 - auf Rechnungen der **Mitgliedsbeitrag** des Mitglieds-Tarifs,
 - im ersten endgültigen Lauf mit Energie (oder nach **Beitrittsgebühr nachverrechnen**) einmal die **Beitrittsgebühr**,
   immer auf einer Rechnung (ein reiner Erzeuger bekommt dafür eine eigene Rechnung neben der Gutschrift),
@@ -72,7 +74,8 @@ Im Abrechnungsmodus zeigen die Zählpunkt-Karten Beträge in € statt kWh.
 
 ## Vorschau erstellen
 
-Wähle das **Rechnungsdatum** und klicke auf **Vorschau erstellen**. Vorher prüft eegFaktura die Daten des Zeitraums:
+Wähle das **Rechnungsdatum** (es darf nicht in der Zukunft liegen) und klicke auf **Vorschau erstellen**. Vorher
+prüft eegFaktura die Daten des Zeitraums:
 
 ![Prüfung vor der Abrechnung](images/abrechnung-pruefung.png)
 
@@ -92,14 +95,20 @@ Sind die Energiedaten des Zeitraums noch nicht geladen oder gibt es darin kein a
 eegFaktura nach der Prüfung keinen Lauf und nennt unter „Abrechnung nicht möglich“ den Grund. Ein Zeitraum ganz ohne
 Energiedaten wird also nicht abgerechnet.
 
-Die Vorschau erstellt Belege mit dem Zusatz „Vorschau“ und ohne Nummern:
+Die Vorschau erstellt Belege ohne Nummer: Im PDF steht statt der Nummer „-- E N T W U R F --“, der Dateiname enthält
+„Vorschau“.
 
 ![Vorschau](images/abrechnung-vorschau.png)
 
+Die Knöpfe sind in der Oberfläche großgeschrieben, z. B. „VORSCHAU ERSTELLEN“.
+
 - Die Tabelle zeigt Rechnungen und Gutschriften netto, USt und brutto; **Saldo Zahlungen (brutto)** ist die zu
-  erwartende Kontobewegung.
-- **Marge bei Regelbesteuerung (netto)** ist ein rechnerischer Wert zur Orientierung, kein Buchungsbetrag und keine
-  steuerliche Beratung.
+  erwartende Kontobewegung. Der Pfeil links davon klappt die Aufstellung zu und auf.
+- Darunter steht je nach euren Verbrauchertarifen **Marge bei Regelbesteuerung (netto)** (Tarife mit USt) oder
+  **Marge bei Kleinunternehmerregelung (brutto)** (Tarife ohne USt), bei gemischten Tarifen beide. Gibt es
+  Gutschriften an Erzeuger mit UID, zeigt eegFaktura zusätzlich „Rechnerische USt bei Reverse Charge (20 %)“ oder,
+  wenn auf solchen Gutschriften USt ausgewiesen ist, einen gelben Hinweis. Das sind rechnerische Werte zur
+  Orientierung, keine Buchungsbeträge und keine steuerliche Beratung.
 - Den **Mitgliedsbeitrag** bekommt ein Mitglied nur, wenn es im Zeitraum mindestens einen Zählpunkt mit Energiedaten
   hat.
 - Ist eine [Beitrittsgebühr](04-tarife.md#beitrittsgebuhr) fällig, steht sie in den Beträgen des Mitglieds in einer
@@ -113,7 +122,8 @@ Die Vorschau erstellt Belege mit dem Zusatz „Vorschau“ und ohne Nummern:
 Bei Gemeinschaften mit dem Modell **P2P** oder **EVA** gibt es nur die Vorschau, keine endgültige Abrechnung (siehe
 [Peer-to-Peer und Eigenversorgung](01-anmeldung.md#peer-to-peer-und-eigenversorgung)).
 
-Passt die Vorschau, klicke auf **Abrechnung durchführen**. Die endgültigen Belege werden dabei **neu berechnet** — mit
+Passt die Vorschau, klicke auf **Abrechnung durchführen** (die Zahl in Klammern am Knopf nennt die Mitglieder mit
+Beträgen). Die endgültigen Belege werden dabei **neu berechnet** — mit
 den Tarifen, Stammdaten und Energiedaten im Moment des Klicks. Hat sich seit
 der Vorschau etwas geändert, erstelle sie mit **Vorschau Akt.** direkt davor neu. eegFaktura prüft noch einmal und
 warnt ausdrücklich:
@@ -121,14 +131,23 @@ warnt ausdrücklich:
 ![Abrechnung durchführen](images/abrechnung-durchfuehren.png)
 
 > **Die Abrechnung ist endgültig.** Die Belege bekommen fortlaufende Nummern und lassen sich danach nicht mehr ändern
-> oder löschen. Ein Belegdatum in der Zukunft ist nicht erlaubt.
+> oder löschen. Ein Rechnungsdatum in der Zukunft ist nicht erlaubt.
 
 Endgültige Läufe einer Gemeinschaft laufen nacheinander: Startest du einen, während ein anderer noch läuft (z. B.
 für einen zweiten Zeitraum), bricht er ab mit „Ein endgültiger Abrechnungslauf dieser Gemeinschaft läuft gerade –
 bitte nach dessen Ende erneut starten“.
 
-Belege mit dem Betrag 0 werden nicht erstellt. Erzeuger ohne UID bekommen eine **Gutschrift**, Erzeuger mit UID eine
-**Gutschrift im Reverse-Charge-Verfahren** (mit den Texten „Gutschriften für Mitgliedstyp Firma“).
+Schlägt ein Lauf fehl, steht unten „Abrechnung fehlgeschlagen (…)“ mit dem Grund. Behebe ihn und erstelle die
+Vorschau neu. Einen Zeitraum, der sich mit einem schon endgültig abgerechneten überschneidet, rechnet eegFaktura
+nicht noch einmal ab.
+
+Belege mit dem Betrag 0 werden nicht erstellt. Erzeuger ohne UID bekommen eine Gutschrift mit den Texten
+„Gutschriften für Mitgliedstyp Privat“, Erzeuger mit eingetragener UID eine Gutschrift mit den Texten „Gutschriften
+für Mitgliedstyp Firma“. Ob Umsatzsteuer auf der Gutschrift steht, bestimmt allein der Erzeugertarif
+(**Umsatzsteuer anführen**). eegFaktura druckt von sich aus keinen Hinweis auf Reverse Charge; einen solchen Text
+trägst du selbst ein, in den Texten für Mitgliedstyp Firma oder im
+[Zusatztext des Tarifs](04-tarife.md#umsatzsteuer). Ob Reverse Charge anzuwenden ist, klärst du mit deiner
+Steuerberatung.
 
 ## Nach der Abrechnung
 
@@ -141,8 +160,10 @@ Belege mit dem Betrag 0 werden nicht erstellt. Erzeuger ohne UID bekommen eine *
 | **EXCEL** | Aufstellung aller Belege und Positionen, z. B. für die Buchhaltung |
 | **SEPA** | Dateien für die Bank (siehe unten) |
 
-> **Vor dem Senden:** **SENDEN** geht pro Lauf nur **einmal**. Einzelne Mails, die nicht zugestellt werden können
-> (fehlende oder ungültige Adresse), zeigt eegFaktura nicht an, und der Versand lässt sich nicht wiederholen. Prüfe die
+> **Vor dem Senden:** **SENDEN** fragt nach („Jetzt … Abrechnungsdokumente per E-Mail an die Mitglieder versenden?“)
+> und geht pro Lauf nur **einmal**: Danach steht am Knopf „Bereits versendet (Datum)“. Nur wenn der Mailserver gar
+> keine Mail bestätigt hat, heißt der Knopf **Erneut senden**. Einzelne Mails, die nicht zugestellt werden können
+> (fehlende oder ungültige Adresse), zeigt eegFaktura nicht an, und sie lassen sich nicht nachsenden. Prüfe die
 > E-Mail-Adressen deshalb vorher und gib Mitgliedern ohne Mail ihren Beleg aus dem **DOWNLOAD** (ZIP).
 
 **Dateinamen im ZIP:** Rechnungen und Gutschriften heißen wie der Beleg, mit der Belegnummer, z. B.
@@ -154,6 +175,10 @@ Belege mit dem Betrag 0 werden nicht erstellt. Erzeuger ohne UID bekommen eine *
 
 ![SEPA Dateien](images/abrechnung-sepa.png)
 
+Voraussetzung sind IBAN und BIC der Gemeinschaft (EEG-Seite → Bankdaten), für Lastschriften zusätzlich die
+Creditor-ID. Fehlt IBAN oder BIC, entsteht keine Datei, und eegFaktura meldet z. B. „Die BIC der EEG wurde noch nicht
+konfiguriert.“
+
 1. Wähle **Einzug am** (für die Lastschriften, voreingestellt heute) und **Überweisung am** (für die Gutschriften,
    voreingestellt fünf Tage später, nicht am Wochenende). Liegt die Überweisung vor dem Einzug, warnt eegFaktura.
    Passe das Einzugsdatum an das an, was eure Rechnungstexte versprechen.
@@ -162,8 +187,12 @@ Belege mit dem Betrag 0 werden nicht erstellt. Erzeuger ohne UID bekommen eine *
    Ist die Summe positiv, wird sie eingezogen, ist sie negativ, überwiesen, bei 0 gibt es keine Buchung. Beispiel:
    Rechnung 50 €, Gutschrift 20 € → Einzug 30 €. Ohne den Haken wird jeder Beleg einzeln gebucht. Beides ist
    voreingestellt.
-4. Klicke auf **Generieren** und lade die Dateien mit **Herunterladen** herunter. Sie werden im Browser erstellt und
-   nicht auf dem Server gespeichert.
+4. Klicke auf **Generieren** und lade die Dateien mit **Herunterladen** herunter. Es entstehen bis zu drei Dateien:
+   Lastschrift CORE, Lastschrift B2B und Überweisung (Gutschriften). Sie werden im Browser erstellt und nicht auf dem
+   Server gespeichert.
+
+Bankdaten, Mandat und Einzugsart stammen aus den Belegen des Laufs, also vom Stand beim Abrechnen. Änderst du sie
+danach beim Mitglied, wirkt das erst im nächsten Lauf; diesen Fall wickelst du händisch ab.
 
 Die Hinweise darunter nennen, was nicht in den Dateien ist, z. B.:
 
@@ -244,8 +273,9 @@ eine Vorschau gerade rechnet, wartet der Wechsel wie bei jeder laufenden Berechn
 - Bestehende Belege, ihre Nummern und Exporte bleiben unverändert. Schon abgerechnete Zeiträume werden nicht neu
   berechnet.
 - Nach dem Wechsel bietet eegFaktura bei der Abrechnung die Zeiträume des neuen Intervalls an.
-- **Mitgliedsbeitrag, Zählpunktgebühr und kostenlose Energie (kWh)** gelten **je Abrechnung**. Bleibt der Tarif gleich,
-  ändert sich mit dem Intervall also der Jahresbetrag: Ein Mitgliedsbeitrag von 5 € ergibt monatlich abgerechnet 60 € im Jahr,
+- **Mitgliedsbeitrag, Zählpunktgebühr und kostenlose Energie (kWh)** gelten
+  **je Abrechnungsintervall**, das heißt je Abrechnung. Bleibt der Tarif gleich, ändert sich mit dem Intervall also
+  der Jahresbetrag: Ein Mitgliedsbeitrag von 5 € ergibt monatlich abgerechnet 60 € im Jahr,
   vierteljährlich abgerechnet 20 €. Prüfe deshalb vor dem Wechsel die [Tarife](04-tarife.md) und passe die Beträge an.
 - Die einmalige [Beitrittsgebühr](04-tarife.md#beitrittsgebuhr) ist nicht betroffen.
 
