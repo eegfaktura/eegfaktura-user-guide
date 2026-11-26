@@ -673,7 +673,7 @@ sie und rechnet daraus die Anteile der Gemeinschaft.</p>
 <p>Jede Zählpunkt-Karte zeigt die Energiemenge im gewählten Zeitraum:</p>
 <ul>
 <li>bei <strong>Verbrauchern</strong> den Anteil, den sie aus der Gemeinschaft bezogen haben,</li>
-<li>bei <strong>Erzeugern</strong> den Teil ihrer Einspeisung, der nicht in der Gemeinschaft verteilt wurde.</li>
+<li>bei <strong>Erzeugern</strong> den Teil ihrer Einspeisung, der in der Gemeinschaft verteilt wurde (Erzeugung minus Überschuss).</li>
 </ul>
 <p>Den Zeitraum wählst du oben in der Liste.</p>
 <h2 id="diagramm-eines-zahlpunkts">Diagramm eines Zählpunkts<a class="headerlink" href="#diagramm-eines-zahlpunkts" title="Link zu diesem Abschnitt">&para;</a></h2>
@@ -729,7 +729,8 @@ erreichbar, sagt eegFaktura das; der Export enthält dann alle Mitglieder, nur d
 <p>Die Excel-Datei mit den Energiedaten hat zwei Blätter:</p>
 <ul>
 <li><strong>Summary</strong>: Summen der Gemeinschaft (Verbrauch, Erzeugung, Eigendeckung, Überschuss, Mengenbilanz — sie sollte
-  nahe 0 sein) und je Zählpunkt, ab wann und bis wann Daten da sind und ob sie <strong>vollständig</strong> sind.</li>
+  nahe 0 sein) und je Zählpunkt, ab wann und bis wann Daten da sind und ob sie <strong>vollständig</strong> sind. Die Spalten
+  <strong>L0</strong>, <strong>L2</strong> und <strong>L3</strong> zählen die betroffenen Viertelstunden; die Notiz an der Zahl nennt die Tage.</li>
 <li><strong>Energiedaten</strong>: alle Viertelstundenwerte je Zählpunkt.</li>
 </ul>
 <p>Die Farben zeigen die Qualität der Werte:</p>
@@ -812,7 +813,7 @@ docs.eegfaktura.at.</p>
 <li><strong>Korrekturen:</strong> Vorläufige Werte (L3) ersetzt der Netzbetreiber später durch gemessene oder Ersatzwerte (L2).
   Kleine Differenzen von Bruchteilen eines Prozents zwischen zwei Abfragen sind dadurch normal.</li>
 <li><strong>Mengenbilanz</strong> im Export und <strong>Bilanzdifferenz</strong> im Dashboard sollten nahe 0 sein. Größere Abweichungen deuten auf
-  fehlende Daten hin — siehe <a href="../01-anmeldung/#dashboard">Bilanzdifferenz</a>.</li>
+  fehlende Daten hin — siehe <a href="../01-anmeldung/#bilanzdifferenz">Bilanzdifferenz</a>.</li>
 </ul>
 <h2 id="energiedaten-importieren">Energiedaten importieren<a class="headerlink" href="#energiedaten-importieren" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p>Der Knopf mit der Wolke öffnet <strong>Upload Daten für …</strong>. Mit <strong>Stammdaten</strong> liest du Mitglieder und Zählpunkte aus einer

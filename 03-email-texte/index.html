@@ -738,8 +738,11 @@ den Standardtext. Der Kasten darunter sagt das ausdrücklich, Betreff und Text s
 <p>Die grün hinterlegten Felder sind <strong>Platzhalter</strong>. Sie werden beim Versand für jedes Mitglied ersetzt, z. B.
 „Vorname“ durch den Vornamen des Mitglieds oder „Zählpunkt“ durch die Zählpunktnummer. Der <strong>Kontaktblock der
 EEG</strong> ist ein <strong>Baustein</strong>: Er wird durch EEG Bezeichnung, Kontaktperson, Adresse, Telefon, E-Mail und Webseite der
-Gemeinschaft ersetzt (leere Angaben fallen weg). Die Rechnungs-Mail hat stattdessen den Baustein <strong>Kontaktdaten der
-EEG</strong>; er kommt aus den Angaben des Belegs, und dort gibt es zusätzlich den Platzhalter <strong>Empfängername</strong>.</p>
+Gemeinschaft ersetzt (leere Angaben fallen weg).</p>
+<p>Die Rechnungs-Mail hat eigene Platzhalter: <strong>Empfängername</strong>, <strong>Belegart</strong>, <strong>Abrechnungszeitraum</strong>, <strong>Name der
+EEG</strong>, <strong>E-Mail der EEG</strong>, <strong>Fußzeile der Belege</strong> und den Baustein <strong>Kontaktdaten der EEG</strong> (Adresse, Telefon,
+E-Mail und Web aus den Angaben des Belegs). Ihr Standardtext endet mit dem Namen der EEG und der Fußzeile der Belege;
+den Baustein mit den Kontaktdaten fügst du bei Bedarf selbst ein.</p>
 <p><strong>Vorschau</strong> und <strong>Testmail</strong> funktionieren auch mit dem Standardtext.</p>
 <h2 id="eigenen-text-verwenden">Eigenen Text verwenden<a class="headerlink" href="#eigenen-text-verwenden" title="Link zu diesem Abschnitt">&para;</a></h2>
 <ol>
@@ -803,18 +806,21 @@ Ein neues Bild ist zunächst <strong>Klein</strong> (200 px breit). Klickst du e
 <p>Damit eure Mails nicht im Spam landen, prüft eegFaktura die Links beim Speichern, bei der Vorschau und bei der
 Testmail:</p>
 <ul>
-<li>höchstens <strong>3 Links</strong> je Mail, E-Mail-Links (<code>mailto:</code>) mitgezählt,</li>
-<li>höchstens <strong>2 Domains</strong> (<code>portal.netz.at</code> und <code>www.netz.at</code> zählen als eine); E-Mail-Links zählen hier nicht,</li>
+<li>höchstens <strong>3 Links</strong> je Mail; E-Mail-Links (<code>mailto:</code> — ein Klick öffnet eine neue Mail) zählen mit,</li>
+<li>höchstens <strong>2 Domains</strong>. Es zählt die Hauptdomain, z. B. <code>netz.at</code>: <code>portal.netz.at</code> und <code>www.netz.at</code> zählen
+  als eine. E-Mail-Links zählen hier nicht,</li>
 <li>die feste Zeile unten zählt bei beidem nicht mit,</li>
 <li>Links beginnen mit <code>https://</code> oder <code>mailto:</code>,</li>
-<li>keine Kurz-Links (z. B. bit.ly) und keine IP-Adressen,</li>
+<li>keine Kurz-Links (z. B. bit.ly) und keine Adressen, die nur aus Zahlen bestehen (IP-Adressen),</li>
 <li>steht im Linktext eine Adresse, muss es dieselbe sein wie das Ziel des Links,</li>
-<li>kein Platzhalter in einem Link,</li>
-<li>Domains mit Umlauten schreibst du in der Form mit <code>xn--</code> (z. B. <code>xn--mnchen-3ya.at</code> statt <code>münchen.at</code>).</li>
+<li>kein Platzhalter in einem Link.</li>
 </ul>
+<p>Der Standardtext der <strong>Freigabe-Aufforderung</strong> enthält bereits einen Link. Startest du von seiner Kopie, zählt er mit.</p>
 <p>Verstößt ein Text gegen eine Regel, speichert eegFaktura ihn nicht und nennt den Grund. Ausnahme: Fügst du Text mit
 einem <code>http://</code>-Link ein, bleibt nur der Text stehen, der Link fällt ohne Meldung weg. Prüfe eingefügte Links
 deshalb in der Vorschau.</p>
+<p>Selten nötig: Eine Domain mit Umlaut schreibst du in der Form mit <code>xn--</code> (z. B. <code>xn--mnchen-3ya.at</code> statt
+<code>münchen.at</code>).</p>
 <h2 id="vorschau-und-testmail">Vorschau und Testmail<a class="headerlink" href="#vorschau-und-testmail" title="Link zu diesem Abschnitt">&para;</a></h2>
 <ul>
 <li>
@@ -862,14 +868,17 @@ nicht gespeichert ist. So kannst du Änderungen prüfen, bevor du sie speicherst
 <h2 id="gut-zu-wissen">Gut zu wissen<a class="headerlink" href="#gut-zu-wissen" title="Link zu diesem Abschnitt">&para;</a></h2>
 <ul>
 <li><strong>Kopie an die Gemeinschaft:</strong> Die Mails „Freigabe-Aufforderung“, „Zählpunkt aktiv“ und „Zählpunkt inaktiv“ gehen
-  mit der E-Mail-Adresse der Gemeinschaft (EEG-Seite → Kontakt) in Kopie hinaus.</li>
+  mit der E-Mail-Adresse der Gemeinschaft (EEG-Seite → Kontakt) in Kopie hinaus. Auch die Mail „Rechnung /
+  Gutschrift“ geht in Kopie an die Gemeinschaft, an die Adresse zum Zeitpunkt der Abrechnung.</li>
 <li><strong>Wenn eure Fassung nicht verwendet werden kann:</strong> Lässt sich ein gespeicherter eigener Text beim Versand nicht
   verwenden, verschickt eegFaktura den Standardtext — die Mail kommt also trotzdem an. Bei den Mitglieder-Mails
-  meldet eegFaktura das unter <strong>Nachrichten</strong>, bei der Rechnungs-Mail mit einem Hinweis im Versandprotokoll des
-  Abrechnungslaufs. Prüfe dann deinen Text in der Vorschau.</li>
+  meldet eegFaktura das unter <strong>Nachrichten</strong>; prüfe dann deinen Text in der Vorschau. Bei der Rechnungs-Mail siehst
+  du davon nichts in eegFaktura: Der Hinweis steht nur im internen Versandprotokoll, das der Support einsehen kann.
+  Prüfe eine eigene Rechnungs-Mail deshalb vor dem Versand mit <strong>Vorschau</strong> und <strong>Testmail</strong>.</li>
 <li><strong>Der Standardtext wurde überarbeitet:</strong> Ändert eegFaktura einen Standardtext, während ihr einen eigenen Text
   verwendet, siehst du „Der Standardtext wurde inzwischen überarbeitet.“ Mit <strong>Neuen Standard ansehen</strong> vergleichst
-  du, mit <strong>Neuen Standard übernehmen</strong> startest du von der neuen Fassung. Eure Fassung bleibt bis dahin gültig.</li>
+  du. <strong>Neuen Standard übernehmen</strong> lädt die neue Fassung in den Editor. Verschickt wird sie erst, wenn du auf
+  <strong>Speichern</strong> klickst; bis dahin gilt eure bisherige Fassung.</li>
 <li><strong>Zwei Personen gleichzeitig:</strong> Hat jemand anderer die Mail inzwischen gespeichert, meldet eegFaktura „Diese Mail
   wurde inzwischen geändert …“. Mit <strong>Neu laden</strong> holst du den aktuellen Stand.</li>
 <li><strong>Ungespeichert zurück:</strong> <strong>Zurück zur Liste</strong> fragt nach, wenn noch Änderungen offen sind.</li>

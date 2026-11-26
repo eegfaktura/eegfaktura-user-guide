@@ -561,7 +561,8 @@
 <p>Unter <strong>Nachrichten</strong> (nur EEG-Admins) zeigt eegFaktura die Rückmeldungen des Netzbetreibers und eigene Hinweise,
 die neuesten oben. Die Seite zeigt die letzten 30 Nachrichten.</p>
 <p><img alt="Nachrichten" src="../images/nachrichten.png" /></p>
-<p>Jede Nachricht hat unten Datum, Uhrzeit und die Art. Die häufigsten:</p>
+<p>Jede Nachricht hat unten Datum, Uhrzeit und ein technisches Kürzel für die Art (z. B. <code>ANTWORT_ECON</code>). Das Kürzel
+hilft dem Support, du brauchst es sonst nicht. Die häufigsten Nachrichten:</p>
 <table>
 <thead>
 <tr>
@@ -591,8 +592,12 @@ die neuesten oben. Die Seite zeigt die letzten 30 Nachrichten.</p>
 <td>eine Nachforderung wurde angenommen; die Daten kommen danach in eigenen Nachrichten, bei vielen Zählpunkten kann das Stunden dauern</td>
 </tr>
 <tr>
+<td><strong>Energiedaten-Anforderung läuft</strong></td>
+<td>Zwischenstand einer laufenden Nachforderung; Zählpunkte ohne Antwort stehen unter „Antwort noch offen“. Die Nachricht wird danach zur Zusammenfassung</td>
+</tr>
+<tr>
 <td><strong>Zusammenfassung Energiedaten-Anforderung</strong></td>
-<td>Ergebnis einer Nachforderung: angefordert, angenommen, abgelehnt, keine Antwort. <strong>Datenstand prüfen</strong> zeigt, ob die Daten inzwischen da sind</td>
+<td>Ergebnis einer Nachforderung: wie viele Zählpunkte angefordert und angenommen wurden, darunter aufklappbar „Abgelehnt“, „Keine Antwort“, „Bereits angefordert“ (mit „frei ab …“), „Nicht angefordert“ und „Keine fehlenden Daten oder L3-Werte“. <strong>Datenstand prüfen</strong> zeigt, ob die Daten inzwischen da sind</td>
 </tr>
 <tr>
 <td>Datenfreigabe aufgehoben</td>
@@ -603,20 +608,24 @@ die neuesten oben. Die Seite zeigt die letzten 30 Nachrichten.</p>
 <td>der Netzbetreiber hat eine Abmeldung bestätigt oder abgelehnt; eine Ablehnung nennt den Grund, z. B. „Keine Datenfreigabe vorhanden“ (siehe <a href="../08-prozesse/#was-nach-dem-anfordern-passiert">Zählpunkt abmelden</a>)</td>
 </tr>
 <tr>
-<td>Teilnahmefaktor … (angenommen / abgelehnt)</td>
-<td>Antwort auf eine Änderung des Teilnahmefaktors; bei „Prozessdatum falsch“ zwischen 9 und 17 Uhr erneut senden</td>
+<td>Teilnahmefaktor … abgelehnt</td>
+<td>der Netzbetreiber hat eine Änderung des Teilnahmefaktors abgelehnt; bei „Prozessdatum falsch“ zwischen 9 und 17 Uhr erneut senden. Eine Annahme erscheint nur in der <a href="../08-prozesse/#prozess-history">Prozess History</a> (ANTWORT_CPF)</td>
 </tr>
 <tr>
 <td>E-Mail-Texte: …</td>
-<td>ein eigener Mailtext konnte nicht verwendet werden, es ging der Standardtext hinaus (siehe <a href="../03-email-texte/">E-Mail-Texte</a>)</td>
+<td>ein eigener Mailtext konnte nicht verwendet werden, es ging der Standardtext hinaus; oder eegFaktura hat den Standardtext einer Mail geändert, die ihr angepasst habt — eure Fassung gilt weiter (siehe <a href="../03-email-texte/">E-Mail-Texte</a>)</td>
+</tr>
+<tr>
+<td>Mailversand nicht bestätigt: …</td>
+<td>der Mailserver hat nicht rechtzeitig geantwortet; die Mail ging vermutlich trotzdem hinaus. Frag beim Empfänger nach, bevor du sie noch einmal auslöst</td>
 </tr>
 <tr>
 <td>Mailversand fehlgeschlagen: …</td>
 <td>eine der Mails zu Zählpunkten (Freigabe-Aufforderung, aktiv, inaktiv) konnte nicht verschickt werden, mit Grund. Fehler beim Versand von Rechnungen erscheinen hier <strong>nicht</strong> (siehe <a href="../05-abrechnung/#nach-der-abrechnung">Abrechnung</a>)</td>
 </tr>
 <tr>
-<td>Excel Stammdaten importiert</td>
-<td>ein Stammdaten-Import ist fertig, ggf. mit Hinweisen</td>
+<td>Excel Stammdaten importiert — Hinweise: …</td>
+<td>ein Stammdaten-Import hat Hinweise oder Fehler ergeben (siehe <a href="../02-mitglieder-zaehlpunkte/#stammdaten-aus-excel-importieren">Stammdaten aus Excel importieren</a>). Ohne Hinweise kommt keine Nachricht</td>
 </tr>
 </tbody>
 </table>

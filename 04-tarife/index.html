@@ -725,7 +725,7 @@ die Suche.</p>
 <tr>
 <td>Person</td>
 <td><strong>Mitglied</strong></td>
-<td>den Mitgliedsbeitrag je Abrechnungszeitraum</td>
+<td>den Mitgliedsbeitrag je Abrechnungsintervall (also je Abrechnung)</td>
 </tr>
 <tr>
 <td>Solarmodul</td>
@@ -752,9 +752,11 @@ Zählpunktgebühr und Umsatzsteuer.</p>
 </ol>
 <h3 id="umsatzsteuer">Umsatzsteuer<a class="headerlink" href="#umsatzsteuer" title="Link zu diesem Abschnitt">&para;</a></h3>
 <p>Hake <strong>Umsatzsteuer anführen</strong> an, wenn auf dem Beleg Umsatzsteuer ausgewiesen werden soll. Dann trägst du
-<strong>Umsatzsteuer in %</strong> und optional einen <strong>Zusatztext für Umsatzsteuer</strong> ein. Welche Steuer gilt, klärst du bitte
-mit deiner Steuerberatung. Hintergrund zu den Mitgliedstypen und Steuersätzen:
-<a href="https://docs.eegfaktura.at/books/workflowprozesse/page/die-umsatzsteuerlich-korrekte-ausfuhrung-von-rechnungen-und-gutschriften">Umsatzsteuer bei Rechnungen und Gutschriften</a>.</p>
+<strong>Umsatzsteuer in %</strong> und optional einen <strong>Zusatztext für Umsatzsteuer</strong> ein. Der Zusatztext steht auf dem Beleg
+unter den Positionen, z. B. für einen Hinweis zur Steuer, den dir deine Steuerberatung nennt. Er wird nur bei
+Erzeuger- und Verbrauchertarifen gedruckt, nicht beim Mitgliedstarif.</p>
+<p>Welche Steuer gilt, klärst du bitte mit deiner Steuerberatung.
+<a href="https://docs.eegfaktura.at/books/workflowprozesse/page/die-umsatzsteuerlich-korrekte-ausfuhrung-von-rechnungen-und-gutschriften">Hintergrund zu Mitgliedstypen und Steuersätzen (keine Steuerberatung)</a>.</p>
 <p>Ohne den Haken stehen die Positionen dieses Tarifs auf dem Beleg mit <strong>0 %</strong> in der USt-Spalte, und für sie gibt es
 keine eigene USt-Summenzeile.</p>
 <h3 id="bestandteile-je-art">Bestandteile je Art<a class="headerlink" href="#bestandteile-je-art" title="Link zu diesem Abschnitt">&para;</a></h3>
@@ -772,21 +774,23 @@ keine eigene USt-Summenzeile.</p>
 </tr>
 <tr>
 <td><strong>Erzeuger</strong></td>
-<td><strong>Arbeitspreis in ct/kWh</strong> (netto); optional <strong>Zählpunktgebühr einheben?</strong> mit Gebühr in € und eigener USt.</td>
+<td><strong>Arbeitspreis in ct/kWh</strong> (netto); optional <strong>Zählpunktgebühr einheben?</strong> mit <strong>Zählpunktgebühr in €</strong> und eigener <strong>USt. für Zählpunktgebühr in %</strong></td>
 </tr>
 <tr>
 <td><strong>Verbraucher</strong></td>
-<td><strong>Arbeitspreis in ct/kWh</strong> (netto), <strong>Kostenlose Energie in kWh</strong> (Freikontingent je Abrechnungsintervall und <strong>je Zählpunkt</strong>), <strong>Rabatt in %</strong>; optional <strong>Zählpunktgebühr einheben?</strong></td>
+<td><strong>Arbeitspreis in ct/kWh</strong> (netto), <strong>Kostenlose Energie in kWh</strong> (Freikontingent je Abrechnungsintervall und <strong>je Zählpunkt</strong>), <strong>Rabatt in %</strong>; optional <strong>Zählpunktgebühr einheben?</strong> (mit der USt des Tarifs)</td>
 </tr>
 </tbody>
 </table>
+<p>Die Zählpunktgebühr steht immer auf einer <strong>Rechnung</strong>, auch bei einem Erzeugertarif (siehe
+<a href="../05-abrechnung/#was-auf-einem-beleg-steht">Was auf einem Beleg steht</a>).</p>
 <h3 id="zeitbasierte-tarife">Zeitbasierte Tarife<a class="headerlink" href="#zeitbasierte-tarife" title="Link zu diesem Abschnitt">&para;</a></h3>
 <p>Bei <strong>Erzeuger</strong> und <strong>Verbraucher</strong> kannst du statt <strong>Einfach</strong> auch <strong>Zeitbasiert</strong> wählen. Dann gilt ein
-<strong>Basispreis</strong> und bis zu zwei Zeiträume mit eigenem Preis, z. B. ein günstigerer Mittagstarif:</p>
+<strong>Basispreis in ct/kWh</strong> und bis zu zwei Zeiträume mit eigenem Preis, z. B. ein günstigerer Mittagstarif:</p>
 <p><img alt="Neuer zeitbasierter Tarif" src="../images/tarife-neu-zeitbasiert.png" /></p>
 <ul>
-<li>Je Zeitraum: <strong>Zeitraum aktiv</strong> anhaken, <strong>Tarifname</strong>, <strong>Von</strong> und <strong>Bis</strong> (im 15-Minuten-Raster) und den
-  <strong>Preis</strong>.</li>
+<li>Je Zeitraum, hier für den ersten: <strong>Zeitraum 1 aktiv</strong> anhaken, <strong>Tarifname Zeitraum 1</strong>, <strong>Von</strong> und <strong>Bis</strong> (im
+  15-Minuten-Raster) und <strong>Preis Zeitraum 1 in ct/kWh</strong>.</li>
 <li>Mindestens ein Zeitraum muss aktiv sein. Die beiden Zeiträume dürfen sich nicht überschneiden; ein Zeitraum darf
   über Mitternacht gehen (z. B. 22:00 bis 06:00).</li>
 <li>Das Freikontingent gibt es nur bei <strong>Einfach</strong>.</li>
