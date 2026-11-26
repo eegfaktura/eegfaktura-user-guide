@@ -22,7 +22,7 @@ Das Symbol zeigt die Art:
 
 | Symbol | Art | Wofür |
 |--------|-----|-------|
-| Person | **Mitglied** | den Mitgliedsbeitrag je Abrechnungszeitraum |
+| Person | **Mitglied** | den Mitgliedsbeitrag je Abrechnungsintervall (also je Abrechnung) |
 | Solarmodul | **Erzeuger** | die Vergütung für eingespeisten Strom (Gutschrift) |
 | Stecker | **Verbraucher** | den Preis für bezogenen Strom (Rechnung) |
 
@@ -41,9 +41,12 @@ Zählpunktgebühr und Umsatzsteuer.
 ### Umsatzsteuer
 
 Hake **Umsatzsteuer anführen** an, wenn auf dem Beleg Umsatzsteuer ausgewiesen werden soll. Dann trägst du
-**Umsatzsteuer in %** und optional einen **Zusatztext für Umsatzsteuer** ein. Welche Steuer gilt, klärst du bitte
-mit deiner Steuerberatung. Hintergrund zu den Mitgliedstypen und Steuersätzen:
-[Umsatzsteuer bei Rechnungen und Gutschriften](https://docs.eegfaktura.at/books/workflowprozesse/page/die-umsatzsteuerlich-korrekte-ausfuhrung-von-rechnungen-und-gutschriften).
+**Umsatzsteuer in %** und optional einen **Zusatztext für Umsatzsteuer** ein. Der Zusatztext steht auf dem Beleg
+unter den Positionen, z. B. für einen Hinweis zur Steuer, den dir deine Steuerberatung nennt. Er wird nur bei
+Erzeuger- und Verbrauchertarifen gedruckt, nicht beim Mitgliedstarif.
+
+Welche Steuer gilt, klärst du bitte mit deiner Steuerberatung.
+[Hintergrund zu Mitgliedstypen und Steuersätzen (keine Steuerberatung)](https://docs.eegfaktura.at/books/workflowprozesse/page/die-umsatzsteuerlich-korrekte-ausfuhrung-von-rechnungen-und-gutschriften).
 
 Ohne den Haken stehen die Positionen dieses Tarifs auf dem Beleg mit **0 %** in der USt-Spalte, und für sie gibt es
 keine eigene USt-Summenzeile.
@@ -53,18 +56,21 @@ keine eigene USt-Summenzeile.
 | Art | Felder |
 |-----|--------|
 | **Mitglied** | **Mitgliedsbeitrag in €** (je Abrechnungsintervall, netto), **Rabatt in %** (ganze Zahl); optional die [Beitrittsgebühr](#beitrittsgebuhr) |
-| **Erzeuger** | **Arbeitspreis in ct/kWh** (netto); optional **Zählpunktgebühr einheben?** mit Gebühr in € und eigener USt. |
-| **Verbraucher** | **Arbeitspreis in ct/kWh** (netto), **Kostenlose Energie in kWh** (Freikontingent je Abrechnungsintervall und **je Zählpunkt**), **Rabatt in %**; optional **Zählpunktgebühr einheben?** |
+| **Erzeuger** | **Arbeitspreis in ct/kWh** (netto); optional **Zählpunktgebühr einheben?** mit **Zählpunktgebühr in €** und eigener **USt. für Zählpunktgebühr in %** |
+| **Verbraucher** | **Arbeitspreis in ct/kWh** (netto), **Kostenlose Energie in kWh** (Freikontingent je Abrechnungsintervall und **je Zählpunkt**), **Rabatt in %**; optional **Zählpunktgebühr einheben?** (mit der USt des Tarifs) |
+
+Die Zählpunktgebühr steht immer auf einer **Rechnung**, auch bei einem Erzeugertarif (siehe
+[Was auf einem Beleg steht](05-abrechnung.md#was-auf-einem-beleg-steht)).
 
 ### Zeitbasierte Tarife
 
 Bei **Erzeuger** und **Verbraucher** kannst du statt **Einfach** auch **Zeitbasiert** wählen. Dann gilt ein
-**Basispreis** und bis zu zwei Zeiträume mit eigenem Preis, z. B. ein günstigerer Mittagstarif:
+**Basispreis in ct/kWh** und bis zu zwei Zeiträume mit eigenem Preis, z. B. ein günstigerer Mittagstarif:
 
 ![Neuer zeitbasierter Tarif](images/tarife-neu-zeitbasiert.png)
 
-- Je Zeitraum: **Zeitraum aktiv** anhaken, **Tarifname**, **Von** und **Bis** (im 15-Minuten-Raster) und den
-  **Preis**.
+- Je Zeitraum, hier für den ersten: **Zeitraum 1 aktiv** anhaken, **Tarifname Zeitraum 1**, **Von** und **Bis** (im
+  15-Minuten-Raster) und **Preis Zeitraum 1 in ct/kWh**.
 - Mindestens ein Zeitraum muss aktiv sein. Die beiden Zeiträume dürfen sich nicht überschneiden; ein Zeitraum darf
   über Mitternacht gehen (z. B. 22:00 bis 06:00).
 - Das Freikontingent gibt es nur bei **Einfach**.
