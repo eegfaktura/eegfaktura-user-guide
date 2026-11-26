@@ -64,6 +64,12 @@ nav:
   - Nachrichten: 07-nachrichten.md
   - Prozesse: 08-prozesse.md
 
+# Broken links and anchors are warnings, so `mkdocs build --strict` fails on them (the default only logs anchors).
+validation:
+  links:
+    not_found: warn
+    anchors: warn
+
 markdown_extensions:
   - admonition
   - attr_list
