@@ -41,8 +41,12 @@ den Standardtext. Der Kasten darunter sagt das ausdrücklich, Betreff und Text s
 Die grün hinterlegten Felder sind **Platzhalter**. Sie werden beim Versand für jedes Mitglied ersetzt, z. B.
 „Vorname“ durch den Vornamen des Mitglieds oder „Zählpunkt“ durch die Zählpunktnummer. Der **Kontaktblock der
 EEG** ist ein **Baustein**: Er wird durch EEG Bezeichnung, Kontaktperson, Adresse, Telefon, E-Mail und Webseite der
-Gemeinschaft ersetzt (leere Angaben fallen weg). Die Rechnungs-Mail hat stattdessen den Baustein **Kontaktdaten der
-EEG**; er kommt aus den Angaben des Belegs, und dort gibt es zusätzlich den Platzhalter **Empfängername**.
+Gemeinschaft ersetzt (leere Angaben fallen weg).
+
+Die Rechnungs-Mail hat eigene Platzhalter: **Empfängername**, **Belegart**, **Abrechnungszeitraum**, **Name der
+EEG**, **E-Mail der EEG**, **Fußzeile der Belege** und den Baustein **Kontaktdaten der EEG** (Adresse, Telefon,
+E-Mail und Web aus den Angaben des Belegs). Ihr Standardtext endet mit dem Namen der EEG und der Fußzeile der Belege;
+den Baustein mit den Kontaktdaten fügst du bei Bedarf selbst ein.
 
 **Vorschau** und **Testmail** funktionieren auch mit dem Standardtext.
 
@@ -80,7 +84,7 @@ Unter dem Text stehen die Grenzen der jeweiligen Mail:
 | | Freigabe-Aufforderung, Zählpunkt aktiv, Zählpunkt inaktiv | Rechnung / Gutschrift |
 |---|---|---|
 | Bilder | höchstens 3, je höchstens 1 MB | höchstens 3 |
-| alle Bilder zusammen | — (3 × 1 MB) | höchstens 500 KB |
+| alle Bilder zusammen | höchstens 6 MB (mit 3 × 1 MB nie erreicht) | höchstens 500 KB |
 | PDF-Anhang | keiner | keiner — der Beleg ist immer angehängt |
 
 Neu hochgeladene Bilder sind **Entwürfe**: Sie werden erst mit dem Speichern verwendet.
@@ -90,18 +94,23 @@ Neu hochgeladene Bilder sind **Entwürfe**: Sie werden erst mit dem Speichern ve
 Damit eure Mails nicht im Spam landen, prüft eegFaktura die Links beim Speichern, bei der Vorschau und bei der
 Testmail:
 
-- höchstens **3 Links** je Mail, E-Mail-Links (`mailto:`) mitgezählt,
-- höchstens **2 Domains** (`portal.netz.at` und `www.netz.at` zählen als eine); E-Mail-Links zählen hier nicht,
+- höchstens **3 Links** je Mail; E-Mail-Links (`mailto:` — ein Klick öffnet eine neue Mail) zählen mit,
+- höchstens **2 Domains**. Die Domain ist der Teil der Adresse zwischen `https://` und dem nächsten `/`;
+  `portal.netz.at` und `www.netz.at` zählen als eine. E-Mail-Links zählen hier nicht,
 - die feste Zeile unten zählt bei beidem nicht mit,
 - Links beginnen mit `https://` oder `mailto:`,
-- keine Kurz-Links (z. B. bit.ly) und keine IP-Adressen,
+- keine Kurz-Links (z. B. bit.ly) und keine Adressen, die nur aus Zahlen bestehen (IP-Adressen),
 - steht im Linktext eine Adresse, muss es dieselbe sein wie das Ziel des Links,
-- kein Platzhalter in einem Link,
-- Domains mit Umlauten schreibst du in der Form mit `xn--` (z. B. `xn--mnchen-3ya.at` statt `münchen.at`).
+- kein Platzhalter in einem Link.
+
+Der Standardtext der **Freigabe-Aufforderung** enthält bereits einen Link. Startest du von seiner Kopie, zählt er mit.
 
 Verstößt ein Text gegen eine Regel, speichert eegFaktura ihn nicht und nennt den Grund. Ausnahme: Fügst du Text mit
 einem `http://`-Link ein, bleibt nur der Text stehen, der Link fällt ohne Meldung weg. Prüfe eingefügte Links
 deshalb in der Vorschau.
+
+Selten nötig: Eine Domain mit Umlaut schreibst du in der Form mit `xn--` (z. B. `xn--mnchen-3ya.at` statt
+`münchen.at`).
 
 ## Vorschau und Testmail
 
@@ -133,14 +142,17 @@ Mit **Abbrechen** bleibt alles, wie es war.
 ## Gut zu wissen
 
 - **Kopie an die Gemeinschaft:** Die Mails „Freigabe-Aufforderung“, „Zählpunkt aktiv“ und „Zählpunkt inaktiv“ gehen
-  mit der E-Mail-Adresse der Gemeinschaft (EEG-Seite → Kontakt) in Kopie hinaus.
+  mit der E-Mail-Adresse der Gemeinschaft (EEG-Seite → Kontakt) in Kopie hinaus. Auch die Mail „Rechnung /
+  Gutschrift“ geht in Kopie an die Gemeinschaft, an die Adresse zum Zeitpunkt der Abrechnung.
 - **Wenn eure Fassung nicht verwendet werden kann:** Lässt sich ein gespeicherter eigener Text beim Versand nicht
   verwenden, verschickt eegFaktura den Standardtext — die Mail kommt also trotzdem an. Bei den Mitglieder-Mails
-  meldet eegFaktura das unter **Nachrichten**, bei der Rechnungs-Mail mit einem Hinweis im Versandprotokoll des
-  Abrechnungslaufs. Prüfe dann deinen Text in der Vorschau.
+  meldet eegFaktura das unter **Nachrichten**; prüfe dann deinen Text in der Vorschau. Bei der Rechnungs-Mail siehst
+  du davon nichts in eegFaktura: Der Hinweis steht nur im internen Versandprotokoll, das der Support einsehen kann.
+  Prüfe eine eigene Rechnungs-Mail deshalb vor dem Versand mit **Vorschau** und **Testmail**.
 - **Der Standardtext wurde überarbeitet:** Ändert eegFaktura einen Standardtext, während ihr einen eigenen Text
   verwendet, siehst du „Der Standardtext wurde inzwischen überarbeitet.“ Mit **Neuen Standard ansehen** vergleichst
-  du, mit **Neuen Standard übernehmen** startest du von der neuen Fassung. Eure Fassung bleibt bis dahin gültig.
+  du. **Neuen Standard übernehmen** lädt die neue Fassung in den Editor. Verschickt wird sie erst, wenn du auf
+  **Speichern** klickst; bis dahin gilt eure bisherige Fassung.
 - **Zwei Personen gleichzeitig:** Hat jemand anderer die Mail inzwischen gespeichert, meldet eegFaktura „Diese Mail
   wurde inzwischen geändert …“. Mit **Neu laden** holst du den aktuellen Stand.
 - **Ungespeichert zurück:** **Zurück zur Liste** fragt nach, wenn noch Änderungen offen sind.
