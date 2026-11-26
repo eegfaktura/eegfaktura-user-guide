@@ -28,7 +28,7 @@ Links ist das **Menü**, rechts davon die gewählte Seite. Oben im Menü steht �
 | **Tarife** | die Tarife der Gemeinschaft | alle |
 | **Prozesse** | Prozesse beim Netzbetreiber auslösen, z. B. Daten nachfordern | EEG-Admins von Gemeinschaften mit Online-Anbindung |
 
-Ganz unten öffnet **Info** das Impressum.
+Ganz unten öffnet **Handbuch** dieses Benutzerhandbuch in einem neuen Tab, **Info** das Impressum.
 
 ## Benutzermenü und Abmelden
 
@@ -45,11 +45,11 @@ Ein Klick auf dein **Benutzersymbol** oben im Menü öffnet das Benutzermenü:
 ## Gemeinschaft wechseln
 
 Die Gemeinschaft, die du bearbeitest, wählst du im Benutzermenü mit **Gemeinschaft wechseln**. Den Eintrag gibt es
-immer, auch wenn du nur eine Gemeinschaft betreust. Es öffnet sich die
-Liste **Auswahl Gemeinschaft**, die aktuelle Gemeinschaft ist mit einem Häkchen markiert. Oben steht ein **Suchfeld**:
-Tippe die Nummer oder einen Teil des Namens ein (Groß- und Kleinschreibung und Akzente spielen keine Rolle, „sonnen“
-findet „EEG Sonnenfeld“). Ein Klick auf eine Gemeinschaft wechselt sofort; alle Seiten zeigen danach ihre Daten. Hast
-du gerade ungespeicherte Eingaben, fragt eegFaktura vorher nach.
+immer, auch wenn du nur eine Gemeinschaft betreust. Es öffnet sich die Liste **Auswahl Gemeinschaft**, die aktuelle
+Gemeinschaft ist mit einem Häkchen markiert. Betreust du mehrere Gemeinschaften, steht oben ein **Suchfeld**: Tippe
+die Nummer oder einen Teil des Namens ein (Groß- und Kleinschreibung und Akzente spielen keine Rolle, „sonnen“ findet
+„EEG Sonnenfeld“). Ein Klick auf eine Gemeinschaft wechselt sofort; alle Seiten zeigen danach ihre Daten. Hast du
+gerade ungespeicherte Eingaben, fragt eegFaktura vorher nach.
 
 ![Gemeinschaft wechseln](images/oberflaeche-gemeinschaft-wechseln.png)
 
@@ -57,15 +57,18 @@ eegFaktura merkt sich deine Wahl für die nächste Anmeldung im selben Browser.
 
 ## Dashboard
 
-Das **Dashboard** zeigt die wichtigsten Zahlen der Gemeinschaft, meist für den gewählten **Zeitraum**:
+Das **Dashboard** zeigt die wichtigsten Zahlen der Gemeinschaft, meist für den gewählten **Zeitraum**. Den Zeitraum
+wählst du in der **Mitgliederliste**; das Dashboard übernimmt ihn. Für **Lastverlauf** und **Tagesverlauf** kannst du
+über das Zahnrad der Kachel einen anderen Zeitraum wählen (Jahr, Halbjahr, Vierteljahr, Monat oder Tag) — das ändert
+nur diese Kachel.
 
 ![Dashboard](images/dashboard.png)
 
 | Bereich | Inhalt |
 |---------|--------|
 | **Übersicht EEG** | Mitglieder, Zählpunkte und Tarife mit dem Stand von heute (siehe [unten](#ubersicht-eeg)) |
-| **Übersicht Stromproduktion und Verteilung** | **Produziert**, **Verteilt** und **EVU** (Bezug vom Energieversorger), jeweils mit der vorherigen Periode zum Vergleich; darunter die **Energiemengen** „Eingekauft“ und „Verkauft“ |
-| **Lastverlauf** | Balken für EEG, EVU und Erzeugung über den Zeitraum, darüber die **Bilanz** (siehe unten); auffällige Balken tragen ein „!“ |
+| **Übersicht Stromproduktion und Verteilung** | **Produziert** und **Verteilt**, jeweils mit der vorherigen Periode zum Vergleich, und **EVU**: der Teil der Erzeugung, der nicht in der Gemeinschaft verteilt wurde und ins Netz ging (Überschuss); darunter die [Energiemengen](#energiemengen) „Eingekauft“ und „Verkauft“ |
+| **Lastverlauf** | Balken für EEG, EVU und Erzeugt über den Zeitraum, dazu zwei Linien mit der Zahl der **Abnehmer** und **Einspeiser** (rechte Achse); darüber die **Bilanz** (siehe [Bilanzdifferenz](#bilanzdifferenz)); auffällige Balken tragen ein „!“ |
 | **Tagesverlauf** | Verlauf über den Tag (EEG, EVU, Erzeugt) |
 
 Die Fragezeichen-Symbole neben den Werten erklären, wie eine Zahl entsteht.
@@ -73,9 +76,9 @@ Die Fragezeichen-Symbole neben den Werten erklären, wie eine Zahl entsteht.
 **Lastverlauf und Tagesverlauf lesen:** Über einen Zeitraum zeigen beide Kacheln gestapelte Balken für den Verbrauch
 der Mitglieder — unten der Teil aus der Gemeinschaft (**EEG**), darüber der Bezug vom Energieversorger (**EVU**).
 Daneben steht die Erzeugung (**Erzeugt**). Ist dieser Balken höher als der EEG-Teil, konnte die Gemeinschaft den Rest
-nicht an ihre Mitglieder verteilen — oder es fehlen noch Daten (siehe Bilanzdifferenz). Der Tagesverlauf zeigt, zu
-welchen Tageszeiten das passiert — hilfreich, wenn ihr überlegt, welche Verbraucher gut zur Gemeinschaft passen. In
-der Ansicht eines einzelnen Tags zeigt der Lastverlauf Linien statt Balken.
+nicht an ihre Mitglieder verteilen — oder es fehlen noch Daten (siehe [Bilanzdifferenz](#bilanzdifferenz)). Der
+Tagesverlauf zeigt, zu welchen Tageszeiten das passiert — hilfreich, wenn ihr überlegt, welche Verbraucher gut zur
+Gemeinschaft passen. In der Ansicht eines einzelnen Tags zeigt der Lastverlauf Linien statt Balken.
 
 ### Übersicht EEG
 
@@ -89,16 +92,22 @@ Die Kachel zeigt alle Zahlen mit dem Stand von heute, unabhängig vom gewählten
 
 Die anderen Kacheln zeigen den gewählten Zeitraum.
 
-**Bilanzdifferenz:** Produktion minus Eigendeckung minus Überschuss. Sind alle Energiedaten da, ist sie 0, und
+### Bilanzdifferenz
+
+Die Bilanzdifferenz ist Produktion minus Eigendeckung minus Überschuss. Sind alle Energiedaten da, ist sie 0, und
 eegFaktura zeigt „Bilanz ausgeglichen“ (sehr kleine Werte sind Rundung). Eine Differenz steht rot da: **negativ**
 heißt, vermutlich fehlen Daten von Einspeisern, **positiv**, vermutlich fehlen Daten von Beziehern. Für die
 jüngsten Tage ist eine Differenz normal, solange noch nicht alle Daten eingetroffen sind. Fehlen ältere Daten,
 kannst du sie unter **Prozesse → Zählpunktdaten nachfordern** anfordern.
 
-**Energiemengen:** „Eingekauft“ und „Verkauft“ zählen nur Zählpunkte mit einem gültigen Tarif der Gemeinschaft;
-ein Hinweis darunter nennt die Zählpunkte, die deshalb fehlen.
+### Energiemengen
 
-**Einzelner Tag:** Über das Zahnrad von Lastverlauf oder Tagesverlauf wählst du in der Zeile **Tag** ein Datum; mit
+„Eingekauft“ und „Verkauft“ zählen nur Zählpunkte mit einem gültigen Tarif der Gemeinschaft; ein Hinweis darunter
+sagt, wie viele Zählpunkte deshalb fehlen und mit wie vielen kWh.
+
+### Einzelner Tag
+
+Über das Zahnrad von Lastverlauf oder Tagesverlauf wählst du in der Zeile **Tag** ein Datum; mit
 den Pfeilen blätterst du tageweise. Nur diese Kachel wechselt in die Tagesansicht; möglich sind Tage mit
 Energiedaten bis gestern. Eine andere Zeile im Zahnrad-Menü führt zurück zum Zeitraum.
 
