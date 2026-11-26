@@ -8,7 +8,7 @@ sie und rechnet daraus die Anteile der Gemeinschaft.
 Jede Zählpunkt-Karte zeigt die Energiemenge im gewählten Zeitraum:
 
 - bei **Verbrauchern** den Anteil, den sie aus der Gemeinschaft bezogen haben,
-- bei **Erzeugern** den Teil ihrer Einspeisung, der nicht in der Gemeinschaft verteilt wurde.
+- bei **Erzeugern** den Teil ihrer Einspeisung, der in der Gemeinschaft verteilt wurde (Erzeugung minus Überschuss).
 
 Den Zeitraum wählst du oben in der Liste.
 
@@ -51,7 +51,8 @@ erreichbar, sagt eegFaktura das; der Export enthält dann alle Mitglieder, nur d
 Die Excel-Datei mit den Energiedaten hat zwei Blätter:
 
 - **Summary**: Summen der Gemeinschaft (Verbrauch, Erzeugung, Eigendeckung, Überschuss, Mengenbilanz — sie sollte
-  nahe 0 sein) und je Zählpunkt, ab wann und bis wann Daten da sind und ob sie **vollständig** sind.
+  nahe 0 sein) und je Zählpunkt, ab wann und bis wann Daten da sind und ob sie **vollständig** sind. Die Spalten
+  **L0**, **L2** und **L3** zählen die betroffenen Viertelstunden; die Notiz an der Zahl nennt die Tage.
 - **Energiedaten**: alle Viertelstundenwerte je Zählpunkt.
 
 Die Farben zeigen die Qualität der Werte:
@@ -92,7 +93,7 @@ docs.eegfaktura.at.
 - **Korrekturen:** Vorläufige Werte (L3) ersetzt der Netzbetreiber später durch gemessene oder Ersatzwerte (L2).
   Kleine Differenzen von Bruchteilen eines Prozents zwischen zwei Abfragen sind dadurch normal.
 - **Mengenbilanz** im Export und **Bilanzdifferenz** im Dashboard sollten nahe 0 sein. Größere Abweichungen deuten auf
-  fehlende Daten hin — siehe [Bilanzdifferenz](01-anmeldung.md#dashboard).
+  fehlende Daten hin — siehe [Bilanzdifferenz](01-anmeldung.md#bilanzdifferenz).
 
 ## Energiedaten importieren
 
