@@ -1098,7 +1098,9 @@ daneben <strong>verschiebt</strong> den Zählpunkt zu einem anderen Mitglied (bi
 <li><strong>Energiedaten</strong>: ein Diagramm der Energiedaten des Zählpunkts (nur bei aktiven Zählpunkten).</li>
 </ul>
 <p>Die <strong>Richtung</strong> (Verbraucher/Erzeuger) eines angemeldeten Zählpunkts ist gesperrt. Ein EEG-Admin kann sie über das
-Pfeil-Symbol ändern; eegFaktura warnt vorher, denn die Änderung wird <strong>nicht</strong> an den Netzbetreiber gemeldet.</p>
+Pfeil-Symbol ändern; eegFaktura warnt vorher, denn die Änderung wird <strong>nicht</strong> an den Netzbetreiber gemeldet.
+Der bisherige Tarif bleibt dabei gespeichert, auch wenn das Feld ihn nicht mehr anzeigt: Wähle danach einen Tarif
+der neuen Richtung.</p>
 <h3 id="status-eines-zahlpunkts">Status eines Zählpunkts<a class="headerlink" href="#status-eines-zahlpunkts" title="Link zu diesem Abschnitt">&para;</a></h3>
 <p>Ist ein Zählpunkt nicht aktiv, steht über den Details ein Hinweis zum Stand:</p>
 <table>
@@ -1115,11 +1117,11 @@ Pfeil-Symbol ändern; eegFaktura warnt vorher, denn die Änderung wird <strong>n
 </tr>
 <tr>
 <td>Zustimmung des Mitglieds noch ausstehend.</td>
-<td>Das Mitglied muss die Datenfreigabe noch bestätigen; es bekommt dazu die Mail „Freigabe-Aufforderung“.</td>
+<td>Das Mitglied muss die Datenfreigabe noch bestätigen; es bekommt dazu die Mail „Freigabe-Aufforderung“. Dauert es länger, erinnere das Mitglied — nach Ablauf der Frist (30 Arbeitstage) lehnt der Netzbetreiber ab.</td>
 </tr>
 <tr>
 <td>Abschlussmeldung vom Netzbetreiber noch ausstehend.</td>
-<td>Das Mitglied hat zugestimmt, die Abschlussmeldung des Netzbetreibers fehlt noch.</td>
+<td>Das Mitglied hat zugestimmt, die Abschlussmeldung des Netzbetreibers fehlt noch. Ohne Smart Meter kann das dauern, bis der Netzbetreiber ihn eingebaut hat; du musst dafür nichts tun.</td>
 </tr>
 <tr>
 <td>Zählpunkt wurde vom Netzbetreiber abgewiesen.</td>
@@ -1152,6 +1154,7 @@ richtest du dich: Ist der Fehler behoben (z. B. Nummer korrigiert), meldest du d
 <strong>Prozesse → Zählpunkt aktivieren</strong> erneut an.</p>
 <p>Einen ungültigen Zählpunkt, der nie angemeldet wurde, kannst du hier mit <strong>Löschen</strong> entfernen.</p>
 <h2 id="neues-mitglied-anlegen">Neues Mitglied anlegen<a class="headerlink" href="#neues-mitglied-anlegen" title="Link zu diesem Abschnitt">&para;</a></h2>
+<p>Lege zuerst die <a href="../04-tarife/">Tarife</a> an — beim Zählpunkt wählst du einen davon aus.</p>
 <ol>
 <li>
 <p>Klicke in der Mitgliederliste oben auf <strong>Plus</strong>. Es öffnet sich <strong>Registrieren</strong>.</p>
@@ -1338,8 +1341,10 @@ Datei.</p>
 <ul>
 <li><strong>Mehrere E-Mail-Adressen</strong> eines Mitglieds trennst du mit <code>;</code> (ohne Leerzeichen); Mails gehen an alle gültigen
   Adressen.</li>
-<li><strong>Mitglied ohne E-Mail:</strong> Lass das Feld leer — eegFaktura schickt diesem Mitglied dann keine Mails. Trage keine
-  Platzhalter-Adresse ein, sonst wird an sie geschickt.</li>
+<li><strong>Mitglied ohne E-Mail:</strong> Beim Anlegen und Ändern verlangt eegFaktura eine E-Mail-Adresse. Ohne Adresse kommt ein
+  Mitglied nur über den <a href="#stammdaten-aus-excel-importieren">Stammdaten-Import</a> in die Liste (Spalte leer); es bekommt
+  dann keine Mails. Das Feld E-Mail selbst kannst du danach nur mit einer gültigen Adresse speichern. Trage keine
+  erfundene Adresse ein — an sie wird geschickt.</li>
 <li><strong>Mitglied ohne Konto:</strong> Wähle die Einzugsart <strong>Kein SEPA</strong>; die IBAN darf dann leer bleiben.</li>
 <li><strong>Anlagenname:</strong> Hat ein Zählpunkt einen Anlagennamen, steht in der Liste dieser Name statt der Nummer, in den
   Prozessen „Name – Nummer“ — praktisch bei mehreren Anlagen eines Mitglieds.</li>

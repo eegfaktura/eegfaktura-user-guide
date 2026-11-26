@@ -745,7 +745,7 @@ Zählpunktgebühr und Umsatzsteuer.</p>
 <ol>
 <li>Klicke oben in der Tarifliste auf <strong>+</strong>.</li>
 <li>Wähle die Art: <strong>Mitglied</strong>, <strong>Erzeuger</strong> oder <strong>Verbraucher</strong>. Die Art lässt sich später nicht mehr ändern.</li>
-<li>Gib die <strong>Tarifbezeichnung</strong> ein. Erlaubt sind Buchstaben ohne Umlaute, Ziffern, Leerzeichen, <code>-</code> und <code>_</code>; jeder
+<li>Gib die <strong>Tarifbezeichnung</strong> ein. Erlaubt sind Buchstaben (auch Umlaute und ß), Ziffern, Leerzeichen, <code>-</code> und <code>_</code>; jeder
    Name darf nur einmal vorkommen.</li>
 <li>Fülle die Bestandteile aus (siehe unten) und klicke auf <strong>Änderungen speichern</strong>. Ein Zahlenfeld, das du leerst,
    zählt als 0.</li>
@@ -753,7 +753,8 @@ Zählpunktgebühr und Umsatzsteuer.</p>
 <h3 id="umsatzsteuer">Umsatzsteuer<a class="headerlink" href="#umsatzsteuer" title="Link zu diesem Abschnitt">&para;</a></h3>
 <p>Hake <strong>Umsatzsteuer anführen</strong> an, wenn auf dem Beleg Umsatzsteuer ausgewiesen werden soll. Dann trägst du
 <strong>Umsatzsteuer in %</strong> und optional einen <strong>Zusatztext für Umsatzsteuer</strong> ein. Welche Steuer gilt, klärst du bitte
-mit deiner Steuerberatung.</p>
+mit deiner Steuerberatung. Hintergrund zu den Mitgliedstypen und Steuersätzen:
+<a href="https://docs.eegfaktura.at/books/workflowprozesse/page/die-umsatzsteuerlich-korrekte-ausfuhrung-von-rechnungen-und-gutschriften">Umsatzsteuer bei Rechnungen und Gutschriften</a>.</p>
 <p>Ohne den Haken stehen die Positionen dieses Tarifs auf dem Beleg mit <strong>0 %</strong> in der USt-Spalte, und für sie gibt es
 keine eigene USt-Summenzeile.</p>
 <h3 id="bestandteile-je-art">Bestandteile je Art<a class="headerlink" href="#bestandteile-je-art" title="Link zu diesem Abschnitt">&para;</a></h3>
@@ -837,6 +838,14 @@ haben (Abschnitt <strong>Einmalige Beitrittsgebühr</strong>):</p>
 ganzen Abrechnungszeitraum. Bereits <strong>abgerechnete</strong> Läufe ändern sich nicht. Eine <strong>Vorschau</strong>, die vor der
 Änderung erstellt wurde, musst du mit <strong>Vorschau Akt.</strong> neu rechnen lassen.</p>
 </blockquote>
+<p><strong>Bewährt hat sich:</strong></p>
+<ul>
+<li>Ändere einen bestehenden Tarif, statt einen neuen anzulegen — dann musst du ihn nicht jedem Zählpunkt neu zuweisen.</li>
+<li>Schreibe den Zeitraum in die <strong>Tarifbezeichnung</strong> (sie steht auf dem Beleg), z. B. „Standard 2027“, und passe sie
+  beim Ändern der Preise an.</li>
+<li>Ändere die Preise erst, wenn der alte Zeitraum abgerechnet ist; sonst rechnet die letzte Abrechnung des alten
+  Zeitraums schon mit den neuen Preisen.</li>
+</ul>
 <h2 id="tarife-zuweisen">Tarife zuweisen<a class="headerlink" href="#tarife-zuweisen" title="Link zu diesem Abschnitt">&para;</a></h2>
 <ul>
 <li><strong>Mitgliedsbeitrag:</strong> beim Mitglied unter <strong>Details → Mitglieds-Tarif</strong> (nur Tarife der Art „Mitglied“, oder

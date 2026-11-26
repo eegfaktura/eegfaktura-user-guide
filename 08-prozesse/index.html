@@ -854,6 +854,11 @@ inaktiv (siehe <a href="#was-nach-dem-anfordern-passiert">Was nach dem Anfordern
 die Schritte mit Datum (TT.MM.JJJJ) und Uhrzeit, <strong>Protokoll</strong> und <strong>Status</strong> bzw. <strong>Info</strong>.</p>
 <p><strong>Eine Ablehnung lesen:</strong> In der Spalte Protokoll steht dann ABLEHNUNG, in Status oder Info der Grund, z. B.
 „Zählpunkt nicht gefunden“, „Kunde hat Datenfreigabe abgelehnt“ oder „Prozessdatum falsch“.</p>
+<p><strong>Zeitraum groß genug wählen:</strong> Die History zeigt nur Schritte im gewählten Zeitraum. Liegt der Beginn eines Vorgangs
+davor, fehlen seine ersten Schritte. Bei „konkurrierende Prozesse“ hilft ein größerer Zeitraum, den Vorgang zu finden,
+der noch läuft.</p>
+<p>Alle Nachrichten je Prozess mit den Beschreibungen der ebUtilities und Beispielen:
+<a href="https://docs.eegfaktura.at/books/workflowprozesse/page/prozess-history">Prozess History</a> auf docs.eegfaktura.at.</p>
 <h3 id="nachrichtenarten-in-der-spalte-protokoll">Nachrichtenarten in der Spalte Protokoll<a class="headerlink" href="#nachrichtenarten-in-der-spalte-protokoll" title="Link zu diesem Abschnitt">&para;</a></h3>
 <table>
 <thead>
@@ -912,8 +917,12 @@ die Schritte mit Datum (TT.MM.JJJJ) und Uhrzeit, <strong>Protokoll</strong> und 
 <td>das Mitglied hat nicht rechtzeitig zugestimmt: erinnern und neu anmelden</td>
 </tr>
 <tr>
-<td>Kein Smart Meter / Noch kein fernauslesbarer Zähler eingebaut</td>
-<td>ohne Smart Meter (bzw. ohne Fernauslesung) geht die Teilnahme noch nicht: Netzbetreiber fragen, wann getauscht wird</td>
+<td>Kein Smart Meter</td>
+<td>ohne Smart Meter geht die Teilnahme nicht: Netzbetreiber fragen, wann getauscht wird</td>
+</tr>
+<tr>
+<td>Noch kein fernauslesbarer Zähler eingebaut</td>
+<td>keine Ablehnung, sondern ein Hinweis: die Anmeldung läuft weiter, die Teilnahme beginnt erst, wenn der Smart Meter eingebaut und in Betrieb ist; du musst nichts tun. Manche Netzbetreiber melden das auch bei einem eingebauten Smart Meter, der noch nicht in Betrieb ist</td>
 </tr>
 <tr>
 <td>Kunde hat optiert</td>
@@ -941,7 +950,7 @@ die Schritte mit Datum (TT.MM.JJJJ) und Uhrzeit, <strong>Protokoll</strong> und 
 </tr>
 <tr>
 <td>Teilnahme-Limit wird überschritten</td>
-<td>der Zählpunkt nimmt schon an der höchstzulässigen Zahl von Gemeinschaften teil</td>
+<td>der Zählpunkt nimmt schon an der höchstzulässigen Zahl von Gemeinschaften teil (derzeit 5)</td>
 </tr>
 <tr>
 <td>Keine Daten im angeforderten Zeitraum vorhanden</td>
@@ -959,6 +968,10 @@ Netzbetreiber-ID auf Tippfehler oder Leerzeichen.</p>
   später noch. Rechne daher nicht unmittelbar nach dem Ende eines Zeitraums ab, sondern prüfe vorher die
   <a href="../05-abrechnung/#vorschau-erstellen">Vollständigkeit</a>.</li>
 <li>Fehlen Daten ein, zwei Tage nach einer Störung noch immer, fordere sie nach; erst danach lohnt ein Ticket.</li>
+<li><strong>Bewährte Routine:</strong> Prüfe die Energiedaten einmal im Monat, etwa in der ersten Woche (Bilanzdifferenz im
+  Dashboard oder Mengenbilanz im Export) und fordere Fehlendes nach. Mehr dazu, mit einer Excel-Vorlage für den
+  Vergleich der Viertelstundenwerte: <a href="https://docs.eegfaktura.at/books/workflowprozesse/page/datenkontrolle-energie">Datenkontrolle Energie</a>
+  auf docs.eegfaktura.at.</li>
 </ul>
 
 
