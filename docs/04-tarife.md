@@ -33,7 +33,7 @@ Zählpunktgebühr und Umsatzsteuer.
 
 1. Klicke oben in der Tarifliste auf **+**.
 2. Wähle die Art: **Mitglied**, **Erzeuger** oder **Verbraucher**. Die Art lässt sich später nicht mehr ändern.
-3. Gib die **Tarifbezeichnung** ein. Erlaubt sind Buchstaben ohne Umlaute, Ziffern, Leerzeichen, `-` und `_`; jeder
+3. Gib die **Tarifbezeichnung** ein. Erlaubt sind Buchstaben (auch Umlaute und ß), Ziffern, Leerzeichen, `-` und `_`; jeder
    Name darf nur einmal vorkommen.
 4. Fülle die Bestandteile aus (siehe unten) und klicke auf **Änderungen speichern**. Ein Zahlenfeld, das du leerst,
    zählt als 0.

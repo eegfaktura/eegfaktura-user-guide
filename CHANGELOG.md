@@ -32,6 +32,8 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
   „In der Pilot-Zone“.
 
 ### Changed
+- Chapter 4, „Einen Tarif anlegen“ (tracking web 261126-mm2): the tariff name allows umlauts and ß (platform#228);
+  the guide still said „ohne Umlaute“. Pre-existing wrong statement.
 - Chapter 2, „Gut zu wissen“, member without e-mail (tracking web 261126-mm1): „leave the field empty“ cannot be done,
   the form requires an e-mail. Now: only the master data import creates a member without e-mail; it gets no mails;
   no made-up address. Pre-existing wrong statement.
