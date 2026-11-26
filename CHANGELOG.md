@@ -4,6 +4,10 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 
 ## [Unreleased]
 
+### Changed
+- Links to docs.eegfaktura.at point to the renamed BookStack book „Hintergrundwissen“ (`/books/hintergrundwissen/…`,
+  formerly „Workflow/Prozesse“); the old addresses redirect, the new ones do not depend on it.
+
 ### Fixed
 - Review of the whole guide against the current code and the ebUtilities process descriptions valid since 05.10.2026
   (tracking workspace W-261126-mm1): 69 findings, 65 corrected, one commit per chapter.
