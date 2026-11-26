@@ -359,8 +359,10 @@ Gut zu wissen:
 
 - **Mehrere E-Mail-Adressen** eines Mitglieds trennst du mit `;` (ohne Leerzeichen); Mails gehen an alle gültigen
   Adressen.
-- **Mitglied ohne E-Mail:** Lass das Feld leer — eegFaktura schickt diesem Mitglied dann keine Mails. Trage keine
-  Platzhalter-Adresse ein, sonst wird an sie geschickt.
+- **Mitglied ohne E-Mail:** Beim Anlegen und Ändern verlangt eegFaktura eine E-Mail-Adresse. Ohne Adresse kommt ein
+  Mitglied nur über den [Stammdaten-Import](#stammdaten-aus-excel-importieren) in die Liste (Spalte leer); es bekommt
+  dann keine Mails, und um später seine Daten zu ändern, brauchst du eine Adresse. Trage keine erfundene Adresse
+  ein — an sie wird geschickt.
 - **Mitglied ohne Konto:** Wähle die Einzugsart **Kein SEPA**; die IBAN darf dann leer bleiben.
 - **Anlagenname:** Hat ein Zählpunkt einen Anlagennamen, steht in der Liste dieser Name statt der Nummer, in den
   Prozessen „Name – Nummer“ — praktisch bei mehreren Anlagen eines Mitglieds.

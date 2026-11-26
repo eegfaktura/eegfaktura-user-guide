@@ -18,6 +18,9 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
   „In der Pilot-Zone“.
 
 ### Changed
+- Chapter 2, „Gut zu wissen“, member without e-mail (tracking web 261126-mm1): „leave the field empty“ cannot be done,
+  the form requires an e-mail. Now: only the master data import creates a member without e-mail; it gets no mails;
+  no made-up address. Pre-existing wrong statement.
 - Chapter 2, import: an existing member does not get „only the new metering points“ — if it already has one of the
   file's metering points, nothing is imported for it (error under Nachrichten). Pre-existing wrong statement.
 - Pilot hint removed with the prod release of 21.11.2026 (web 1.27.0): „Nach Energiemenge sortieren“ applies to
