@@ -5,7 +5,7 @@
 eegFaktura ist die Verwaltungs- und Abrechnungssoftware für Energiegemeinschaften in Österreich:
 **Erneuerbare-Energie-Gemeinschaften (EEG)**, **Bürgerenergiegemeinschaften (BEG)** und **Gemeinschaftliche
 Erzeugungsanlagen (GEA)**; für Peer-to-Peer (P2P) und Eigenversorgungsanlagen (EVA) mit Einschränkungen (siehe
-[Peer-to-Peer und Eigenversorgung](01-anmeldung.md#peer-to-peer-und-eigenversorgung)). Damit verwaltest du als
+[Peer-to-Peer und Eigenversorgung](eeg-seite.md#peer-to-peer-und-eigenversorgung)). Damit verwaltest du als
 EEG-Admin
 
 - die **Mitglieder** deiner Gemeinschaft mit ihren Kontakt- und Bankdaten,
@@ -34,7 +34,9 @@ In eegFaktura öffnest du dieses Handbuch über **Handbuch** im Menü.
 |---------|--------|
 | [Was ist neu?](changelog.md) | neue Funktionen, nach Datum |
 | [Einrichtung & Hilfe](einrichtung-hilfe.md) | Anbindung an die Netzbetreiber, Datenfreigabe der Mitglieder, Datenschutz, Support |
-| [Anmeldung & Oberfläche](01-anmeldung.md) | Anmelden, Menü, Gemeinschaft wechseln, Dashboard, EEG-Seite |
+| [Anmeldung & Oberfläche](01-anmeldung.md) | Anmelden, Menü, Gemeinschaft wechseln |
+| [Dashboard](dashboard.md) | Kennzahlen und Diagramme, Bilanzdifferenz, Zeitraum einer Kachel |
+| [EEG-Seite](eeg-seite.md) | Stammdaten der Gemeinschaft, Modell und Nahebereich, Peer-to-Peer und Eigenversorgung |
 | [Mitglieder & Zählpunkte](02-mitglieder-zaehlpunkte.md) | Mitgliederliste, Mitglied anlegen, Zählpunkte, Status |
 | [Stammdaten aus Excel importieren](stammdaten-import.md) | viele Mitglieder auf einmal einlesen, Spalten, Testablauf |
 | [E-Mail-Texte](03-email-texte.md) | die automatischen Mails an Mitglieder selbst gestalten |

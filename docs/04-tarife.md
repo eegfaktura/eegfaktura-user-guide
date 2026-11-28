@@ -45,7 +45,8 @@ Hake **Umsatzsteuer anführen** an, wenn auf dem Beleg Umsatzsteuer ausgewiesen 
 unter den Positionen, z. B. für einen Hinweis zur Steuer, den dir deine Steuerberatung nennt. Er wird nur bei
 Erzeuger- und Verbrauchertarifen gedruckt, nicht beim Mitgliedstarif.
 
-Welche Steuer gilt, klärst du bitte mit deiner Steuerberatung.
+Welche Steuer gilt, klärst du bitte mit deiner Steuerberatung. Was für Gutschriften an Erzeuger mit und ohne UID
+gilt, steht unter [Gutschriften und Umsatzsteuer](05-abrechnung.md#gutschriften-und-umsatzsteuer).
 [Hintergrund zu Mitgliedstypen und Steuersätzen (keine Steuerberatung)](https://docs.eegfaktura.at/books/hintergrundwissen/page/die-umsatzsteuerlich-korrekte-ausfuhrung-von-rechnungen-und-gutschriften).
 
 Ohne den Haken stehen die Positionen dieses Tarifs auf dem Beleg mit **0 %** in der USt-Spalte, und für sie gibt es

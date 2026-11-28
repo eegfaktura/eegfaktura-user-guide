@@ -56,6 +56,8 @@ nav:
   - Was ist neu?: changelog.md
   - Einrichtung & Hilfe: einrichtung-hilfe.md
   - Anmeldung & Oberfläche: 01-anmeldung.md
+  - Dashboard: dashboard.md
+  - EEG-Seite: eeg-seite.md
   - Mitglieder & Zählpunkte: 02-mitglieder-zaehlpunkte.md
   - Stammdaten aus Excel importieren: stammdaten-import.md
   - E-Mail-Texte: 03-email-texte.md

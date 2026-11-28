@@ -47,16 +47,16 @@ später wieder teilnehmen, ist eine neue Anmeldung nötig.
    [Begründung](#begrundung) ein.
 3. Klicke auf **Anfordern** und bestätige „Datenfreigabe aufheben“ mit **Aufheben**.
 
+**Fehlt die Kennung der Datenfreigabe (Consent-ID)** — das kommt bei importierten Zählpunkten vor —, meldet eegFaktura
+das beim Anfordern. Fordere dann zuerst die [Teilnehmerliste](#teilnehmerliste-anfordern) an. Sobald sie da ist, hat
+eegFaktura die Kennung selbst eingetragen, und du forderst die Abmeldung noch einmal an.
+
 ### Begründung
 
 Die **Begründung (optional)** geht mit der Abmeldung an den Netzbetreiber und wird in der Prozess History gespeichert.
 Trag deshalb keine personenbezogenen Daten ein. Sie darf höchstens 50 Zeichen lang sein; ein Zähler unter dem Feld
 zeigt, wie viele es sind. Bei mehr als 50 Zeichen bleibt **Anfordern** gesperrt. Die Bestätigung vor dem Absenden
 nennt die Begründung noch einmal.
-
-Fehlt eegFaktura die Kennung der Datenfreigabe (Consent-ID), meldet eegFaktura das beim Anfordern. Fordere dann zuerst
-die **Teilnehmerliste** an (siehe unten). Sobald sie da ist, ist die Kennung eingetragen, und du forderst die Abmeldung
-noch einmal an.
 
 ### Was nach dem Anfordern passiert
 
@@ -80,6 +80,9 @@ oder „ConsentID abgelaufen“.
 
 1. Wähle **Mitglied** und **Zählpunkt** (mehrere möglich; die Auswahl zeigt am Ende den aktuellen Faktor).
 2. Gib den neuen **Teilnahmefaktor in %** ein (1–100), klicke auf **Anfordern** und bestätige mit **Senden**.
+
+Nimmt ein Zählpunkt an mehreren Gemeinschaften teil, darf die Summe 100 % nicht übersteigen — senke den Faktor zuerst
+in der einen Gemeinschaft, bevor du ihn in der anderen erhöhst.
 
 > Der Netzbetreiber nimmt Änderungen **nur zwischen 9 und 17 Uhr** an, **eine pro Tag** je Zählpunkt; die Änderung
 > gilt ab dem nächsten Tag. Außerhalb dieser Zeit warnt eegFaktura, weil der Netzbetreiber sonst mit „Prozessdatum
@@ -183,9 +186,12 @@ Erfahrungswerte aus der Praxis, je nach Netzbetreiber verschieden:
   später noch. Rechne daher nicht unmittelbar nach dem Ende eines Zeitraums ab, sondern prüfe vorher die
   [Vollständigkeit](05-abrechnung.md#vorschau-erstellen).
 - Fehlen Daten ein, zwei Tage nach einer Störung noch immer, fordere sie nach; erst danach lohnt ein Ticket.
-- **Bewährte Routine:** Schau einmal im Monat, etwa in der ersten Woche, ins [Dashboard](01-anmeldung.md#dashboard):
-  Wähle im Zahnrad des **Lastverlaufs** den Monat — dann ist jeder Balken ein Tag, und Tage, an denen die Bilanz
-  nicht aufgeht, tragen ein „!“ (siehe
-  [Bilanzdifferenz](01-anmeldung.md#bilanzdifferenz)). Fehlendes forderst du nach. Vor der Abrechnung prüft
-  eegFaktura Vollständigkeit und L3-Werte noch einmal ([Vorschau erstellen](05-abrechnung.md#vorschau-erstellen)).
+
+## Monatliche Routine: Daten prüfen
+
+Schau einmal im Monat, etwa in der ersten Woche, ins [Dashboard](dashboard.md): Wähle im Zahnrad des **Lastverlaufs**
+den Monat — dann ist jeder Balken ein Tag, und Tage, an denen die Bilanz nicht aufgeht, tragen ein „!“ (siehe
+[Bilanzdifferenz](dashboard.md#bilanzdifferenz)). Fehlendes forderst du nach
+([Zählpunktdaten nachfordern](#zahlpunktdaten-nachfordern)). Vor der Abrechnung prüft eegFaktura Vollständigkeit und
+L3-Werte noch einmal ([Vorschau erstellen](05-abrechnung.md#vorschau-erstellen)).
 

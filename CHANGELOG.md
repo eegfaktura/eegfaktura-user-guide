@@ -5,6 +5,18 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 ## [Unreleased]
 
 ### Changed
+- Bloat review (Fable), part 2: one home per topic, chapters reorganised. Facts unchanged.
+  - Dashboard and EEG page are their own pages (`dashboard.md`, `eeg-seite.md`); chapter 1 keeps login, interface,
+    user menu and switching community. Anchor ids stay, the page changes (e.g. `01-anmeldung/#bilanzdifferenz` →
+    `dashboard/#bilanzdifferenz`).
+  - Chapter 2 in task order (list → create → admit → view → metering points → documents); „Gut zu wissen“ dissolved
+    into the sections it belongs to; new sections „Aktiv am …“, „Ein Mitglied tritt aus“, „Zählpunkt verschieben oder
+    Besitzer wechselt“.
+  - Joining fee: rules only in chapter 4, actions only in chapter 2. Consent ID only in chapter 8. Participation factor
+    sum rule only in chapter 8.
+  - Chapter 5: invoice date once, as a warning in „Abrechnung durchführen“; new section „Gutschriften und
+    Umsatzsteuer“ as the one home of UID, „Privat“/„Firma“ texts and reverse charge (tax-adviser sentence kept).
+  - Chapter 8: new section „Monatliche Routine: Daten prüfen“.
 - Bloat review (Fable), quick wins: the guide is shorter and easier to scan (docs 1,972 → 1,726 lines, about 75 more
   lines folded into `??? note` blocks).
   - „Was ist neu?“ follows a new rule: one block per month, at most about 8 one-liners with a link, only changes to a
