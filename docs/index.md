@@ -47,4 +47,4 @@ In eegFaktura öffnest du dieses Handbuch über **Handbuch** im Menü.
 | [Prozesse beim Netzbetreiber](08-prozesse.md) | Daten nachfordern, Zählpunkte anmelden und abmelden, Teilnahmefaktor, Prozess History |
 
 > **Hinweis zu den Bildern:** Alle Screenshots stammen aus einer Testumgebung mit erfundenen Daten
-> („Fixture Sonnenhang“, „Petra Eins“ …). Namen, Adressen und Zählpunktnummern sind nicht echt.
+> („EEG Sonnenhang“, „Petra Gruber“ …). Namen, Adressen und Zählpunktnummern sind nicht echt.

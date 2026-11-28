@@ -1,10 +1,11 @@
 """Screenshot steps of the chapters Tarife, Abrechnung, Energiedaten, Nachrichten, Prozesse and Dokumente.
 
 Used by screenshots.py (shot/step/goto come from there). Unlike the other chapters, the billing steps WRITE to the
-local stack: they create a preview for the current period and, once, a final billing run for FINAL_PERIOD (a final
-run cannot be undone; on a fresh stack it is created again). Run scripts/prepare-local-stack.sql first.
+local stack: they bill the closed quarter FINAL_PERIOD (preview, then the final run with DOCUMENT_DATE). A final run
+cannot be undone: run scripts/prepare-local-stack.sql before every full run, it resets the billing history.
 """
 import re
+from datetime import datetime, timedelta, timezone
 
 from playwright.sync_api import Page
 
@@ -12,7 +13,11 @@ LIST_READY = "Anzeige: Standard"  # the member list has loaded (its view choice,
 
 FINAL_PERIOD = "Jul-Sep 2026"  # the period that gets a final billing run in the local stack
 FINAL_RANGE = "01.07.2026 – 30.09.2026"
-FINAL_PERIOD_ID = "/YQ/Abr_YQ-2026-3"  # how the billing API names that period (end of the billing-run URL)  # as the check dialog shows it: the final run is confirmed only for this
+FINAL_PERIOD_ID = "/YQ/Abr_YQ-2026-3"  # how the billing API names that period (end of the billing-run URL)
+DOCUMENT_DATE = "05.10.2026"  # invoice date of the billing, early in the month after the quarter
+# within the grid operator's window for a participation factor change (09:00-17:00), so its out-of-hours warning
+# does not depend on when the screenshots are taken
+PROCESS_CLOCK = datetime(2026, 11, 26, 10, 30, tzinfo=timezone(timedelta(hours=1)))  # Vienna, winter time
 CHECK_TITLE = "Prüfung vor der Abrechnung"
 METER_WITH_DATA = "0000143001"  # shown shortened in the list ("AT008000...0000143001")
 
@@ -25,8 +30,8 @@ def chapter_tariffs(page: Page, shot, step, goto) -> None:
         shot("tarife-liste", page)
 
     def joining_fee():
-        # the member tariff with its joining fee (prepare-local-stack.sql sets one on "Tarif A"); nothing is saved
-        page.get_by_text("Tarif A", exact=True).first.click()
+        # the member tariff with its joining fee (prepare-local-stack.sql sets one on it); nothing is saved
+        page.get_by_text("Mitgliedsbeitrag", exact=True).first.click()
         page.get_by_text("Einmalige Beitrittsgebühr", exact=True).first.wait_for()
         shot("tarife-beitrittsgebuehr", page)
 
@@ -73,7 +78,29 @@ def _select_period(page: Page, period: str, period_id: str) -> bool:
     return response.ok and "DONE" in response.text()
 
 
+def _set_document_date(page: Page) -> None:
+    """Types DOCUMENT_DATE into the „Rechnungsdatum“ field of the footer; it counts when the field is left."""
+    field = page.get_by_label("Rechnungsdatum").last
+    field.fill(DOCUMENT_DATE)
+    field.press("Tab")
+    page.evaluate("document.activeElement && document.activeElement.blur()")  # no focus ring on the next button
+    page.wait_for_timeout(300)
+
+
+def _wait_billing_done(page: Page, button) -> None:
+    """Waits for the end state of a billing run: the footer shows „Abrechnung wird erstellt …“ while it runs."""
+    running = page.get_by_text("Abrechnung wird erstellt", exact=False).first
+    try:
+        running.wait_for(timeout=10000)
+    except Exception:  # noqa: BLE001 — a fast run may be done before the text shows
+        pass
+    running.wait_for(state="hidden", timeout=180000)
+    button.wait_for(timeout=60000)
+
+
 def chapter_billing(page: Page, shot, step, goto) -> None:
+    run_button = page.get_by_role("button", name="ABRECHNUNG DURCHFÜHREN", exact=False)
+
     def mode_alert():
         _billing_mode(page, goto)
         page.locator("ion-alert", has_text="Abrechnungsmodus").wait_for()
@@ -81,48 +108,34 @@ def chapter_billing(page: Page, shot, step, goto) -> None:
         page.locator("ion-alert button", has_text="OK").click()
 
     def check_and_preview():
-        # first preview of the period, or a refresh of an existing one ("Vorschau Akt.")
-        page.get_by_role("button", name=re.compile(r"^(VORSCHAU ERSTELLEN|VORSCHAU AKT)", re.I)).first.click()
+        # the closed quarter FINAL_PERIOD: check, preview, and the check before the final run
+        if _select_period(page, FINAL_PERIOD, FINAL_PERIOD_ID):
+            raise RuntimeError(f"{FINAL_PERIOD} is billed already — run scripts/prepare-local-stack.sql first")
+        preview = page.get_by_role("button", name=re.compile(r"^(VORSCHAU ERSTELLEN|VORSCHAU AKT)", re.I)).first
+        preview.wait_for(timeout=60000)
+        _set_document_date(page)
+        preview.click()
         page.get_by_text(CHECK_TITLE, exact=False).first.wait_for()
         page.get_by_text("Prüfung läuft", exact=False).first.wait_for(state="hidden", timeout=60000)
         shot("abrechnung-pruefung", page)
         page.locator("ion-modal ion-button").filter(has_text="Vorschau erstellen").last.click()
-        page.get_by_role("button", name="ABRECHNUNG DURCHFÜHREN", exact=False).wait_for(timeout=120000)
+        _wait_billing_done(page, run_button)
         page.get_by_text("Saldo Zahlungen", exact=False).first.wait_for()
+        _set_document_date(page)  # the field of the final run starts with today again
         shot("abrechnung-vorschau", page)
-        # the confirmation of a final run, cancelled: nothing is billed for the current period
-        page.get_by_role("button", name="ABRECHNUNG DURCHFÜHREN", exact=False).click()
+        run_button.click()
         page.get_by_text(CHECK_TITLE, exact=False).first.wait_for()
         page.get_by_text("Prüfung läuft", exact=False).first.wait_for(state="hidden", timeout=60000)
         shot("abrechnung-durchfuehren", page)
-        page.locator("ion-modal ion-button").filter(has_text="Abbrechen").last.click()
 
     def final_run():
-        # once per local stack: a final run for FINAL_PERIOD (skipped when it exists already)
-        _billing_mode(page, goto)
-        page.wait_for_timeout(800)
-        ok = page.locator("ion-alert button", has_text="OK")  # the hint comes only once per session
-        if ok.count() and ok.first.is_visible():
-            ok.first.click()
-        billed = _select_period(page, FINAL_PERIOD, FINAL_PERIOD_ID)
+        # irreversible: confirm only when the open check dialog is about FINAL_PERIOD (warnings are accepted on purpose)
+        if page.get_by_text(f"{CHECK_TITLE} ({FINAL_RANGE})", exact=False).count() == 0:
+            page.locator("ion-modal ion-button").filter(has_text="Abbrechen").last.click()
+            raise RuntimeError(f"the check dialog is not about {FINAL_RANGE} — final run not started")
+        page.locator("ion-modal ion-button").filter(has_text=re.compile(r"Abrechnung durchführen$")).last.click()
         sepa_button = page.get_by_role("button", name="SEPA")
-        new_preview = page.get_by_role("button", name="VORSCHAU ERSTELLEN")
-        run_button = page.get_by_role("button", name="ABRECHNUNG DURCHFÜHREN", exact=False)
-        sepa_button.or_(new_preview).or_(run_button).first.wait_for(timeout=60000)  # footer loaded
-        if not billed:
-            if new_preview.is_visible():
-                new_preview.click()
-                page.get_by_text("Prüfung läuft", exact=False).first.wait_for(state="hidden", timeout=60000)
-                page.locator("ion-modal ion-button").filter(has_text="Vorschau erstellen").last.click()
-            run_button.click(timeout=120000)
-            page.get_by_text(CHECK_TITLE, exact=False).first.wait_for()
-            page.get_by_text("Prüfung läuft", exact=False).first.wait_for(state="hidden", timeout=60000)
-            # irreversible: confirm only when the dialog is about FINAL_PERIOD (warnings are accepted on purpose)
-            if page.get_by_text(f"{CHECK_TITLE} ({FINAL_RANGE})", exact=False).count() == 0:
-                page.locator("ion-modal ion-button").filter(has_text="Abbrechen").last.click()
-                raise RuntimeError(f"the check dialog is not about {FINAL_RANGE} — final run not started")
-            page.locator("ion-modal ion-button").filter(has_text=re.compile(r"Abrechnung durchführen$")).last.click()
-        page.get_by_role("button", name="SEPA").wait_for(timeout=120000)
+        _wait_billing_done(page, sepa_button)
         shot("abrechnung-abgerechnet", page)
 
     def sepa():
@@ -130,7 +143,20 @@ def chapter_billing(page: Page, shot, step, goto) -> None:
         page.get_by_text("SEPA Dateien", exact=False).first.wait_for()
         page.get_by_role("button", name="Generieren").click()
         page.get_by_role("button", name="Herunterladen").first.wait_for(timeout=60000)
-        shot("abrechnung-sepa", page)
+        page.wait_for_timeout(500)
+        # the dialog has a fixed height and scrolls: let it (and the window) grow until every file is visible
+        grow = page.locator("ion-modal").last.evaluate("""async m => {
+          const el = await m.querySelector('ion-content').getScrollElement()
+          const hidden = el.scrollHeight - el.clientHeight
+          const height = m.shadowRoot.querySelector('.modal-wrapper').getBoundingClientRect().height + hidden
+          m.style.setProperty('--height', height + 'px')
+          return height
+        }""")
+        page.set_viewport_size({"width": 1440, "height": max(900, int(grow) + 200)})
+        try:
+            shot("abrechnung-sepa", page)
+        finally:
+            page.set_viewport_size({"width": 1440, "height": 900})
         page.get_by_role("button", name="Schließen").click()
 
     def invoices_of_member():
@@ -211,5 +237,6 @@ def chapter_processes(page: Page, shot, step, goto) -> None:
         step(name, run)
 
     card("Zählpunkt abmelden", "prozesse-abmelden", "Begründung")
+    page.clock.set_fixed_time(PROCESS_CLOCK)
     card("Teilnahmefaktor ändern", "prozesse-teilnahmefaktor", "Teilnahmefaktor in %")
     card("Prozess History", "prozesse-history", "Anmeldung Teilnahme Online")

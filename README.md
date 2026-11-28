@@ -16,6 +16,7 @@ eegFaktura member-onboarding user guide. Developer and architecture docs live in
 | `scripts/screenshots.py` | Playwright script that logs in to a local eegFaktura stack and takes the screenshots |
 | `scripts/screens_more.py` | the screenshot steps of the chapters Tarife to Prozesse |
 | `scripts/prepare-local-stack.sql` | demo data for those chapters in the local stack |
+| `scripts/prepare-local-keycloak.sh` | optional: name and e-mail of the fixture admin in the local Keycloak (user menu) |
 
 ## Preview and build
 
@@ -33,17 +34,20 @@ names, addresses or IBANs end up in the public guide. See `scripts/screenshots.p
 to run it:
 
 ```bash
-# once per local stack: demo data the tariff and billing chapters need (local stack only!)
+# before every full run: demo data (community, members, tariffs) and a reset billing history (local stack only!)
 docker exec -i eegfaktura-legacy-dev-eegfaktura-postgresql-1 psql -v ON_ERROR_STOP=1 -U postgres -d eegfaktura < scripts/prepare-local-stack.sql
+# optional, in the WSL distribution of the stack: realistic name and e-mail of the fixture admin in the user menu
+bash scripts/prepare-local-keycloak.sh
 pip install --no-deps -r requirements-screenshots.txt
 playwright install chromium
 SCREENSHOT_PASSWORD=<fixture password> python scripts/screenshots.py          # all images
 SCREENSHOT_PASSWORD=<fixture password> python scripts/screenshots.py abrechnung  # only names containing this
 ```
 
-The billing steps write to the local stack: a preview for the current period and, once, a final billing run for
-Jul-Sep 2026 (confirmed only when the check dialog shows that period). They run in every run, also with a name filter
-(the filter only selects which images are saved). Everything else only reads. A failed step leaves a debug image in `.cache/`.
+The billing steps write to the local stack: they bill the closed quarter Jul-Sep 2026 with the invoice date 05.10.2026,
+preview and final run (confirmed only when the check dialog shows that period). A final run cannot be undone, so run
+`prepare-local-stack.sql` before every full run; it resets the billing history of the demo community. The billing steps
+run in every run, also with a name filter (the filter only selects which images are saved). Everything else only reads. A failed step leaves a debug image in `.cache/`.
 
 ## Publishing
 

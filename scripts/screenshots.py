@@ -32,7 +32,8 @@ VIEWPORT = {"width": 1440, "height": 900}
 MAX_HEIGHT = 2400  # a page taller than its content area is shot in full, up to this height
 DEBUG_DIR = Path(__file__).resolve().parent.parent / ".cache"  # failed steps leave an image here (gitignored)
 
-# height of the visible page content: Ionic scrolls inside ion-content, so a plain full-page shot would cut it off
+# height of the visible page content: Ionic scrolls inside ion-content, and some panes (the member list) inside their
+# own scrolling element, so a plain full-page shot would cut them off
 CONTENT_HEIGHT_JS = """async () => {
   let bottom = 0
   for (const c of document.querySelectorAll('ion-content')) {
@@ -40,6 +41,11 @@ CONTENT_HEIGHT_JS = """async () => {
     if (r.width === 0 || r.height === 0) continue
     const el = await c.getScrollElement()
     bottom = Math.max(bottom, r.top + el.scrollHeight)
+  }
+  for (const el of document.querySelectorAll('div')) {
+    const hidden = el.scrollHeight - el.clientHeight
+    if (hidden < 2 || el.clientHeight === 0 || !/(auto|scroll)/.test(getComputedStyle(el).overflowY)) continue
+    bottom = Math.max(bottom, window.innerHeight + hidden)
   }
   return Math.ceil(bottom)
 }"""
@@ -62,14 +68,14 @@ def shot(name: str, page: Page, locator=None, fit: bool = True) -> None:
     page.wait_for_timeout(400)  # Ionic transitions
     wait_toasts_gone(page)
     overlay = any(o.is_visible() for o in page.locator(OVERLAYS).all())
-    if locator or overlay or not fit:  # an element, a dialog, or a long list in the normal window
+    if overlay or not fit:  # a dialog, or a long list in the normal window
         (locator or page).screenshot(path=str(path))
-    else:  # the whole page: let the window grow to the content, then back
+    else:  # the whole page or one element of it: let the window grow to the content, then back
         height = min(max(page.evaluate(CONTENT_HEIGHT_JS), VIEWPORT["height"]), MAX_HEIGHT)
         page.set_viewport_size({"width": VIEWPORT["width"], "height": height})
         try:
             page.wait_for_timeout(600)
-            page.screenshot(path=str(path))
+            (locator or page).screenshot(path=str(path))
         finally:
             page.set_viewport_size(VIEWPORT)
     written.append(name)
@@ -150,14 +156,13 @@ def chapter_overview(page: Page) -> None:
 def chapter_switch_community(page: Page) -> None:
     def switcher():
         page.locator("ion-menu ion-header ion-chip").click()
-        page.locator('ion-popover ion-select[label="Auswahl Gemeinschaft"]').click()
-        page.locator("ion-alert").wait_for()
+        page.locator("ion-popover ion-item", has_text="Gemeinschaft wechseln").click()
+        picker = page.locator("ion-modal", has=page.locator("ion-searchbar"))  # the community picker (web 1.28)
+        picker.locator("ion-item", has_text=ONLINE_COMMUNITY).wait_for()
         shot("oberflaeche-gemeinschaft-wechseln", page)
         # switch to the online community explicitly: the "Prozesse" screenshot needs its menu entry
-        page.locator("ion-alert button[role=radio]", has_text=ONLINE_COMMUNITY).click()
-        page.locator("ion-alert button", has_text="OK").click()
+        picker.locator("ion-item", has_text=ONLINE_COMMUNITY).click()
         page.locator("ion-menu ion-item", has_text="Prozesse").wait_for()
-        close_overlays(page)
 
     step("oberflaeche-gemeinschaft-wechseln", switcher)
     # "Prozesse" is only in the menu of an online community (GC106668 of the second user)
@@ -246,7 +251,7 @@ def chapter_mail_texts(page: Page) -> None:
         # an unsaved edit makes switching off ask first; the edit is discarded with "Ja" (nothing is saved)
         page.locator(".mail-editor .ProseMirror").click()
         page.keyboard.press("End")
-        page.keyboard.type(" Beispiel")
+        page.keyboard.type(" Bei Fragen erreichst du uns unter office@eeg-sonnenhang.example.")
         toggle.click()
         page.locator("ion-alert").wait_for()
         scroll_to(page.locator(".mail-template-editor"))
@@ -269,11 +274,14 @@ def main() -> int:
             old.unlink()
     with sync_playwright() as p:
         browser = p.chromium.launch()
-        more = [lambda pg, f=f: f(pg, shot, step, goto) for f in (
+        tariffs, billing, energy, messages = [lambda pg, f=f: f(pg, shot, step, goto) for f in (
             screens_more.chapter_tariffs, screens_more.chapter_billing, screens_more.chapter_energy,
             screens_more.chapter_messages_documents)]
         processes = lambda pg: screens_more.chapter_processes(pg, shot, step, goto)  # noqa: E731
-        for user, chapters, capture in ((USER, (chapter_overview, chapter_members, chapter_mail_texts, *more), True),
+        # the member chapter after the billing: its joining fee line then shows the fee charged in the billed quarter,
+        # as the billing images do
+        first = (chapter_overview, chapter_mail_texts, tariffs, billing, chapter_members, energy, messages)
+        for user, chapters, capture in ((USER, first, True),
                                         (MULTI_USER, (chapter_switch_community, processes), False)):
             ctx = browser.new_context(viewport=VIEWPORT, locale="de-AT", timezone_id="Europe/Vienna")
             page = ctx.new_page()
