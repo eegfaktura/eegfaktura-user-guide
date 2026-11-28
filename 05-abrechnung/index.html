@@ -375,6 +375,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../stammdaten-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stammdaten aus Excel importieren
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../03-email-texte/" class="md-nav__link">
         
   
@@ -657,17 +684,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#was-den-wechsel-aufhalt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Was den Wechsel aufhält
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#was-sich-andert-und-was-nicht" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -829,7 +845,7 @@ hinzufügen</strong>):</p>
 </tr>
 <tr>
 <td><strong>Präfix / Startwert für Rechnungsnummern</strong></td>
-<td>Die Nummer setzt sich aus Präfix, Jahr des Belegdatums und laufender Nummer zusammen, z. B. <code>RE20260004</code>; die laufende Nummer beginnt je Jahr (und je Präfix) beim Startwert. Vorbelegt ist 0, auch ein fehlender Startwert zählt als 0: Die erste Nummer des Jahres endet dann auf 0, bei vier Stellen z. B. <code>RE20270000</code>. Soll sie mit 1 beginnen, trage 1 ein. Der Startwert gilt nur für die erste Nummer; danach zählt eegFaktura weiter</td>
+<td>Präfix + Jahr des Belegdatums + laufende Nummer, z. B. <code>RE20260004</code>. Die laufende Nummer beginnt jedes Jahr (und je Präfix) beim Startwert (vorbelegt 0 — trage 1 ein, wenn die erste Rechnung des Jahres auf 1 statt auf 0 enden soll)</td>
 </tr>
 <tr>
 <td><strong>Gutschriften für Mitgliedstyp Privat: Texte</strong></td>
@@ -891,8 +907,7 @@ kannst du z. B. auch eine Kostenstelle oder die Adresse der Anlage eintragen, et
 Objekten. Soll jede Kostenstelle eine eigene Rechnung bekommen, legst du je Kostenstelle ein eigenes Mitglied an.
 Jedes dieser Mitglieder bekommt dann einen eigenen Mitgliedsbeitrag (und gegebenenfalls die Beitrittsgebühr) —
 wähle bei Bedarf einen Mitgliedstarif ohne Beitrag. Bestehende Zählpunkte verschiebst du mit dem Pfeilkreuz.</p>
-<p>Alle Zahlen stehen mit Tausenderpunkt, z. B. „21.345,00 kWh“ oder „1.234,56“ €. Das gilt für Belege, die neu erstellt
-werden; schon erstellte Belege behalten ihr PDF.</p>
+<p>Alle Zahlen stehen mit Tausenderpunkt, z. B. „21.345,00 kWh“ oder „1.234,56“ €.</p>
 <h2 id="abrechnungsmodus">Abrechnungsmodus<a class="headerlink" href="#abrechnungsmodus" title="Link zu diesem Abschnitt">&para;</a></h2>
 <ol>
 <li>Öffne <strong>Mitglieder</strong> und wähle oben den <strong>Zeitraum</strong> (z. B. „Jul-Sep 2026“). Jeder Zeitraum hat seinen eigenen
@@ -904,9 +919,7 @@ werden; schon erstellte Belege behalten ihr PDF.</p>
 angemeldeten Zählpunkt). Auswählen musst du niemanden. Zählpunkte ohne Tarif nennt die
 <a href="#vorschau-erstellen">Prüfung vor der Abrechnung</a> unter <strong>Tarif</strong>.</p>
 <p>Der Schalter <strong>€</strong> lässt sich einschalten, sobald die Energiedaten des Zeitraums geladen sind und darin mindestens ein
-abrechenbares Mitglied vorkommt. Fährst du mit der Maus darüber, steht da „Abrechnungsmodus aktivieren“ bzw.
-„Abrechnungsmodus beenden“ — oder, solange er gesperrt ist, der Grund, z. B. „Bitte zuerst einen Zeitraum wählen.“
-oder „Im Zeitraum gibt es keine abrechenbaren Mitglieder (aktiv, mit Tarif).“</p>
+abrechenbares Mitglied vorkommt. Solange er gesperrt ist, steht der Grund da, wenn du mit der Maus darüberfährst.</p>
 <p>Im Abrechnungsmodus zeigen die Zählpunkt-Karten Beträge in € statt kWh.</p>
 <h2 id="vorschau-erstellen">Vorschau erstellen<a class="headerlink" href="#vorschau-erstellen" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p>Wähle das <strong>Rechnungsdatum</strong> (es darf nicht in der Zukunft liegen) und klicke auf <strong>Vorschau erstellen</strong>. Vorher
@@ -964,8 +977,7 @@ weiter. Welches Datum für eure Buchhaltung passt, klärst du mit deiner Steuerb
   hat.</li>
 <li>Ist eine <a href="../04-tarife/#beitrittsgebuhr">Beitrittsgebühr</a> fällig, steht sie in den Beträgen des Mitglieds in einer
   eigenen Zeile „Beitrittsgebühr:“ und ist in seiner Summe enthalten.</li>
-<li><strong>ZIP</strong> lädt alle Vorschau-Belege als PDF herunter (Dateinamen mit der Mitgliedsnummer am Ende, z. B.
-  <code>Abr_YM-2026-9_Rechnung_Vorschau_042.pdf</code>), <strong>EXCEL</strong> eine Aufstellung aller Positionen.</li>
+<li><strong>ZIP</strong> lädt alle Vorschau-Belege als PDF herunter, <strong>EXCEL</strong> eine Aufstellung aller Positionen.</li>
 <li><strong>Vorschau Akt.</strong> rechnet die Vorschau neu, z. B. nachdem du einen Tarif geändert oder Daten nachgefordert hast.</li>
 </ul>
 <h2 id="abrechnung-durchfuhren">Abrechnung durchführen<a class="headerlink" href="#abrechnung-durchfuhren" title="Link zu diesem Abschnitt">&para;</a></h2>
@@ -1012,7 +1024,7 @@ Steuerberatung.</p>
 </tr>
 <tr>
 <td><strong>DOWNLOAD</strong></td>
-<td>alle Belege als ZIP (Dateinamen siehe unten)</td>
+<td>alle Belege als ZIP; die Dateien heißen wie die Belege, mit der Belegnummer</td>
 </tr>
 <tr>
 <td><strong>EXCEL</strong></td>
@@ -1031,8 +1043,6 @@ keine Mail bestätigt hat, heißt der Knopf <strong>Erneut senden</strong>. Einz
 (fehlende oder ungültige Adresse), zeigt eegFaktura nicht an, und sie lassen sich nicht nachsenden. Prüfe die
 E-Mail-Adressen deshalb vorher und gib Mitgliedern ohne Mail ihren Beleg aus dem <strong>DOWNLOAD</strong> (ZIP).</p>
 </blockquote>
-<p><strong>Dateinamen im ZIP:</strong> Rechnungen und Gutschriften heißen wie der Beleg, mit der Belegnummer, z. B.
-<code>Abr_YM-2026-9_Rechnung_RG202600123.pdf</code>. Kommt ein Name zweimal vor, bekommt der zweite „ (2)“.</p>
 <h3 id="sepa-dateien">SEPA-Dateien<a class="headerlink" href="#sepa-dateien" title="Link zu diesem Abschnitt">&para;</a></h3>
 <p><strong>SEPA</strong> öffnet den Dialog <strong>SEPA Dateien</strong>:</p>
 <p><img alt="SEPA Dateien" src="../images/abrechnung-sepa.png" /></p>
@@ -1111,21 +1121,22 @@ alles bis dahin im bisherigen Intervall abgerechnet sein. So kann kein Zeitraum 
 </ul>
 <p>Genauso wirkt ein Wechsel auf halbjährlich zum 1. Jänner oder 1. Juli, auf jährlich zum 1. Jänner und auf monatlich zu
 jedem Monatsbeginn. Wurde noch nie endgültig abgerechnet, gilt das neue Intervall sofort.</p>
-<h3 id="was-den-wechsel-aufhalt">Was den Wechsel aufhält<a class="headerlink" href="#was-den-wechsel-aufhalt" title="Link zu diesem Abschnitt">&para;</a></h3>
+<details class="note">
+<summary>Was den Wechsel aufhält</summary>
 <ul>
 <li><strong>Noch nicht abgerechnete Zeiträume</strong> vor dem neuen Beginn (siehe Beispiel). Der Dialog nennt sie und den
   frühestmöglichen Beginn.</li>
-<li><strong>Lücken in den letzten 12 Monaten:</strong> Ist in den 12 Monaten bis einschließlich zum letzten endgültig abgerechneten
-  Monat ein Monat nicht endgültig abgerechnet, geht der Wechsel nicht; die Meldung nennt den Monat (z. B. „Februar 2026 ist noch nicht
-  endgültig abgerechnet.“). Ältere Lücken halten den Wechsel nicht auf, die Meldung weist aber darauf hin (z. B.
-  „Hinweis: März bis Mai 2024 wurden nicht endgültig abgerechnet.“). Monate vor der allerersten endgültigen Abrechnung
-  zählen nicht.</li>
-<li><strong>Eine Berechnung, die gerade läuft</strong> für einen Zeitraum, den der Wechsel betrifft, z. B. eine Abrechnung, die du eben
-  gestartet hast. Warte, bis sie fertig ist,
-  und versuche es dann noch einmal.</li>
+<li><strong>Lücken in den letzten 12 Monaten:</strong> Ist in den 12 Monaten bis einschließlich zum letzten endgültig
+  abgerechneten Monat ein Monat nicht endgültig abgerechnet, geht der Wechsel nicht; die Meldung nennt den Monat
+  (z. B. „Februar 2026 ist noch nicht endgültig abgerechnet.“). Ältere Lücken halten den Wechsel nicht auf, die
+  Meldung weist aber darauf hin (z. B. „Hinweis: März bis Mai 2024 wurden nicht endgültig abgerechnet.“). Monate
+  vor der allerersten endgültigen Abrechnung zählen nicht.</li>
+<li><strong>Eine Berechnung, die gerade läuft</strong> für einen Zeitraum, den der Wechsel betrifft, z. B. eine Abrechnung, die
+  du eben gestartet hast. Warte, bis sie fertig ist, und versuche es dann noch einmal.</li>
 </ul>
-<p>Eine <strong>fertige Vorschau</strong> hält den Wechsel nicht auf. Sie ist nicht endgültig und zählt nicht als abgerechnet. Nur solange
-eine Vorschau gerade rechnet, wartet der Wechsel wie bei jeder laufenden Berechnung.</p>
+<p>Eine <strong>fertige Vorschau</strong> hält den Wechsel nicht auf. Sie ist nicht endgültig und zählt nicht als abgerechnet. Nur
+solange eine Vorschau gerade rechnet, wartet der Wechsel wie bei jeder laufenden Berechnung.</p>
+</details>
 <h3 id="was-sich-andert-und-was-nicht">Was sich ändert und was nicht<a class="headerlink" href="#was-sich-andert-und-was-nicht" title="Link zu diesem Abschnitt">&para;</a></h3>
 <ul>
 <li>Bestehende Belege, ihre Nummern und Exporte bleiben unverändert. Schon abgerechnete Zeiträume werden nicht neu

@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://eegfaktura.github.io/eegfaktura-user-guide/03-email-texte/">
       
       
-        <link rel="prev" href="../02-mitglieder-zaehlpunkte/">
+        <link rel="prev" href="../stammdaten-import/">
       
       
         <link rel="next" href="../04-tarife/">
@@ -356,6 +356,33 @@
     
   
     Mitglieder & Zählpunkte
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stammdaten-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stammdaten aus Excel importieren
   
 
     
@@ -755,11 +782,6 @@ Standardtext.“</p>
 <li>
 <p>Ändere <strong>Betreff</strong> und Text:</p>
 <ul>
-<li>Die Knöpfe über dem Text formatieren ihn: <strong>Fett</strong>, <strong>Kursiv</strong>, <strong>Unterstrichen</strong>, <strong>Überschrift 1–3</strong>,
-  <strong>Aufzählung</strong>, <strong>Nummerierte Liste</strong>, <strong>Link</strong>, <strong>Linksbündig</strong>, <strong>Zentriert</strong>, <strong>Rechtsbündig</strong> und
-  <strong>Bild einfügen</strong>.</li>
-<li><strong>Schriftgröße</strong> setzt den Absatz, die Überschrift oder den Listenpunkt am Cursor auf <strong>Klein</strong>, <strong>Normal</strong>
-  oder <strong>Groß</strong>.</li>
 <li><strong>Platzhalter einfügen</strong> setzt einen Platzhalter an die Stelle des Cursors; Einträge mit „(Baustein)“ fügen
   einen ganzen Absatz ein. <strong>Platzhalter in den Betreff</strong> macht dasselbe für den Betreff.</li>
 <li>Für Links gelten Regeln gegen Spam, siehe <a href="#links">Links</a>.</li>
@@ -804,7 +826,13 @@ Ein neues Bild ist zunächst <strong>Klein</strong> (200 px breit). Klickst du e
 <p>Neu hochgeladene Bilder sind <strong>Entwürfe</strong>: Sie werden erst mit dem Speichern verwendet.</p>
 <h3 id="links">Links<a class="headerlink" href="#links" title="Link zu diesem Abschnitt">&para;</a></h3>
 <p>Damit eure Mails nicht im Spam landen, prüft eegFaktura die Links beim Speichern, bei der Vorschau und bei der
-Testmail:</p>
+Testmail: höchstens <strong>3 Links</strong> auf höchstens <strong>2 Domains</strong>, nur <code>https://</code> oder <code>mailto:</code>, keine Kurz-Links.</p>
+<p>Der Standardtext der <strong>Freigabe-Aufforderung</strong> enthält bereits einen Link. Startest du von seiner Kopie, zählt er mit.</p>
+<p>Verstößt ein Text gegen eine Regel, speichert eegFaktura ihn nicht und nennt den Grund. Ausnahme: Fügst du Text mit
+einem <code>http://</code>-Link ein, bleibt nur der Text stehen, der Link fällt ohne Meldung weg. Prüfe eingefügte Links
+deshalb in der Vorschau.</p>
+<details class="note">
+<summary>Alle Link-Regeln</summary>
 <ul>
 <li>höchstens <strong>3 Links</strong> je Mail; E-Mail-Links (<code>mailto:</code> — ein Klick öffnet eine neue Mail) zählen mit,</li>
 <li>höchstens <strong>2 Domains</strong>. Es zählt die Hauptdomain, z. B. <code>netz.at</code>: <code>portal.netz.at</code> und <code>www.netz.at</code> zählen
@@ -815,12 +843,9 @@ Testmail:</p>
 <li>steht im Linktext eine Adresse, muss es dieselbe sein wie das Ziel des Links,</li>
 <li>kein Platzhalter in einem Link.</li>
 </ul>
-<p>Der Standardtext der <strong>Freigabe-Aufforderung</strong> enthält bereits einen Link. Startest du von seiner Kopie, zählt er mit.</p>
-<p>Verstößt ein Text gegen eine Regel, speichert eegFaktura ihn nicht und nennt den Grund. Ausnahme: Fügst du Text mit
-einem <code>http://</code>-Link ein, bleibt nur der Text stehen, der Link fällt ohne Meldung weg. Prüfe eingefügte Links
-deshalb in der Vorschau.</p>
 <p>Selten nötig: Eine Domain mit Umlaut schreibst du in der Form mit <code>xn--</code> (z. B. <code>xn--mnchen-3ya.at</code> statt
 <code>münchen.at</code>).</p>
+</details>
 <h2 id="vorschau-und-testmail">Vorschau und Testmail<a class="headerlink" href="#vorschau-und-testmail" title="Link zu diesem Abschnitt">&para;</a></h2>
 <ul>
 <li>
@@ -879,9 +904,6 @@ nicht gespeichert ist. So kannst du Änderungen prüfen, bevor du sie speicherst
   verwendet, siehst du „Der Standardtext wurde inzwischen überarbeitet.“ Mit <strong>Neuen Standard ansehen</strong> vergleichst
   du. <strong>Neuen Standard übernehmen</strong> lädt die neue Fassung in den Editor. Verschickt wird sie erst, wenn du auf
   <strong>Speichern</strong> klickst; bis dahin gilt eure bisherige Fassung.</li>
-<li><strong>Zwei Personen gleichzeitig:</strong> Hat jemand anderer die Mail inzwischen gespeichert, meldet eegFaktura „Diese Mail
-  wurde inzwischen geändert …“. Mit <strong>Neu laden</strong> holst du den aktuellen Stand.</li>
-<li><strong>Ungespeichert zurück:</strong> <strong>Zurück zur Liste</strong> fragt nach, wenn noch Änderungen offen sind.</li>
 <li><strong>Kontaktdaten aktuell halten:</strong> Der Kontaktblock der Mitglieder-Mails kommt aus den Stammdaten der EEG-Seite.
   Ändern sich Adresse oder Telefonnummer, passt du sie dort an, nicht im Text.</li>
 </ul>
@@ -922,7 +944,7 @@ nicht gespeichert ist. So kannst du Änderungen prüfen, bevor du sie speicherst
       <nav class="md-footer__inner md-grid" aria-label="Fußzeile" >
         
           
-          <a href="../02-mitglieder-zaehlpunkte/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Mitglieder &amp; Zählpunkte">
+          <a href="../stammdaten-import/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Stammdaten aus Excel importieren">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -932,7 +954,7 @@ nicht gespeichert ist. So kannst du Änderungen prüfen, bevor du sie speicherst
                 Zurück
               </span>
               <div class="md-ellipsis">
-                Mitglieder & Zählpunkte
+                Stammdaten aus Excel importieren
               </div>
             </div>
           </a>

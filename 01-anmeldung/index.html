@@ -470,21 +470,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#einzelner-tag" class="md-nav__link">
+  <a href="#anderen-zeitraum-fur-eine-kachel-wahlen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Einzelner Tag
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sommer-und-winter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sommer und Winter
+        Anderen Zeitraum für eine Kachel wählen
       
     </span>
   </a>
@@ -558,6 +547,33 @@
     
   
     Mitglieder & Zählpunkte
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stammdaten-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stammdaten aus Excel importieren
   
 
     
@@ -828,9 +844,8 @@ gerade ungespeicherte Eingaben, fragt eegFaktura vorher nach.</p>
 <p>eegFaktura merkt sich deine Wahl für die nächste Anmeldung im selben Browser.</p>
 <h2 id="dashboard">Dashboard<a class="headerlink" href="#dashboard" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p>Das <strong>Dashboard</strong> zeigt die wichtigsten Zahlen der Gemeinschaft, meist für den gewählten <strong>Zeitraum</strong>. Den Zeitraum
-wählst du in der <strong>Mitgliederliste</strong>; das Dashboard übernimmt ihn. <strong>Lastverlauf</strong> und <strong>Tagesverlauf</strong> haben ein
-eigenes Zahnrad für einen anderen Zeitraum (Jahr, Halbjahr, Vierteljahr, Monat oder Tag); es ändert nur diese Kachel
-(siehe <a href="#einzelner-tag">Einzelner Tag</a>).</p>
+wählst du in der <strong>Mitgliederliste</strong>; das Dashboard übernimmt ihn. Für <strong>Lastverlauf</strong> und <strong>Tagesverlauf</strong> kannst du
+einen anderen wählen (siehe <a href="#anderen-zeitraum-fur-eine-kachel-wahlen">Anderen Zeitraum für eine Kachel wählen</a>).</p>
 <p><img alt="Dashboard" src="../images/dashboard.png" /></p>
 <table>
 <thead>
@@ -846,11 +861,11 @@ eigenes Zahnrad für einen anderen Zeitraum (Jahr, Halbjahr, Vierteljahr, Monat 
 </tr>
 <tr>
 <td><strong>Übersicht Stromproduktion und Verteilung</strong></td>
-<td><strong>Produziert</strong> (die Erzeugung aller Erzeuger) und <strong>Verteilt</strong> (was davon in der Gemeinschaft an die Verbraucher ging — nicht der gesamte Verbrauch der Mitglieder), jeweils mit der vorherigen Periode zum Vergleich, und <strong>EVU</strong>: der Teil der Erzeugung, der nicht in der Gemeinschaft verteilt wurde und ins Netz ging (Überschuss); darunter die <a href="#energiemengen">Energiemengen</a> „Eingekauft“ und „Verkauft“</td>
+<td><strong>Produziert</strong>, <strong>Verteilt</strong> und <strong>EVU</strong> im Zeitraum, mit der vorherigen Periode zum Vergleich; darunter die <a href="#energiemengen">Energiemengen</a></td>
 </tr>
 <tr>
 <td><strong>Lastverlauf</strong></td>
-<td>Balken für EEG, EVU und Erzeugt über den Zeitraum, dazu zwei Linien mit der Zahl der <strong>Abnehmer</strong> und <strong>Einspeiser</strong> (rechte Achse); darüber die <strong>Bilanz</strong> (siehe <a href="#bilanzdifferenz">Bilanzdifferenz</a>); auffällige Balken tragen ein „!“. Ein Balken ist bei einem Monat ein Tag, bei Vierteljahr und Halbjahr eine Woche, bei einem Jahr ein Monat</td>
+<td>Verbrauch aus der Gemeinschaft (EEG) und vom Energieversorger (EVU) sowie Erzeugung über den Zeitraum; darüber die <strong>Bilanz</strong> (siehe <a href="#bilanzdifferenz">Bilanzdifferenz</a>)</td>
 </tr>
 <tr>
 <td><strong>Tagesverlauf</strong></td>
@@ -859,12 +874,16 @@ eigenes Zahnrad für einen anderen Zeitraum (Jahr, Halbjahr, Vierteljahr, Monat 
 </tbody>
 </table>
 <p>Die Fragezeichen-Symbole neben den Werten erklären, wie eine Zahl entsteht.</p>
+<p><strong>Produziert</strong> ist die Erzeugung aller Erzeuger, <strong>Verteilt</strong> der Teil davon, der in der Gemeinschaft an die
+Verbraucher ging (nicht der gesamte Verbrauch der Mitglieder), <strong>EVU</strong> der Rest, der ins Netz ging (Überschuss).</p>
 <p><strong>Lastverlauf und Tagesverlauf lesen:</strong> Über einen Zeitraum zeigen beide Kacheln gestapelte Balken für den Verbrauch
 der Mitglieder — unten der Teil aus der Gemeinschaft (<strong>EEG</strong>), darüber der Bezug vom Energieversorger (<strong>EVU</strong>).
 Daneben steht die Erzeugung (<strong>Erzeugt</strong>). Ist dieser Balken höher als der EEG-Teil, konnte die Gemeinschaft den Rest
 nicht an ihre Mitglieder verteilen — oder es fehlen noch Daten (siehe <a href="#bilanzdifferenz">Bilanzdifferenz</a>). Der
 Tagesverlauf zeigt, zu welchen Tageszeiten das passiert — hilfreich, wenn ihr überlegt, welche Verbraucher gut zur
-Gemeinschaft passen. In der Ansicht eines einzelnen Tags zeigt der Lastverlauf Linien statt Balken.</p>
+Gemeinschaft passen. Im Lastverlauf ist ein Balken bei einem Monat ein Tag, bei Vierteljahr und Halbjahr eine Woche,
+bei einem Jahr ein Monat; auffällige Balken tragen ein „!“. Zwei Linien zeigen die Zahl der <strong>Abnehmer</strong> und
+<strong>Einspeiser</strong> (rechte Achse). In der Ansicht eines einzelnen Tags zeigt der Lastverlauf Linien statt Balken.</p>
 <h3 id="ubersicht-eeg">Übersicht EEG<a class="headerlink" href="#ubersicht-eeg" title="Link zu diesem Abschnitt">&para;</a></h3>
 <p>Die Kachel zeigt alle Zahlen mit dem Stand von heute, unabhängig vom gewählten Zeitraum; oben steht „Stand heute“.</p>
 <ul>
@@ -884,16 +903,16 @@ kannst du sie unter <strong>Prozesse → Zählpunktdaten nachfordern</strong> an
 <h3 id="energiemengen">Energiemengen<a class="headerlink" href="#energiemengen" title="Link zu diesem Abschnitt">&para;</a></h3>
 <p>„Eingekauft“ und „Verkauft“ zählen nur Zählpunkte mit einem gültigen Tarif der Gemeinschaft; ein Hinweis darunter
 sagt, wie viele Zählpunkte deshalb fehlen und mit wie vielen kWh.</p>
-<h3 id="einzelner-tag">Einzelner Tag<a class="headerlink" href="#einzelner-tag" title="Link zu diesem Abschnitt">&para;</a></h3>
-<p>Über das Zahnrad von Lastverlauf oder Tagesverlauf wählst du in der Zeile <strong>Tag</strong> ein Datum; mit
-den Pfeilen blätterst du tageweise. Nur diese Kachel wechselt in die Tagesansicht; möglich sind Tage mit
-Energiedaten bis gestern. Eine andere Zeile im Zahnrad-Menü führt zurück zum Zeitraum.</p>
-<h3 id="sommer-und-winter">Sommer und Winter<a class="headerlink" href="#sommer-und-winter" title="Link zu diesem Abschnitt">&para;</a></h3>
-<p>Über das Zahnrad von Lastverlauf oder Tagesverlauf bietet die Liste <strong>Halbjahr</strong> unter den Kalender-Halbjahren auch
-das <strong>Sommerhalbjahr</strong> (April bis September, z. B. „Apr-Sep 2026“) und das <strong>Winterhalbjahr</strong> (Oktober bis März
-über den Jahreswechsel, z. B. „Okt 2026-Mär 2027“), das neueste zuerst und nur mit Energiedaten. So vergleichst du etwa den
-Tagesverlauf im Sommer und im Winter, um Tarife nach Tageszeit zu planen. Wie beim Tag wechselt nur diese Kachel;
-die Übersicht und die Mitgliederliste behalten ihren Zeitraum.</p>
+<h3 id="anderen-zeitraum-fur-eine-kachel-wahlen">Anderen Zeitraum für eine Kachel wählen<a class="headerlink" href="#anderen-zeitraum-fur-eine-kachel-wahlen" title="Link zu diesem Abschnitt">&para;</a></h3>
+<p>Das Zahnrad von <strong>Lastverlauf</strong> oder <strong>Tagesverlauf</strong> ändert den Zeitraum nur für diese Kachel; die Übersicht und die
+Mitgliederliste behalten ihren. Zur Wahl stehen Jahr, Halbjahr, Vierteljahr, Monat oder ein einzelner Tag:</p>
+<ul>
+<li><strong>Tag:</strong> Wähle ein Datum (Tage mit Energiedaten bis gestern); mit den Pfeilen blätterst du tageweise. Eine andere
+  Zeile im Zahnrad-Menü führt zurück.</li>
+<li><strong>Halbjahr:</strong> Neben den Kalender-Halbjahren gibt es das <strong>Sommerhalbjahr</strong> (April bis September) und das
+  <strong>Winterhalbjahr</strong> (Oktober bis März). So vergleichst du etwa den Tagesverlauf im Sommer und im Winter, um Tarife
+  nach Tageszeit zu planen.</li>
+</ul>
 <h2 id="eeg-seite">EEG-Seite<a class="headerlink" href="#eeg-seite" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p>Der Menüpunkt mit dem <strong>Namen deiner Gemeinschaft</strong> öffnet die EEG-Seite mit ihren Stammdaten:</p>
 <p><img alt="EEG-Seite" src="../images/eeg-seite.png" /></p>
@@ -938,10 +957,12 @@ die Übersicht und die Mitgliederliste behalten ihren Zeitraum.</p>
 <p>Ändern können die Felder nur EEG-Admins. Eine Änderung wird gespeichert, sobald du das Feld verlässt; einen
 eigenen Speichern-Knopf gibt es nicht. EC-Nummer, Gemeinschafts-ID und Verteilung lassen sich nicht ändern.</p>
 <h3 id="modell-und-nahebereich">Modell und Nahebereich<a class="headerlink" href="#modell-und-nahebereich" title="Link zu diesem Abschnitt">&para;</a></h3>
-<p>Unter <strong>Allgemeines</strong> stehen zwei weitere Felder, beide nur zur Anzeige:</p>
+<p>Unter <strong>Allgemeines</strong> stehen zwei weitere Felder, beide nur zur Anzeige: <strong>Modell</strong> und <strong>Nahebereich</strong>.</p>
+<details class="note">
+<summary>Was bedeuten Modell und Nahebereich?</summary>
 <ul>
-<li><strong>Modell</strong>: die Art der Gemeinschaft, mit Kurz- und Langform: EEG lokal (Erneuerbare-Energie-Gemeinschaft, lokal),
-  EEG regional (Erneuerbare-Energie-Gemeinschaft, regional), GEA (Gemeinschaftliche Erzeugungsanlage), BEG
+<li><strong>Modell</strong>: die Art der Gemeinschaft, mit Kurz- und Langform: EEG lokal (Erneuerbare-Energie-Gemeinschaft,
+  lokal), EEG regional (Erneuerbare-Energie-Gemeinschaft, regional), GEA (Gemeinschaftliche Erzeugungsanlage), BEG
   (Bürgerenergiegemeinschaft), P2P (Peer-to-Peer) oder EVA (Eigenversorgungsanlage).</li>
 <li><strong>Nahebereich</strong>: die Netzebene, die alle Zählpunkte der Gemeinschaft verbindet, mit der amtlichen Bezeichnung
   laut ElWG. Der Wert ist aus dem Modell vorbelegt und wird mit jeder Zählpunktliste des Netzbetreibers
@@ -985,7 +1006,7 @@ eigenen Speichern-Knopf gibt es nicht. EC-Nummer, Gemeinschafts-ID und Verteilun
 </tr>
 </tbody>
 </table>
-<p>Liegt noch kein Wert vor, steht „unbekannt“.</p>
+</details>
 <h3 id="peer-to-peer-und-eigenversorgung">Peer-to-Peer und Eigenversorgung<a class="headerlink" href="#peer-to-peer-und-eigenversorgung" title="Link zu diesem Abschnitt">&para;</a></h3>
 <p>Für Gemeinschaften mit dem Modell <strong>P2P</strong> oder <strong>EVA</strong> gibt es alle Funktionen wie bei einer EEG, die Abrechnung aber
 nur als <strong>Vorschau</strong>: Du kannst Tarife anlegen und zuweisen, eine <a href="../05-abrechnung/#vorschau-erstellen">Vorschau erstellen</a>
