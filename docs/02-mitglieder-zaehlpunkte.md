@@ -250,10 +250,8 @@ Lege zuerst die [Tarife](04-tarife.md) an — beim Zählpunkt wählst du einen d
     - Unter **Optional** steht das Datum **Aktiv am …**, vorbelegt mit heute. eegFaktura speichert es als „Mitglied
       seit“ und meldet die Zählpunkte beim Zulassen ab diesem Tag beim Netzbetreiber an, frühestens ab morgen.
       Du kannst auch einen späteren Tag wählen, z. B. den Ersten des nächsten Abrechnungszeitraums. Nach den Regeln
-      der Marktkommunikation darf er höchstens 30 Arbeitstage in der Zukunft liegen; eegFaktura prüft das nicht.
-      Gut zu wissen: Mitgliedsbeitrag und Zählpunktgebühr kommen je Abrechnung in voller Höhe, nicht anteilig nach
-      Tagen. Wird ein Mitglied wenige Tage vor dem Ende eines Abrechnungszeitraums aktiv, zahlt es sie für diesen
-      Zeitraum ganz; mit **Aktiv am …** auf dem Ersten des nächsten Zeitraums vermeidest du das.
+      der Marktkommunikation darf er höchstens **30 Arbeitstage nach dem Zulassen** liegen; liegt er weiter weg,
+      lehnt der Netzbetreiber die Anmeldung ab. Lass das Mitglied dann erst später zu. eegFaktura prüft das nicht.
 3. Jedes Mitglied braucht mindestens einen Zählpunkt: Klicke auf **Zählpunkt hinzufügen**.
 
     ![Zählpunkt beim neuen Mitglied](images/mitglied-anlegen-zaehlpunkt.png)
@@ -274,6 +272,12 @@ Lege zuerst die [Tarife](04-tarife.md) an — beim Zählpunkt wählst du einen d
 7. Das Mitglied steht jetzt orange mit „!“ in der Liste und wartet auf die Zulassung. **Lasse es zu** (siehe
    [Neues Mitglied zulassen](#neues-mitglied-zulassen)) — erst dann werden die Zählpunkte beim Netzbetreiber
    angemeldet bzw. aktiv. Den Fortschritt siehst du am Status des Zählpunkts.
+
+**Gut zu wissen:** Mitgliedsbeitrag und Zählpunktgebühr kommen je Abrechnung in voller Höhe, nicht anteilig nach Tagen,
+sobald für den Zeitraum Energiedaten da sind (siehe [Vorschau erstellen](05-abrechnung.md#vorschau-erstellen)). Wird ein
+Mitglied wenige Tage vor dem Ende eines Abrechnungszeitraums aktiv, zahlt es sie für diesen Zeitraum ganz. Mit
+**Aktiv am …** auf dem Ersten des nächsten Zeitraums vermeidest du das, sofern dieser Tag höchstens 30 Arbeitstage
+nach dem Zulassen liegt.
 
 ### Zählpunkt vor dem Registrieren ändern oder entfernen
 

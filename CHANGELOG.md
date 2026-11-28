@@ -15,9 +15,10 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 
 ### Changed
 - BookStack „Hintergrundwissen“ reduced to background only: the guide no longer links the pages „Energiedaten
-  herunterladen“ (the export names its series in plain text), „Datenkontrolle Energie“ (the dashboard marks unbalanced
-  days, the check before billing covers completeness) and „Prozess History“ (covered by chapter 8). Chapter 8: the
-  monthly routine now uses the dashboard.
+  herunterladen“ (the export names its series in plain text), „Datenkontrolle Energie“ (in the month view of the
+  dashboard each bar is a day and unbalanced days carry „!“; the check before billing covers completeness) and „Prozess
+  History“ (covered by chapter 8). Chapter 8: the monthly routine now uses the dashboard; chapter 1 says what a bar
+  stands for per period.
 - Links to docs.eegfaktura.at point to the renamed BookStack book „Hintergrundwissen“ (`/books/hintergrundwissen/…`,
   formerly „Workflow/Prozesse“); the old addresses redirect, the new ones do not depend on it.
 

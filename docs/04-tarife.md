@@ -147,7 +147,9 @@ Die Auswahl ist wie die Tarifliste nach Namen sortiert.
 Sollen **viele Zählpunkte oder Mitglieder auf einmal** einen anderen Tarif bekommen, musst du sie nicht einzeln
 ändern: Der Support kann das für die ganze Gemeinschaft in einem Schritt erledigen (Massenänderung). Schreib ein
 Ticket an den [Support](einrichtung-hilfe.md#hilfe-und-support) und nenne den neuen Tarif und für wen er gelten
-soll — für alle, nur für jene ohne Tarif oder nur für jene mit einem bestimmten bisherigen Tarif.
+soll — für alle, nur für jene ohne Tarif oder nur für jene mit einem bestimmten bisherigen Tarif. Lege den neuen Tarif
+vorher an. Wie jede Tarifänderung gilt er ab der nächsten Abrechnung für deren ganzen Zeitraum; lass ihn deshalb erst
+nach der Abrechnung des alten Zeitraums umstellen.
 
 Zählpunkte ohne Tarif werden nicht abgerechnet. Die [Prüfung vor der Abrechnung](05-abrechnung.md#vorschau-erstellen)
 weist darauf hin.

@@ -70,12 +70,12 @@ nur die fehlenden.
 
 ## Woraus die Werte entstehen
 
-Der Netzbetreiber schickt je Zählpunkt mehrere Messreihen. eegFaktura verwendet:
+Der Netzbetreiber schickt je Zählpunkt mehrere Messreihen:
 
 | Zählpunkt | Messreihe | Bedeutung |
 |-----------|-----------|-----------|
 | Verbraucher | Gesamtverbrauch | was der Zählpunkt insgesamt bezogen hat |
-| Verbraucher | Anteil gemeinschaftliche Erzeugung | der Teil der Erzeugung der Gemeinschaft, der dem Zählpunkt zugeteilt wurde |
+| Verbraucher | Anteil gemeinschaftliche Erzeugung (G.02) | der Teil der Erzeugung, der dem Zählpunkt nach dem Verteilschlüssel zugeteilt wurde; was davon tatsächlich verbraucht wurde, ist die Eigendeckung |
 | Verbraucher | Eigendeckung (G.03) | der Anteil aus der Gemeinschaft — **Grundlage der Rechnung** |
 | Erzeuger | Erzeugung | was die Anlage insgesamt eingespeist hat |
 | Erzeuger | Überschuss | was davon nicht in der Gemeinschaft verbraucht wurde |

@@ -21,7 +21,7 @@ hinzufügen**):
 | Feld | Wofür |
 |------|-------|
 | **Rechnungen: Text vor / nach Positionen, Abschlusstext** | Texte auf jeder Rechnung, z. B. Zahlungsbedingungen |
-| **Präfix / Startwert für Rechnungsnummern** | Die Nummer setzt sich aus Präfix, Jahr des Belegdatums und laufender Nummer zusammen, z. B. `RE20260004`; die laufende Nummer beginnt je Jahr (und je Präfix) beim Startwert. Vorbelegt ist 0, auch ein fehlender Startwert zählt als 0: Die erste Nummer des Jahres endet dann auf 0, z. B. `RE20270000`. Soll sie mit 1 beginnen, trage 1 ein. Der Startwert gilt nur für die erste Nummer; danach zählt eegFaktura weiter |
+| **Präfix / Startwert für Rechnungsnummern** | Die Nummer setzt sich aus Präfix, Jahr des Belegdatums und laufender Nummer zusammen, z. B. `RE20260004`; die laufende Nummer beginnt je Jahr (und je Präfix) beim Startwert. Vorbelegt ist 0, auch ein fehlender Startwert zählt als 0: Die erste Nummer des Jahres endet dann auf 0, bei vier Stellen z. B. `RE20270000`. Soll sie mit 1 beginnen, trage 1 ein. Der Startwert gilt nur für die erste Nummer; danach zählt eegFaktura weiter |
 | **Gutschriften für Mitgliedstyp Privat: Texte** | Texte auf Gutschriften an Mitglieder **ohne UID** |
 | **Präfix / Startwert für Gutschriftennummern** | wie bei den Rechnungen, z. B. `GS20260001` |
 | **Gutschriften für Mitgliedstyp Firma: Texte** | Texte auf Gutschriften an Mitglieder **mit UID**. Es zählt das Feld UID beim Mitglied, nicht Privat oder Firma |
@@ -48,11 +48,14 @@ Die Positionen sind je Zählpunkt gruppiert („Zählpunkt AT… – Anlagenname
   siehe [Tarife](04-tarife.md#beitrittsgebuhr),
 - Umsatzsteuer und Summen, darunter die Texte aus den Abrechnungseinstellungen und die Fußzeile,
 - die **Bankverbindung** des Mitglieds: der Name der Bank (falls eingetragen), der Kontoinhaber und von der IBAN nur
-  die letzten vier Stellen („******1234“); darunter die SEPA-Mandatsreferenz, falls eine eingetragen ist.
+  die letzten vier Stellen („******1234“; ohne IBAN steht nur „******“); darunter die SEPA-Mandatsreferenz — ist
+  keine eingetragen, steht dort die Mitgliedsnummer.
 
 Der Anlagenname des Zählpunkts erscheint auf dem Beleg — praktisch, wenn ein Mitglied mehrere Anlagen hat. Dort
 kannst du z. B. auch eine Kostenstelle oder die Adresse der Anlage eintragen, etwa bei einer Gemeinde mit mehreren
 Objekten. Soll jede Kostenstelle eine eigene Rechnung bekommen, legst du je Kostenstelle ein eigenes Mitglied an.
+Jedes dieser Mitglieder bekommt dann einen eigenen Mitgliedsbeitrag (und gegebenenfalls die Beitrittsgebühr) —
+wähle bei Bedarf einen Mitgliedstarif ohne Beitrag. Bestehende Zählpunkte verschiebst du mit dem Pfeilkreuz.
 
 Alle Zahlen stehen mit Tausenderpunkt, z. B. „21.345,00 kWh“ oder „1.234,56“ €. Das gilt für Belege, die neu erstellt
 werden; schon erstellte Belege behalten ihr PDF.

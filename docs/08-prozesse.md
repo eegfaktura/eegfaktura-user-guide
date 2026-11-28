@@ -185,7 +185,8 @@ Erfahrungswerte aus der Praxis, je nach Netzbetreiber verschieden:
   [Vollständigkeit](05-abrechnung.md#vorschau-erstellen).
 - Fehlen Daten ein, zwei Tage nach einer Störung noch immer, fordere sie nach; erst danach lohnt ein Ticket.
 - **Bewährte Routine:** Schau einmal im Monat, etwa in der ersten Woche, ins [Dashboard](01-anmeldung.md#dashboard):
-  Im **Lastverlauf** tragen Tage, an denen die Bilanz nicht aufgeht, ein „!“ (siehe
+  Wähle im Zahnrad des **Lastverlaufs** den Monat — dann ist jeder Balken ein Tag, und Tage, an denen die Bilanz
+  nicht aufgeht, tragen ein „!“ (siehe
   [Bilanzdifferenz](01-anmeldung.md#bilanzdifferenz)). Fehlendes forderst du nach. Vor der Abrechnung prüft
   eegFaktura Vollständigkeit und L3-Werte noch einmal ([Vorschau erstellen](05-abrechnung.md#vorschau-erstellen)).
 
