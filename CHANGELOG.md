@@ -4,6 +4,20 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 
 ## [Unreleased]
 
+### Changed
+- Bloat review (Fable), quick wins: the guide is shorter and easier to scan (docs 1,972 → 1,726 lines, about 75 more
+  lines folded into `??? note` blocks).
+  - „Was ist neu?“ follows a new rule: one block per month, at most about 8 one-liners with a link, only changes to a
+    task, end states only. The rule and the release procedure are in the README.
+  - The master data import is its own page („Stammdaten aus Excel importieren“); chapter 2 keeps a short pointer.
+  - Folded: model and proximity area, the protocol abbreviations, the measurement series and typical effects, what
+    blocks an interval change, the detailed link rules.
+  - Paragraph-long table cells shortened (number start value, dashboard tiles, support); new section „Dafür schreibst
+    du ein Ticket“ as the single home of the bulk change.
+  - Removed: quoted tooltips, button lists, file name patterns, rare dialog cases, the closing pointer in chapter 2.
+  - The dashboard gear is explained once („Anderen Zeitraum für eine Kachel wählen“); the anchors „Einzelner Tag“ and
+    „Sommer und Winter“ are gone.
+
 ### Added
 - Pilot release of 28.11.2026 (web 1.30.0, billing 1.13.1, eda-xp 1.6.1), chapter 5 with the pilot hint: „Format der
   Dateien“ (SEPA in ISO 20022 version 2019, pain.008.001.08 / pain.001.001.09) and „Kopf je Zählpunkt“ (equipment

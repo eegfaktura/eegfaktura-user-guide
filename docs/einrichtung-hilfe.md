@@ -19,7 +19,7 @@ gibt es zwei Wege:
 3. Sobald die Anbindung aktiv ist, erscheint in eegFaktura der Menüpunkt **Prozesse**.
 
 **Wechsel vom EDA-Anwenderportal:** Ein Abmelden im Portal vorab ist nicht nötig. Lege die Mitglieder in eegFaktura an
-oder importiere sie (siehe [Stammdaten importieren](02-mitglieder-zaehlpunkte.md#stammdaten-aus-excel-importieren)).
+oder importiere sie (siehe [Stammdaten importieren](stammdaten-import.md)).
 Zählpunkte, die beim Netzbetreiber schon aktiv sind, importierst du als **aktiv** — sonst würden sie neu angemeldet —
 und mit dem tatsächlichen Datum in „registriert seit“. Danach forderst du die Energiedaten rückwirkend an
 ([Zählpunktdaten nachfordern](08-prozesse.md#zahlpunktdaten-nachfordern)).
@@ -42,23 +42,25 @@ Datenverarbeitung rechtlich gestaltet, klärt bitte mit eurer Rechtsberatung ode
 den Mitgliedern bietet die Österreichische Koordinationsstelle für Energiegemeinschaften in ihrem
 [Downloadbereich](https://energiegemeinschaften.gv.at/downloadbereich/).
 
-## Weiterführende Informationen
-
-Dieses Handbuch beschreibt die Bedienung von eegFaktura. Hintergrundwissen, das darüber hinausgeht, steht auf
-**docs.eegfaktura.at**:
-
-| Thema | Wo |
-|-------|----|
-| Umsatzsteuer bei Rechnungen und Gutschriften je Mitgliedstyp | [docs.eegfaktura.at](https://docs.eegfaktura.at/books/hintergrundwissen/page/die-umsatzsteuerlich-korrekte-ausfuhrung-von-rechnungen-und-gutschriften) |
-| Anleitungen der Netzbetreiber-Portale | [docs.eegfaktura.at](https://docs.eegfaktura.at/shelves/netz-betreiber-infos) |
-
 ## Hilfe und Support
 
 | Wo | Wofür |
 |----|-------|
-| **Support-Portal** <https://support.vfeeg.org> | Tickets, z. B. Zugangsdaten der EDA übermitteln, einen weiteren **EEG-Admin** anlegen (mit Vor- und Nachname und E-Mail-Adresse der Person), Tarife oder Bankdaten vieler Mitglieder auf einmal ändern (Massenänderung) oder Änderungen, die nur der Betrieb machen kann. Anmeldung mit denselben Zugangsdaten wie eegFaktura |
+| **Support-Portal** <https://support.vfeeg.org> | Tickets (siehe [unten](#dafur-schreibst-du-ein-ticket)). Anmeldung mit denselben Zugangsdaten wie eegFaktura |
 | **Forum** <https://www.eeg-grossraming.at/Forum/index.php> | Fragen an andere Gemeinschaften; Ideen für neue Funktionen im Bereich **Feature Requests** |
 | dieses Handbuch | Bedienung von eegFaktura |
 
 Der Support wird **ehrenamtlich** betrieben. Eine Antwort kann einige Tage bis mehrere Wochen dauern; einfache Fragen
 sind im Forum oft schneller beantwortet.
+
+### Dafür schreibst du ein Ticket
+
+- **Zugangsdaten der EDA** für die Online-Anbindung übermitteln.
+- Einen weiteren **EEG-Admin** anlegen lassen (mit Vor- und Nachname und E-Mail-Adresse der Person).
+- **Tarif vieler Zählpunkte oder Mitglieder auf einmal ändern** (Massenänderung): Lege den neuen Tarif vorher an und
+  nenne ihn im Ticket, dazu für wen er gelten soll — für alle, nur für jene ohne Tarif oder nur für jene mit einem
+  bestimmten bisherigen Tarif. Wie jede Tarifänderung gilt er ab der nächsten Abrechnung für deren ganzen Zeitraum;
+  lass ihn deshalb erst nach der Abrechnung des alten Zeitraums umstellen.
+- **Bankdaten vieler Mitglieder auf einmal setzen** (Massenänderung): Einzugsart, Mandatsreferenz und Mandatsdatum,
+  Mandatsreferenz und Mandatsdatum auch aus einer Excel-Liste je Mitgliedsnummer.
+- Änderungen, die nur der Betrieb machen kann.

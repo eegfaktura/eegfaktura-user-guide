@@ -60,11 +60,6 @@ den Baustein mit den Kontaktdaten fügst du bei Bedarf selbst ein.
     Standardtext.“
 
 2. Ändere **Betreff** und Text:
-    - Die Knöpfe über dem Text formatieren ihn: **Fett**, **Kursiv**, **Unterstrichen**, **Überschrift 1–3**,
-      **Aufzählung**, **Nummerierte Liste**, **Link**, **Linksbündig**, **Zentriert**, **Rechtsbündig** und
-      **Bild einfügen**.
-    - **Schriftgröße** setzt den Absatz, die Überschrift oder den Listenpunkt am Cursor auf **Klein**, **Normal**
-      oder **Groß**.
     - **Platzhalter einfügen** setzt einen Platzhalter an die Stelle des Cursors; Einträge mit „(Baustein)“ fügen
       einen ganzen Absatz ein. **Platzhalter in den Betreff** macht dasselbe für den Betreff.
     - Für Links gelten Regeln gegen Spam, siehe [Links](#links).
@@ -92,16 +87,7 @@ Neu hochgeladene Bilder sind **Entwürfe**: Sie werden erst mit dem Speichern ve
 ### Links
 
 Damit eure Mails nicht im Spam landen, prüft eegFaktura die Links beim Speichern, bei der Vorschau und bei der
-Testmail:
-
-- höchstens **3 Links** je Mail; E-Mail-Links (`mailto:` — ein Klick öffnet eine neue Mail) zählen mit,
-- höchstens **2 Domains**. Es zählt die Hauptdomain, z. B. `netz.at`: `portal.netz.at` und `www.netz.at` zählen
-  als eine. E-Mail-Links zählen hier nicht,
-- die feste Zeile unten zählt bei beidem nicht mit,
-- Links beginnen mit `https://` oder `mailto:`,
-- keine Kurz-Links (z. B. bit.ly) und keine Adressen, die nur aus Zahlen bestehen (IP-Adressen),
-- steht im Linktext eine Adresse, muss es dieselbe sein wie das Ziel des Links,
-- kein Platzhalter in einem Link.
+Testmail: höchstens **3 Links** auf höchstens **2 Domains**, nur `https://` oder `mailto:`, keine Kurz-Links.
 
 Der Standardtext der **Freigabe-Aufforderung** enthält bereits einen Link. Startest du von seiner Kopie, zählt er mit.
 
@@ -109,8 +95,18 @@ Verstößt ein Text gegen eine Regel, speichert eegFaktura ihn nicht und nennt d
 einem `http://`-Link ein, bleibt nur der Text stehen, der Link fällt ohne Meldung weg. Prüfe eingefügte Links
 deshalb in der Vorschau.
 
-Selten nötig: Eine Domain mit Umlaut schreibst du in der Form mit `xn--` (z. B. `xn--mnchen-3ya.at` statt
-`münchen.at`).
+??? note "Alle Link-Regeln"
+    - höchstens **3 Links** je Mail; E-Mail-Links (`mailto:` — ein Klick öffnet eine neue Mail) zählen mit,
+    - höchstens **2 Domains**. Es zählt die Hauptdomain, z. B. `netz.at`: `portal.netz.at` und `www.netz.at` zählen
+      als eine. E-Mail-Links zählen hier nicht,
+    - die feste Zeile unten zählt bei beidem nicht mit,
+    - Links beginnen mit `https://` oder `mailto:`,
+    - keine Kurz-Links (z. B. bit.ly) und keine Adressen, die nur aus Zahlen bestehen (IP-Adressen),
+    - steht im Linktext eine Adresse, muss es dieselbe sein wie das Ziel des Links,
+    - kein Platzhalter in einem Link.
+
+    Selten nötig: Eine Domain mit Umlaut schreibst du in der Form mit `xn--` (z. B. `xn--mnchen-3ya.at` statt
+    `münchen.at`).
 
 ## Vorschau und Testmail
 
@@ -153,8 +149,5 @@ Mit **Abbrechen** bleibt alles, wie es war.
   verwendet, siehst du „Der Standardtext wurde inzwischen überarbeitet.“ Mit **Neuen Standard ansehen** vergleichst
   du. **Neuen Standard übernehmen** lädt die neue Fassung in den Editor. Verschickt wird sie erst, wenn du auf
   **Speichern** klickst; bis dahin gilt eure bisherige Fassung.
-- **Zwei Personen gleichzeitig:** Hat jemand anderer die Mail inzwischen gespeichert, meldet eegFaktura „Diese Mail
-  wurde inzwischen geändert …“. Mit **Neu laden** holst du den aktuellen Stand.
-- **Ungespeichert zurück:** **Zurück zur Liste** fragt nach, wenn noch Änderungen offen sind.
 - **Kontaktdaten aktuell halten:** Der Kontaktblock der Mitglieder-Mails kommt aus den Stammdaten der EEG-Seite.
   Ändern sich Adresse oder Telefonnummer, passt du sie dort an, nicht im Text.

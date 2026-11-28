@@ -58,27 +58,31 @@ eegFaktura merkt sich deine Wahl für die nächste Anmeldung im selben Browser.
 ## Dashboard
 
 Das **Dashboard** zeigt die wichtigsten Zahlen der Gemeinschaft, meist für den gewählten **Zeitraum**. Den Zeitraum
-wählst du in der **Mitgliederliste**; das Dashboard übernimmt ihn. **Lastverlauf** und **Tagesverlauf** haben ein
-eigenes Zahnrad für einen anderen Zeitraum (Jahr, Halbjahr, Vierteljahr, Monat oder Tag); es ändert nur diese Kachel
-(siehe [Einzelner Tag](#einzelner-tag)).
+wählst du in der **Mitgliederliste**; das Dashboard übernimmt ihn. Für **Lastverlauf** und **Tagesverlauf** kannst du
+einen anderen wählen (siehe [Anderen Zeitraum für eine Kachel wählen](#anderen-zeitraum-fur-eine-kachel-wahlen)).
 
 ![Dashboard](images/dashboard.png)
 
 | Bereich | Inhalt |
 |---------|--------|
 | **Übersicht EEG** | Mitglieder, Zählpunkte und Tarife mit dem Stand von heute (siehe [unten](#ubersicht-eeg)) |
-| **Übersicht Stromproduktion und Verteilung** | **Produziert** (die Erzeugung aller Erzeuger) und **Verteilt** (was davon in der Gemeinschaft an die Verbraucher ging — nicht der gesamte Verbrauch der Mitglieder), jeweils mit der vorherigen Periode zum Vergleich, und **EVU**: der Teil der Erzeugung, der nicht in der Gemeinschaft verteilt wurde und ins Netz ging (Überschuss); darunter die [Energiemengen](#energiemengen) „Eingekauft“ und „Verkauft“ |
-| **Lastverlauf** | Balken für EEG, EVU und Erzeugt über den Zeitraum, dazu zwei Linien mit der Zahl der **Abnehmer** und **Einspeiser** (rechte Achse); darüber die **Bilanz** (siehe [Bilanzdifferenz](#bilanzdifferenz)); auffällige Balken tragen ein „!“. Ein Balken ist bei einem Monat ein Tag, bei Vierteljahr und Halbjahr eine Woche, bei einem Jahr ein Monat |
+| **Übersicht Stromproduktion und Verteilung** | **Produziert**, **Verteilt** und **EVU** im Zeitraum, mit der vorherigen Periode zum Vergleich; darunter die [Energiemengen](#energiemengen) |
+| **Lastverlauf** | Verbrauch aus der Gemeinschaft (EEG) und vom Energieversorger (EVU) sowie Erzeugung über den Zeitraum; darüber die **Bilanz** (siehe [Bilanzdifferenz](#bilanzdifferenz)) |
 | **Tagesverlauf** | Verlauf über den Tag (EEG, EVU, Erzeugt) |
 
 Die Fragezeichen-Symbole neben den Werten erklären, wie eine Zahl entsteht.
+
+**Produziert** ist die Erzeugung aller Erzeuger, **Verteilt** der Teil davon, der in der Gemeinschaft an die
+Verbraucher ging (nicht der gesamte Verbrauch der Mitglieder), **EVU** der Rest, der ins Netz ging (Überschuss).
 
 **Lastverlauf und Tagesverlauf lesen:** Über einen Zeitraum zeigen beide Kacheln gestapelte Balken für den Verbrauch
 der Mitglieder — unten der Teil aus der Gemeinschaft (**EEG**), darüber der Bezug vom Energieversorger (**EVU**).
 Daneben steht die Erzeugung (**Erzeugt**). Ist dieser Balken höher als der EEG-Teil, konnte die Gemeinschaft den Rest
 nicht an ihre Mitglieder verteilen — oder es fehlen noch Daten (siehe [Bilanzdifferenz](#bilanzdifferenz)). Der
 Tagesverlauf zeigt, zu welchen Tageszeiten das passiert — hilfreich, wenn ihr überlegt, welche Verbraucher gut zur
-Gemeinschaft passen. In der Ansicht eines einzelnen Tags zeigt der Lastverlauf Linien statt Balken.
+Gemeinschaft passen. Im Lastverlauf ist ein Balken bei einem Monat ein Tag, bei Vierteljahr und Halbjahr eine Woche,
+bei einem Jahr ein Monat; auffällige Balken tragen ein „!“. Zwei Linien zeigen die Zahl der **Abnehmer** und
+**Einspeiser** (rechte Achse). In der Ansicht eines einzelnen Tags zeigt der Lastverlauf Linien statt Balken.
 
 ### Übersicht EEG
 
@@ -105,19 +109,15 @@ kannst du sie unter **Prozesse → Zählpunktdaten nachfordern** anfordern.
 „Eingekauft“ und „Verkauft“ zählen nur Zählpunkte mit einem gültigen Tarif der Gemeinschaft; ein Hinweis darunter
 sagt, wie viele Zählpunkte deshalb fehlen und mit wie vielen kWh.
 
-### Einzelner Tag
+### Anderen Zeitraum für eine Kachel wählen
 
-Über das Zahnrad von Lastverlauf oder Tagesverlauf wählst du in der Zeile **Tag** ein Datum; mit
-den Pfeilen blätterst du tageweise. Nur diese Kachel wechselt in die Tagesansicht; möglich sind Tage mit
-Energiedaten bis gestern. Eine andere Zeile im Zahnrad-Menü führt zurück zum Zeitraum.
+Das Zahnrad von **Lastverlauf** oder **Tagesverlauf** ändert den Zeitraum nur für diese Kachel; die Übersicht und die
+Mitgliederliste behalten ihren. Zur Wahl stehen Jahr, Halbjahr, Vierteljahr, Monat oder ein einzelner Tag:
 
-### Sommer und Winter
-
-Über das Zahnrad von Lastverlauf oder Tagesverlauf bietet die Liste **Halbjahr** unter den Kalender-Halbjahren auch
-das **Sommerhalbjahr** (April bis September, z. B. „Apr-Sep 2026“) und das **Winterhalbjahr** (Oktober bis März
-über den Jahreswechsel, z. B. „Okt 2026-Mär 2027“), das neueste zuerst und nur mit Energiedaten. So vergleichst du etwa den
-Tagesverlauf im Sommer und im Winter, um Tarife nach Tageszeit zu planen. Wie beim Tag wechselt nur diese Kachel;
-die Übersicht und die Mitgliederliste behalten ihren Zeitraum.
+- **Tag:** Wähle ein Datum (Tage mit Energiedaten bis gestern); mit den Pfeilen blätterst du tageweise.
+- **Halbjahr:** Neben den Kalender-Halbjahren gibt es das **Sommerhalbjahr** (April bis September) und das
+  **Winterhalbjahr** (Oktober bis März). So vergleichst du etwa den Tagesverlauf im Sommer und im Winter, um Tarife
+  nach Tageszeit zu planen.
 
 ## EEG-Seite
 
@@ -142,24 +142,23 @@ eigenen Speichern-Knopf gibt es nicht. EC-Nummer, Gemeinschafts-ID und Verteilun
 
 Unter **Allgemeines** stehen zwei weitere Felder, beide nur zur Anzeige:
 
-- **Modell**: die Art der Gemeinschaft, mit Kurz- und Langform: EEG lokal (Erneuerbare-Energie-Gemeinschaft, lokal),
-  EEG regional (Erneuerbare-Energie-Gemeinschaft, regional), GEA (Gemeinschaftliche Erzeugungsanlage), BEG
-  (Bürgerenergiegemeinschaft), P2P (Peer-to-Peer) oder EVA (Eigenversorgungsanlage).
-- **Nahebereich**: die Netzebene, die alle Zählpunkte der Gemeinschaft verbindet, mit der amtlichen Bezeichnung
-  laut ElWG. Der Wert ist aus dem Modell vorbelegt und wird mit jeder Zählpunktliste des Netzbetreibers
-  aktualisiert; bei P2P und EVA steht er bis zur ersten Zählpunktliste auf „unbekannt“.
+??? note "Was bedeuten Modell und Nahebereich?"
+    - **Modell**: die Art der Gemeinschaft, mit Kurz- und Langform: EEG lokal (Erneuerbare-Energie-Gemeinschaft,
+      lokal), EEG regional (Erneuerbare-Energie-Gemeinschaft, regional), GEA (Gemeinschaftliche Erzeugungsanlage), BEG
+      (Bürgerenergiegemeinschaft), P2P (Peer-to-Peer) oder EVA (Eigenversorgungsanlage).
+    - **Nahebereich**: die Netzebene, die alle Zählpunkte der Gemeinschaft verbindet, mit der amtlichen Bezeichnung
+      laut ElWG. Der Wert ist aus dem Modell vorbelegt und wird mit jeder Zählpunktliste des Netzbetreibers
+      aktualisiert; bei P2P und EVA steht er bis zur ersten Zählpunktliste auf „unbekannt“.
 
-| Nahebereich | Bezeichnung |
-|---|---|
-| 1 | Haupt-/Steigleitung |
-| 2 | Standortbereich – gemeinsame Sammelschiene |
-| 3 | Lokalbereich – gleiche Trafostation |
-| 4 | Regionalbereich – gleiches Umspannwerk eines Netzbetreibers |
-| 5 | Regionalbereich – gleiches Umspannwerk verschiedener Netzbetreiber |
-| 6 | Gebotszone – mehrere Umspannwerke eines Netzbetreibers |
-| 7 | Gebotszone – mehrere Umspannwerke verschiedener Netzbetreiber |
-
-Liegt noch kein Wert vor, steht „unbekannt“.
+    | Nahebereich | Bezeichnung |
+    |---|---|
+    | 1 | Haupt-/Steigleitung |
+    | 2 | Standortbereich – gemeinsame Sammelschiene |
+    | 3 | Lokalbereich – gleiche Trafostation |
+    | 4 | Regionalbereich – gleiches Umspannwerk eines Netzbetreibers |
+    | 5 | Regionalbereich – gleiches Umspannwerk verschiedener Netzbetreiber |
+    | 6 | Gebotszone – mehrere Umspannwerke eines Netzbetreibers |
+    | 7 | Gebotszone – mehrere Umspannwerke verschiedener Netzbetreiber |
 
 ### Peer-to-Peer und Eigenversorgung
 

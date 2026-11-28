@@ -132,15 +132,14 @@ reichen.
 davor, fehlen seine ersten Schritte. Bei „konkurrierende Prozesse“ hilft ein größerer Zeitraum, den Vorgang zu finden,
 der noch läuft.
 
-### Nachrichtenarten in der Spalte Protokoll
-
-| Bereich | Ablauf |
-|---------|--------|
-| Anmeldung Teilnahme Online | ANFORDERUNG_ECON (eegFaktura meldet an) → ANTWORT_ECON (Netzbetreiber bestätigt den Eingang) → ZUSTIMMUNG_ECON (Mitglied hat zugestimmt) → ABSCHLUSS_ECON (Zählpunkt aufgenommen); oder ABLEHNUNG_ECON; ABBRUCH_ECON, wenn die Anmeldung nach der Zustimmung abgebrochen wird (Zustimmung entzogen oder keine stabile Verbindung zum Zähler) |
-| Datenfreigabe-Aufhebung | AUFHEBUNG_CCMS (eegFaktura hebt auf), ANTWORT_CCMS / ABLEHNUNG_CCMS; AUFHEBUNG_CCMC, wenn das Mitglied aufhebt; AUFHEBUNG_CCMI, wenn der Netzbetreiber aufhebt |
-| Anfordern von Energiedaten | ANFORDERUNG_PT → ANTWORT_PT oder ABLEHNUNG_PT |
-| Änderung des Teilnahmefaktors | ANFORDERUNG_CPF (mit neuem Faktor) → ANTWORT_CPF oder ABLEHNUNG_CPF |
-| Versenden der Energiedaten | kein Protokoll: je Lieferung eine Zeile mit „Energiedaten von“ und „Energiedaten bis“ |
+??? note "Nachrichtenarten in der Spalte Protokoll"
+    | Bereich | Ablauf |
+    |---------|--------|
+    | Anmeldung Teilnahme Online | ANFORDERUNG_ECON (eegFaktura meldet an) → ANTWORT_ECON (Netzbetreiber bestätigt den Eingang) → ZUSTIMMUNG_ECON (Mitglied hat zugestimmt) → ABSCHLUSS_ECON (Zählpunkt aufgenommen); oder ABLEHNUNG_ECON; ABBRUCH_ECON, wenn die Anmeldung nach der Zustimmung abgebrochen wird (Zustimmung entzogen oder keine stabile Verbindung zum Zähler) |
+    | Datenfreigabe-Aufhebung | AUFHEBUNG_CCMS (eegFaktura hebt auf), ANTWORT_CCMS / ABLEHNUNG_CCMS; AUFHEBUNG_CCMC, wenn das Mitglied aufhebt; AUFHEBUNG_CCMI, wenn der Netzbetreiber aufhebt |
+    | Anfordern von Energiedaten | ANFORDERUNG_PT → ANTWORT_PT oder ABLEHNUNG_PT |
+    | Änderung des Teilnahmefaktors | ANFORDERUNG_CPF (mit neuem Faktor) → ANTWORT_CPF oder ABLEHNUNG_CPF |
+    | Versenden der Energiedaten | kein Protokoll: je Lieferung eine Zeile mit „Energiedaten von“ und „Energiedaten bis“ |
 
 Eine angenommene Anforderung (ANTWORT_PT) heißt noch nicht, dass die Daten da sind — das zeigt erst ein Eintrag unter
 **Versenden der Energiedaten**.

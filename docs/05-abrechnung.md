@@ -21,7 +21,7 @@ hinzufügen**):
 | Feld | Wofür |
 |------|-------|
 | **Rechnungen: Text vor / nach Positionen, Abschlusstext** | Texte auf jeder Rechnung, z. B. Zahlungsbedingungen |
-| **Präfix / Startwert für Rechnungsnummern** | Die Nummer setzt sich aus Präfix, Jahr des Belegdatums und laufender Nummer zusammen, z. B. `RE20260004`; die laufende Nummer beginnt je Jahr (und je Präfix) beim Startwert. Vorbelegt ist 0, auch ein fehlender Startwert zählt als 0: Die erste Nummer des Jahres endet dann auf 0, bei vier Stellen z. B. `RE20270000`. Soll sie mit 1 beginnen, trage 1 ein. Der Startwert gilt nur für die erste Nummer; danach zählt eegFaktura weiter |
+| **Präfix / Startwert für Rechnungsnummern** | Präfix + Jahr des Belegdatums + laufende Nummer, z. B. `RE20260004`. Die laufende Nummer beginnt jedes Jahr beim Startwert (vorbelegt 0 — trage 1 ein, wenn die erste Rechnung des Jahres auf 1 statt auf 0 enden soll) |
 | **Gutschriften für Mitgliedstyp Privat: Texte** | Texte auf Gutschriften an Mitglieder **ohne UID** |
 | **Präfix / Startwert für Gutschriftennummern** | wie bei den Rechnungen, z. B. `GS20260001` |
 | **Gutschriften für Mitgliedstyp Firma: Texte** | Texte auf Gutschriften an Mitglieder **mit UID**. Es zählt das Feld UID beim Mitglied, nicht Privat oder Firma |
@@ -65,8 +65,7 @@ Objekten. Soll jede Kostenstelle eine eigene Rechnung bekommen, legst du je Kost
 Jedes dieser Mitglieder bekommt dann einen eigenen Mitgliedsbeitrag (und gegebenenfalls die Beitrittsgebühr) —
 wähle bei Bedarf einen Mitgliedstarif ohne Beitrag. Bestehende Zählpunkte verschiebst du mit dem Pfeilkreuz.
 
-Alle Zahlen stehen mit Tausenderpunkt, z. B. „21.345,00 kWh“ oder „1.234,56“ €. Das gilt für Belege, die neu erstellt
-werden; schon erstellte Belege behalten ihr PDF.
+Alle Zahlen stehen mit Tausenderpunkt, z. B. „21.345,00 kWh“ oder „1.234,56“ €.
 
 ## Abrechnungsmodus
 
@@ -81,9 +80,7 @@ angemeldeten Zählpunkt). Auswählen musst du niemanden. Zählpunkte ohne Tarif 
 [Prüfung vor der Abrechnung](#vorschau-erstellen) unter **Tarif**.
 
 Der Schalter **€** lässt sich einschalten, sobald die Energiedaten des Zeitraums geladen sind und darin mindestens ein
-abrechenbares Mitglied vorkommt. Fährst du mit der Maus darüber, steht da „Abrechnungsmodus aktivieren“ bzw.
-„Abrechnungsmodus beenden“ — oder, solange er gesperrt ist, der Grund, z. B. „Bitte zuerst einen Zeitraum wählen.“
-oder „Im Zeitraum gibt es keine abrechenbaren Mitglieder (aktiv, mit Tarif).“
+abrechenbares Mitglied vorkommt. Solange er gesperrt ist, steht der Grund da, wenn du mit der Maus darüberfährst.
 
 Im Abrechnungsmodus zeigen die Zählpunkt-Karten Beträge in € statt kWh.
 
@@ -131,8 +128,7 @@ Die Vorschau erstellt Belege ohne Nummer: Im PDF steht statt der Nummer „-- E 
   hat.
 - Ist eine [Beitrittsgebühr](04-tarife.md#beitrittsgebuhr) fällig, steht sie in den Beträgen des Mitglieds in einer
   eigenen Zeile „Beitrittsgebühr:“ und ist in seiner Summe enthalten.
-- **ZIP** lädt alle Vorschau-Belege als PDF herunter (Dateinamen mit der Mitgliedsnummer am Ende, z. B.
-  `Abr_YM-2026-9_Rechnung_Vorschau_042.pdf`), **EXCEL** eine Aufstellung aller Positionen.
+- **ZIP** lädt alle Vorschau-Belege als PDF herunter, **EXCEL** eine Aufstellung aller Positionen.
 - **Vorschau Akt.** rechnet die Vorschau neu, z. B. nachdem du einen Tarif geändert oder Daten nachgefordert hast.
 
 ## Abrechnung durchführen
@@ -176,7 +172,7 @@ Steuerberatung.
 | Knopf | Was er tut |
 |-------|------------|
 | **SENDEN** | schickt jedem Mitglied mit E-Mail-Adresse seinen Beleg als PDF, mit der Gemeinschaft in Kopie. Text und Betreff kommen aus den [E-Mail-Texten](03-email-texte.md) („Rechnung / Gutschrift“) |
-| **DOWNLOAD** | alle Belege als ZIP (Dateinamen siehe unten) |
+| **DOWNLOAD** | alle Belege als ZIP; die Dateien heißen wie die Belege, mit der Belegnummer |
 | **EXCEL** | Aufstellung aller Belege und Positionen, z. B. für die Buchhaltung |
 | **SEPA** | Dateien für die Bank (siehe unten) |
 
@@ -185,9 +181,6 @@ Steuerberatung.
 > keine Mail bestätigt hat, heißt der Knopf **Erneut senden**. Einzelne Mails, die nicht zugestellt werden können
 > (fehlende oder ungültige Adresse), zeigt eegFaktura nicht an, und sie lassen sich nicht nachsenden. Prüfe die
 > E-Mail-Adressen deshalb vorher und gib Mitgliedern ohne Mail ihren Beleg aus dem **DOWNLOAD** (ZIP).
-
-**Dateinamen im ZIP:** Rechnungen und Gutschriften heißen wie der Beleg, mit der Belegnummer, z. B.
-`Abr_YM-2026-9_Rechnung_RG202600123.pdf`. Kommt ein Name zweimal vor, bekommt der zweite „ (2)“.
 
 ### SEPA-Dateien
 
@@ -280,21 +273,19 @@ alles bis dahin im bisherigen Intervall abgerechnet sein. So kann kein Zeitraum 
 Genauso wirkt ein Wechsel auf halbjährlich zum 1. Jänner oder 1. Juli, auf jährlich zum 1. Jänner und auf monatlich zu
 jedem Monatsbeginn. Wurde noch nie endgültig abgerechnet, gilt das neue Intervall sofort.
 
-### Was den Wechsel aufhält
+??? note "Was den Wechsel aufhält"
+    - **Noch nicht abgerechnete Zeiträume** vor dem neuen Beginn (siehe Beispiel). Der Dialog nennt sie und den
+      frühestmöglichen Beginn.
+    - **Lücken in den letzten 12 Monaten:** Ist in den 12 Monaten bis einschließlich zum letzten endgültig
+      abgerechneten Monat ein Monat nicht endgültig abgerechnet, geht der Wechsel nicht; die Meldung nennt den Monat
+      (z. B. „Februar 2026 ist noch nicht endgültig abgerechnet.“). Ältere Lücken halten den Wechsel nicht auf, die
+      Meldung weist aber darauf hin (z. B. „Hinweis: März bis Mai 2024 wurden nicht endgültig abgerechnet.“). Monate
+      vor der allerersten endgültigen Abrechnung zählen nicht.
+    - **Eine Berechnung, die gerade läuft** für einen Zeitraum, den der Wechsel betrifft, z. B. eine Abrechnung, die
+      du eben gestartet hast. Warte, bis sie fertig ist, und versuche es dann noch einmal.
 
-- **Noch nicht abgerechnete Zeiträume** vor dem neuen Beginn (siehe Beispiel). Der Dialog nennt sie und den
-  frühestmöglichen Beginn.
-- **Lücken in den letzten 12 Monaten:** Ist in den 12 Monaten bis einschließlich zum letzten endgültig abgerechneten
-  Monat ein Monat nicht endgültig abgerechnet, geht der Wechsel nicht; die Meldung nennt den Monat (z. B. „Februar 2026 ist noch nicht
-  endgültig abgerechnet.“). Ältere Lücken halten den Wechsel nicht auf, die Meldung weist aber darauf hin (z. B.
-  „Hinweis: März bis Mai 2024 wurden nicht endgültig abgerechnet.“). Monate vor der allerersten endgültigen Abrechnung
-  zählen nicht.
-- **Eine Berechnung, die gerade läuft** für einen Zeitraum, den der Wechsel betrifft, z. B. eine Abrechnung, die du eben
-  gestartet hast. Warte, bis sie fertig ist,
-  und versuche es dann noch einmal.
-
-Eine **fertige Vorschau** hält den Wechsel nicht auf. Sie ist nicht endgültig und zählt nicht als abgerechnet. Nur solange
-eine Vorschau gerade rechnet, wartet der Wechsel wie bei jeder laufenden Berechnung.
+    Eine **fertige Vorschau** hält den Wechsel nicht auf. Sie ist nicht endgültig und zählt nicht als abgerechnet. Nur
+    solange eine Vorschau gerade rechnet, wartet der Wechsel wie bei jeder laufenden Berechnung.
 
 ### Was sich ändert und was nicht
 

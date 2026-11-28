@@ -36,6 +36,7 @@ In eegFaktura öffnest du dieses Handbuch über **Handbuch** im Menü.
 | [Einrichtung & Hilfe](einrichtung-hilfe.md) | Anbindung an die Netzbetreiber, Datenfreigabe der Mitglieder, Datenschutz, Support |
 | [Anmeldung & Oberfläche](01-anmeldung.md) | Anmelden, Menü, Gemeinschaft wechseln, Dashboard, EEG-Seite |
 | [Mitglieder & Zählpunkte](02-mitglieder-zaehlpunkte.md) | Mitgliederliste, Mitglied anlegen, Zählpunkte, Status, Prozesse beim Netzbetreiber |
+| [Stammdaten aus Excel importieren](stammdaten-import.md) | viele Mitglieder auf einmal einlesen, Spalten, Testablauf |
 | [E-Mail-Texte](03-email-texte.md) | die automatischen Mails an Mitglieder selbst gestalten |
 | [Tarife](04-tarife.md) | Tarife anlegen, ändern, zuweisen, zeitbasierte Tarife |
 | [Abrechnung](05-abrechnung.md) | Vorschau, Abrechnung durchführen, Belege senden, SEPA-Dateien |

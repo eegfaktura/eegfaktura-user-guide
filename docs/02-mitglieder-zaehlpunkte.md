@@ -55,34 +55,17 @@ Mitgliedsnummer und E-Mail des Mitglieds sowie in Zählpunktnummer und Anlagenna
   ![Anzeige](images/mitglieder-filter.png)
 
 - Das Pfeil-Symbol ganz rechts öffnet die **Sortierung**: Mitgliedsnummer (voreingestellt), Nachname, Vorname,
-  Mitglied seit (neueste bzw. älteste zuerst), Aktiv ab (neueste zuerst), Einzugsart, Ort oder Energiemenge (siehe
-  [Nach Energiemenge sortieren](#nach-energiemenge-sortieren)). Mit dem Haken
-  **Mitglieder mit nötiger Aktion oben** bleiben Mitglieder, bei denen etwas zu tun ist, vor den anderen; ohne Haken
-  gilt die Sortierung für alle gleich. Die Wahl gilt nach **Übernehmen** und bleibt in deinem Browser gespeichert.
+  Mitglied seit (neueste bzw. älteste zuerst), Aktiv ab (neueste zuerst), Einzugsart, Ort oder Energiemenge. Mit dem
+  Haken **Mitglieder mit nötiger Aktion oben** bleiben Mitglieder, bei denen etwas zu tun ist, vor den anderen; ohne
+  Haken gilt die Sortierung für alle gleich. Die Wahl gilt nach **Übernehmen** und bleibt in deinem Browser
+  gespeichert.
 
   ![Sortierung](images/mitglieder-sortierung.png)
 
+- Die **Energiemenge** (größte oder kleinste zuerst, kWh im gewählten Zeitraum) ist wählbar, sobald unten in der Liste
+  **Nur Erzeuger** oder **Nur Verbraucher** gewählt ist. Mit **Nur Zählpunkte** steht jeder Zählpunkt für sich — so
+  siehst du z. B. die größten Erzeuger der Gemeinschaft oben.
 - Bei jedem Mitglied stehen die Verbraucher vor den Erzeugern.
-
-### Nach Energiemenge sortieren
-
-In der **Sortierung** gibt es **Energiemenge (größte zuerst)** und **Energiemenge (kleinste zuerst)**. Sortiert wird
-nach den kWh im gewählten Zeitraum, die auch auf den Zählpunkten stehen: beim Verbraucher die Energie aus der
-Gemeinschaft, beim Erzeuger die Einspeisung in die Gemeinschaft.
-
-- Wähle unten in der Liste zuerst **Nur Erzeuger** oder **Nur Verbraucher**. Vorher sind die beiden Einträge grau,
-  mit dem Hinweis „Für die Sortierung nach Energiemenge zuerst Erzeuger oder Verbraucher wählen.“ In der Ansicht
-  **Nur Mitglieder** gibt es sie nicht.
-- Mit **Nur Zählpunkte** steht jeder Zählpunkt für sich, sortiert über alle Mitglieder. So siehst du z. B. die
-  größten Erzeuger der Gemeinschaft oben.
-- Werden die Mitglieder angezeigt, zählt die Summe ihrer Zählpunkte; die Zählpunkte eines Mitglieds sind ebenfalls
-  nach Energiemenge sortiert. Im Abrechnungsmodus bleiben die Zählpunkte immer beim Mitglied, die Reihenfolge richtet
-  sich auch dort nach den kWh.
-- Ein Zählpunkt ohne Energiedaten im Zeitraum zählt als 0 kWh und steht bei „kleinste zuerst“ oben.
-- Der Haken **Mitglieder mit nötiger Aktion oben** gilt auch hier. Gleiche Werte bleiben nach der Mitgliedsnummer
-  geordnet.
-- Nimmst du die Auswahl Erzeuger oder Verbraucher wieder weg oder wechselst zu **Nur Mitglieder**, sortiert die
-  Liste nach der Mitgliedsnummer. Deine Wahl bleibt gespeichert und gilt wieder, sobald die Energiemenge wählbar ist.
 
 ### Farben
 
@@ -104,8 +87,7 @@ Zählpunkt mehr.
 - Der Schalter **€** wechselt in den **Abrechnungsmodus**. Er gehört zur Abrechnung und wird im Kapitel
   [Abrechnung](05-abrechnung.md#abrechnungsmodus) beschrieben.
 - Mit den Symbolen daneben wechselst du zwischen Mitgliedern und Zählpunkten und blendest Verbraucher oder Erzeuger
-  ein und aus. Fährst du mit der Maus darüber, steht da, was sie tun: „Nur Mitglieder (Zählpunkte einklappen)“,
-  „Nur Zählpunkte“, „Nur Erzeuger“, „Nur Verbraucher“.
+  ein und aus (**Nur Mitglieder**, **Nur Zählpunkte**, **Nur Erzeuger**, **Nur Verbraucher**).
 
 ## Ein Mitglied ansehen und ändern
 
@@ -290,137 +272,24 @@ nur einmal in der Liste: Trägst du eine Nummer ein, die schon dasteht, ersetzt 
 Klicke in der Mitgliederliste beim Mitglied auf **+**. Bei einem Mitglied, das orange mit „!“ auf die Zulassung
 wartet, gibt es das **+** noch nicht. Das Formular ist dasselbe wie oben; gespeichert wird mit **Registrieren**. Ist das Mitglied schon zugelassen, meldet eegFaktura den neuen Zählpunkt bei Gemeinschaften mit
 Online-Anbindung gleich beim Netzbetreiber an.
+
 ## Stammdaten aus Excel importieren
 
 Viele Mitglieder auf einmal — z. B. beim Umstieg auf eegFaktura — liest du aus einer Excel-Datei ein: oben in der
-Mitgliederliste der Knopf mit der Wolke, **Stammdaten**, **Sheet-Name** (voreingestellt „EEG Stammdaten“; heißt das
-Blatt in deiner Datei anders, trägst du hier seinen Namen ein), die Datei mit dem Stern wählen oder in das Fenster
-ziehen, **Import**. Es geht eine Datei je Import. Eine Vorlage mit allen Spalten gibt es hier; Zeile 5 erklärt die
-wichtigsten Spalten:
-[Vorlage Stammdatenimport (Excel)](https://github.com/eegfaktura/eegfaktura-backend/raw/master/tests/261124-vorlage-import-stammdaten.xlsx).
-Ältere Vorlagen funktionieren weiter: eegFaktura erkennt die Spalten an ihrer Überschrift, nicht an der Position.
-
-Wichtige Spalten:
-
-| Spalte | Hinweis |
-|--------|---------|
-| Gemeinschafts-ID | Pflicht, muss zur Gemeinschaft passen |
-| Name 1 / Name 2 | Vorname / Nachname (bei Firmen: Firmenname / Nachname der Kontaktperson). Groß-/Kleinschreibung zählt beim Wiedererkennen. Ist „Name 1“ leer, muss „Name 2“ „Nachname Vorname“ enthalten |
-| BusinessRole | `business` für eine Firma, sonst privat |
-| Mitglied seit | Excel-Datum oder `TT.MM.JJJJ`; leer = Spalte „Dokument unterschrieben“ (ältere Vorlagen), sonst heute |
-| Zählpunkt | genau 33 Zeichen |
-| Energierichtung | `CONSUMPTION` (Verbraucher, auch leer) oder `GENERATION` (Erzeuger) |
-| Zählpunktstatus | Pflicht. `ACTIVE`, `ACTIVATED` oder `REGISTERED` → wird als **aktiv** übernommen; `NEW` → wird neu angemeldet; andere Werte → Zeile wird nicht importiert |
-| registriert seit | ab wann der Zählpunkt aktiv ist; **leer = 1. Jänner des laufenden Jahres**. Ältere Energiedaten werden davor weder angefordert noch abgerechnet — beim Umstieg das tatsächliche Datum eintragen |
-| Zugeteilte Menge in Prozent | Teilnahmefaktor (1–100); leer oder 0 wird 100 % |
-| email | mehrere Adressen mit `;` trennen; ist eine Adresse ungültig, wird das Mitglied ohne E-Mail angelegt (mit Hinweis) |
-| Einzugsart | `CORE`, `B2B` oder `Kein SEPA`. Leer: kein Einzug; hat das Mitglied eine IBAN, kommt ein Hinweis |
-| MandatRef | Mandatsreferenz für die Lastschrift. Leer: Die Abrechnung nimmt die Mitgliedsnummer. Die Bank nimmt sie nur ohne Leerzeichen und Umlaute an (höchstens 35 Zeichen) – sonst die Mandatsreferenz ausfüllen |
-| MandatDat | Datum, an dem das Mitglied das Mandat unterschrieben hat (Excel-Datum oder `TT.MM.JJJJ`); bei `CORE` und `B2B` immer ausfüllen |
-| ObjektName | wird als Anlagenname übernommen |
-| Mitgliedstarif | Name eines aktiven Mitgliedstarifs eurer Gemeinschaft, so geschrieben wie im Stammdaten-Export (Groß-/Kleinschreibung egal). Leer: kein Tarif. Steht das Mitglied in mehreren Zeilen, zählt die erste ausgefüllte |
-| Zp. Tarifname | Name eines aktiven Zählpunkttarifs, passend zur Energierichtung (Verbrauch bzw. Erzeugung). Leer: kein Tarif |
-
-So verhält sich der Import:
-
-- Zählpunkte, die beim Netzbetreiber **schon aktiv** sind, importierst du mit Status aktiv — mit `NEW` würden sie
-  erneut angemeldet.
-- Ein Mitglied mit gleichem Vor- und Nachnamen wie ein vorhandenes gilt als **dasselbe**: Es bekommt die Zählpunkte
-  aus der Datei, seine übrigen Daten werden **nicht** geändert. Hat es einen dieser Zählpunkte schon, wird für dieses
-  Mitglied nichts importiert (Fehler unter Nachrichten) — nimm dann nur die neuen Zählpunkte in die Datei.
-- Zählpunkte mit `NEW` bei einem schon zugelassenen Mitglied legt der Import nur an. Melde sie danach unter
-  **Prozesse → Zählpunkt aktivieren** an.
-- Ein Fehler betrifft nur das jeweilige Mitglied; die übrigen Zeilen werden trotzdem importiert. Datumsfelder dürfen
-  Excel-Datum oder Text (`TT.MM.JJJJ`) sein.
-- Hinweise und Fehler (z. B. doppelte Mitgliedsnummer, Zählpunkt mit falscher Länge) kommen als Nachricht
-  **„Excel Stammdaten importiert — Hinweise: …“** unter [Nachrichten](07-nachrichten.md). Die Hinweise stehen
-  derzeit großteils auf Englisch. Die häufigsten:
-    - „Rows skipped: 'Gemeinschafts-ID' …“: Die Gemeinschafts-ID fehlt oder passt nicht zu deiner Gemeinschaft.
-    - „Len not equal 33“: Die Zählpunktnummer hat nicht 33 Zeichen.
-    - „Participant has wrong status“: Der Zählpunktstatus ist leer oder kein erlaubter Wert.
-    - „unknown 'Energierichtung'“: Erlaubt sind `CONSUMPTION` und `GENERATION`.
-    - „no active tariff named …“: Einen aktiven Tarif mit diesem Namen gibt es nicht.
-    - „MitgliedsNr … is already assigned …“ oder „… is used by several members“: Die Mitgliedsnummer ist schon
-      vergeben oder steht in der Datei bei mehreren Mitgliedern.
-    - „… have no direct debit type“: Mitglieder mit IBAN, aber ohne Einzugsart; sie werden nicht eingezogen.
-- Einzugsart, Mandatsreferenz, Mandatsdatum und Mitgliedstarif gelten nur für Mitglieder, die der Import neu
-  anlegt. Der Zählpunkttarif gilt für jeden neu angelegten Zählpunkt, auch bei einem schon vorhandenen Mitglied.
-- Einen unbekannten Tarifnamen oder einen Tarif der falschen Art meldet der Import; das Mitglied bzw. der Zählpunkt
-  wird dann ohne Tarif angelegt.
-- Bekommt ein neues Mitglied einen Tarif mit [Beitrittsgebühr](04-tarife.md#beitrittsgebuhr), weist die Nachricht
-  darauf hin: Die Gebühr wird mit der ersten Energieabrechnung verrechnet, auch wenn das Mitglied sie schon früher
-  bezahlt hat (z. B. vor dem Umstieg). Dann beim Mitglied **Außerhalb bezahlt erfassen**, siehe
-  [Beitrittsgebühr eines Mitglieds](#beitrittsgebuhr-eines-mitglieds).
-
-### Import zuerst mit wenigen Mitgliedern testen
-
-Bevor du alle Mitglieder einliest, probiere den Import mit **zwei oder drei Mitgliedern** aus. So siehst du, ob die
-Spalten passen, ohne dass sich Fehler in Hunderten Mitgliedern wiederfinden.
-
-> **Wichtig:** Ein Mitglied, dessen Zählpunkte in der Spalte **Zählpunktstatus** als aktiv eingetragen sind
-> (`ACTIVE`, `ACTIVATED` oder `REGISTERED`), kannst du nach dem Import **nicht mehr löschen**. Deshalb läuft der Test
-> mit dem Status `NEW`: Solche Mitglieder lassen sich wieder löschen.
-
-**1. Testdatei anlegen.** Kopiere deine Importdatei und lass darin nur zwei oder drei Mitglieder stehen, am besten
-verschiedene Fälle: einen Verbraucher, einen Erzeuger, ein Mitglied mit mehreren Zählpunkten, ein Mitglied mit
-Einzugsart **Kein SEPA**. Nimm nur Mitglieder, die **noch nicht** in eegFaktura stehen. Ein Mitglied mit gleichem
-Vor- und Nachnamen gilt als dasselbe, und dessen neue Zählpunkte könntest du nicht mehr mit dem Mitglied löschen.
-Setze in der Testdatei die Spalte **Zählpunktstatus** in **allen** Zeilen auf `NEW`, auch bei mehreren Zeilen
-desselben Mitglieds.
-
-**2. Importieren.** Lies die Testdatei wie oben beschrieben ein. Der Import selbst schickt **nichts** an den
-Netzbetreiber.
-
-**3. Prüfen.**
-
-- Unter [Nachrichten](07-nachrichten.md) nach der Nachricht **„Excel Stammdaten importiert — Hinweise: …“** sehen.
-  Jeder Hinweis nennt ein Mitglied oder einen Zählpunkt, den du in der großen Datei auch korrigieren solltest. Kommt
-  keine solche Nachricht, gab es nichts zu beanstanden.
-- In der Mitgliederliste jedes Testmitglied öffnen: Name, Adresse, E-Mail, Bankverbindung und Einzugsart, die
-  Zählpunkte mit Energierichtung, Teilnahmefaktor und Anlagenname.
-
-**4. Testmitglieder wieder löschen.** Bei den Testmitgliedern sind die Zählpunkte orange, der Name selbst ist es
-bei importierten Mitgliedern nicht. Öffne jedes. Rechts steht
-die Frage „Möchtest du *Nachname* in deine EEG aufnehmen?“ (siehe [Neues Mitglied zulassen](#neues-mitglied-zulassen)).
-Klicke auf **Nein, Löschen** und bestätige die Rückfrage mit **Löschen**. Lösche **alle** Testmitglieder. Ein
-übrig gebliebenes Testmitglied würde der große Import nicht mehr richtigstellen (siehe unten).
-
-!!! danger "Nicht auf „Ja, Zulassen“ klicken"
-    Bei Gemeinschaften mit Online-Anbindung meldet eegFaktura die Zählpunkte damit beim Netzbetreiber an. Ohne
-    Online-Anbindung werden sie aktiv. In beiden Fällen lässt sich das Mitglied danach nicht mehr löschen.
-
-**5. Korrigieren und wiederholen.** Passe die große Datei an. Wiederhole den Test mit den Schritten 2 bis 4, bis
-keine Hinweise mehr kommen, und lösche die Testmitglieder jedes Mal wieder.
-
-**6. Alle Mitglieder importieren.** Trage in der großen Datei bei Zählpunkten, die beim Netzbetreiber schon aktiv
-sind, den Status aktiv und unter „registriert seit“ das tatsächliche Datum ein. Importiere dann die vollständige
-Datei.
-
-Gut zu wissen:
-
-- **Aktiven Status mitprüfen:** Den Status aktiv und das Datum „registriert seit“ prüft der Test mit `NEW` nicht.
-  Willst du auch das sehen, importiere vor Schritt 6 zuerst **einige echte Mitglieder** mit ihrem richtigen Status
-  und prüfe sie. Diese Mitglieder bleiben in eegFaktura. **Nimm sie danach aus der großen Datei heraus**, sonst
-  meldet der große Import für jedes von ihnen einen Fehler.
-- **Ein erneuter Import ändert keine vorhandenen Mitglieder.** Einen Fehler an einem schon importierten Mitglied
-  korrigierst du direkt beim Mitglied in eegFaktura.
-- **Ein Testmitglied wurde nicht gelöscht:** Steht es auch in der großen Datei, meldet der Import für dieses Mitglied
-  einen Fehler (unter Nachrichten) und lässt es mit dem Teststatus stehen. Lösche es mit **Nein, Löschen** und
-  importiere eine Datei nur mit diesem Mitglied noch einmal.
-- Ist beim großen Import etwas schiefgegangen, wende dich an den [Support](einrichtung-hilfe.md#hilfe-und-support).
+Mitgliederliste der Knopf mit der Wolke, **Stammdaten**. Spalten, Vorlage und ein Testablauf mit wenigen Mitgliedern
+stehen auf der Seite [Stammdaten aus Excel importieren](stammdaten-import.md).
 
 ## Gut zu wissen
 
 - **Mehrere E-Mail-Adressen** eines Mitglieds trennst du mit `;` (ohne Leerzeichen); Mails gehen an alle gültigen
   Adressen.
 - **Mitglied ohne E-Mail:** Beim Anlegen und Ändern verlangt eegFaktura eine E-Mail-Adresse. Ohne Adresse kommt ein
-  Mitglied nur über den [Stammdaten-Import](#stammdaten-aus-excel-importieren) in die Liste (Spalte leer); es bekommt
+  Mitglied nur über den [Stammdaten-Import](stammdaten-import.md) in die Liste (Spalte leer); es bekommt
   dann keine Mails. Das Feld E-Mail selbst kannst du danach nur mit einer gültigen Adresse speichern. Trage keine
   erfundene Adresse ein — an sie wird geschickt.
 - **Mitglied ohne Konto:** Wähle die Einzugsart **Kein SEPA**; die IBAN darf dann leer bleiben.
-- **Bankdaten vieler Mitglieder auf einmal:** Einzugsart, Mandatsreferenz und Mandatsdatum kann der Support für
-  viele Mitglieder in einem Schritt setzen (Massenänderung), Mandatsreferenz und Mandatsdatum auch aus einer
-  Excel-Liste je Mitgliedsnummer. Schreib dazu ein Ticket an den [Support](einrichtung-hilfe.md#hilfe-und-support).
+- **Bankdaten vieler Mitglieder auf einmal:** Einzugsart, Mandatsreferenz und Mandatsdatum setzt der Support für
+  viele Mitglieder in einem Schritt (siehe [Dafür schreibst du ein Ticket](einrichtung-hilfe.md#dafur-schreibst-du-ein-ticket)).
 - **Anlagenname:** Hat ein Zählpunkt einen Anlagennamen, steht in der Liste dieser Name statt der Nummer, in den
   Prozessen „Verbraucher - Name - Nummer“ bzw. „Erzeuger - Name - Nummer“ — praktisch bei mehreren Anlagen eines
   Mitglieds.
@@ -459,8 +328,3 @@ Unter **Dokumente** legst du Unterlagen zum Mitglied ab, z. B. den unterschriebe
 
 Ein Klick auf ein Dokument öffnet es, das Papierkorb-Symbol löscht es endgültig. Dieselben Anmeldedokumente kannst
 du auch beim [Zulassen](#neues-mitglied-zulassen) hochladen.
-
-## Prozesse beim Netzbetreiber
-
-Vorgänge wie Daten nachfordern, einen Zählpunkt abmelden oder den Teilnahmefaktor ändern findest du unter
-**Prozesse**; sie sind im Kapitel [Prozesse beim Netzbetreiber](08-prozesse.md) beschrieben.
