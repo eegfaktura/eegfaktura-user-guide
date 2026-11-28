@@ -64,7 +64,8 @@ Mitgliedsnummer und E-Mail des Mitglieds sowie in Zählpunktnummer und Anlagenna
 
 - Die **Energiemenge** (größte oder kleinste zuerst, kWh im gewählten Zeitraum) ist wählbar, sobald unten in der Liste
   **Nur Erzeuger** oder **Nur Verbraucher** gewählt ist. Mit **Nur Zählpunkte** steht jeder Zählpunkt für sich — so
-  siehst du z. B. die größten Erzeuger der Gemeinschaft oben.
+  siehst du z. B. die größten Erzeuger der Gemeinschaft oben. Sonst sortiert die Liste nach der Mitgliedsnummer;
+  deine Wahl gilt wieder, sobald die Energiemenge wählbar ist.
 - Bei jedem Mitglied stehen die Verbraucher vor den Erzeugern.
 
 ### Farben

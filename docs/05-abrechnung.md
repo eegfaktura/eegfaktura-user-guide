@@ -21,7 +21,7 @@ hinzufügen**):
 | Feld | Wofür |
 |------|-------|
 | **Rechnungen: Text vor / nach Positionen, Abschlusstext** | Texte auf jeder Rechnung, z. B. Zahlungsbedingungen |
-| **Präfix / Startwert für Rechnungsnummern** | Präfix + Jahr des Belegdatums + laufende Nummer, z. B. `RE20260004`. Die laufende Nummer beginnt jedes Jahr beim Startwert (vorbelegt 0 — trage 1 ein, wenn die erste Rechnung des Jahres auf 1 statt auf 0 enden soll) |
+| **Präfix / Startwert für Rechnungsnummern** | Präfix + Jahr des Belegdatums + laufende Nummer, z. B. `RE20260004`. Die laufende Nummer beginnt jedes Jahr (und je Präfix) beim Startwert (vorbelegt 0 — trage 1 ein, wenn die erste Rechnung des Jahres auf 1 statt auf 0 enden soll) |
 | **Gutschriften für Mitgliedstyp Privat: Texte** | Texte auf Gutschriften an Mitglieder **ohne UID** |
 | **Präfix / Startwert für Gutschriftennummern** | wie bei den Rechnungen, z. B. `GS20260001` |
 | **Gutschriften für Mitgliedstyp Firma: Texte** | Texte auf Gutschriften an Mitglieder **mit UID**. Es zählt das Feld UID beim Mitglied, nicht Privat oder Firma |

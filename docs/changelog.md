@@ -18,6 +18,8 @@ Stand.
   Begründung geht an ihn mit → [Zählpunkt abmelden](08-prozesse.md#zahlpunkt-abmelden)
 - **Anmeldung nur noch online:** die Offline-Registrierung mit Aktivierungs-Code gibt es nicht mehr →
   [Neues Mitglied zulassen](02-mitglieder-zaehlpunkte.md#neues-mitglied-zulassen)
+- **Mitglied registrieren:** einen eingetragenen Zählpunkt vor dem Registrieren ändern oder entfernen →
+  [Zählpunkt vor dem Registrieren ändern](02-mitglieder-zaehlpunkte.md#zahlpunkt-vor-dem-registrieren-andern-oder-entfernen)
 - **Peer-to-Peer und Eigenversorgung:** Abrechnung als Vorschau, z. B. für Vorlage-Rechnungen; keine endgültige
   Abrechnung → [Peer-to-Peer und Eigenversorgung](01-anmeldung.md#peer-to-peer-und-eigenversorgung)
 - **Mitgliederliste:** Suche mit mehreren Begriffen, Sortierung nach Energiemenge, Mitgliedsnummer hinter dem Namen →

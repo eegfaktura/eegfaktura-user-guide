@@ -81,7 +81,8 @@ The page is for EEG admins, not a developer changelog:
   Details belong in the chapter the link points to.
 - **Only what enables a new task or changes a familiar one.** No renamings, defaults, sort orders, number formats,
   clearer messages or file names.
-- **End state only:** several changes to the same function become one entry; never „zunächst …, seit … “.
+- **End state only:** several changes to the same function become one entry; never „zunächst …, seit … “. A merged
+  entry stays in the month of the first change; later changes only update its text.
 - **Age:** entries older than 6 months move into a `??? note "Ältere Änderungen"` block at the end of the page;
   delete them after 12 months.
 

@@ -114,7 +114,8 @@ sagt, wie viele Zählpunkte deshalb fehlen und mit wie vielen kWh.
 Das Zahnrad von **Lastverlauf** oder **Tagesverlauf** ändert den Zeitraum nur für diese Kachel; die Übersicht und die
 Mitgliederliste behalten ihren. Zur Wahl stehen Jahr, Halbjahr, Vierteljahr, Monat oder ein einzelner Tag:
 
-- **Tag:** Wähle ein Datum (Tage mit Energiedaten bis gestern); mit den Pfeilen blätterst du tageweise.
+- **Tag:** Wähle ein Datum (Tage mit Energiedaten bis gestern); mit den Pfeilen blätterst du tageweise. Eine andere
+  Zeile im Zahnrad-Menü führt zurück.
 - **Halbjahr:** Neben den Kalender-Halbjahren gibt es das **Sommerhalbjahr** (April bis September) und das
   **Winterhalbjahr** (Oktober bis März). So vergleichst du etwa den Tagesverlauf im Sommer und im Winter, um Tarife
   nach Tageszeit zu planen.
@@ -140,7 +141,7 @@ eigenen Speichern-Knopf gibt es nicht. EC-Nummer, Gemeinschafts-ID und Verteilun
 
 ### Modell und Nahebereich
 
-Unter **Allgemeines** stehen zwei weitere Felder, beide nur zur Anzeige:
+Unter **Allgemeines** stehen zwei weitere Felder, beide nur zur Anzeige: **Modell** und **Nahebereich**.
 
 ??? note "Was bedeuten Modell und Nahebereich?"
     - **Modell**: die Art der Gemeinschaft, mit Kurz- und Langform: EEG lokal (Erneuerbare-Energie-Gemeinschaft,

@@ -14,9 +14,13 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
     blocks an interval change, the detailed link rules.
   - Paragraph-long table cells shortened (number start value, dashboard tiles, support); new section „Dafür schreibst
     du ein Ticket“ as the single home of the bulk change.
-  - Removed: quoted tooltips, button lists, file name patterns, rare dialog cases, the closing pointer in chapter 2.
-  - The dashboard gear is explained once („Anderen Zeitraum für eine Kachel wählen“); the anchors „Einzelner Tag“ and
-    „Sommer und Winter“ are gone.
+  - Removed: quoted tooltips, button lists, file name patterns, rare dialog cases, the closing pointer in chapter 2,
+    the section „Weiterführende Informationen“ in „Einrichtung & Hilfe“ (both links are in the chapters).
+  - The dashboard gear is explained once („Anderen Zeitraum für eine Kachel wählen“).
+  - Anchors that no longer exist (nothing links to them, external bookmarks land at the page top): `#einzelner-tag`,
+    `#sommer-und-winter`, `#nach-energiemenge-sortieren`, `#weiterfuhrende-informationen`,
+    `#prozesse-beim-netzbetreiber`, `#was-den-wechsel-aufhalt`, `#nachrichtenarten-in-der-spalte-protokoll`,
+    `#typische-effekte`.
 
 ### Added
 - Pilot release of 28.11.2026 (web 1.30.0, billing 1.13.1, eda-xp 1.6.1), chapter 5 with the pilot hint: „Format der

@@ -27,7 +27,7 @@ Probiere den Import zuerst mit wenigen Mitgliedern aus (siehe
 | Zählpunkt | genau 33 Zeichen |
 | Energierichtung | `CONSUMPTION` (Verbraucher, auch leer) oder `GENERATION` (Erzeuger) |
 | Zählpunktstatus | Pflicht. `ACTIVE`, `ACTIVATED` oder `REGISTERED` → wird als **aktiv** übernommen; `NEW` → wird neu angemeldet; andere Werte → Zeile wird nicht importiert |
-| registriert seit | ab wann der Zählpunkt aktiv ist; **leer = 1. Jänner des laufenden Jahres**. Ältere Energiedaten werden davor weder angefordert noch abgerechnet — beim Umstieg das tatsächliche Datum eintragen |
+| registriert seit | ab wann der Zählpunkt aktiv ist (Excel-Datum oder `TT.MM.JJJJ`); **leer = 1. Jänner des laufenden Jahres**. Ältere Energiedaten werden davor weder angefordert noch abgerechnet — beim Umstieg das tatsächliche Datum eintragen |
 | Zugeteilte Menge in Prozent | Teilnahmefaktor (1–100); leer oder 0 wird 100 % |
 | email | mehrere Adressen mit `;` trennen; ist eine Adresse ungültig, wird das Mitglied ohne E-Mail angelegt (mit Hinweis) |
 | Einzugsart | `CORE`, `B2B` oder `Kein SEPA`. Leer: kein Einzug; hat das Mitglied eine IBAN, kommt ein Hinweis |
@@ -82,7 +82,8 @@ Spalten passen, ohne dass sich Fehler in Hunderten Mitgliedern wiederfinden.
 
 1. **Testdatei anlegen.** Kopiere deine Importdatei und lass darin nur zwei oder drei Mitglieder stehen, am besten
    verschiedene Fälle: einen Verbraucher, einen Erzeuger, ein Mitglied mit mehreren Zählpunkten, ein Mitglied mit
-   Einzugsart **Kein SEPA**. Nimm nur Mitglieder, die **noch nicht** in eegFaktura stehen. Setze die Spalte
+   Einzugsart **Kein SEPA**. Nimm nur Mitglieder, die **noch nicht** in eegFaktura stehen — sonst gilt ein Mitglied
+   mit gleichem Namen als dasselbe, und seine neuen Zählpunkte ließen sich nicht mehr löschen. Setze die Spalte
    **Zählpunktstatus** in **allen** Zeilen auf `NEW`.
 2. **Importieren.** Lies die Testdatei ein. Der Import selbst schickt **nichts** an den Netzbetreiber.
 3. **Prüfen.** Sieh unter [Nachrichten](07-nachrichten.md) nach der Nachricht
