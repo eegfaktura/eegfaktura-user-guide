@@ -16,6 +16,7 @@ eegFaktura member-onboarding user guide. Developer and architecture docs live in
 | `scripts/screenshots.py` | Playwright script that logs in to a local eegFaktura stack and takes the screenshots |
 | `scripts/screens_more.py` | the screenshot steps of the chapters Tarife to Prozesse |
 | `scripts/prepare-local-stack.sql` | demo data for those chapters in the local stack |
+| `scripts/prepare-local-keycloak.sh` | optional: name and e-mail of the fixture admin in the local Keycloak (user menu) |
 
 ## Preview and build
 
@@ -35,6 +36,8 @@ to run it:
 ```bash
 # before every full run: demo data (community, members, tariffs) and a reset billing history (local stack only!)
 docker exec -i eegfaktura-legacy-dev-eegfaktura-postgresql-1 psql -v ON_ERROR_STOP=1 -U postgres -d eegfaktura < scripts/prepare-local-stack.sql
+# optional, in the WSL distribution of the stack: realistic name and e-mail of the fixture admin in the user menu
+bash scripts/prepare-local-keycloak.sh
 pip install --no-deps -r requirements-screenshots.txt
 playwright install chromium
 SCREENSHOT_PASSWORD=<fixture password> python scripts/screenshots.py          # all images

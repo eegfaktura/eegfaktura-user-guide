@@ -70,16 +70,26 @@ SELECT g.pid, k.type FROM guide_member g CROSS JOIN (VALUES ('RESIDENCE'), ('BIL
  WHERE NOT EXISTS (SELECT 1 FROM base.address a WHERE a.participant_id = g.pid AND a.type = k.type);
 UPDATE base.address a SET street = g.street, "streetNumber" = g.streetnr, city = 'Graz', zip = '8010'
   FROM guide_member g WHERE a.participant_id = g.pid;
--- a second contact row of a member (fixture: an alternative address) gets a second address
-UPDATE base.contactdetail c SET email = CASE WHEN c.email LIKE '%alt%' THEN split_part(g.email, '@', 1) || '@example.com'
-                                             ELSE g.email END,
-                                phone = CASE WHEN c.email LIKE '%alt%' THEN NULL ELSE g.phone END
-  FROM guide_member g WHERE c.participant_id = g.pid;
+-- the first contact row of a member (by id) gets the address, a further row (fixture: an alternative address) a
+-- second one
+UPDATE base.contactdetail c SET email = CASE WHEN r.rn = 1 THEN g.email ELSE split_part(g.email, '@', 1) || '@example.com' END,
+                                phone = CASE WHEN r.rn = 1 THEN g.phone END
+  FROM guide_member g,
+       (SELECT id, row_number() OVER (PARTITION BY participant_id ORDER BY id) AS rn FROM base.contactdetail) r
+ WHERE c.participant_id = g.pid AND r.id = c.id;
 UPDATE base.bankaccount b SET owner = trim(p.firstname || ' ' || p.lastname), "bankName" = 'Musterbank'
   FROM guide_member g JOIN base.participant p ON p.id = g.pid WHERE b.participant_id = g.pid;
+-- B2B direct debit is for companies only (chapter 5): private members with B2B get CORE
+UPDATE base.bankaccount b SET sepa_direct_debit = 'CORE'
+  FROM guide_member g JOIN base.participant p ON p.id = g.pid
+ WHERE b.participant_id = g.pid AND p."businessRole" = 'EEG_PRIVATE' AND b.sepa_direct_debit = 'B2B';
 -- the metering points are at the member's address
 UPDATE base.meteringpoint m SET street = g.street, "streetNumber" = g.streetnr, city = 'Graz', zip = '8010'
   FROM guide_member g WHERE m.participant_id = g.pid AND m.tenant = 'RC100100';
+
+-- Petra Gruber's generator is in the fixture's state WARN (shown orange like a registration under way): active
+UPDATE base.meteringpoint SET process_state = 'ACTIVE'
+ WHERE tenant = 'RC100100' AND metering_point_id = 'AT0080000000000000000000000100102' AND process_state = 'WARN';
 
 -- earlier local test runs left placeholder values: an activation date 01.01.1970 and a participation factor of 0 %
 -- (the energy data of the demo meters start in 2026, so they are active from 01.01.2026 at the latest)
@@ -120,6 +130,22 @@ UPDATE base.tariff SET status = 'ARCHIVED'
 -- a joining fee with 20 % VAT on the member tariff (web 1.15 / billing 1.6): the member details show its status line
 UPDATE base.tariff SET "joiningFee" = 50, "joiningFeeUseVat" = true, "joiningFeeVatInPercent" = 20
  WHERE id = '00000000-0000-4000-a100-00000000000a' AND tenant = 'RC100100' AND type = 'EEG';
+
+-- messages: the runtime's leftovers of RC100100 (test runs) replaced by a consistent history, oldest first (the list
+-- is ordered by id): Johann Pichler's metering point joins in October, energy data are requested in November
+DELETE FROM base.notification WHERE tenant = 'RC100100';
+INSERT INTO base.notification (tenant, type, process, notification, date, role)
+SELECT 'RC100100', 'MESSAGE', 'EDA_PROCESS',
+       json_build_object('meteringPoints', json_build_array(m.meter), 'responseCodes', json_build_array(m.code),
+                         'type', m.type), m.date::timestamp, 'ADMIN'
+  FROM (VALUES (1, 'ANFORDERUNG_ECON', 'AT0080000000000000000000000143002', 'Meldung erhalten', '2026-10-01 10:00:00'),
+               (2, 'ANTWORT_ECON', 'AT0080000000000000000000000143002', 'Meldung erhalten', '2026-10-01 10:05:00'),
+               (3, 'ZUSTIMMUNG_ECON', 'AT0080000000000000000000000143002', 'Zustimmung erteilt', '2026-10-03 18:42:00'),
+               (4, 'ABSCHLUSS_ECON', 'AT0080000000000000000000000143002', 'Meldung erhalten', '2026-10-13 06:30:00'),
+               (5, 'ANFORDERUNG_PT', 'AT0080000000000000000000000100101', 'Meldung erhalten', '2026-11-20 09:10:00'),
+               (6, 'ANTWORT_PT', 'AT0080000000000000000000000100101', 'Meldung erhalten', '2026-11-20 09:15:00'))
+       AS m(n, type, meter, code, date)
+ ORDER BY m.n;
 
 -- billing history of RC100100 reset: „Meine Rechnungen“ shows only the documents of the run the screenshots create
 CREATE TEMP TABLE guide_files ON COMMIT DROP AS

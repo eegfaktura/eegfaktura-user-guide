@@ -274,11 +274,14 @@ def main() -> int:
             old.unlink()
     with sync_playwright() as p:
         browser = p.chromium.launch()
-        more = [lambda pg, f=f: f(pg, shot, step, goto) for f in (
+        tariffs, billing, energy, messages = [lambda pg, f=f: f(pg, shot, step, goto) for f in (
             screens_more.chapter_tariffs, screens_more.chapter_billing, screens_more.chapter_energy,
             screens_more.chapter_messages_documents)]
         processes = lambda pg: screens_more.chapter_processes(pg, shot, step, goto)  # noqa: E731
-        for user, chapters, capture in ((USER, (chapter_overview, chapter_members, chapter_mail_texts, *more), True),
+        # the member chapter after the billing: its joining fee line then shows the fee charged in the billed quarter,
+        # as the billing images do
+        first = (chapter_overview, chapter_mail_texts, tariffs, billing, chapter_members, energy, messages)
+        for user, chapters, capture in ((USER, first, True),
                                         (MULTI_USER, (chapter_switch_community, processes), False)):
             ctx = browser.new_context(viewport=VIEWPORT, locale="de-AT", timezone_id="Europe/Vienna")
             page = ctx.new_page()

@@ -143,7 +143,20 @@ def chapter_billing(page: Page, shot, step, goto) -> None:
         page.get_by_text("SEPA Dateien", exact=False).first.wait_for()
         page.get_by_role("button", name="Generieren").click()
         page.get_by_role("button", name="Herunterladen").first.wait_for(timeout=60000)
-        shot("abrechnung-sepa", page)
+        page.wait_for_timeout(500)
+        # the dialog has a fixed height and scrolls: let it (and the window) grow until every file is visible
+        grow = page.locator("ion-modal").last.evaluate("""async m => {
+          const el = await m.querySelector('ion-content').getScrollElement()
+          const hidden = el.scrollHeight - el.clientHeight
+          const height = m.shadowRoot.querySelector('.modal-wrapper').getBoundingClientRect().height + hidden
+          m.style.setProperty('--height', height + 'px')
+          return height
+        }""")
+        page.set_viewport_size({"width": 1440, "height": max(900, int(grow) + 200)})
+        try:
+            shot("abrechnung-sepa", page)
+        finally:
+            page.set_viewport_size({"width": 1440, "height": 900})
         page.get_by_role("button", name="Schließen").click()
 
     def invoices_of_member():
