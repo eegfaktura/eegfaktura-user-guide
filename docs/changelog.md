@@ -3,6 +3,13 @@
 Neue Funktionen von eegFaktura, die du als EEG-Admin bemerkst. Die Kapitel beschreiben jeweils den aktuellen
 Stand.
 
+## In der Pilot-Zone
+
+--8<-- "pilot.md"
+
+- **SEPA-Dateien:** im Format ISO 20022 Version 2019 → [Format der Dateien](05-abrechnung.md#format-der-dateien)
+- **Belege:** die Anlage-Nr. steht wieder im Kopf je Zählpunkt → [Kopf je Zählpunkt](05-abrechnung.md#kopf-je-zahlpunkt)
+
 ## Herbst 2026 (seit 25.11.2026)
 
 ### Menü: Handbuch
