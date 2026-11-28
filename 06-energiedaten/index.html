@@ -769,7 +769,7 @@ erreichbar, sagt eegFaktura das; der Export enthält dann alle Mitglieder, nur d
 <a href="../08-prozesse/#zahlpunktdaten-nachfordern">Prozesse → Zählpunktdaten nachfordern</a> erneut anfordern — mit „Smart“
 nur die fehlenden.</p>
 <h2 id="woraus-die-werte-entstehen">Woraus die Werte entstehen<a class="headerlink" href="#woraus-die-werte-entstehen" title="Link zu diesem Abschnitt">&para;</a></h2>
-<p>Der Netzbetreiber schickt je Zählpunkt mehrere Messreihen. eegFaktura verwendet:</p>
+<p>Der Netzbetreiber schickt je Zählpunkt mehrere Messreihen:</p>
 <table>
 <thead>
 <tr>
@@ -783,6 +783,11 @@ nur die fehlenden.</p>
 <td>Verbraucher</td>
 <td>Gesamtverbrauch</td>
 <td>was der Zählpunkt insgesamt bezogen hat</td>
+</tr>
+<tr>
+<td>Verbraucher</td>
+<td>Anteil gemeinschaftliche Erzeugung (G.02)</td>
+<td>der Teil der Erzeugung, der dem Zählpunkt nach dem Verteilschlüssel zugeteilt wurde; was davon tatsächlich verbraucht wurde, ist die Eigendeckung</td>
 </tr>
 <tr>
 <td>Verbraucher</td>
@@ -803,9 +808,7 @@ nur die fehlenden.</p>
 </table>
 <p>Abgerechnet wird beim Erzeuger <strong>Erzeugung minus Überschuss</strong>, also der in der Gemeinschaft verteilte Teil. Das zeigen
 auch die Karten in der Mitgliederliste.</p>
-<p>Die Codes der Messreihen (OBIS) und ihre Geschichte seit der Mehrfachteilnahme beschreibt
-<a href="https://docs.eegfaktura.at/books/hintergrundwissen/page/energiedaten-herunterladen">Energiedaten herunterladen</a> auf
-docs.eegfaktura.at.</p>
+<p>Im Export stehen die Messreihen mit ihrem vollen Namen in der Zeile <strong>Metercode</strong> des Blatts „Energiedaten“.</p>
 <h3 id="typische-effekte">Typische Effekte<a class="headerlink" href="#typische-effekte" title="Link zu diesem Abschnitt">&para;</a></h3>
 <ul>
 <li><strong>Zeitumstellung:</strong> Ein Tag der Umstellung hat 92 bzw. 100 Viertelstunden statt 96 — beim Nachrechnen von Hand

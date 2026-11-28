@@ -795,7 +795,7 @@ hinzufügen</strong>):</p>
 </tr>
 <tr>
 <td><strong>Präfix / Startwert für Rechnungsnummern</strong></td>
-<td>Die Nummer setzt sich aus Präfix, Jahr des Belegdatums und laufender Nummer zusammen, z. B. <code>RE20260004</code>; die laufende Nummer beginnt je Jahr beim Startwert</td>
+<td>Die Nummer setzt sich aus Präfix, Jahr des Belegdatums und laufender Nummer zusammen, z. B. <code>RE20260004</code>; die laufende Nummer beginnt je Jahr (und je Präfix) beim Startwert. Vorbelegt ist 0, auch ein fehlender Startwert zählt als 0: Die erste Nummer des Jahres endet dann auf 0, bei vier Stellen z. B. <code>RE20270000</code>. Soll sie mit 1 beginnen, trage 1 ein. Der Startwert gilt nur für die erste Nummer; danach zählt eegFaktura weiter</td>
 </tr>
 <tr>
 <td><strong>Gutschriften für Mitgliedstyp Privat: Texte</strong></td>
@@ -837,9 +837,16 @@ hinzufügen</strong>):</p>
 <li>im ersten endgültigen Lauf mit Energie (oder nach <strong>Beitrittsgebühr nachverrechnen</strong>) einmal die <strong>Beitrittsgebühr</strong>,
   immer auf einer Rechnung (ein reiner Erzeuger bekommt dafür eine eigene Rechnung neben der Gutschrift),
   siehe <a href="../04-tarife/#beitrittsgebuhr">Tarife</a>,</li>
-<li>Umsatzsteuer und Summen, darunter die Texte aus den Abrechnungseinstellungen und die Fußzeile.</li>
+<li>Umsatzsteuer und Summen, darunter die Texte aus den Abrechnungseinstellungen und die Fußzeile,</li>
+<li>die <strong>Bankverbindung</strong> des Mitglieds: der Name der Bank (falls eingetragen), der Kontoinhaber und von der IBAN nur
+  die letzten vier Stellen („<strong><strong><strong>1234“; ohne IBAN steht nur „</strong></strong></strong>“); darunter die SEPA-Mandatsreferenz — ist
+  keine eingetragen, steht dort die Mitgliedsnummer.</li>
 </ul>
-<p>Der Anlagenname des Zählpunkts erscheint auf dem Beleg — praktisch, wenn ein Mitglied mehrere Anlagen hat.</p>
+<p>Der Anlagenname des Zählpunkts erscheint auf dem Beleg — praktisch, wenn ein Mitglied mehrere Anlagen hat. Dort
+kannst du z. B. auch eine Kostenstelle oder die Adresse der Anlage eintragen, etwa bei einer Gemeinde mit mehreren
+Objekten. Soll jede Kostenstelle eine eigene Rechnung bekommen, legst du je Kostenstelle ein eigenes Mitglied an.
+Jedes dieser Mitglieder bekommt dann einen eigenen Mitgliedsbeitrag (und gegebenenfalls die Beitrittsgebühr) —
+wähle bei Bedarf einen Mitgliedstarif ohne Beitrag. Bestehende Zählpunkte verschiebst du mit dem Pfeilkreuz.</p>
 <p>Alle Zahlen stehen mit Tausenderpunkt, z. B. „21.345,00 kWh“ oder „1.234,56“ €. Das gilt für Belege, die neu erstellt
 werden; schon erstellte Belege behalten ihr PDF.</p>
 <h2 id="abrechnungsmodus">Abrechnungsmodus<a class="headerlink" href="#abrechnungsmodus" title="Link zu diesem Abschnitt">&para;</a></h2>
@@ -894,6 +901,9 @@ aber, wo die Abrechnung noch unvollständig ist. Fehlende Daten forderst du unte
 <p>Sind die Energiedaten des Zeitraums noch nicht geladen oder gibt es darin kein abrechenbares Mitglied, startet
 eegFaktura nach der Prüfung keinen Lauf und nennt unter „Abrechnung nicht möglich“ den Grund. Ein Zeitraum ganz ohne
 Energiedaten wird also nicht abgerechnet.</p>
+<p>Ein <strong>Rechnungsdatum in der Vergangenheit</strong> ist erlaubt. Rechnest du z. B. den Dezember erst im Jänner ab, kannst du
+den 31.12. wählen: Die Belegnummern tragen dann das Jahr des Rechnungsdatums und zählen in dessen Nummernfolge
+weiter. Welches Datum für eure Buchhaltung passt, klärst du mit deiner Steuerberatung.</p>
 <p>Die Vorschau erstellt Belege ohne Nummer: Im PDF steht statt der Nummer „-- E N T W U R F --“, der Dateiname enthält
 „Vorschau“.</p>
 <p><img alt="Vorschau" src="../images/abrechnung-vorschau.png" /></p>
@@ -920,8 +930,10 @@ Energiedaten wird also nicht abgerechnet.</p>
 <p>Passt die Vorschau, klicke auf <strong>Abrechnung durchführen</strong> (die Zahl in Klammern am Knopf nennt die Mitglieder mit
 Beträgen). Die endgültigen Belege werden dabei <strong>neu berechnet</strong> — mit
 den Tarifen, Stammdaten und Energiedaten im Moment des Klicks. Hat sich seit
-der Vorschau etwas geändert, erstelle sie mit <strong>Vorschau Akt.</strong> direkt davor neu. eegFaktura prüft noch einmal und
-warnt ausdrücklich:</p>
+der Vorschau etwas geändert, erstelle sie mit <strong>Vorschau Akt.</strong> direkt davor neu. Das <strong>Rechnungsdatum</strong> der
+endgültigen Belege steht im Feld über <strong>Vorschau Akt.</strong>: Es ist mit heute vorbelegt und übernimmt das Datum der
+ersten Vorschau nicht — stelle ein abweichendes Datum dort noch einmal ein. eegFaktura prüft noch einmal und warnt
+ausdrücklich:</p>
 <p><img alt="Abrechnung durchführen" src="../images/abrechnung-durchfuehren.png" /></p>
 <blockquote>
 <p><strong>Die Abrechnung ist endgültig.</strong> Die Belege bekommen fortlaufende Nummern und lassen sich danach nicht mehr ändern

@@ -1183,7 +1183,10 @@ beiden Fällen oben.</p>
    mit der nächsten freien Nummer vorbelegt.</p>
 <ul>
 <li>Unter <strong>Optional</strong> steht das Datum <strong>Aktiv am …</strong>, vorbelegt mit heute. eegFaktura speichert es als „Mitglied
-  seit“ und meldet die Zählpunkte beim Zulassen ab diesem Tag beim Netzbetreiber an, frühestens ab morgen.</li>
+  seit“ und meldet die Zählpunkte beim Zulassen ab diesem Tag beim Netzbetreiber an, frühestens ab morgen.
+  Du kannst auch einen späteren Tag wählen, z. B. den Ersten des nächsten Abrechnungszeitraums. Nach den Regeln
+  der Marktkommunikation darf er höchstens <strong>30 Arbeitstage nach dem Zulassen</strong> liegen; liegt er weiter weg,
+  lehnt der Netzbetreiber die Anmeldung ab. Lass das Mitglied dann erst später zu. eegFaktura prüft das nicht.</li>
 </ul>
 </li>
 <li>
@@ -1211,6 +1214,11 @@ beiden Fällen oben.</p>
    <a href="#neues-mitglied-zulassen">Neues Mitglied zulassen</a>) — erst dann werden die Zählpunkte beim Netzbetreiber
    angemeldet bzw. aktiv. Den Fortschritt siehst du am Status des Zählpunkts.</li>
 </ol>
+<p><strong>Gut zu wissen:</strong> Mitgliedsbeitrag und Zählpunktgebühr kommen je Abrechnung in voller Höhe, nicht anteilig nach Tagen,
+sobald für den Zeitraum Energiedaten da sind (siehe <a href="../05-abrechnung/#vorschau-erstellen">Vorschau erstellen</a>). Wird ein
+Mitglied wenige Tage vor dem Ende eines Abrechnungszeitraums aktiv, zahlt es sie für diesen Zeitraum ganz. Mit
+<strong>Aktiv am …</strong> auf dem Ersten des nächsten Zeitraums vermeidest du das, sofern dieser Tag höchstens 30 Arbeitstage
+nach dem Zulassen liegt.</p>
 <h3 id="zahlpunkt-vor-dem-registrieren-andern-oder-entfernen">Zählpunkt vor dem Registrieren ändern oder entfernen<a class="headerlink" href="#zahlpunkt-vor-dem-registrieren-andern-oder-entfernen" title="Link zu diesem Abschnitt">&para;</a></h3>
 <p>Einen schon eingetragenen Zählpunkt kannst du vor dem <strong>Registrieren</strong> noch korrigieren: Klicke auf seine Karte, ändere
 die Angaben und klicke auf <strong>Übernehmen</strong>. <strong>Entfernen</strong> nimmt ihn wieder aus der Liste. Jede Zählpunktnummer steht
@@ -1396,6 +1404,9 @@ Datei.</p>
   dann keine Mails. Das Feld E-Mail selbst kannst du danach nur mit einer gültigen Adresse speichern. Trage keine
   erfundene Adresse ein — an sie wird geschickt.</li>
 <li><strong>Mitglied ohne Konto:</strong> Wähle die Einzugsart <strong>Kein SEPA</strong>; die IBAN darf dann leer bleiben.</li>
+<li><strong>Bankdaten vieler Mitglieder auf einmal:</strong> Einzugsart, Mandatsreferenz und Mandatsdatum kann der Support für
+  viele Mitglieder in einem Schritt setzen (Massenänderung), Mandatsreferenz und Mandatsdatum auch aus einer
+  Excel-Liste je Mitgliedsnummer. Schreib dazu ein Ticket an den <a href="../einrichtung-hilfe/#hilfe-und-support">Support</a>.</li>
 <li><strong>Anlagenname:</strong> Hat ein Zählpunkt einen Anlagennamen, steht in der Liste dieser Name statt der Nummer, in den
   Prozessen „Verbraucher - Name - Nummer“ bzw. „Erzeuger - Name - Nummer“ — praktisch bei mehreren Anlagen eines
   Mitglieds.</li>
