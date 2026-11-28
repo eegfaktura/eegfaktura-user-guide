@@ -348,6 +348,60 @@
   
   
     <li class="md-nav__item">
+      <a href="../dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eeg-seite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EEG-Seite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../02-mitglieder-zaehlpunkte/" class="md-nav__link">
         
   
@@ -526,6 +580,17 @@
   
     <nav class="md-nav" aria-label="Abrechnungseinstellungen">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gutschriften-und-umsatzsteuer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gutschriften und Umsatzsteuer
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#was-auf-einem-beleg-steht" class="md-nav__link">
@@ -849,7 +914,7 @@ hinzufügen</strong>):</p>
 </tr>
 <tr>
 <td><strong>Gutschriften für Mitgliedstyp Privat: Texte</strong></td>
-<td>Texte auf Gutschriften an Mitglieder <strong>ohne UID</strong></td>
+<td>Texte auf Gutschriften an Mitglieder <strong>ohne UID</strong> (siehe <a href="#gutschriften-und-umsatzsteuer">Gutschriften und Umsatzsteuer</a>)</td>
 </tr>
 <tr>
 <td><strong>Präfix / Startwert für Gutschriftennummern</strong></td>
@@ -857,7 +922,7 @@ hinzufügen</strong>):</p>
 </tr>
 <tr>
 <td><strong>Gutschriften für Mitgliedstyp Firma: Texte</strong></td>
-<td>Texte auf Gutschriften an Mitglieder <strong>mit UID</strong>. Es zählt das Feld UID beim Mitglied, nicht Privat oder Firma</td>
+<td>Texte auf Gutschriften an Mitglieder <strong>mit UID</strong></td>
 </tr>
 <tr>
 <td><strong>Text für Fußzeile</strong></td>
@@ -875,6 +940,14 @@ hinzufügen</strong>):</p>
 </table>
 <p>Änderungen werden gespeichert, sobald du ein Feld verlässt.</p>
 <p>In allen Texten der Abrechnungseinstellungen (und in den Tariftexten) erzeugt <code>##</code> einen Zeilenumbruch.</p>
+<h3 id="gutschriften-und-umsatzsteuer">Gutschriften und Umsatzsteuer<a class="headerlink" href="#gutschriften-und-umsatzsteuer" title="Link zu diesem Abschnitt">&para;</a></h3>
+<p>Welche Texte eine Gutschrift bekommt, hängt am Feld <strong>UID</strong> des Mitglieds, nicht an Privat oder Firma: Erzeuger ohne
+UID bekommen die Texte „Gutschriften für Mitgliedstyp Privat“, Erzeuger mit eingetragener UID die Texte „Gutschriften
+für Mitgliedstyp Firma“. Ob Umsatzsteuer auf der Gutschrift steht, bestimmt allein der Erzeugertarif
+(<strong>Umsatzsteuer anführen</strong>). eegFaktura druckt von sich aus keinen Hinweis auf Reverse Charge; einen solchen Text
+trägst du selbst ein, in den Texten für Mitgliedstyp Firma oder im
+<a href="../04-tarife/#umsatzsteuer">Zusatztext des Tarifs</a>. Ob Reverse Charge anzuwenden ist, klärst du mit deiner
+Steuerberatung.</p>
 <h3 id="was-auf-einem-beleg-steht">Was auf einem Beleg steht<a class="headerlink" href="#was-auf-einem-beleg-steht" title="Link zu diesem Abschnitt">&para;</a></h3>
 <p>Die Positionen sind je Zählpunkt gruppiert (siehe <a href="#kopf-je-zahlpunkt">Kopf je Zählpunkt</a>):</p>
 <ul>
@@ -884,9 +957,7 @@ hinzufügen</strong>):</p>
   Erzeuger bekommt dafür eine Rechnung neben der Gutschrift). Bei Verbrauchern gilt die USt des Tarifs, bei Erzeugern
   <strong>USt. für Zählpunktgebühr in %</strong>,</li>
 <li>auf Rechnungen der <strong>Mitgliedsbeitrag</strong> des Mitglieds-Tarifs,</li>
-<li>im ersten endgültigen Lauf mit Energie (oder nach <strong>Beitrittsgebühr nachverrechnen</strong>) einmal die <strong>Beitrittsgebühr</strong>,
-  immer auf einer Rechnung (ein reiner Erzeuger bekommt dafür eine eigene Rechnung neben der Gutschrift),
-  siehe <a href="../04-tarife/#beitrittsgebuhr">Tarife</a>,</li>
+<li>einmal die <strong>Beitrittsgebühr</strong>, wenn sie fällig ist (siehe <a href="../04-tarife/#beitrittsgebuhr">Tarife</a>),</li>
 <li>Umsatzsteuer und Summen, darunter die Texte aus den Abrechnungseinstellungen und die Fußzeile,</li>
 <li>die <strong>Bankverbindung</strong> des Mitglieds: der Name der Bank (falls eingetragen), der Kontoinhaber und von der IBAN nur
   die letzten vier Stellen („<strong><strong><strong>1234“; ohne IBAN steht nur „</strong></strong></strong>“); darunter die SEPA-Mandatsreferenz — ist
@@ -958,9 +1029,6 @@ aber, wo die Abrechnung noch unvollständig ist. Fehlende Daten forderst du unte
 <p>Sind die Energiedaten des Zeitraums noch nicht geladen oder gibt es darin kein abrechenbares Mitglied, startet
 eegFaktura nach der Prüfung keinen Lauf und nennt unter „Abrechnung nicht möglich“ den Grund. Ein Zeitraum ganz ohne
 Energiedaten wird also nicht abgerechnet.</p>
-<p>Ein <strong>Rechnungsdatum in der Vergangenheit</strong> ist erlaubt. Rechnest du z. B. den Dezember erst im Jänner ab, kannst du
-den 31.12. wählen: Die Belegnummern tragen dann das Jahr des Rechnungsdatums und zählen in dessen Nummernfolge
-weiter. Welches Datum für eure Buchhaltung passt, klärst du mit deiner Steuerberatung.</p>
 <p>Die Vorschau erstellt Belege ohne Nummer: Im PDF steht statt der Nummer „-- E N T W U R F --“, der Dateiname enthält
 „Vorschau“.</p>
 <p><img alt="Vorschau" src="../images/abrechnung-vorschau.png" /></p>
@@ -975,25 +1043,30 @@ weiter. Welches Datum für eure Buchhaltung passt, klärst du mit deiner Steuerb
   Orientierung, keine Buchungsbeträge und keine steuerliche Beratung.</li>
 <li>Den <strong>Mitgliedsbeitrag</strong> bekommt ein Mitglied nur, wenn es im Zeitraum mindestens einen Zählpunkt mit Energiedaten
   hat.</li>
-<li>Ist eine <a href="../04-tarife/#beitrittsgebuhr">Beitrittsgebühr</a> fällig, steht sie in den Beträgen des Mitglieds in einer
-  eigenen Zeile „Beitrittsgebühr:“ und ist in seiner Summe enthalten.</li>
+<li>Eine fällige <a href="../04-tarife/#beitrittsgebuhr">Beitrittsgebühr</a> steht bei den Beträgen des Mitglieds in einer eigenen
+  Zeile „Beitrittsgebühr:“ und ist in seiner Summe enthalten.</li>
 <li><strong>ZIP</strong> lädt alle Vorschau-Belege als PDF herunter, <strong>EXCEL</strong> eine Aufstellung aller Positionen.</li>
 <li><strong>Vorschau Akt.</strong> rechnet die Vorschau neu, z. B. nachdem du einen Tarif geändert oder Daten nachgefordert hast.</li>
 </ul>
 <h2 id="abrechnung-durchfuhren">Abrechnung durchführen<a class="headerlink" href="#abrechnung-durchfuhren" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p>Bei Gemeinschaften mit dem Modell <strong>P2P</strong> oder <strong>EVA</strong> gibt es nur die Vorschau, keine endgültige Abrechnung (siehe
-<a href="../01-anmeldung/#peer-to-peer-und-eigenversorgung">Peer-to-Peer und Eigenversorgung</a>).</p>
+<a href="../eeg-seite/#peer-to-peer-und-eigenversorgung">Peer-to-Peer und Eigenversorgung</a>).</p>
 <p>Passt die Vorschau, klicke auf <strong>Abrechnung durchführen</strong> (die Zahl in Klammern am Knopf nennt die Mitglieder mit
-Beträgen). Die endgültigen Belege werden dabei <strong>neu berechnet</strong> — mit
-den Tarifen, Stammdaten und Energiedaten im Moment des Klicks. Hat sich seit
-der Vorschau etwas geändert, erstelle sie mit <strong>Vorschau Akt.</strong> direkt davor neu. Das <strong>Rechnungsdatum</strong> der
-endgültigen Belege steht im Feld über <strong>Vorschau Akt.</strong>: Es ist mit heute vorbelegt und übernimmt das Datum der
-ersten Vorschau nicht — stelle ein abweichendes Datum dort noch einmal ein. eegFaktura prüft noch einmal und warnt
-ausdrücklich:</p>
+Beträgen). Die endgültigen Belege werden dabei <strong>neu berechnet</strong> — mit den Tarifen, Stammdaten und Energiedaten im
+Moment des Klicks. Hat sich seit der Vorschau etwas geändert, erstelle sie mit <strong>Vorschau Akt.</strong> direkt davor neu.</p>
+<div class="admonition warning">
+<p class="admonition-title">Rechnungsdatum noch einmal prüfen</p>
+<p>Das <strong>Rechnungsdatum</strong> der endgültigen Belege steht im Feld über <strong>Vorschau Akt.</strong>: Es ist mit heute vorbelegt und
+übernimmt das Datum der ersten Vorschau nicht — stelle ein abweichendes Datum dort noch einmal ein. Ein Datum in
+der Vergangenheit ist erlaubt, eines in der Zukunft nicht. Rechnest du z. B. den Dezember erst im Jänner ab,
+kannst du den 31.12. wählen: Die Belegnummern tragen dann das Jahr des Rechnungsdatums und zählen in dessen
+Nummernfolge weiter. Welches Datum für eure Buchhaltung passt, klärst du mit deiner Steuerberatung.</p>
+</div>
+<p>eegFaktura prüft noch einmal und warnt ausdrücklich:</p>
 <p><img alt="Abrechnung durchführen" src="../images/abrechnung-durchfuehren.png" /></p>
 <blockquote>
 <p><strong>Die Abrechnung ist endgültig.</strong> Die Belege bekommen fortlaufende Nummern und lassen sich danach nicht mehr ändern
-oder löschen. Ein Rechnungsdatum in der Zukunft ist nicht erlaubt.</p>
+oder löschen.</p>
 </blockquote>
 <p>Endgültige Läufe einer Gemeinschaft laufen nacheinander: Startest du einen, während ein anderer noch läuft (z. B.
 für einen zweiten Zeitraum), bricht er ab mit „Ein endgültiger Abrechnungslauf dieser Gemeinschaft läuft gerade –
@@ -1001,13 +1074,8 @@ bitte nach dessen Ende erneut starten“.</p>
 <p>Schlägt ein Lauf fehl, steht unten „Abrechnung fehlgeschlagen (…)“ mit dem Grund. Behebe ihn und erstelle die
 Vorschau neu. Einen Zeitraum, der sich mit einem schon endgültig abgerechneten überschneidet, rechnet eegFaktura
 nicht noch einmal ab.</p>
-<p>Belege mit dem Betrag 0 werden nicht erstellt. Erzeuger ohne UID bekommen eine Gutschrift mit den Texten
-„Gutschriften für Mitgliedstyp Privat“, Erzeuger mit eingetragener UID eine Gutschrift mit den Texten „Gutschriften
-für Mitgliedstyp Firma“. Ob Umsatzsteuer auf der Gutschrift steht, bestimmt allein der Erzeugertarif
-(<strong>Umsatzsteuer anführen</strong>). eegFaktura druckt von sich aus keinen Hinweis auf Reverse Charge; einen solchen Text
-trägst du selbst ein, in den Texten für Mitgliedstyp Firma oder im
-<a href="../04-tarife/#umsatzsteuer">Zusatztext des Tarifs</a>. Ob Reverse Charge anzuwenden ist, klärst du mit deiner
-Steuerberatung.</p>
+<p>Belege mit dem Betrag 0 werden nicht erstellt. Welche Texte eine Gutschrift bekommt und was für die Umsatzsteuer
+gilt, steht unter <a href="#gutschriften-und-umsatzsteuer">Gutschriften und Umsatzsteuer</a>.</p>
 <h2 id="nach-der-abrechnung">Nach der Abrechnung<a class="headerlink" href="#nach-der-abrechnung" title="Link zu diesem Abschnitt">&para;</a></h2>
 <p><img alt="Abgerechneter Zeitraum" src="../images/abrechnung-abgerechnet.png" /></p>
 <table>

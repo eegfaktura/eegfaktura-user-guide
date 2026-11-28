@@ -346,6 +346,60 @@
   
   
     <li class="md-nav__item">
+      <a href="../dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eeg-seite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EEG-Seite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../02-mitglieder-zaehlpunkte/" class="md-nav__link">
         
   
@@ -710,6 +764,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#monatliche-routine-daten-prufen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monatliche Routine: Daten prüfen
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -774,14 +839,14 @@ später wieder teilnehmen, ist eine neue Anmeldung nötig.</p>
    <a href="#begrundung">Begründung</a> ein.</li>
 <li>Klicke auf <strong>Anfordern</strong> und bestätige „Datenfreigabe aufheben“ mit <strong>Aufheben</strong>.</li>
 </ol>
+<p><strong>Fehlt die Kennung der Datenfreigabe (Consent-ID)</strong> — das kommt bei importierten Zählpunkten vor —, meldet eegFaktura
+das beim Anfordern. Fordere dann zuerst die <a href="#teilnehmerliste-anfordern">Teilnehmerliste</a> an. Sobald sie da ist, hat
+eegFaktura die Kennung selbst eingetragen, und du forderst die Abmeldung noch einmal an.</p>
 <h3 id="begrundung">Begründung<a class="headerlink" href="#begrundung" title="Link zu diesem Abschnitt">&para;</a></h3>
 <p>Die <strong>Begründung (optional)</strong> geht mit der Abmeldung an den Netzbetreiber und wird in der Prozess History gespeichert.
 Trag deshalb keine personenbezogenen Daten ein. Sie darf höchstens 50 Zeichen lang sein; ein Zähler unter dem Feld
 zeigt, wie viele es sind. Bei mehr als 50 Zeichen bleibt <strong>Anfordern</strong> gesperrt. Die Bestätigung vor dem Absenden
 nennt die Begründung noch einmal.</p>
-<p>Fehlt eegFaktura die Kennung der Datenfreigabe (Consent-ID), meldet eegFaktura das beim Anfordern. Fordere dann zuerst
-die <strong>Teilnehmerliste</strong> an (siehe unten). Sobald sie da ist, ist die Kennung eingetragen, und du forderst die Abmeldung
-noch einmal an.</p>
 <h3 id="was-nach-dem-anfordern-passiert">Was nach dem Anfordern passiert<a class="headerlink" href="#was-nach-dem-anfordern-passiert" title="Link zu diesem Abschnitt">&para;</a></h3>
 <p>Das Anfordern allein ändert den Zählpunkt nicht: Er bleibt aktiv, die Anfrage steht in der Prozess History und in den
 <a href="../07-nachrichten/">Nachrichten</a>. Erst die <strong>Antwort des Netzbetreibers</strong> entscheidet:</p>
@@ -816,6 +881,8 @@ oder „ConsentID abgelaufen“.</p>
 <li>Wähle <strong>Mitglied</strong> und <strong>Zählpunkt</strong> (mehrere möglich; die Auswahl zeigt am Ende den aktuellen Faktor).</li>
 <li>Gib den neuen <strong>Teilnahmefaktor in %</strong> ein (1–100), klicke auf <strong>Anfordern</strong> und bestätige mit <strong>Senden</strong>.</li>
 </ol>
+<p>Nimmt ein Zählpunkt an mehreren Gemeinschaften teil, darf die Summe 100 % nicht übersteigen — senke den Faktor zuerst
+in der einen Gemeinschaft, bevor du ihn in der anderen erhöhst.</p>
 <blockquote>
 <p>Der Netzbetreiber nimmt Änderungen <strong>nur zwischen 9 und 17 Uhr</strong> an, <strong>eine pro Tag</strong> je Zählpunkt; die Änderung
 gilt ab dem nächsten Tag. Außerhalb dieser Zeit warnt eegFaktura, weil der Netzbetreiber sonst mit „Prozessdatum
@@ -1003,12 +1070,13 @@ Netzbetreiber-ID auf Tippfehler oder Leerzeichen.</p>
   später noch. Rechne daher nicht unmittelbar nach dem Ende eines Zeitraums ab, sondern prüfe vorher die
   <a href="../05-abrechnung/#vorschau-erstellen">Vollständigkeit</a>.</li>
 <li>Fehlen Daten ein, zwei Tage nach einer Störung noch immer, fordere sie nach; erst danach lohnt ein Ticket.</li>
-<li><strong>Bewährte Routine:</strong> Schau einmal im Monat, etwa in der ersten Woche, ins <a href="../01-anmeldung/#dashboard">Dashboard</a>:
-  Wähle im Zahnrad des <strong>Lastverlaufs</strong> den Monat — dann ist jeder Balken ein Tag, und Tage, an denen die Bilanz
-  nicht aufgeht, tragen ein „!“ (siehe
-  <a href="../01-anmeldung/#bilanzdifferenz">Bilanzdifferenz</a>). Fehlendes forderst du nach. Vor der Abrechnung prüft
-  eegFaktura Vollständigkeit und L3-Werte noch einmal (<a href="../05-abrechnung/#vorschau-erstellen">Vorschau erstellen</a>).</li>
 </ul>
+<h2 id="monatliche-routine-daten-prufen">Monatliche Routine: Daten prüfen<a class="headerlink" href="#monatliche-routine-daten-prufen" title="Link zu diesem Abschnitt">&para;</a></h2>
+<p>Schau einmal im Monat, etwa in der ersten Woche, ins <a href="../dashboard/">Dashboard</a>: Wähle im Zahnrad des <strong>Lastverlaufs</strong>
+den Monat — dann ist jeder Balken ein Tag, und Tage, an denen die Bilanz nicht aufgeht, tragen ein „!“ (siehe
+<a href="../dashboard/#bilanzdifferenz">Bilanzdifferenz</a>). Fehlendes forderst du nach
+(<a href="#zahlpunktdaten-nachfordern">Zählpunktdaten nachfordern</a>). Vor der Abrechnung prüft eegFaktura Vollständigkeit und
+L3-Werte noch einmal (<a href="../05-abrechnung/#vorschau-erstellen">Vorschau erstellen</a>).</p>
 
 
 
