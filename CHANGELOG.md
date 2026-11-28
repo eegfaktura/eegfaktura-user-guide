@@ -5,11 +5,12 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 ## [Unreleased]
 
 ### Changed
-- Bloat review (Fable), part 2: one home per topic, chapters reorganised. Facts unchanged.
+- Bloat review (Fable), part 2: one home per topic, chapters reorganised; content moved, merged or shortened.
   - Dashboard and EEG page are their own pages (`dashboard.md`, `eeg-seite.md`); chapter 1 keeps login, interface,
     user menu and switching community. Anchor ids stay, the page changes (e.g. `01-anmeldung/#bilanzdifferenz` →
     `dashboard/#bilanzdifferenz`).
-  - Chapter 2 in task order (list → create → admit → view → metering points → documents); „Gut zu wissen“ dissolved
+  - Chapter 2 in task order (list → create → import pointer → admit → view → metering points → documents → member
+    leaves → move/owner change); „Gut zu wissen“ dissolved
     into the sections it belongs to; new sections „Aktiv am …“, „Ein Mitglied tritt aus“, „Zählpunkt verschieben oder
     Besitzer wechselt“.
   - Joining fee: rules only in chapter 4, actions only in chapter 2. Consent ID only in chapter 8. Participation factor

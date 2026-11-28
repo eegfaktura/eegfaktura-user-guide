@@ -131,7 +131,7 @@ Die Vorschau erstellt Belege ohne Nummer: Im PDF steht statt der Nummer „-- E 
 - Den **Mitgliedsbeitrag** bekommt ein Mitglied nur, wenn es im Zeitraum mindestens einen Zählpunkt mit Energiedaten
   hat.
 - Eine fällige [Beitrittsgebühr](04-tarife.md#beitrittsgebuhr) steht bei den Beträgen des Mitglieds in einer eigenen
-  Zeile.
+  Zeile „Beitrittsgebühr:“ und ist in seiner Summe enthalten.
 - **ZIP** lädt alle Vorschau-Belege als PDF herunter, **EXCEL** eine Aufstellung aller Positionen.
 - **Vorschau Akt.** rechnet die Vorschau neu, z. B. nachdem du einen Tarif geändert oder Daten nachgefordert hast.
 

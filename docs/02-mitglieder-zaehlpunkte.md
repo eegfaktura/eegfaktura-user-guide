@@ -110,7 +110,9 @@ Lege zuerst die [Tarife](04-tarife.md) an — beim Zählpunkt wählst du einen d
 4. Wähle **Verbraucher** oder **Erzeuger** und den **Tarif**. Gib die **Zählpunktnummer** ein: 33 Zeichen, `AT`,
    dann sechs Ziffern des Netzbetreibers, dann 25 Ziffern oder Großbuchstaben. Leerzeichen und Striche entfernt
    eegFaktura beim Einfügen. Der **Teilnahmefaktor in %** ist mit 100 vorbelegt. Die Adresse des Zählpunkts ist
-   Pflicht; mit **Adresse vom Besitzer übernehmen** wird die Adresse des Mitglieds eingetragen.
+   Pflicht; mit **Adresse vom Besitzer übernehmen** wird die Adresse des Mitglieds eingetragen. Gehört die Nummer schon
+   einem anderen Mitglied der Gemeinschaft, siehe
+   [Zählpunkt verschieben oder Besitzer wechselt](#zahlpunkt-verschieben-oder-besitzer-wechselt).
     - Bei Gemeinschaften mit Online-Anbindung lässt du das Datum **Aktiv ab …** leer: Es kommt mit der Meldung des
       Netzbetreibers.
     - Bei Gemeinschaften ohne Online-Anbindung wählst du zusätzlich den **Status** („Noch nicht registriert“ oder
@@ -135,7 +137,8 @@ Mitglied dann erst später zu. eegFaktura prüft das nicht.
 **Tipp:** Mitgliedsbeitrag und Zählpunktgebühr kommen je Abrechnung in voller Höhe, nicht anteilig nach Tagen, sobald
 für den Zeitraum Energiedaten da sind (siehe [Vorschau erstellen](05-abrechnung.md#vorschau-erstellen)). Wird ein
 Mitglied wenige Tage vor dem Ende eines Abrechnungszeitraums aktiv, zahlt es sie für diesen Zeitraum ganz. Mit
-**Aktiv am …** auf dem Ersten des nächsten Zeitraums vermeidest du das.
+**Aktiv am …** auf dem Ersten des nächsten Zeitraums vermeidest du das (höchstens 30 Arbeitstage nach dem Zulassen,
+siehe oben).
 
 ### Zählpunkt vor dem Registrieren ändern oder entfernen
 
@@ -233,6 +236,9 @@ Darunter stehen, je nach Stand, diese Knöpfe:
 Vormerken und „außerhalb bezahlt“ schließen sich aus. Ist die Gebühr einmal verrechnet, lässt sich nichts mehr ändern.
 Ist die Abrechnung gerade nicht erreichbar, fehlen die Zeile und die Knöpfe.
 
+Weist du einem schon abgerechneten Mitglied einen Tarif mit Beitrittsgebühr zu, warnt eegFaktura: Die Gebühr wird ihm
+nicht mehr automatisch verrechnet. Mit **Beitrittsgebühr nachverrechnen** kommt sie in den nächsten Abrechnungslauf.
+
 Wann und wie eegFaktura die Gebühr verrechnet, steht bei den [Tarifen](04-tarife.md#beitrittsgebuhr).
 
 ## Zählpunkte
@@ -316,7 +322,7 @@ du auch beim [Zulassen](#neues-mitglied-zulassen) hochladen.
 
 Melde seine Zählpunkte ab ([Zählpunkt abmelden](08-prozesse.md#zahlpunkt-abmelden)) statt das Mitglied zu löschen —
 so bleiben seine Daten und Belege erhalten. Meldet eegFaktura dabei, dass die Kennung der Datenfreigabe fehlt, steht
-dort, was zu tun ist.
+unter [Zählpunkt abmelden](08-prozesse.md#zahlpunkt-abmelden), was zu tun ist.
 
 ## Zählpunkt verschieben oder Besitzer wechselt
 
