@@ -43,6 +43,12 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
     `#typische-effekte`.
 
 ### Added
+- Texts for three web fixes on master, not yet in the pilot zone (platform#277, #278, #280), with the pilot hint:
+  chapter 2 „Farben“ (orange while a registration is under way, red only for rejected, revoked or invalid) and
+  „Neues Mitglied anlegen“ step 6 („Registrieren“ refused without an added metering point or with an unsaved metering
+  point form); chapter 3 „Gut zu wissen“ (hint below the send button when the mails went out with the default text).
+  „Was ist neu?“ lists the registration rule under „In der Pilot-Zone“; the colours and the hint are not listed (no
+  changed task). Merge only after the pilot release of web and billing with these fixes.
 - Pilot release of 28.11.2026 (web 1.30.0, billing 1.13.1, eda-xp 1.6.1), chapter 5 with the pilot hint: „Format der
   Dateien“ (SEPA in ISO 20022 version 2019, pain.008.001.08 / pain.001.001.09) and „Kopf je Zählpunkt“ (equipment
   number back in the block header, discount in the same parenthesis). „Was ist neu?“ lists both under „In der

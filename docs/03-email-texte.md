@@ -137,14 +137,18 @@ Mit **Abbrechen** bleibt alles, wie es war.
 
 ## Gut zu wissen
 
+--8<-- "pilot.md"
+
 - **Kopie an die Gemeinschaft:** Die Mails „Freigabe-Aufforderung“, „Zählpunkt aktiv“ und „Zählpunkt inaktiv“ gehen
   mit der E-Mail-Adresse der Gemeinschaft (EEG-Seite → Kontakt) in Kopie hinaus. Auch die Mail „Rechnung /
   Gutschrift“ geht in Kopie an die Gemeinschaft, an die Adresse zum Zeitpunkt der Abrechnung.
 - **Wenn eure Fassung nicht verwendet werden kann:** Lässt sich ein gespeicherter eigener Text beim Versand nicht
   verwenden, verschickt eegFaktura den Standardtext — die Mail kommt also trotzdem an. Bei den Mitglieder-Mails
-  meldet eegFaktura das unter **Nachrichten**; prüfe dann deinen Text in der Vorschau. Bei der Rechnungs-Mail siehst
-  du davon nichts in eegFaktura: Der Hinweis steht nur im internen Versandprotokoll, das der Support einsehen kann.
-  Prüfe eine eigene Rechnungs-Mail deshalb vor dem Versand mit **Vorschau** und **Testmail**.
+  meldet eegFaktura das unter **Nachrichten**; prüfe dann deinen Text in der Vorschau. Bei der Rechnungs-Mail steht
+  nach dem Versand unter dem Knopf **SENDEN** des Abrechnungslaufs ein oranger Hinweis: „Beim Versand konnte euer
+  eigener Mailtext nicht verwendet werden, die Mails gingen mit dem Standardtext hinaus. …“ Er bleibt, wenn du den
+  Lauf später wieder öffnest. Prüfe dann den Text „Rechnung / Gutschrift“. Eine eigene Rechnungs-Mail prüfst du am
+  besten schon vor dem Versand mit **Vorschau** und **Testmail**.
 - **Der Standardtext wurde überarbeitet:** Ändert eegFaktura einen Standardtext, während ihr einen eigenen Text
   verwendet, siehst du „Der Standardtext wurde inzwischen überarbeitet.“ Mit **Neuen Standard ansehen** vergleichst
   du. **Neuen Standard übernehmen** lädt die neue Fassung in den Editor. Verschickt wird sie erst, wenn du auf
