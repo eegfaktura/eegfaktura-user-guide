@@ -5,6 +5,10 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 ## [Unreleased]
 
 ### Added
+- Pilot release of 28.11.2026 (web 1.30.0, billing 1.13.1, eda-xp 1.6.1), chapter 5 with the pilot hint: „Format der
+  Dateien“ (SEPA in ISO 20022 version 2019, pain.008.001.08 / pain.001.001.09) and „Kopf je Zählpunkt“ (equipment
+  number back in the block header, discount in the same parenthesis). „Was ist neu?“ lists both under „In der
+  Pilot-Zone“. eda-xp 1.6.1 (process date, no DateTo) changes nothing an admin operates, so it is not listed.
 - Taken over from the BookStack FAQ before it is deleted (only tips that are still valid and add value; each checked
   against the current code): chapter 1 „Verteilt“ in the dashboard; chapter 2 a later start date with „Aktiv am …“
   (at most 30 working days ahead), member fee and metering point fee are never prorated, bulk change of SEPA mandate

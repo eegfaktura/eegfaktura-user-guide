@@ -35,7 +35,7 @@ In allen Texten der Abrechnungseinstellungen (und in den Tariftexten) erzeugt `#
 
 ### Was auf einem Beleg steht
 
-Die Positionen sind je Zählpunkt gruppiert („Zählpunkt AT… – Anlagenname“, ggf. mit Rabatt):
+Die Positionen sind je Zählpunkt gruppiert (siehe [Kopf je Zählpunkt](#kopf-je-zahlpunkt)):
 
 - die **Energiemenge** mit Arbeitspreis (bei zeitbasierten Tarifen je Zeitraum),
 - bei Verbrauchern mit Freikontingent eine Zeile „Menge (…) = Verbrauch (…) abzgl. freie kWh (…)“,
@@ -50,6 +50,14 @@ Die Positionen sind je Zählpunkt gruppiert („Zählpunkt AT… – Anlagenname
 - die **Bankverbindung** des Mitglieds: der Name der Bank (falls eingetragen), der Kontoinhaber und von der IBAN nur
   die letzten vier Stellen („******1234“; ohne IBAN steht nur „******“); darunter die SEPA-Mandatsreferenz — ist
   keine eingetragen, steht dort die Mitgliedsnummer.
+
+#### Kopf je Zählpunkt
+
+--8<-- "pilot.md"
+
+Über den Positionen eines Zählpunkts steht „Zählpunkt AT… – Anlagenname (Anlage-Nr. …)“. Hat der Tarif einen Rabatt,
+steht er in derselben Klammer: „(Anlage-Nr. …, Rabatt 10 %)“. Fehlt der Anlagenname oder die Anlage-Nr., fällt der
+jeweilige Teil weg. Schon erstellte Belege bleiben, wie sie sind.
 
 Der Anlagenname des Zählpunkts erscheint auf dem Beleg — praktisch, wenn ein Mitglied mehrere Anlagen hat. Dort
 kannst du z. B. auch eine Kostenstelle oder die Adresse der Anlage eintragen, etwa bei einer Gemeinde mit mehreren
@@ -211,6 +219,14 @@ Die Hinweise darunter nennen, was nicht in den Dateien ist, z. B.:
 - keine Lastschrift-Datei, weil die Gemeinschaft keine **Creditor-ID** hat (EEG-Seite → Bankdaten),
 - Mitglieder mit Einzugsart „Kein SEPA“ oder ohne Einzugsart,
 - Mitglieder ohne IBAN — diese bitte händisch abwickeln.
+
+#### Format der Dateien
+
+--8<-- "pilot.md"
+
+Die Dateien entsprechen ISO 20022 in der Version 2019: Lastschrift `pain.008.001.08`, Überweisung
+`pain.001.001.09`. Fragt eure Bank nach dem Format, nenne diese Bezeichnungen. Nimmt eure Bank die Datei nicht an,
+melde dich beim [Support](einrichtung-hilfe.md#hilfe-und-support).
 
 ### SEPA — Begriffe
 
