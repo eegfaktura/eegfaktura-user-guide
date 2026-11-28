@@ -21,14 +21,14 @@ Stand.
 - **Mitglied registrieren:** einen eingetragenen Zählpunkt vor dem Registrieren ändern oder entfernen →
   [Zählpunkt vor dem Registrieren ändern](02-mitglieder-zaehlpunkte.md#zahlpunkt-vor-dem-registrieren-andern-oder-entfernen)
 - **Peer-to-Peer und Eigenversorgung:** Abrechnung als Vorschau, z. B. für Vorlage-Rechnungen; keine endgültige
-  Abrechnung → [Peer-to-Peer und Eigenversorgung](01-anmeldung.md#peer-to-peer-und-eigenversorgung)
+  Abrechnung → [Peer-to-Peer und Eigenversorgung](eeg-seite.md#peer-to-peer-und-eigenversorgung)
 - **Mitgliederliste:** Suche mit mehreren Begriffen, Sortierung nach Energiemenge, Mitgliedsnummer hinter dem Namen →
   [Die Mitgliederliste](02-mitglieder-zaehlpunkte.md#die-mitgliederliste)
 - **Stammdaten-Import:** übernimmt auch Mitgliedstarif und Zählpunkttarif; neue Vorlage →
   [Stammdaten aus Excel importieren](stammdaten-import.md)
 - **Gemeinschaft wechseln:** im Benutzermenü, mit Suche → [Gemeinschaft wechseln](01-anmeldung.md#gemeinschaft-wechseln)
 - **Dashboard:** Übersicht EEG mit dem Stand von heute; Sommer- und Winterhalbjahr für Lastverlauf und Tagesverlauf →
-  [Dashboard](01-anmeldung.md#dashboard)
+  [Dashboard](dashboard.md)
 
 ## Oktober 2026
 
@@ -43,7 +43,7 @@ Stand.
 - **Mitgliederliste:** Anzeige Standard, Alle, Aktive oder Inaktive und wählbare Sortierung →
   [Anzeige, Zeitraum und Sortierung](02-mitglieder-zaehlpunkte.md#anzeige-zeitraum-und-sortierung)
 - **Dashboard:** die Bilanzdifferenz im Lastverlauf zeigt fehlende Energiedaten →
-  [Bilanzdifferenz](01-anmeldung.md#bilanzdifferenz)
+  [Bilanzdifferenz](dashboard.md#bilanzdifferenz)
 - **Tarife:** Liste nach Art gruppiert, mit Suche → [Die Tarifliste](04-tarife.md#die-tarifliste)
 - **Dokumente:** Verträge durch Ziehen hochladen, mehrere auf einmal →
   [Dokumente eines Mitglieds](02-mitglieder-zaehlpunkte.md#dokumente-eines-mitglieds)

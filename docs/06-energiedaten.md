@@ -42,11 +42,10 @@ Der Knopf mit dem Pfeil nach unten oben in der Mitgliederliste öffnet **Downloa
 3. Klicke auf **Export**. Du bekommst eine Excel-Datei.
 
 Im **Stammdaten**-Export ist das Blatt „Mitglieder“ nach der Mitgliedsnummer sortiert („2“ vor „10“), Mitglieder
-ohne Nummer stehen am Ende. Nach „Mitgliedstarif“ stehen die Spalten „Beitrittsgebühr (€)“ und
-„Beitrittsgebühr Status“, mit den Status-Texten wie beim
-[Mitglied](02-mitglieder-zaehlpunkte.md#beitrittsgebuhr-eines-mitglieds); hat der Tarif eines Mitglieds keine Gebühr,
-bleiben beide Zellen leer. Ist die Abrechnung gerade nicht
-erreichbar, sagt eegFaktura das; der Export enthält dann alle Mitglieder, nur die Status-Spalte bleibt leer.
+ohne Nummer stehen am Ende. Nach „Mitgliedstarif“ folgen die Spalten **Beitrittsgebühr (€)** und **Beitrittsgebühr
+Status** (Texte wie beim [Mitglied](02-mitglieder-zaehlpunkte.md#beitrittsgebuhr-eines-mitglieds)). Hat der Tarif eines
+Mitglieds keine Gebühr, bleiben beide Zellen leer. Ist die Abrechnung gerade nicht erreichbar, sagt eegFaktura das; der
+Export enthält dann alle Mitglieder, nur die Status-Spalte bleibt leer.
 
 Die Excel-Datei mit den Energiedaten hat zwei Blätter:
 
@@ -92,7 +91,7 @@ auch die Karten in der Mitgliederliste.
     - **Korrekturen:** Vorläufige Werte (L3) ersetzt der Netzbetreiber später durch gemessene oder Ersatzwerte (L2).
       Kleine Differenzen von Bruchteilen eines Prozents zwischen zwei Abfragen sind dadurch normal.
     - **Mengenbilanz** im Export und **Bilanzdifferenz** im Dashboard sollten nahe 0 sein. Größere Abweichungen deuten
-      auf fehlende Daten hin — siehe [Bilanzdifferenz](01-anmeldung.md#bilanzdifferenz).
+      auf fehlende Daten hin — siehe [Bilanzdifferenz](dashboard.md#bilanzdifferenz).
 
 ## Energiedaten importieren
 

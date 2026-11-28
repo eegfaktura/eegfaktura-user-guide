@@ -22,9 +22,9 @@ hinzufügen**):
 |------|-------|
 | **Rechnungen: Text vor / nach Positionen, Abschlusstext** | Texte auf jeder Rechnung, z. B. Zahlungsbedingungen |
 | **Präfix / Startwert für Rechnungsnummern** | Präfix + Jahr des Belegdatums + laufende Nummer, z. B. `RE20260004`. Die laufende Nummer beginnt jedes Jahr (und je Präfix) beim Startwert (vorbelegt 0 — trage 1 ein, wenn die erste Rechnung des Jahres auf 1 statt auf 0 enden soll) |
-| **Gutschriften für Mitgliedstyp Privat: Texte** | Texte auf Gutschriften an Mitglieder **ohne UID** |
+| **Gutschriften für Mitgliedstyp Privat: Texte** | Texte auf Gutschriften an Mitglieder **ohne UID** (siehe [Gutschriften und Umsatzsteuer](#gutschriften-und-umsatzsteuer)) |
 | **Präfix / Startwert für Gutschriftennummern** | wie bei den Rechnungen, z. B. `GS20260001` |
-| **Gutschriften für Mitgliedstyp Firma: Texte** | Texte auf Gutschriften an Mitglieder **mit UID**. Es zählt das Feld UID beim Mitglied, nicht Privat oder Firma |
+| **Gutschriften für Mitgliedstyp Firma: Texte** | Texte auf Gutschriften an Mitglieder **mit UID** |
 | **Text für Fußzeile** | steht unten auf jedem Beleg |
 | **Dokumentennummer: Anzahl Stellen** | Länge der laufenden Nummer (1–6, mit führenden Nullen) |
 | **Bild für Logo** | das Logo oben auf den Belegen |
@@ -32,6 +32,16 @@ hinzufügen**):
 Änderungen werden gespeichert, sobald du ein Feld verlässt.
 
 In allen Texten der Abrechnungseinstellungen (und in den Tariftexten) erzeugt `##` einen Zeilenumbruch.
+
+### Gutschriften und Umsatzsteuer
+
+Welche Texte eine Gutschrift bekommt, hängt am Feld **UID** des Mitglieds, nicht an Privat oder Firma: Erzeuger ohne
+UID bekommen die Texte „Gutschriften für Mitgliedstyp Privat“, Erzeuger mit eingetragener UID die Texte „Gutschriften
+für Mitgliedstyp Firma“. Ob Umsatzsteuer auf der Gutschrift steht, bestimmt allein der Erzeugertarif
+(**Umsatzsteuer anführen**). eegFaktura druckt von sich aus keinen Hinweis auf Reverse Charge; einen solchen Text
+trägst du selbst ein, in den Texten für Mitgliedstyp Firma oder im
+[Zusatztext des Tarifs](04-tarife.md#umsatzsteuer). Ob Reverse Charge anzuwenden ist, klärst du mit deiner
+Steuerberatung.
 
 ### Was auf einem Beleg steht
 
@@ -43,9 +53,7 @@ Die Positionen sind je Zählpunkt gruppiert (siehe [Kopf je Zählpunkt](#kopf-je
   Erzeuger bekommt dafür eine Rechnung neben der Gutschrift). Bei Verbrauchern gilt die USt des Tarifs, bei Erzeugern
   **USt. für Zählpunktgebühr in %**,
 - auf Rechnungen der **Mitgliedsbeitrag** des Mitglieds-Tarifs,
-- im ersten endgültigen Lauf mit Energie (oder nach **Beitrittsgebühr nachverrechnen**) einmal die **Beitrittsgebühr**,
-  immer auf einer Rechnung (ein reiner Erzeuger bekommt dafür eine eigene Rechnung neben der Gutschrift),
-  siehe [Tarife](04-tarife.md#beitrittsgebuhr),
+- einmal die **Beitrittsgebühr**, wenn sie fällig ist (siehe [Tarife](04-tarife.md#beitrittsgebuhr)),
 - Umsatzsteuer und Summen, darunter die Texte aus den Abrechnungseinstellungen und die Fußzeile,
 - die **Bankverbindung** des Mitglieds: der Name der Bank (falls eingetragen), der Kontoinhaber und von der IBAN nur
   die letzten vier Stellen („******1234“; ohne IBAN steht nur „******“); darunter die SEPA-Mandatsreferenz — ist
@@ -107,10 +115,6 @@ Sind die Energiedaten des Zeitraums noch nicht geladen oder gibt es darin kein a
 eegFaktura nach der Prüfung keinen Lauf und nennt unter „Abrechnung nicht möglich“ den Grund. Ein Zeitraum ganz ohne
 Energiedaten wird also nicht abgerechnet.
 
-Ein **Rechnungsdatum in der Vergangenheit** ist erlaubt. Rechnest du z. B. den Dezember erst im Jänner ab, kannst du
-den 31.12. wählen: Die Belegnummern tragen dann das Jahr des Rechnungsdatums und zählen in dessen Nummernfolge
-weiter. Welches Datum für eure Buchhaltung passt, klärst du mit deiner Steuerberatung.
-
 Die Vorschau erstellt Belege ohne Nummer: Im PDF steht statt der Nummer „-- E N T W U R F --“, der Dateiname enthält
 „Vorschau“.
 
@@ -126,28 +130,33 @@ Die Vorschau erstellt Belege ohne Nummer: Im PDF steht statt der Nummer „-- E 
   Orientierung, keine Buchungsbeträge und keine steuerliche Beratung.
 - Den **Mitgliedsbeitrag** bekommt ein Mitglied nur, wenn es im Zeitraum mindestens einen Zählpunkt mit Energiedaten
   hat.
-- Ist eine [Beitrittsgebühr](04-tarife.md#beitrittsgebuhr) fällig, steht sie in den Beträgen des Mitglieds in einer
-  eigenen Zeile „Beitrittsgebühr:“ und ist in seiner Summe enthalten.
+- Eine fällige [Beitrittsgebühr](04-tarife.md#beitrittsgebuhr) steht bei den Beträgen des Mitglieds in einer eigenen
+  Zeile „Beitrittsgebühr:“ und ist in seiner Summe enthalten.
 - **ZIP** lädt alle Vorschau-Belege als PDF herunter, **EXCEL** eine Aufstellung aller Positionen.
 - **Vorschau Akt.** rechnet die Vorschau neu, z. B. nachdem du einen Tarif geändert oder Daten nachgefordert hast.
 
 ## Abrechnung durchführen
 
 Bei Gemeinschaften mit dem Modell **P2P** oder **EVA** gibt es nur die Vorschau, keine endgültige Abrechnung (siehe
-[Peer-to-Peer und Eigenversorgung](01-anmeldung.md#peer-to-peer-und-eigenversorgung)).
+[Peer-to-Peer und Eigenversorgung](eeg-seite.md#peer-to-peer-und-eigenversorgung)).
 
 Passt die Vorschau, klicke auf **Abrechnung durchführen** (die Zahl in Klammern am Knopf nennt die Mitglieder mit
-Beträgen). Die endgültigen Belege werden dabei **neu berechnet** — mit
-den Tarifen, Stammdaten und Energiedaten im Moment des Klicks. Hat sich seit
-der Vorschau etwas geändert, erstelle sie mit **Vorschau Akt.** direkt davor neu. Das **Rechnungsdatum** der
-endgültigen Belege steht im Feld über **Vorschau Akt.**: Es ist mit heute vorbelegt und übernimmt das Datum der
-ersten Vorschau nicht — stelle ein abweichendes Datum dort noch einmal ein. eegFaktura prüft noch einmal und warnt
-ausdrücklich:
+Beträgen). Die endgültigen Belege werden dabei **neu berechnet** — mit den Tarifen, Stammdaten und Energiedaten im
+Moment des Klicks. Hat sich seit der Vorschau etwas geändert, erstelle sie mit **Vorschau Akt.** direkt davor neu.
+
+!!! warning "Rechnungsdatum noch einmal prüfen"
+    Das **Rechnungsdatum** der endgültigen Belege steht im Feld über **Vorschau Akt.**: Es ist mit heute vorbelegt und
+    übernimmt das Datum der ersten Vorschau nicht — stelle ein abweichendes Datum dort noch einmal ein. Ein Datum in
+    der Vergangenheit ist erlaubt, eines in der Zukunft nicht. Rechnest du z. B. den Dezember erst im Jänner ab,
+    kannst du den 31.12. wählen: Die Belegnummern tragen dann das Jahr des Rechnungsdatums und zählen in dessen
+    Nummernfolge weiter. Welches Datum für eure Buchhaltung passt, klärst du mit deiner Steuerberatung.
+
+eegFaktura prüft noch einmal und warnt ausdrücklich:
 
 ![Abrechnung durchführen](images/abrechnung-durchfuehren.png)
 
 > **Die Abrechnung ist endgültig.** Die Belege bekommen fortlaufende Nummern und lassen sich danach nicht mehr ändern
-> oder löschen. Ein Rechnungsdatum in der Zukunft ist nicht erlaubt.
+> oder löschen.
 
 Endgültige Läufe einer Gemeinschaft laufen nacheinander: Startest du einen, während ein anderer noch läuft (z. B.
 für einen zweiten Zeitraum), bricht er ab mit „Ein endgültiger Abrechnungslauf dieser Gemeinschaft läuft gerade –
@@ -157,13 +166,8 @@ Schlägt ein Lauf fehl, steht unten „Abrechnung fehlgeschlagen (…)“ mit de
 Vorschau neu. Einen Zeitraum, der sich mit einem schon endgültig abgerechneten überschneidet, rechnet eegFaktura
 nicht noch einmal ab.
 
-Belege mit dem Betrag 0 werden nicht erstellt. Erzeuger ohne UID bekommen eine Gutschrift mit den Texten
-„Gutschriften für Mitgliedstyp Privat“, Erzeuger mit eingetragener UID eine Gutschrift mit den Texten „Gutschriften
-für Mitgliedstyp Firma“. Ob Umsatzsteuer auf der Gutschrift steht, bestimmt allein der Erzeugertarif
-(**Umsatzsteuer anführen**). eegFaktura druckt von sich aus keinen Hinweis auf Reverse Charge; einen solchen Text
-trägst du selbst ein, in den Texten für Mitgliedstyp Firma oder im
-[Zusatztext des Tarifs](04-tarife.md#umsatzsteuer). Ob Reverse Charge anzuwenden ist, klärst du mit deiner
-Steuerberatung.
+Belege mit dem Betrag 0 werden nicht erstellt. Welche Texte eine Gutschrift bekommt und was für die Umsatzsteuer
+gilt, steht unter [Gutschriften und Umsatzsteuer](#gutschriften-und-umsatzsteuer).
 
 ## Nach der Abrechnung
 
