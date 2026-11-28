@@ -5,6 +5,13 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 ## [Unreleased]
 
 ### Changed
+- Screenshots regenerated with realistic demo data: the demo community is „EEG Sonnenhang“ with complete master data
+  (grid operator Energienetze Steiermark, AT008000), members with names and addresses, tariffs „Mitgliedsbeitrag“,
+  „Einspeisung“ and „Bezug Standard“, a joining fee with 20 % VAT. Billing images show the closed quarter Jul-Sep 2026
+  with the invoice date 05.10.2026 (`scripts/prepare-local-stack.sql` resets the billing history of the demo community;
+  its guard now checks fixture ids instead of the fixture name). Script fixes: the billing images wait for the end state
+  of a run, lists and the billing settings are no longer cut off, the participation factor image no longer depends on
+  the time of day, the mail text step types a real sentence.
 - Bloat review (Fable), part 2: one home per topic, chapters reorganised; content moved, merged or shortened.
   - Dashboard and EEG page are their own pages (`dashboard.md`, `eeg-seite.md`); chapter 1 keeps login, interface,
     user menu and switching community. Anchor ids stay, the page changes (e.g. `01-anmeldung/#bilanzdifferenz` →
