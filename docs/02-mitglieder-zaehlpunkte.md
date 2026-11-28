@@ -76,7 +76,7 @@ Mitgliedsnummer und E-Mail des Mitglieds sowie in Zählpunktnummer und Anlagenna
 |----------------------|-----------|
 | Dunkelgrün | Zählpunkt ist aktiv (oder inaktiv mit früheren Daten) |
 | Orange | die Anmeldung läuft noch: neu angelegt, beim Netzbetreiber angemeldet, oder eegFaktura wartet auf die Zustimmung des Mitglieds bzw. auf die Abschlussmeldung des Netzbetreibers |
-| Rot | vom Netzbetreiber abgewiesen, aufgehoben oder ungültig — auch bei einem Mitglied, das noch zugelassen werden muss |
+| Rot | vom Netzbetreiber abgewiesen, aufgehoben oder ungültig |
 
 Was gerade gilt, sagt der Hinweis beim Zählpunkt (siehe [Status eines Zählpunkts](#status-eines-zahlpunkts)).
 
@@ -92,8 +92,6 @@ Zählpunkt mehr.
   ein und aus (**Nur Mitglieder**, **Nur Zählpunkte**, **Nur Erzeuger**, **Nur Verbraucher**).
 
 ## Neues Mitglied anlegen
-
---8<-- "pilot.md"
 
 Lege zuerst die [Tarife](04-tarife.md) an — beim Zählpunkt wählst du einen davon aus.
 
@@ -123,10 +121,14 @@ Lege zuerst die [Tarife](04-tarife.md) an — beim Zählpunkt wählst du einen d
 5. Klicke auf **Hinzufügen** — erst damit steht der Zählpunkt in der Liste. Weitere Zählpunkte fügst du genauso
    hinzu.
 6. Klicke auf **Registrieren**. Verlässt du die Seite vor dem Speichern, fragt eegFaktura nach.
-   **Achtung:** Ohne hinzugefügten Zählpunkt registriert eegFaktura nicht („Zuerst einen Zählpunkt hinzufügen.“).
-   Steht im Formular noch ein Zählpunkt, den du nicht mit **Hinzufügen** (bzw. **Übernehmen**) übernommen hast,
-   registriert eegFaktura ebenfalls nicht und weist darauf hin: Klicke dann auf **Hinzufügen** oder verwirf die
-   Eingabe mit **Abbrechen**.
+
+    --8<-- "pilot.md"
+
+    **Achtung:** Ohne hinzugefügten Zählpunkt registriert eegFaktura nicht („Zuerst einen Zählpunkt hinzufügen.“).
+    Steht im Formular noch ein Zählpunkt, den du nicht mit **Hinzufügen** (bzw. **Übernehmen**) übernommen hast,
+    registriert eegFaktura ebenfalls nicht und weist darauf hin: Klicke dann auf **Hinzufügen** oder verwirf die
+    Eingabe mit **Abbrechen**.
+
 7. Das Mitglied steht jetzt orange mit „!“ in der Liste und wartet auf die Zulassung. **Lasse es zu** (siehe
    [Neues Mitglied zulassen](#neues-mitglied-zulassen)) — erst dann werden die Zählpunkte beim Netzbetreiber
    angemeldet bzw. aktiv. Den Fortschritt siehst du am Status des Zählpunkts.

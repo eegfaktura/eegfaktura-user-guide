@@ -11,7 +11,9 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
   with the invoice date 05.10.2026 (`scripts/prepare-local-stack.sql` resets the billing history of the demo community;
   its guard now checks fixture ids instead of the fixture name). Script fixes: the billing images wait for the end state
   of a run, lists and the billing settings are no longer cut off, the participation factor image no longer depends on
-  the time of day, the mail text step types a real sentence.
+  the time of day, the mail text step types a real sentence. Review of #33: consistent messages, no WARN meter, private
+  members on CORE, the member images after the billing (joining fee charged as in the billing images), the SEPA dialog
+  in full, the contact rows idempotent; optional `scripts/prepare-local-keycloak.sh` for the admin in the user menu.
 - Bloat review (Fable), part 2: one home per topic, chapters reorganised; content moved, merged or shortened.
   - Dashboard and EEG page are their own pages (`dashboard.md`, `eeg-seite.md`); chapter 1 keeps login, interface,
     user menu and switching community. Anchor ids stay, the page changes (e.g. `01-anmeldung/#bilanzdifferenz` →
@@ -47,8 +49,8 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
   chapter 2 „Farben“ (orange while a registration is under way, red only for rejected, revoked or invalid) and
   „Neues Mitglied anlegen“ step 6 („Registrieren“ refused without an added metering point or with an unsaved metering
   point form); chapter 3 „Gut zu wissen“ (hint below the send button when the mails went out with the default text).
-  „Was ist neu?“ lists the registration rule under „In der Pilot-Zone“; the colours and the hint are not listed (no
-  changed task). Merge only after the pilot release of web and billing with these fixes.
+  „Was ist neu?“ lists the colours and the registration rule under „In der Pilot-Zone“; the hint is not listed (no
+  changed task). The pilot hints of steps 6 and „Gut zu wissen“ sit in the affected list item, not under the heading. Merge only after the pilot release of web and billing with these fixes.
 - Pilot release of 28.11.2026 (web 1.30.0, billing 1.13.1, eda-xp 1.6.1), chapter 5 with the pilot hint: „Format der
   Dateien“ (SEPA in ISO 20022 version 2019, pain.008.001.08 / pain.001.001.09) and „Kopf je Zählpunkt“ (equipment
   number back in the block header, discount in the same parenthesis). „Was ist neu?“ lists both under „In der

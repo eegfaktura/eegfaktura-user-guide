@@ -9,6 +9,8 @@ Stand.
 
 - **SEPA-Dateien:** im Format ISO 20022 Version 2019 → [Format der Dateien](05-abrechnung.md#format-der-dateien)
 - **Belege:** die Anlage-Nr. steht wieder im Kopf je Zählpunkt → [Kopf je Zählpunkt](05-abrechnung.md#kopf-je-zahlpunkt)
+- **Mitgliederliste:** Rot heißt nur noch abgewiesen, aufgehoben oder ungültig; solange die Anmeldung läuft, ist
+  der Zählpunkt orange → [Farben](02-mitglieder-zaehlpunkte.md#farben)
 - **Mitglied registrieren:** geht nur mit mindestens einem hinzugefügten Zählpunkt →
   [Neues Mitglied anlegen](02-mitglieder-zaehlpunkte.md#neues-mitglied-anlegen)
 
