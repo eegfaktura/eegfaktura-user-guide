@@ -509,6 +509,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Was auf einem Beleg steht">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kopf-je-zahlpunkt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kopf je Zählpunkt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -569,6 +586,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="SEPA-Dateien">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format-der-dateien" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format der Dateien
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -826,7 +860,7 @@ hinzufügen</strong>):</p>
 <p>Änderungen werden gespeichert, sobald du ein Feld verlässt.</p>
 <p>In allen Texten der Abrechnungseinstellungen (und in den Tariftexten) erzeugt <code>##</code> einen Zeilenumbruch.</p>
 <h3 id="was-auf-einem-beleg-steht">Was auf einem Beleg steht<a class="headerlink" href="#was-auf-einem-beleg-steht" title="Link zu diesem Abschnitt">&para;</a></h3>
-<p>Die Positionen sind je Zählpunkt gruppiert („Zählpunkt AT… – Anlagenname“, ggf. mit Rabatt):</p>
+<p>Die Positionen sind je Zählpunkt gruppiert (siehe <a href="#kopf-je-zahlpunkt">Kopf je Zählpunkt</a>):</p>
 <ul>
 <li>die <strong>Energiemenge</strong> mit Arbeitspreis (bei zeitbasierten Tarifen je Zeitraum),</li>
 <li>bei Verbrauchern mit Freikontingent eine Zeile „Menge (…) = Verbrauch (…) abzgl. freie kWh (…)“,</li>
@@ -842,6 +876,16 @@ hinzufügen</strong>):</p>
   die letzten vier Stellen („<strong><strong><strong>1234“; ohne IBAN steht nur „</strong></strong></strong>“); darunter die SEPA-Mandatsreferenz — ist
   keine eingetragen, steht dort die Mitgliedsnummer.</li>
 </ul>
+<h4 id="kopf-je-zahlpunkt">Kopf je Zählpunkt<a class="headerlink" href="#kopf-je-zahlpunkt" title="Link zu diesem Abschnitt">&para;</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Derzeit nur in der Pilot-Zone</p>
+<p>Diese Funktion bzw. dieses Verhalten gibt es derzeit nur in der <strong>Pilot-Zone</strong> für eine kleine Zahl von
+Friendly Usern. In der allgemeinen Version von eegFaktura kommt es mit einem der nächsten Releases; bis dahin kann
+es dort noch anders aussehen.</p>
+</div>
+<p>Über den Positionen eines Zählpunkts steht „Zählpunkt AT… – Anlagenname (Anlage-Nr. …)“. Hat der Tarif einen Rabatt,
+steht er in derselben Klammer: „(Anlage-Nr. …, Rabatt 10 %)“. Fehlt der Anlagenname oder die Anlage-Nr., fällt der
+jeweilige Teil weg. Schon erstellte Belege bleiben, wie sie sind.</p>
 <p>Der Anlagenname des Zählpunkts erscheint auf dem Beleg — praktisch, wenn ein Mitglied mehrere Anlagen hat. Dort
 kannst du z. B. auch eine Kostenstelle oder die Adresse der Anlage eintragen, etwa bei einer Gemeinde mit mehreren
 Objekten. Soll jede Kostenstelle eine eigene Rechnung bekommen, legst du je Kostenstelle ein eigenes Mitglied an.
@@ -1016,6 +1060,16 @@ danach beim Mitglied, wirkt das erst im nächsten Lauf; diesen Fall wickelst du 
 <li>Mitglieder mit Einzugsart „Kein SEPA“ oder ohne Einzugsart,</li>
 <li>Mitglieder ohne IBAN — diese bitte händisch abwickeln.</li>
 </ul>
+<h4 id="format-der-dateien">Format der Dateien<a class="headerlink" href="#format-der-dateien" title="Link zu diesem Abschnitt">&para;</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Derzeit nur in der Pilot-Zone</p>
+<p>Diese Funktion bzw. dieses Verhalten gibt es derzeit nur in der <strong>Pilot-Zone</strong> für eine kleine Zahl von
+Friendly Usern. In der allgemeinen Version von eegFaktura kommt es mit einem der nächsten Releases; bis dahin kann
+es dort noch anders aussehen.</p>
+</div>
+<p>Die Dateien entsprechen ISO 20022 in der Version 2019: Lastschrift <code>pain.008.001.08</code>, Überweisung
+<code>pain.001.001.09</code>. Fragt eure Bank nach dem Format, nenne diese Bezeichnungen. Nimmt eure Bank die Datei nicht an,
+melde dich beim <a href="../einrichtung-hilfe/#hilfe-und-support">Support</a>.</p>
 <h3 id="sepa-begriffe">SEPA — Begriffe<a class="headerlink" href="#sepa-begriffe" title="Link zu diesem Abschnitt">&para;</a></h3>
 <ul>
 <li><strong>Einzugsart CORE</strong> (Basislastschrift): für alle Mitglieder; das Mitglied kann eine Lastschrift innerhalb von acht
