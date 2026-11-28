@@ -21,7 +21,7 @@ hinzufügen**):
 | Feld | Wofür |
 |------|-------|
 | **Rechnungen: Text vor / nach Positionen, Abschlusstext** | Texte auf jeder Rechnung, z. B. Zahlungsbedingungen |
-| **Präfix / Startwert für Rechnungsnummern** | Die Nummer setzt sich aus Präfix, Jahr des Belegdatums und laufender Nummer zusammen, z. B. `RE20260004`; die laufende Nummer beginnt je Jahr beim Startwert |
+| **Präfix / Startwert für Rechnungsnummern** | Die Nummer setzt sich aus Präfix, Jahr des Belegdatums und laufender Nummer zusammen, z. B. `RE20260004`; die laufende Nummer beginnt je Jahr (und je Präfix) beim Startwert. Vorbelegt ist 0, auch ein fehlender Startwert zählt als 0: Die erste Nummer des Jahres endet dann auf 0, z. B. `RE20270000`. Soll sie mit 1 beginnen, trage 1 ein. Der Startwert gilt nur für die erste Nummer; danach zählt eegFaktura weiter |
 | **Gutschriften für Mitgliedstyp Privat: Texte** | Texte auf Gutschriften an Mitglieder **ohne UID** |
 | **Präfix / Startwert für Gutschriftennummern** | wie bei den Rechnungen, z. B. `GS20260001` |
 | **Gutschriften für Mitgliedstyp Firma: Texte** | Texte auf Gutschriften an Mitglieder **mit UID**. Es zählt das Feld UID beim Mitglied, nicht Privat oder Firma |
@@ -46,9 +46,13 @@ Die Positionen sind je Zählpunkt gruppiert („Zählpunkt AT… – Anlagenname
 - im ersten endgültigen Lauf mit Energie (oder nach **Beitrittsgebühr nachverrechnen**) einmal die **Beitrittsgebühr**,
   immer auf einer Rechnung (ein reiner Erzeuger bekommt dafür eine eigene Rechnung neben der Gutschrift),
   siehe [Tarife](04-tarife.md#beitrittsgebuhr),
-- Umsatzsteuer und Summen, darunter die Texte aus den Abrechnungseinstellungen und die Fußzeile.
+- Umsatzsteuer und Summen, darunter die Texte aus den Abrechnungseinstellungen und die Fußzeile,
+- die **Bankverbindung** des Mitglieds: der Name der Bank (falls eingetragen), der Kontoinhaber und von der IBAN nur
+  die letzten vier Stellen („******1234“); darunter die SEPA-Mandatsreferenz, falls eine eingetragen ist.
 
-Der Anlagenname des Zählpunkts erscheint auf dem Beleg — praktisch, wenn ein Mitglied mehrere Anlagen hat.
+Der Anlagenname des Zählpunkts erscheint auf dem Beleg — praktisch, wenn ein Mitglied mehrere Anlagen hat. Dort
+kannst du z. B. auch eine Kostenstelle oder die Adresse der Anlage eintragen, etwa bei einer Gemeinde mit mehreren
+Objekten. Soll jede Kostenstelle eine eigene Rechnung bekommen, legst du je Kostenstelle ein eigenes Mitglied an.
 
 Alle Zahlen stehen mit Tausenderpunkt, z. B. „21.345,00 kWh“ oder „1.234,56“ €. Das gilt für Belege, die neu erstellt
 werden; schon erstellte Belege behalten ihr PDF.
@@ -95,6 +99,10 @@ Sind die Energiedaten des Zeitraums noch nicht geladen oder gibt es darin kein a
 eegFaktura nach der Prüfung keinen Lauf und nennt unter „Abrechnung nicht möglich“ den Grund. Ein Zeitraum ganz ohne
 Energiedaten wird also nicht abgerechnet.
 
+Ein **Rechnungsdatum in der Vergangenheit** ist erlaubt. Rechnest du z. B. den Dezember erst im Jänner ab, kannst du
+den 31.12. wählen: Die Belegnummern tragen dann das Jahr des Rechnungsdatums und zählen in dessen Nummernfolge
+weiter. Welches Datum für eure Buchhaltung passt, klärst du mit deiner Steuerberatung.
+
 Die Vorschau erstellt Belege ohne Nummer: Im PDF steht statt der Nummer „-- E N T W U R F --“, der Dateiname enthält
 „Vorschau“.
 
@@ -124,8 +132,10 @@ Bei Gemeinschaften mit dem Modell **P2P** oder **EVA** gibt es nur die Vorschau,
 Passt die Vorschau, klicke auf **Abrechnung durchführen** (die Zahl in Klammern am Knopf nennt die Mitglieder mit
 Beträgen). Die endgültigen Belege werden dabei **neu berechnet** — mit
 den Tarifen, Stammdaten und Energiedaten im Moment des Klicks. Hat sich seit
-der Vorschau etwas geändert, erstelle sie mit **Vorschau Akt.** direkt davor neu. eegFaktura prüft noch einmal und
-warnt ausdrücklich:
+der Vorschau etwas geändert, erstelle sie mit **Vorschau Akt.** direkt davor neu. Das **Rechnungsdatum** der
+endgültigen Belege steht im Feld über **Vorschau Akt.**: Es ist mit heute vorbelegt und übernimmt das Datum der
+ersten Vorschau nicht — stelle ein abweichendes Datum dort noch einmal ein. eegFaktura prüft noch einmal und warnt
+ausdrücklich:
 
 ![Abrechnung durchführen](images/abrechnung-durchfuehren.png)
 

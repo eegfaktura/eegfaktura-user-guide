@@ -4,7 +4,20 @@ All notable changes to this guide. Format: [Keep a Changelog](https://keepachang
 
 ## [Unreleased]
 
+### Added
+- Taken over from the BookStack FAQ before it is deleted (only tips that are still valid and add value; each checked
+  against the current code): chapter 1 „Verteilt“ in the dashboard; chapter 2 a later start date with „Aktiv am …“
+  (at most 30 working days ahead), member fee and metering point fee are never prorated, bulk change of SEPA mandate
+  data by the support; chapter 4 bulk tariff change by the support; chapter 5 numbering start value, a document date in
+  the past (e.g. 31.12.) and its own date field for the final run, IBAN printed shortened, plant name for cost
+  centres; „Einrichtung & Hilfe“ the bulk change in the support table.
+- Chapter 6: the series „Anteil gemeinschaftliche Erzeugung“ and where the export names the series („Metercode“).
+
 ### Changed
+- BookStack „Hintergrundwissen“ reduced to background only: the guide no longer links the pages „Energiedaten
+  herunterladen“ (the export names its series in plain text), „Datenkontrolle Energie“ (the dashboard marks unbalanced
+  days, the check before billing covers completeness) and „Prozess History“ (covered by chapter 8). Chapter 8: the
+  monthly routine now uses the dashboard.
 - Links to docs.eegfaktura.at point to the renamed BookStack book „Hintergrundwissen“ (`/books/hintergrundwissen/…`,
   formerly „Workflow/Prozesse“); the old addresses redirect, the new ones do not depend on it.
 

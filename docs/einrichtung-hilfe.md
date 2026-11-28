@@ -50,16 +50,13 @@ Dieses Handbuch beschreibt die Bedienung von eegFaktura. Hintergrundwissen, das 
 | Thema | Wo |
 |-------|----|
 | Umsatzsteuer bei Rechnungen und Gutschriften je Mitgliedstyp | [docs.eegfaktura.at](https://docs.eegfaktura.at/books/hintergrundwissen/page/die-umsatzsteuerlich-korrekte-ausfuhrung-von-rechnungen-und-gutschriften) |
-| Messreihen und OBIS-Codes der Energiedaten | [docs.eegfaktura.at](https://docs.eegfaktura.at/books/hintergrundwissen/page/energiedaten-herunterladen) |
-| Datenkontrolle in der Praxis, Excel-Vorlage für Viertelstundenwerte | [docs.eegfaktura.at](https://docs.eegfaktura.at/books/hintergrundwissen/page/datenkontrolle-energie) |
-| Nachrichten je Prozess mit den Beschreibungen der ebUtilities | [docs.eegfaktura.at](https://docs.eegfaktura.at/books/hintergrundwissen/page/prozess-history) |
 | Anleitungen der Netzbetreiber-Portale | [docs.eegfaktura.at](https://docs.eegfaktura.at/shelves/netz-betreiber-infos) |
 
 ## Hilfe und Support
 
 | Wo | Wofür |
 |----|-------|
-| **Support-Portal** <https://support.vfeeg.org> | Tickets, z. B. Zugangsdaten der EDA übermitteln, einen weiteren **EEG-Admin** anlegen (mit Vor- und Nachname und E-Mail-Adresse der Person) oder Änderungen, die nur der Betrieb machen kann. Anmeldung mit denselben Zugangsdaten wie eegFaktura |
+| **Support-Portal** <https://support.vfeeg.org> | Tickets, z. B. Zugangsdaten der EDA übermitteln, einen weiteren **EEG-Admin** anlegen (mit Vor- und Nachname und E-Mail-Adresse der Person), Tarife oder Bankdaten vieler Mitglieder auf einmal ändern (Massenänderung) oder Änderungen, die nur der Betrieb machen kann. Anmeldung mit denselben Zugangsdaten wie eegFaktura |
 | **Forum** <https://www.eeg-grossraming.at/Forum/index.php> | Fragen an andere Gemeinschaften; Ideen für neue Funktionen im Bereich **Feature Requests** |
 | dieses Handbuch | Bedienung von eegFaktura |
 

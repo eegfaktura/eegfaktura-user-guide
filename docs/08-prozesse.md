@@ -132,9 +132,6 @@ reichen.
 davor, fehlen seine ersten Schritte. Bei „konkurrierende Prozesse“ hilft ein größerer Zeitraum, den Vorgang zu finden,
 der noch läuft.
 
-Alle Nachrichten je Prozess mit den Beschreibungen der ebUtilities und Beispielen:
-[Prozess History](https://docs.eegfaktura.at/books/hintergrundwissen/page/prozess-history) auf docs.eegfaktura.at.
-
 ### Nachrichtenarten in der Spalte Protokoll
 
 | Bereich | Ablauf |
@@ -187,8 +184,8 @@ Erfahrungswerte aus der Praxis, je nach Netzbetreiber verschieden:
   später noch. Rechne daher nicht unmittelbar nach dem Ende eines Zeitraums ab, sondern prüfe vorher die
   [Vollständigkeit](05-abrechnung.md#vorschau-erstellen).
 - Fehlen Daten ein, zwei Tage nach einer Störung noch immer, fordere sie nach; erst danach lohnt ein Ticket.
-- **Bewährte Routine:** Prüfe die Energiedaten einmal im Monat, etwa in der ersten Woche (Bilanzdifferenz im
-  Dashboard oder Mengenbilanz im Export) und fordere Fehlendes nach. Mehr dazu, mit einer Excel-Vorlage für den
-  Vergleich der Viertelstundenwerte: [Datenkontrolle Energie](https://docs.eegfaktura.at/books/hintergrundwissen/page/datenkontrolle-energie)
-  auf docs.eegfaktura.at.
+- **Bewährte Routine:** Schau einmal im Monat, etwa in der ersten Woche, ins [Dashboard](01-anmeldung.md#dashboard):
+  Im **Lastverlauf** tragen Tage, an denen die Bilanz nicht aufgeht, ein „!“ (siehe
+  [Bilanzdifferenz](01-anmeldung.md#bilanzdifferenz)). Fehlendes forderst du nach. Vor der Abrechnung prüft
+  eegFaktura Vollständigkeit und L3-Werte noch einmal ([Vorschau erstellen](05-abrechnung.md#vorschau-erstellen)).
 

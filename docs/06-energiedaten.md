@@ -75,6 +75,7 @@ Der Netzbetreiber schickt je Zählpunkt mehrere Messreihen. eegFaktura verwendet
 | Zählpunkt | Messreihe | Bedeutung |
 |-----------|-----------|-----------|
 | Verbraucher | Gesamtverbrauch | was der Zählpunkt insgesamt bezogen hat |
+| Verbraucher | Anteil gemeinschaftliche Erzeugung | der Teil der Erzeugung der Gemeinschaft, der dem Zählpunkt zugeteilt wurde |
 | Verbraucher | Eigendeckung (G.03) | der Anteil aus der Gemeinschaft — **Grundlage der Rechnung** |
 | Erzeuger | Erzeugung | was die Anlage insgesamt eingespeist hat |
 | Erzeuger | Überschuss | was davon nicht in der Gemeinschaft verbraucht wurde |
@@ -82,9 +83,7 @@ Der Netzbetreiber schickt je Zählpunkt mehrere Messreihen. eegFaktura verwendet
 Abgerechnet wird beim Erzeuger **Erzeugung minus Überschuss**, also der in der Gemeinschaft verteilte Teil. Das zeigen
 auch die Karten in der Mitgliederliste.
 
-Die Codes der Messreihen (OBIS) und ihre Geschichte seit der Mehrfachteilnahme beschreibt
-[Energiedaten herunterladen](https://docs.eegfaktura.at/books/hintergrundwissen/page/energiedaten-herunterladen) auf
-docs.eegfaktura.at.
+Im Export stehen die Messreihen mit ihrem vollen Namen in der Zeile **Metercode** des Blatts „Energiedaten“.
 
 ### Typische Effekte
 
