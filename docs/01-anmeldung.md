@@ -67,8 +67,8 @@ eigenes Zahnrad für einen anderen Zeitraum (Jahr, Halbjahr, Vierteljahr, Monat 
 | Bereich | Inhalt |
 |---------|--------|
 | **Übersicht EEG** | Mitglieder, Zählpunkte und Tarife mit dem Stand von heute (siehe [unten](#ubersicht-eeg)) |
-| **Übersicht Stromproduktion und Verteilung** | **Produziert** und **Verteilt**, jeweils mit der vorherigen Periode zum Vergleich, und **EVU**: der Teil der Erzeugung, der nicht in der Gemeinschaft verteilt wurde und ins Netz ging (Überschuss); darunter die [Energiemengen](#energiemengen) „Eingekauft“ und „Verkauft“ |
-| **Lastverlauf** | Balken für EEG, EVU und Erzeugt über den Zeitraum, dazu zwei Linien mit der Zahl der **Abnehmer** und **Einspeiser** (rechte Achse); darüber die **Bilanz** (siehe [Bilanzdifferenz](#bilanzdifferenz)); auffällige Balken tragen ein „!“ |
+| **Übersicht Stromproduktion und Verteilung** | **Produziert** (die Erzeugung aller Erzeuger) und **Verteilt** (was davon in der Gemeinschaft an die Verbraucher ging — nicht der gesamte Verbrauch der Mitglieder), jeweils mit der vorherigen Periode zum Vergleich, und **EVU**: der Teil der Erzeugung, der nicht in der Gemeinschaft verteilt wurde und ins Netz ging (Überschuss); darunter die [Energiemengen](#energiemengen) „Eingekauft“ und „Verkauft“ |
+| **Lastverlauf** | Balken für EEG, EVU und Erzeugt über den Zeitraum, dazu zwei Linien mit der Zahl der **Abnehmer** und **Einspeiser** (rechte Achse); darüber die **Bilanz** (siehe [Bilanzdifferenz](#bilanzdifferenz)); auffällige Balken tragen ein „!“. Ein Balken ist bei einem Monat ein Tag, bei Vierteljahr und Halbjahr eine Woche, bei einem Jahr ein Monat |
 | **Tagesverlauf** | Verlauf über den Tag (EEG, EVU, Erzeugt) |
 
 Die Fragezeichen-Symbole neben den Werten erklären, wie eine Zahl entsteht.

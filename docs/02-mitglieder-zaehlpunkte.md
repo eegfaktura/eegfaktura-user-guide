@@ -249,6 +249,9 @@ Lege zuerst die [Tarife](04-tarife.md) an — beim Zählpunkt wählst du einen d
    mit der nächsten freien Nummer vorbelegt.
     - Unter **Optional** steht das Datum **Aktiv am …**, vorbelegt mit heute. eegFaktura speichert es als „Mitglied
       seit“ und meldet die Zählpunkte beim Zulassen ab diesem Tag beim Netzbetreiber an, frühestens ab morgen.
+      Du kannst auch einen späteren Tag wählen, z. B. den Ersten des nächsten Abrechnungszeitraums. Nach den Regeln
+      der Marktkommunikation darf er höchstens **30 Arbeitstage nach dem Zulassen** liegen; liegt er weiter weg,
+      lehnt der Netzbetreiber die Anmeldung ab. Lass das Mitglied dann erst später zu. eegFaktura prüft das nicht.
 3. Jedes Mitglied braucht mindestens einen Zählpunkt: Klicke auf **Zählpunkt hinzufügen**.
 
     ![Zählpunkt beim neuen Mitglied](images/mitglied-anlegen-zaehlpunkt.png)
@@ -269,6 +272,12 @@ Lege zuerst die [Tarife](04-tarife.md) an — beim Zählpunkt wählst du einen d
 7. Das Mitglied steht jetzt orange mit „!“ in der Liste und wartet auf die Zulassung. **Lasse es zu** (siehe
    [Neues Mitglied zulassen](#neues-mitglied-zulassen)) — erst dann werden die Zählpunkte beim Netzbetreiber
    angemeldet bzw. aktiv. Den Fortschritt siehst du am Status des Zählpunkts.
+
+**Gut zu wissen:** Mitgliedsbeitrag und Zählpunktgebühr kommen je Abrechnung in voller Höhe, nicht anteilig nach Tagen,
+sobald für den Zeitraum Energiedaten da sind (siehe [Vorschau erstellen](05-abrechnung.md#vorschau-erstellen)). Wird ein
+Mitglied wenige Tage vor dem Ende eines Abrechnungszeitraums aktiv, zahlt es sie für diesen Zeitraum ganz. Mit
+**Aktiv am …** auf dem Ersten des nächsten Zeitraums vermeidest du das, sofern dieser Tag höchstens 30 Arbeitstage
+nach dem Zulassen liegt.
 
 ### Zählpunkt vor dem Registrieren ändern oder entfernen
 
@@ -409,6 +418,9 @@ Gut zu wissen:
   dann keine Mails. Das Feld E-Mail selbst kannst du danach nur mit einer gültigen Adresse speichern. Trage keine
   erfundene Adresse ein — an sie wird geschickt.
 - **Mitglied ohne Konto:** Wähle die Einzugsart **Kein SEPA**; die IBAN darf dann leer bleiben.
+- **Bankdaten vieler Mitglieder auf einmal:** Einzugsart, Mandatsreferenz und Mandatsdatum kann der Support für
+  viele Mitglieder in einem Schritt setzen (Massenänderung), Mandatsreferenz und Mandatsdatum auch aus einer
+  Excel-Liste je Mitgliedsnummer. Schreib dazu ein Ticket an den [Support](einrichtung-hilfe.md#hilfe-und-support).
 - **Anlagenname:** Hat ein Zählpunkt einen Anlagennamen, steht in der Liste dieser Name statt der Nummer, in den
   Prozessen „Verbraucher - Name - Nummer“ bzw. „Erzeuger - Name - Nummer“ — praktisch bei mehreren Anlagen eines
   Mitglieds.
