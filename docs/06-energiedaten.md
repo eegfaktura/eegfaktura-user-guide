@@ -70,29 +70,29 @@ nur die fehlenden.
 
 ## Woraus die Werte entstehen
 
-Der Netzbetreiber schickt je Zählpunkt mehrere Messreihen:
-
-| Zählpunkt | Messreihe | Bedeutung |
-|-----------|-----------|-----------|
-| Verbraucher | Gesamtverbrauch | was der Zählpunkt insgesamt bezogen hat |
-| Verbraucher | Anteil gemeinschaftliche Erzeugung (G.02) | der Teil der Erzeugung, der dem Zählpunkt nach dem Verteilschlüssel zugeteilt wurde; was davon tatsächlich verbraucht wurde, ist die Eigendeckung |
-| Verbraucher | Eigendeckung (G.03) | der Anteil aus der Gemeinschaft — **Grundlage der Rechnung** |
-| Erzeuger | Erzeugung | was die Anlage insgesamt eingespeist hat |
-| Erzeuger | Überschuss | was davon nicht in der Gemeinschaft verbraucht wurde |
-
 Abgerechnet wird beim Erzeuger **Erzeugung minus Überschuss**, also der in der Gemeinschaft verteilte Teil. Das zeigen
 auch die Karten in der Mitgliederliste.
 
-Im Export stehen die Messreihen mit ihrem vollen Namen in der Zeile **Metercode** des Blatts „Energiedaten“.
+??? note "Die Messreihen des Netzbetreibers"
+    Der Netzbetreiber schickt je Zählpunkt mehrere Messreihen:
 
-### Typische Effekte
+    | Zählpunkt | Messreihe | Bedeutung |
+    |-----------|-----------|-----------|
+    | Verbraucher | Gesamtverbrauch | was der Zählpunkt insgesamt bezogen hat |
+    | Verbraucher | Anteil gemeinschaftliche Erzeugung (G.02) | der Teil der Erzeugung, der dem Zählpunkt nach dem Verteilschlüssel zugeteilt wurde; was davon tatsächlich verbraucht wurde, ist die Eigendeckung |
+    | Verbraucher | Eigendeckung (G.03) | der Anteil aus der Gemeinschaft — **Grundlage der Rechnung** |
+    | Erzeuger | Erzeugung | was die Anlage insgesamt eingespeist hat |
+    | Erzeuger | Überschuss | was davon nicht in der Gemeinschaft verbraucht wurde |
 
-- **Zeitumstellung:** Ein Tag der Umstellung hat 92 bzw. 100 Viertelstunden statt 96 — beim Nachrechnen von Hand
-  daran denken.
-- **Korrekturen:** Vorläufige Werte (L3) ersetzt der Netzbetreiber später durch gemessene oder Ersatzwerte (L2).
-  Kleine Differenzen von Bruchteilen eines Prozents zwischen zwei Abfragen sind dadurch normal.
-- **Mengenbilanz** im Export und **Bilanzdifferenz** im Dashboard sollten nahe 0 sein. Größere Abweichungen deuten auf
-  fehlende Daten hin — siehe [Bilanzdifferenz](01-anmeldung.md#bilanzdifferenz).
+    Im Export stehen die Messreihen mit ihrem vollen Namen in der Zeile **Metercode** des Blatts „Energiedaten“.
+
+??? note "Typische Effekte"
+    - **Zeitumstellung:** Ein Tag der Umstellung hat 92 bzw. 100 Viertelstunden statt 96 — beim Nachrechnen von Hand
+      daran denken.
+    - **Korrekturen:** Vorläufige Werte (L3) ersetzt der Netzbetreiber später durch gemessene oder Ersatzwerte (L2).
+      Kleine Differenzen von Bruchteilen eines Prozents zwischen zwei Abfragen sind dadurch normal.
+    - **Mengenbilanz** im Export und **Bilanzdifferenz** im Dashboard sollten nahe 0 sein. Größere Abweichungen deuten
+      auf fehlende Daten hin — siehe [Bilanzdifferenz](01-anmeldung.md#bilanzdifferenz).
 
 ## Energiedaten importieren
 

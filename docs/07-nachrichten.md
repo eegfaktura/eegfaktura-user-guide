@@ -23,7 +23,7 @@ hilft dem Support, du brauchst es sonst nicht. Die häufigsten Nachrichten:
 | E-Mail-Texte: … | ein eigener Mailtext konnte nicht verwendet werden, es ging der Standardtext hinaus; oder eegFaktura hat den Standardtext einer Mail geändert, die ihr angepasst habt — eure Fassung gilt weiter (siehe [E-Mail-Texte](03-email-texte.md)) |
 | Mailversand nicht bestätigt: … | der Mailserver hat nicht rechtzeitig geantwortet; die Mail ging vermutlich trotzdem hinaus. Frag beim Empfänger nach, bevor du sie noch einmal auslöst |
 | Mailversand fehlgeschlagen: … | eine der Mails zu Zählpunkten (Freigabe-Aufforderung, aktiv, inaktiv) konnte nicht verschickt werden, mit Grund. Fehler beim Versand von Rechnungen erscheinen hier **nicht** (siehe [Abrechnung](05-abrechnung.md#nach-der-abrechnung)) |
-| Excel Stammdaten importiert — Hinweise: … | ein Stammdaten-Import hat Hinweise oder Fehler ergeben (siehe [Stammdaten aus Excel importieren](02-mitglieder-zaehlpunkte.md#stammdaten-aus-excel-importieren)). Ohne Hinweise kommt keine Nachricht |
+| Excel Stammdaten importiert — Hinweise: … | ein Stammdaten-Import hat Hinweise oder Fehler ergeben (siehe [Stammdaten aus Excel importieren](stammdaten-import.md)). Ohne Hinweise kommt keine Nachricht |
 
 Nachrichten lassen sich nicht als gelesen markieren oder löschen. Läuft gerade eine Nachforderung, lädt die Seite
 jede Minute neu.

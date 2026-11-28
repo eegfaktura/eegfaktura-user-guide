@@ -61,13 +61,30 @@ be in production, and marked with the shared hint `snippets/pilot.md` („Derzei
 - Put the line `--8<-- "pilot.md"` (pymdownx.snippets) directly under the heading of each section that describes
   pilot behaviour, followed by a blank line. A table row cannot carry the hint: link from it to the section that does.
 - „Was ist neu?“ (`docs/changelog.md`) lists the features under **„In der Pilot-Zone“**, with the hint below that
-  heading.
+  heading, as one-line bullets in the form described under [Was ist neu?](#was-ist-neu-docschangelogmd).
 - Screenshots stay on the production state until the production release.
 
 **At the production release:** delete every line `--8<-- "pilot.md"` of the released features
-(`grep -rn 'pilot.md' docs`), rename „In der Pilot-Zone“ in `docs/changelog.md` to the release date (move the entries
-of features that stay in pilot into a new „In der Pilot-Zone“ section), update the screenshots, add a CHANGELOG
-entry. Leave `snippets/pilot.md` in place for the next pilot features.
+(`grep -rn 'pilot.md' docs`). In `docs/changelog.md`, move the bullets of the released features from „In der
+Pilot-Zone“ into the block of the current month (create it above the older months if it does not exist yet); merge a
+bullet with an existing one for the same function and drop what does not meet the rule below. Features that stay in
+pilot keep their bullets under „In der Pilot-Zone“; if none are left, remove that section until the next pilot feature.
+Then update the screenshots and add a CHANGELOG entry. Leave `snippets/pilot.md` in place for the next pilot features.
+
+### Was ist neu? (`docs/changelog.md`)
+
+The page is for EEG admins, not a developer changelog:
+
+- **One block per month** („## November 2026“), newest first, below „In der Pilot-Zone“. No heading per entry (every
+  heading lands in the sidebar).
+- **One line per entry**, at most about 8 per block: `- **Bereich:** was du jetzt tun kannst → [Link](kapitel.md#anker)`.
+  Details belong in the chapter the link points to.
+- **Only what enables a new task or changes a familiar one.** No renamings, defaults, sort orders, number formats,
+  clearer messages or file names.
+- **End state only:** several changes to the same function become one entry; never „zunächst …, seit … “. A merged
+  entry stays in the month of the first change; later changes only update its text.
+- **Age:** entries older than 6 months move into a `??? note "Ältere Änderungen"` block at the end of the page;
+  delete them after 12 months.
 
 ## Rules
 
